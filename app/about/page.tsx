@@ -3,63 +3,33 @@ import Link from "next/link";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SubpageHeader } from "@/components/layout/SubpageHeader";
-import { 
-  Code2, 
-  Cpu, 
-  ShieldCheck, 
-  Sparkles, 
-  Zap, 
-  ArrowRight, 
-  CheckCircle2 
+import {
+  Building2,
+  Target,
+  Sparkles,
+  ShieldCheck,
+  CheckCircle2,
+  Calendar,
+  ArrowRight,
+  TrendingUp,
+  Award,
 } from "lucide-react";
+import { RHEK_CONFIG } from "@/data/rhek-config";
 
 export const metadata: Metadata = {
-  title: "About Us — High-Performing Digital Engineering",
+  title: "About Us — RHEK GLOBAL",
   description:
-    "Discover Rate Global's engineering philosophy, minimalist code standards, and how we build enterprise-grade web applications for modern brands.",
+    "Learn about RHEK GLOBAL — your trusted partner in intelligent digital, operational, and outsourcing solutions.",
 };
 
-const values = [
-  {
-    icon: Zap,
-    title: "Minimalist Code Architecture",
-    description:
-      "We adhere to pragmatic engineering: zero unnecessary abstractions, zero bloat, and minimal diffs. The cleanest code is the code that is simple, resilient, and easy to maintain.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Type Safety & Security First",
-    description:
-      "Strict TypeScript guarantees, automated security testing, sanitization, and enterprise compliance protect your digital assets and end-user data from vulnerabilities.",
-  },
-  {
-    icon: Cpu,
-    title: "Sub-Second Performance",
-    description:
-      "Every millisecond impacts conversion. We architect around Core Web Vitals (LCP < 2.5s, CLS < 0.1, INP < 200ms) with modern edge caching and modern bundle optimization.",
-  },
-  {
-    icon: Sparkles,
-    title: "Accessible & User-First",
-    description:
-      "Design systems built to WCAG 2.2 Level AA accessibility. Intuitive micro-interactions, responsive mobile-first typography, and seamless cross-browser resilience.",
-  },
-];
-
-const milestones = [
-  { metric: "99.99%", label: "System Uptime Delivered Across Client Work" },
-  { metric: "<24 hrs", label: "Direct Engineering Response Guarantee" },
-  { metric: "100%", label: "Client Codebase Ownership & IP Transfer" },
-  { metric: "40%+", label: "Average Performance & Conversion Improvement" },
-];
-
 export default function AboutPage() {
+  const { company, companyProfile, workProcess } = RHEK_CONFIG;
+
   return (
-    <main className="min-h-screen bg-slate-50/70 py-4 sm:py-8 space-y-12 sm:space-y-16">
+    <main className="min-h-screen py-4 sm:py-8 space-y-12 sm:space-y-16">
       {/* 1. Hero Island — Floating Elevated Canvas */}
       <div className="site-container">
-        <div className="hero-canvas relative overflow-hidden rounded-[32px] bg-white pt-6 pb-10 sm:pb-12 shadow-sm ring-1 ring-slate-900/5 px-6 lg:px-10">
-          {/* Architectural Grid Overlay */}
+        <div className="hero-canvas relative overflow-hidden rounded-[32px] bg-white pt-6 pb-10 sm:pb-12 shadow-xs ring-1 ring-slate-900/5 px-6 lg:px-10">
           <div
             className="hero-grid pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_92%_85%_at_50%_45%,#000_70%,transparent_100%)]"
             aria-hidden="true"
@@ -68,13 +38,12 @@ export default function AboutPage() {
           <div className="relative z-10 mx-auto max-w-[1080px]">
             <Navbar />
 
-            {/* Distinct Subpage Header with Breadcrumb */}
             <SubpageHeader
               currentLabel="About Us"
-              badge="Company Overview & Culture"
-              icon={Code2}
-              title="Engineering digital products that compound business value."
-              description="Rate Global is a modern web development and digital engineering partner. We design, architect, and deploy high-speed web platforms, enterprise SaaS products, and bespoke user experiences for growth-driven companies worldwide."
+              badge="Who We Are"
+              icon={Building2}
+              title="RHEK GLOBAL – Your Trusted Partner in Business Growth."
+              description={company.headline}
             />
           </div>
         </div>
@@ -82,129 +51,136 @@ export default function AboutPage() {
 
       {/* 2. Narrative & Mission Island */}
       <div className="site-container">
-        <div className="rounded-[32px] bg-white shadow-sm ring-1 ring-slate-900/5 overflow-hidden">
-          {/* Narrative & Mission */}
-          <section className="py-12 lg:py-16 px-6 lg:px-10 bg-white">
-          <div className="mx-auto max-w-[1080px] grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="rounded-[32px] bg-white shadow-xs border border-[#F3F3F3] overflow-hidden p-6 sm:p-10 lg:p-14">
+          <div className="mx-auto max-w-[1080px] grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div>
-              <div className="text-[12px] font-semibold uppercase tracking-wider text-brand-blue mb-2">
+              <span className="inline-block text-[12px] font-extrabold uppercase tracking-wider text-[#E9204F] bg-[#FAFAFA] border border-[#F3F3F3] px-3.5 py-1 rounded-full mb-3 shadow-2xs font-display">
                 Our Purpose
-              </div>
-              <h2 className="font-display text-3xl font-semibold text-brand-charcoal tracking-tight">
-                Eliminating engineering slop to deliver clean, durable software.
+              </span>
+              <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#101010] tracking-[-0.04em] leading-[1.15] mt-1">
+                Empowering Businesses Through Intelligent Digital &amp; Outsourcing Solutions
               </h2>
-              <div className="mt-6 space-y-4 text-[15px] text-brand-slate leading-relaxed">
+              <div className="mt-5 space-y-4 text-[16px] text-[#747474] font-sans leading-relaxed">
                 <p>
-                  Most web projects suffer from architectural bloat, fragile dependencies, and over-engineered abstractions that slow teams down. At Rate Global, we take the opposite approach.
+                  At RHEK GLOBAL, we are passionate about helping businesses grow, innovate, and succeed in an increasingly competitive world. We bring together digital expertise, creative solutions, strategic marketing, sales development, and professional outsourcing services under one platform.
                 </p>
                 <p>
-                  We operate with a minimalist senior engineering mindset: building exactly what moves the needle, selecting battle-tested tools like Next.js and TypeScript, and ensuring every line of code adds measurable performance and conversion value.
+                  Our goal is to simplify business operations, strengthen digital presence, create new opportunities, and deliver solutions that help businesses achieve sustainable growth.
                 </p>
               </div>
 
-              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {[
-                  "No offshore junior hand-offs",
-                  "Direct senior engineer comms",
-                  "Continuous sprint previews",
-                  "Production-grade test coverage",
-                ].map((item) => (
-                  <div key={item} className="flex items-center gap-2.5 text-[14px] text-brand-charcoal font-medium">
-                    <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
-                    <span>{item}</span>
-                  </div>
-                ))}
+              <div className="mt-8 pt-6 border-t border-[#F3F3F3] flex flex-wrap items-center gap-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#E9204F] hover:bg-[#101010] px-6 py-3 text-[13px] font-bold font-display uppercase tracking-wider text-white transition-all duration-700 ease-[cubic-bezier(0.17,0.67,0,1.01)] shadow-xs min-h-[44px]"
+                >
+                  <Calendar className="h-4 w-4 text-white" />
+                  <span>Book a Consultation</span>
+                </Link>
+                <Link
+                  href="/contact"
+                  className="text-[13px] font-bold font-display uppercase tracking-wider text-[#101010] hover:text-[#E9204F] transition-colors duration-700"
+                >
+                  Contact Our Team &rarr;
+                </Link>
               </div>
             </div>
 
-            {/* Metrics Panel */}
-            <div className="grid grid-cols-2 gap-4">
-              {milestones.map((item) => (
+            {/* Mission & Vision Cards */}
+            <div className="space-y-6">
+              <div className="rounded-2xl bg-[#FAFAFA] border border-[#F3F3F3] p-6 sm:p-8 transition-all duration-700 ease-[cubic-bezier(0.17,0.67,0,1.01)] hover:border-[#E9204F]">
+                <div className="flex items-center gap-2 text-[#E9204F] mb-2 font-extrabold font-display text-[12px] uppercase tracking-wider">
+                  <Target className="h-4 w-4 text-[#E9204F]" />
+                  <span>6.1 Our Mission</span>
+                </div>
+                <h3 className="text-xl font-extrabold font-display text-[#101010] mb-2">
+                  {companyProfile.mission.headline}
+                </h3>
+                <p className="text-[15px] text-[#747474] font-sans leading-relaxed">
+                  {companyProfile.mission.text}
+                </p>
+              </div>
+
+              <div className="rounded-2xl bg-[#FAFAFA] border border-[#F3F3F3] p-6 sm:p-8 transition-all duration-700 ease-[cubic-bezier(0.17,0.67,0,1.01)] hover:border-[#E9204F]">
+                <div className="flex items-center gap-2 text-[#101010] mb-2 font-extrabold font-display text-[12px] uppercase tracking-wider">
+                  <TrendingUp className="h-4 w-4 text-[#E9204F]" />
+                  <span>6.2 Our Vision</span>
+                </div>
+                <h3 className="text-xl font-extrabold font-display text-[#101010] mb-2">
+                  {companyProfile.vision.headline}
+                </h3>
+                <p className="text-[15px] text-[#747474] font-sans leading-relaxed">
+                  {companyProfile.vision.text}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 5 Core Values */}
+          <div className="mt-16 pt-12 border-t border-[#F3F3F3]">
+            <div className="text-center max-w-[640px] mx-auto mb-10">
+              <span className="inline-block text-[12px] font-extrabold uppercase tracking-wider text-[#E9204F] font-display">
+                Guiding Principles
+              </span>
+              <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-[#101010] mt-1">
+                6.3 Our Core Values
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+              {companyProfile.coreValues.map((val, idx) => (
                 <div
-                  key={item.metric}
-                  className="rounded-2xl border border-slate-100 bg-[#F8FAFD] p-6 text-center sm:text-left hover:border-blue-100 transition"
+                  key={idx}
+                  className="rounded-2xl border border-transparent bg-[#F3F3F3] p-6 transition-all duration-700 ease-[cubic-bezier(0.17,0.67,0,1.01)] hover:bg-[#E9204F] hover:text-white group"
                 >
-                  <div className="font-display text-3xl sm:text-4xl font-bold text-brand-blue tracking-tight">
-                    {item.metric}
-                  </div>
-                  <div className="mt-2 text-[13px] font-medium text-brand-slate leading-snug">
-                    {item.label}
-                  </div>
+                  <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white text-[#101010] group-hover:bg-white/20 group-hover:text-white mb-3 font-extrabold font-display text-[13px] transition-colors duration-700">
+                    0{idx + 1}
+                  </span>
+                  <h4 className="text-[16px] font-extrabold font-display text-[#101010] group-hover:text-white mb-2 leading-snug transition-colors duration-700">
+                    {val.name}
+                  </h4>
+                  <p className="text-[13.5px] text-[#747474] group-hover:text-white/90 leading-relaxed font-sans transition-colors duration-700">
+                    {val.desc}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
-        </section>
 
-        {/* Core Values */}
-        <section className="py-12 lg:py-16 px-6 lg:px-10 bg-[#F8FAFD] border-t border-slate-100">
-          <div className="mx-auto max-w-[1080px]">
-            <div className="text-center max-w-2xl mx-auto mb-16">
-              <div className="text-[12px] font-semibold uppercase tracking-wider text-brand-blue mb-2">
-                Core Principles
-              </div>
-              <h2 className="font-display text-3xl sm:text-4xl font-semibold text-brand-charcoal tracking-tight">
-                Standards that shape our engineering culture.
-              </h2>
-              <p className="mt-4 text-[15px] text-brand-slate">
-                We measure our success by the uptime, speed, and business growth of the platforms we deliver.
+          {/* 4 Working Principles */}
+          <div className="mt-16 rounded-2xl bg-[#101010] border border-white/10 text-white p-8 sm:p-10 shadow-xl">
+            <div className="max-w-[700px] mb-8">
+              <span className="text-[12px] font-extrabold uppercase tracking-wider text-[#E9204F] font-display">
+                Operating Discipline
+              </span>
+              <h3 className="text-2xl font-extrabold font-display text-white mt-1">
+                4.2 Our Working Principles
+              </h3>
+              <p className="text-[15px] text-[#ACACAC] font-sans mt-1 leading-relaxed">
+                Every project at RHEK GLOBAL is governed by four strict standards:
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {values.map((v) => {
-                const Icon = v.icon;
-                return (
-                  <div
-                    key={v.title}
-                    className="rounded-2xl border border-slate-200/80 bg-white p-8 shadow-sm hover:border-blue-200 transition"
-                  >
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-brand-blue mb-6">
-                      <Icon className="h-6 w-6" />
-                    </div>
-                    <h3 className="text-[18px] font-semibold text-brand-charcoal mb-3">
-                      {v.title}
-                    </h3>
-                    <p className="text-[14px] text-brand-slate leading-relaxed">
-                      {v.description}
-                    </p>
-                  </div>
-                );
-              })}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {workProcess.principles.map((pr, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-xl bg-white/5 border border-white/10 p-5 transition-all duration-700 ease-[cubic-bezier(0.17,0.67,0,1.01)] hover:bg-[#E9204F] hover:border-[#E9204F] group"
+                >
+                  <h4 className="text-[15px] font-extrabold font-display text-white mb-1.5">
+                    {pr.title}
+                  </h4>
+                  <p className="text-[13px] text-[#ACACAC] group-hover:text-white/90 leading-relaxed font-sans transition-colors duration-700">
+                    {pr.description}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
-        </section>
-
-        {/* Call to Action Banner */}
-        <section className="py-12 lg:py-14 px-6 lg:px-10 bg-white border-t border-slate-100 text-center">
-          <div className="mx-auto max-w-2xl">
-            <h2 className="font-display text-2xl sm:text-3xl font-semibold text-brand-charcoal">
-              Have a project in mind? Let&apos;s build it together.
-            </h2>
-            <p className="mt-3 text-[15px] text-brand-slate">
-              Book a 30-minute discovery session with our senior engineers to review your technical scope, architecture, and timeline.
-            </p>
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-blue px-7 py-3 text-[14px] font-medium text-white shadow-md shadow-blue-500/20 transition hover:bg-blue-600 min-h-[44px]"
-              >
-                <span>Initiate Your Inquiry</span>
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                href="/services"
-                className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-7 py-3 text-[14px] font-medium text-brand-charcoal transition hover:bg-slate-50 min-h-[44px]"
-              >
-                <span>Explore Capabilities</span>
-              </Link>
-            </div>
-          </div>
-        </section>
         </div>
       </div>
 
-      {/* Consistent Company Footer */}
+      {/* Footer */}
       <div className="site-container pb-6">
         <Footer />
       </div>

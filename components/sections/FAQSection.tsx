@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { ChevronDown, HelpCircle } from "lucide-react";
+import { RHEK_CONFIG } from "@/data/rhek-config";
 
 interface FAQItem {
   question: string;
@@ -10,34 +12,34 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-    question: "How does Rate Global structure project pricing and estimates?",
+    question: "How do I get started with RHEK GLOBAL?",
     answer:
-      "We operate primarily on transparent, fixed-scope sprint milestones. After an initial discovery session, we provide a detailed technical roadmap with milestone deliverables and set pricing. For ongoing product evolution, we offer dedicated monthly engineering pods with guaranteed allocation.",
+      "Simply contact our team or book a meeting through our website. We will discuss your requirements, understand your goals, and recommend suitable solutions for your business.",
   },
   {
-    question: "How quickly can a new development sprint begin?",
+    question: "Does RHEK GLOBAL offer a Money-Back Guarantee?",
     answer:
-      "Most projects kick off within 5 to 7 business days following requirement sign-off and environment setup. We immediately establish shared communication channels, code repositories, and weekly milestone schedules.",
+      "Yes. We offer a 100% Money-Back Guarantee for eligible services under our applicable refund policy. Our commitment is to provide professional service, transparency, and client satisfaction. Please review our official guarantee terms for eligibility and conditions.",
   },
   {
-    question: "Who owns the code and intellectual property (IP)?",
+    question: "How are Janitorial Commercial Cleaning leads generated and verified?",
     answer:
-      "You do. 100% of the source code, design systems, architectural documentation, and custom assets belong entirely to your company upon milestone completion. We provide full repository transfer with zero vendor lock-in.",
+      "Our dedicated B2B SDR cold-calling team directly contacts verified business facility decision-makers, confirms their current cleaning needs, square footage, and schedule requirements, and locks in a confirmed walkthrough date and time. Every lead is 100% exclusive to your company.",
   },
   {
-    question: "What core technologies and frameworks do you build with?",
+    question: "What web development and 3D technologies does RHEK GLOBAL specialize in?",
     answer:
-      "Our approved core stack is centered on Next.js (App Router), React, strict TypeScript, Tailwind CSS, and Framer Motion for frontends, coupled with Node.js/PostgreSQL/Supabase/Cloudflare on the backend. This delivers maximum speed, type safety, and scalability.",
+      "We design and engineer premium 3D websites, custom corporate portals, Shopify eCommerce stores, and full-stack Next.js/React applications with modern UI/UX, strict TypeScript type safety, and optimized search performance.",
   },
   {
-    question: "Do you offer post-launch maintenance, monitoring, and SLAs?",
+    question: "What industries does RHEK GLOBAL service?",
     answer:
-      "Yes. Every production deployment includes a post-launch warranty period. Beyond that, we provide monthly engineering retainers covering proactive security updates, performance monitoring, dependency patches, and new feature sprints with a < 24-hour response SLA.",
+      "We provide tailored digital marketing, sales development, and outsourcing solutions across 10+ core industries including Commercial Cleaning, Real Estate, Healthcare, E-Commerce, Tech/SaaS, Hospitality, Education, Logistics, and Startups.",
   },
   {
-    question: "How do you handle project communication and updates?",
+    question: "What is your typical project delivery and onboarding timeline?",
     answer:
-      "We believe in continuous visibility: direct Slack or Discord channels with our senior engineers, weekly live demo staging links, and transparent milestone tracking. No middlemen or uncommunicative silos.",
+      "Following our 7-step work process (Initial Consultation $\\rightarrow$ Requirement Planning $\\rightarrow$ Strategy), campaigns and engineering sprints typically kick off within 3 to 5 business days after requirements alignment.",
   },
 ];
 
@@ -49,54 +51,62 @@ export function FAQSection() {
   };
 
   return (
-    <section id="faq" className="py-12 lg:py-16 px-6 lg:px-10 bg-white border-t border-slate-100">
+    <section id="faq" className="py-12 lg:py-16 px-6 lg:px-10 bg-white border-t border-[#F3F3F3]">
       <div className="mx-auto max-w-[840px]">
-        <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-2 rounded-full border border-blue-200/60 bg-blue-50/80 px-3.5 py-1 text-[12px] font-medium text-brand-blue mb-3">
-            <HelpCircle className="h-3.5 w-3.5" />
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#F3F3F3] bg-[#FAFAFA] px-3.5 py-1 text-[12px] font-extrabold uppercase tracking-wider text-[#E9204F] mb-3 font-display">
+            <HelpCircle className="h-3.5 w-3.5 text-[#E9204F]" />
             <span>Frequently Asked Questions</span>
           </div>
-          <h2 className="font-display text-3xl font-semibold text-brand-charcoal tracking-tight">
-            Everything you need to know about working with us.
+          <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-[#101010] tracking-[-0.04em]">
+            Common Questions About RHEK GLOBAL
           </h2>
-          <p className="mt-3 text-[15px] text-brand-slate">
-            Clear answers to common questions about timelines, pricing, code ownership, and collaboration.
+          <p className="mt-2.5 text-[16px] text-[#747474] max-w-[540px] mx-auto font-sans">
+            Everything you need to know about our services, guarantees, and workflow.
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-3">
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
               <div
-                key={faq.question}
-                className="rounded-2xl border border-slate-200/80 bg-white transition-all overflow-hidden"
+                key={idx}
+                className="rounded-2xl border border-[#F3F3F3] bg-[#FAFAFA] transition-all duration-700 ease-[cubic-bezier(0.17,0.67,0,1.01)] hover:border-[#E9204F]"
               >
                 <button
                   type="button"
                   onClick={() => toggle(idx)}
-                  className="flex w-full items-center justify-between p-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue min-h-[44px]"
+                  className="flex w-full items-center justify-between p-5 text-left text-[16px] font-extrabold font-display text-[#101010] min-h-[44px]"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-[15.5px] font-semibold text-brand-charcoal pr-4">
-                    {faq.question}
-                  </span>
-                  <div
-                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-50 text-slate-500 transition-transform duration-200 ${
-                      isOpen ? "rotate-180 bg-blue-50 text-brand-blue" : ""
+                  <span className="pr-4">{faq.question}</span>
+                  <ChevronDown
+                    className={`h-4 w-4 shrink-0 transition-transform duration-700 ease-[cubic-bezier(0.17,0.67,0,1.01)] ${
+                      isOpen ? "rotate-180 text-[#E9204F]" : "text-[#747474]"
                     }`}
-                  >
-                    <ChevronDown className="h-4 w-4" />
-                  </div>
+                  />
                 </button>
                 {isOpen && (
-                  <div className="px-6 pb-6 text-[14.5px] text-brand-slate leading-relaxed border-t border-slate-50 pt-3">
+                  <div className="border-t border-[#F3F3F3] px-5 pb-5 pt-3 text-[15px] leading-relaxed text-[#747474] font-sans">
                     {faq.answer}
                   </div>
                 )}
               </div>
             );
           })}
+        </div>
+
+        <div className="mt-10 text-center">
+          <p className="text-[14px] text-[#747474] font-sans">
+            Have a custom question or need a tailored proposal?{" "}
+            <Link
+              href="/contact"
+              className="font-bold font-display text-[#E9204F] hover:text-[#101010] transition-colors duration-700"
+            >
+              Get in touch with our team &rarr;
+            </Link>
+          </p>
         </div>
       </div>
     </section>

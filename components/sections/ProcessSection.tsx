@@ -1,137 +1,83 @@
-import Link from "next/link";
-import { Search, Compass, Terminal, ShieldCheck, ArrowRight } from "lucide-react";
-
-interface ProcessStep {
-  step: string;
-  title: string;
-  duration: string;
-  icon: typeof Search;
-  description: string;
-  deliverables: string[];
-}
-
-const steps: ProcessStep[] = [
-  {
-    step: "01",
-    title: "Discovery & Architecture",
-    duration: "Week 1",
-    icon: Search,
-    description:
-      "We unpack your business objectives, interview technical stakeholders, define API contracts, and establish measurable Core Web Vitals targets.",
-    deliverables: ["Technical SRS Document", "System Architecture Blueprint", "Scope & Sprint Roadmap"],
-  },
-  {
-    step: "02",
-    title: "UX/UI & Design Systems",
-    duration: "Weeks 2–3",
-    icon: Compass,
-    description:
-      "We design responsive, accessible interface prototypes in Figma, establishing atomic component tokens and layout hierarchy before writing code.",
-    deliverables: ["Interactive Prototypes", "Design Token System", "WCAG 2.2 AA Audit"],
-  },
-  {
-    step: "03",
-    title: "Full-Stack Engineering",
-    duration: "Weeks 3–6",
-    icon: Terminal,
-    description:
-      "Iterative Next.js, TypeScript, and API development with continuous integration, unit testing, and weekly staging deployments.",
-    deliverables: ["Production Next.js App", "Backend & API Integration", "Test Coverage"],
-  },
-  {
-    step: "04",
-    title: "QA & Production Launch",
-    duration: "Week 7",
-    icon: ShieldCheck,
-    description:
-      "Rigorous cross-browser verification, sub-second Core Web Vitals optimization, automated security checks, and zero-downtime deployment.",
-    deliverables: ["100/100 Lighthouse Score", "Production VPS / CDN Setup", "Post-Launch Warranty"],
-  },
-];
+import { Target, MessageSquare, Award, TrendingUp } from "lucide-react";
+import { RHEK_CONFIG } from "@/data/rhek-config";
 
 export function ProcessSection() {
-  return (
-    <section id="process" className="site-container">
-      {/* Section Header */}
-      <div className="text-center max-w-2xl mx-auto mb-12">
-        <div className="text-xs font-semibold uppercase tracking-wider text-brand-blue mb-2.5">
-          03 // 4-Step Sprint Roadmap
-        </div>
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 leading-tight">
-          Sprint-driven engineering delivery.
-        </h2>
-        <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-          From initial requirements discovery to zero-downtime launch, we adhere to disciplined milestones with continuous stakeholder visibility.
-        </p>
-      </div>
+  const { headline, subheadline, steps, principles } = RHEK_CONFIG.workProcess;
 
-      {/* 4 Steps Bento Grid — Each is a floating card with subtle elevation */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        {steps.map((item) => {
-          const Icon = item.icon;
-          return (
+  return (
+    <section id="process" className="site-container scroll-mt-24">
+      <div className="rounded-[32px] bg-white border border-[#F3F3F3] p-6 sm:p-10 lg:p-14 shadow-xs">
+        {/* Section Header */}
+        <div className="max-w-[760px] mb-12">
+          <div className="w-10 h-0.5 bg-[#E9204F] mb-3" />
+          <span className="inline-block text-[12px] font-extrabold uppercase tracking-widest text-[#E9204F] mb-1 font-display">
+            Our Work Process
+          </span>
+          <h2 className="font-display text-[32px] sm:text-[42px] font-extrabold text-[#101010] tracking-[-0.04em] leading-[1.15]">
+            {headline}
+          </h2>
+          <p className="mt-3 text-[17px] leading-relaxed text-[#747474] font-sans">
+            {subheadline}
+          </p>
+        </div>
+
+        {/* 7-Step Horizontal / Grid Sequence */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
+          {steps.map((stepItem, index) => (
             <div
-              key={item.step}
-              className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-900/5 hover:shadow-md hover:ring-blue-500/20 transition-all duration-300 flex flex-col justify-between"
+              key={index}
+              className="group relative flex flex-col justify-between rounded-2xl bg-[#F3F3F3] p-6 transition-all duration-700 ease-[cubic-bezier(0.17,0.67,0,1.01)] hover:bg-[#101010] hover:text-white hover:shadow-xl"
             >
               <div>
-                {/* Step Number & Duration Badge */}
-                <div className="flex items-center justify-between mb-4">
-                  <span className="font-display text-[26px] font-bold text-slate-900">
-                    {item.step}
-                  </span>
-                  <span className="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-medium text-slate-600">
-                    {item.duration}
-                  </span>
-                </div>
-
-                {/* Icon & Title */}
-                <div className="flex items-center gap-2.5 mb-3">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50 text-brand-blue">
-                    <Icon className="h-4 w-4" />
-                  </div>
-                  <h3 className="font-display text-[17px] font-semibold text-slate-900 leading-snug">
-                    {item.title}
-                  </h3>
-                </div>
-
-                {/* Description */}
-                <p className="text-[13px] leading-[1.6] text-slate-600 mb-6">
-                  {item.description}
+                <span className="inline-block font-display text-[12px] font-extrabold text-white bg-[#E9204F] rounded-lg px-2.5 py-1 mb-3 shadow-2xs">
+                  Step {stepItem.step}
+                </span>
+                <h3 className="text-[17px] font-extrabold font-display text-[#101010] group-hover:text-white mb-2 leading-snug transition-colors duration-700">
+                  {stepItem.title}
+                </h3>
+                <p className="text-[14.5px] text-[#747474] group-hover:text-[#ACACAC] leading-relaxed font-sans transition-colors duration-700">
+                  {stepItem.description}
                 </p>
               </div>
-
-              {/* Deliverables List */}
-              <div className="pt-4 border-t border-slate-100">
-                <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-2">
-                  Key Deliverables
-                </div>
-                <ul className="space-y-1.5 text-[12px] text-slate-600">
-                  {item.deliverables.map((del) => (
-                    <li key={del} className="flex items-center gap-1.5">
-                      <span className="h-1 w-1 rounded-full bg-brand-blue" />
-                      <span>{del}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </div>
-          );
-        })}
-      </div>
+          ))}
+        </div>
 
-      {/* Clear Multi-Page Pathway to About Us */}
-      <div className="mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 bg-white rounded-2xl p-6 shadow-sm ring-1 ring-slate-900/5">
-        <p className="text-sm text-slate-600 text-center sm:text-left">
-          Curious about our minimalist engineering values, code standards, and technical team?
-        </p>
-        <Link
-          href="/about"
-          className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 hover:bg-white hover:border-blue-300 hover:text-brand-blue px-6 py-2.5 text-[13px] font-medium text-slate-800 shadow-2xs transition min-h-[44px]"
-        >
-          <span>Learn About Our Culture &amp; Values</span>
-          <ArrowRight className="h-4 w-4" />
-        </Link>
+        {/* 4 Working Principles Footer Strip */}
+        <div className="border-t border-[#F3F3F3] pt-10">
+          <div className="mb-6">
+            <span className="text-[12px] font-extrabold uppercase tracking-wider text-[#747474] font-display">
+              Core Execution Values
+            </span>
+            <h3 className="text-[22px] font-extrabold font-display text-[#101010] mt-1">
+              Our 4 Working Principles
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {principles.map((principle, idx) => (
+              <div
+                key={idx}
+                className="group flex items-start gap-3 rounded-2xl bg-[#FAFAFA] border border-[#F3F3F3] p-5 transition-all duration-700 ease-[cubic-bezier(0.17,0.67,0,1.01)] hover:border-[#E9204F] hover:shadow-sm"
+              >
+                <div className="mt-0.5 flex h-9 w-9 items-center justify-center rounded-xl bg-white border border-[#F3F3F3] text-[#E9204F] shrink-0 group-hover:bg-[#E9204F] group-hover:text-white transition-all duration-700">
+                  {idx === 0 && <Target className="h-4 w-4" />}
+                  {idx === 1 && <MessageSquare className="h-4 w-4" />}
+                  {idx === 2 && <Award className="h-4 w-4" />}
+                  {idx === 3 && <TrendingUp className="h-4 w-4" />}
+                </div>
+                <div>
+                  <h4 className="text-[15px] font-extrabold font-display text-[#101010] leading-tight">
+                    {principle.title}
+                  </h4>
+                  <p className="mt-1 text-[13.5px] text-[#747474] leading-relaxed font-sans">
+                    {principle.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

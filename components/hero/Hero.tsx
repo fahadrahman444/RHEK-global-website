@@ -1,49 +1,62 @@
+import Image from "next/image";
 import Link from "next/link";
-import { User, ArrowUpRight } from "lucide-react";
+import { RHEK_CONFIG } from "@/data/rhek-config";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-4 pb-6 lg:pt-8 lg:pb-10">
-      <div className="mt-6 lg:mt-10 relative">
-        
-        {/* Upper-Right Block: The Big Headline (Col 6 to 12) */}
-        <div className="lg:ml-[44%] max-w-[580px]">
-          <h1 className="font-display text-[36px] sm:text-[46px] lg:text-[52px] font-medium leading-[1.14] tracking-[-0.03em] text-brand-charcoal">
-            We build websites, apps, and platforms{" "}
-            <span className="text-brand-blue">— user-first, outcome-driven.</span>
-          </h1>
-        </div>
+    <section className="relative pt-8 pb-12 lg:pt-14 lg:pb-16">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        {/* Left Column (Exact Red Sparrow Digital Hero Typography & Layout) */}
+        <div className="lg:col-span-6">
+          {/* Subtitle */}
+          <h2 className="font-display text-[16px] sm:text-[18px] font-extrabold uppercase tracking-wide text-[#101010]">
+            <span className="text-[#E9204F]">RHEK</span> GLOBAL AGENCY
+          </h2>
 
-        {/* Lower-Left Block: Supporting Value Prop + Buttons */}
-        <div className="mt-8 lg:mt-2 max-w-[340px] lg:w-[340px]">
-          <p className="text-[14.5px] leading-[1.62] text-brand-slate font-normal">
-            From launch to scale, we bring experience-led strategy, lean tech, and just the right structure to get it live.
+          {/* Signature Red Accent Line */}
+          <div className="w-14 h-[3.5px] bg-[#E9204F] mt-2 mb-6" />
+
+          {/* Main Headline */}
+          <h1 className="font-display text-[38px] sm:text-[48px] lg:text-[52px] font-extrabold leading-[1.1] tracking-[-0.04em] text-[#101010]">
+            We&apos;re the best digital marketing, leads &amp; web agency.
+          </h1>
+
+          {/* Paragraph */}
+          <p className="mt-5 text-[17px] leading-[1.7] text-[#747474] font-sans max-w-[520px]">
+            {RHEK_CONFIG.company.subheadline}
           </p>
 
-          {/* Dual Pill Buttons */}
-          <div className="mt-6 flex flex-wrap items-center gap-3">
-            {/* Primary Blue CTA with Avatar */}
+          {/* Action Button (Exact Red Sparrow Button Style: Red Border Box) */}
+          <div className="mt-8 flex flex-wrap items-center gap-4">
             <Link
-              href="#contact"
-              className="inline-flex items-center gap-2.5 rounded-full bg-brand-blue hover:bg-brand-darkblue transition-all py-2 pr-5 pl-2 text-[13px] font-medium text-white shadow-md shadow-blue-500/25 min-h-[44px]"
+              href="/#contact"
+              className="inline-flex items-center justify-center border-2 border-[#E9204F] bg-white hover:bg-[#E9204F] hover:text-white px-8 py-3 text-[14px] font-extrabold font-display text-[#101010] uppercase tracking-wider transition-all duration-700 ease-[cubic-bezier(0.17,0.67,0,1.01)] min-h-[46px] shadow-xs"
             >
-              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/20 text-white">
-                <User className="h-4 w-4" />
-              </span>
-              <span>Book a Discovery Call</span>
+              <span>Make An Enquiry</span>
             </Link>
 
-            {/* Secondary Outlined Glass Pill */}
             <Link
-              href="/work"
-              className="inline-flex items-center justify-center gap-1.5 rounded-full border border-brand-charcoal bg-white/60 hover:bg-white px-5 py-2 text-[13px] font-medium text-brand-charcoal backdrop-blur-sm transition-all min-h-[44px]"
+              href="/services"
+              className="inline-flex items-center justify-center border-2 border-[#101010] bg-transparent hover:border-[#E9204F] hover:text-[#E9204F] px-8 py-3 text-[14px] font-extrabold font-display text-[#101010] uppercase tracking-wider transition-all duration-700 ease-[cubic-bezier(0.17,0.67,0,1.01)] min-h-[46px]"
             >
-              <span>See Our Impact</span>
-              <ArrowUpRight className="h-3.5 w-3.5 text-brand-slate" />
+              <span>Explore Services</span>
             </Link>
           </div>
         </div>
 
+        {/* Right Column: Exact Graphical Visual (Website Design, Social Media, Email, SEO, Content) */}
+        <div className="lg:col-span-6 flex items-center justify-center lg:justify-end">
+          <div className="relative w-full max-w-[640px]">
+            <Image
+              src="/images/digital-marketing-banner.webp"
+              alt="Website Design, Content Marketing, Social Media, Email Marketing, and SEO"
+              width={1472}
+              height={627}
+              priority
+              className="w-full h-auto object-contain transition-transform duration-700 ease-[cubic-bezier(0.17,0.67,0,1.01)] hover:scale-[1.03]"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

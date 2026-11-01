@@ -20,11 +20,11 @@ export function SubpageHeader({
     <div className="pt-6 sm:pt-8">
       {/* Breadcrumb Navigation Trail */}
       <nav aria-label="Breadcrumb" className="mb-6">
-        <ol className="flex items-center gap-2 text-[12.5px] text-brand-slate font-medium">
+        <ol className="flex items-center gap-2 text-[13px] text-[#747474] font-medium font-sans">
           <li>
             <Link
               href="/"
-              className="inline-flex items-center gap-1.5 hover:text-brand-blue transition-colors"
+              className="inline-flex items-center gap-1.5 hover:text-[#E9204F] transition-colors duration-700"
             >
               <Home className="h-3.5 w-3.5" />
               <span>Home</span>
@@ -33,7 +33,7 @@ export function SubpageHeader({
           <li aria-hidden="true">
             <ChevronRight className="h-3.5 w-3.5 text-slate-300" />
           </li>
-          <li className="text-brand-blue font-semibold" aria-current="page">
+          <li className="text-[#101010] font-bold font-display" aria-current="page">
             {currentLabel}
           </li>
         </ol>
@@ -41,16 +41,16 @@ export function SubpageHeader({
 
       {/* Header Content */}
       <div className="max-w-3xl">
-        <div className="inline-flex items-center gap-2 rounded-full border border-blue-200/80 bg-white/90 px-3.5 py-1 text-[12px] font-medium text-brand-blue mb-4 shadow-2xs backdrop-blur-sm">
-          {Icon && <Icon className="h-3.5 w-3.5" />}
+        <div className="inline-flex items-center gap-2 rounded-full border border-[#F3F3F3] bg-[#FAFAFA] px-3.5 py-1 text-[12px] font-extrabold font-display uppercase tracking-wider text-[#E9204F] mb-4 shadow-2xs">
+          {Icon && <Icon className="h-3.5 w-3.5 text-[#E9204F]" />}
           <span>{badge}</span>
         </div>
 
-        <h1 className="font-display text-3xl sm:text-4xl lg:text-[44px] font-bold tracking-tight text-brand-charcoal leading-[1.18]">
+        <h1 className="font-display text-3xl sm:text-4xl lg:text-[46px] font-extrabold tracking-[-0.04em] text-[#101010] leading-[1.15]">
           {title}
         </h1>
 
-        <p className="mt-4 text-[15px] sm:text-[16px] text-brand-slate leading-relaxed max-w-2xl">
+        <p className="mt-4 text-[17px] text-[#747474] font-sans leading-relaxed max-w-2xl">
           {description}
         </p>
       </div>

@@ -23,7 +23,7 @@ The website must communicate credibility, technical competence, and business val
 
 Before implementing any feature, inspect the existing codebase and read relevant documentation in this exact order:
 
-1. `SRS.md` (or `docs/SRS.md`) — approved functional and non-functional requirements.
+1. `docs/SRS.md` — approved functional and non-functional requirements.
 2. `docs/PROJECT-CONTEXT.md` — confirmed company information and business constraints.
 3. `docs/DESIGN-SYSTEM.md` — visual design tokens and component standards.
 4. Existing application architecture and established coding conventions.

@@ -1,6 +1,6 @@
 # Rate Global — Production Launch & Deployment Guide
 
-This document outlines the standard production launch procedures for the Rate Global company profile website in fulfillment of **Phase 5 (Launch)** from [`SRS.md`](file:///home/fahad/Desktop/rate-global-website/SRS.md#L1121-L1126).
+This document outlines the standard production launch procedures for the Rate Global company profile website in fulfillment of **Phase 5 (Launch)** from [`docs/SRS.md`](file:///home/fahad/Desktop/rate-global-website/docs/SRS.md#L1121-L1126).
 
 ---
 

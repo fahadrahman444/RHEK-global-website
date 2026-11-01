@@ -1,150 +1,134 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
-import { Rocket, Zap, Shield, ArrowRight } from "lucide-react";
+import {
+  Sparkles,
+  PhoneCall,
+  Megaphone,
+  Code2,
+  Palette,
+  Video,
+  Mail,
+  Headphones,
+  Check,
+  ArrowUpRight,
+} from "lucide-react";
+import { RHEK_CONFIG, ServiceItem } from "@/data/rhek-config";
 
-interface ServiceTier {
-  id: string;
-  badge: string;
-  title: string;
-  icon: typeof Rocket;
-  description: string;
-  tags: string[];
+// Map service id to specific icon
+function getServiceIcon(id: string) {
+  const iconClasses = "h-5 w-5 transition-colors duration-700 group-hover:text-white";
+  switch (id) {
+    case "janitorial-leads":
+      return <Sparkles className={`${iconClasses} text-[#E9204F]`} />;
+    case "sales-development":
+      return <PhoneCall className={`${iconClasses} text-[#101010]`} />;
+    case "social-media-ads":
+      return <Megaphone className={`${iconClasses} text-[#E9204F]`} />;
+    case "web-development":
+      return <Code2 className={`${iconClasses} text-[#101010]`} />;
+    case "graphic-design":
+      return <Palette className={`${iconClasses} text-[#E9204F]`} />;
+    case "video-production":
+      return <Video className={`${iconClasses} text-[#101010]`} />;
+    case "email-marketing":
+      return <Mail className={`${iconClasses} text-[#E9204F]`} />;
+    case "virtual-assistant":
+      return <Headphones className={`${iconClasses} text-[#101010]`} />;
+    default:
+      return <Sparkles className={`${iconClasses} text-[#E9204F]`} />;
+  }
 }
 
-const serviceTiers: ServiceTier[] = [
-  {
-    id: "startups",
-    badge: "01",
-    title: "Startups",
-    icon: Rocket,
-    description:
-      "We help startups move fast with rapid MVPs, low-code prototypes, and UX-first validation. Our lean process supports you from idea to launch, building scalable foundations without heavy infrastructure or unnecessary agency complexity.",
-    tags: ["MVP Development", "Rapid Prototyping", "UX Strategy"],
-  },
-  {
-    id: "scaleups",
-    badge: "02",
-    title: "Scale-ups & Growth",
-    icon: Zap,
-    description:
-      "For growing teams outgrowing their legacy tech stack. We re-architect web applications for sub-second speeds, implement cohesive multi-brand design systems, and eliminate engineering debt.",
-    tags: ["Next.js Migration", "Design Systems", "Web Performance"],
-  },
-  {
-    id: "enterprise",
-    badge: "03",
-    title: "Enterprise Platforms",
-    icon: Shield,
-    description:
-      "Mission-critical web portals, custom SaaS architectures, and compliant integrations engineered for 99.99% reliability, strict WCAG 2.2 accessibility, and enterprise security standards.",
-    tags: ["Custom SaaS", "Enterprise Security", "API Integrations"],
-  },
-];
-
 export function ServicesPreview() {
-  const [activeTierId, setActiveTierId] = useState<string>("startups");
-  const activeTier = serviceTiers.find((t) => t.id === activeTierId) || serviceTiers[0];
-  const IconComponent = activeTier.icon;
-
   return (
-    <section id="services" className="site-container">
-      {/* Structural Card Island */}
-      <div className="bg-white rounded-[32px] shadow-sm ring-1 ring-slate-900/5 p-8 sm:p-12 lg:p-14">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          {/* Left Column: Heading + Selector Pills */}
-          <div className="lg:col-span-5 pt-2">
-            <div className="text-xs font-semibold uppercase tracking-wider text-brand-blue mb-2.5">
-              01 // Core Disciplines &amp; Services
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-3 leading-tight">
-              Services for
-            </h2>
-            <p className="text-base text-slate-600 leading-relaxed mb-8 max-w-sm">
-              Tailored engineering partnerships calibrated to your growth stage and technical maturity.
-            </p>
-
-            {/* Interactive Tier Buttons */}
-            <div className="flex flex-wrap gap-2">
-              {serviceTiers.map((tier) => {
-                const isActive = tier.id === activeTierId;
-                return (
-                  <button
-                    key={tier.id}
-                    type="button"
-                    onClick={() => setActiveTierId(tier.id)}
-                    className={`rounded-full px-4 py-2 text-[13px] font-medium transition-all min-h-[44px] inline-flex items-center ${
-                      isActive
-                        ? "bg-slate-900 text-white shadow-sm font-semibold"
-                        : "bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900"
-                    }`}
-                  >
-                    {tier.title}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Right Column: Frosted Glass Modal Card */}
-          <div className="lg:col-span-7">
-            <div className="glass-service-card relative rounded-2xl p-7 sm:p-8 max-w-[480px] overflow-hidden transition-all duration-300 ring-1 ring-slate-900/5 shadow-sm">
-              {/* Top-Left Dot Matrix Texture */}
-              <div className="card-dots pointer-events-none absolute top-0 left-0 w-[150px] h-[75px] opacity-45" />
-
-              <div className="relative z-10">
-                {/* Card Header Row */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#E5F0FF] text-brand-blue">
-                      <IconComponent className="h-4.5 w-4.5" />
-                    </div>
-                    <h3 className="font-display text-[21px] font-semibold text-slate-900">
-                      {activeTier.title}
-                    </h3>
-                  </div>
-
-                  {/* Badge Number */}
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#D6E6FB] text-brand-blue text-[11px] font-bold">
-                    {activeTier.badge}
-                  </span>
-                </div>
-
-                {/* Card Body Copy */}
-                <p className="text-[14px] leading-[1.65] text-slate-600 mb-5">
-                  {activeTier.description}
-                </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-200/60">
-                  {activeTier.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-md bg-white border border-slate-200/80 px-2.5 py-1 text-[11.5px] font-medium text-slate-600 shadow-2xs"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Clear Multi-Page Pathway to Dedicated Services Page */}
-        <div className="mt-12 pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-slate-600 text-center sm:text-left">
-            Looking for full technical specifications, engagement models, and enterprise deliverables?
+    <section id="services" className="site-container scroll-mt-24">
+      {/* Section Header */}
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div className="max-w-[620px]">
+          <div className="w-10 h-0.5 bg-[#E9204F] mb-3" />
+          <span className="inline-block text-[12px] font-extrabold uppercase tracking-widest text-[#E9204F] mb-1 font-display">
+            Integrated Solutions
+          </span>
+          <h2 className="font-display text-[32px] sm:text-[42px] font-extrabold text-[#101010] tracking-[-0.04em] leading-[1.15]">
+            Full-Spectrum Services Built for{" "}
+            <span className="text-[#E9204F]">
+              Growth &amp; Scale
+            </span>
+          </h2>
+          <p className="mt-3 text-[17px] leading-relaxed text-[#747474] font-sans">
+            From high-conversion sales pipelines to cutting-edge 3D web platforms and operational outsourcing, we supply the dedicated talent and technology to accelerate your business.
           </p>
-          <Link
-            href="/services"
-            className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 hover:bg-white hover:border-blue-300 hover:text-brand-blue px-6 py-2.5 text-[13px] font-medium text-slate-800 shadow-2xs transition min-h-[44px]"
-          >
-            <span>Explore All 4 Service Pillars</span>
-            <ArrowRight className="h-4 w-4" />
-          </Link>
         </div>
+
+        <Link
+          href="/#contact"
+          className="inline-flex items-center gap-2 rounded-full border-2 border-[#101010] bg-[#101010] hover:bg-[#E9204F] hover:border-[#E9204F] text-white px-6 py-3 text-[13px] font-bold font-display uppercase tracking-wider transition-all duration-700 ease-[cubic-bezier(0.17,0.67,0,1.01)] min-h-[44px] shrink-0 self-start md:self-auto shadow-sm"
+        >
+          <span>Schedule Service Discovery</span>
+          <ArrowUpRight className="h-4 w-4" />
+        </Link>
+      </div>
+
+      {/* 8 Services Bento Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        {RHEK_CONFIG.services.map((service: ServiceItem) => (
+          <div
+            key={service.id}
+            className="group flex flex-col justify-between rounded-2xl bg-[#F3F3F3] p-7 transition-all duration-700 ease-[cubic-bezier(0.17,0.67,0,1.01)] hover:bg-[#E9204F] hover:shadow-2xl"
+          >
+            <div>
+              {/* Header with Number and Icon */}
+              <div className="flex items-center justify-between mb-5">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white group-hover:bg-white/20 transition-all duration-700">
+                  {getServiceIcon(service.id)}
+                </span>
+                <span className="font-display text-[13px] font-extrabold text-[#101010] group-hover:text-white transition-colors duration-700">
+                  {service.number}
+                </span>
+              </div>
+
+              {/* Title & Badge */}
+              <div className="mb-3">
+                <Link
+                  href={`/services#${service.id}`}
+                  className="block text-[19px] font-extrabold font-display text-[#101010] leading-snug group-hover:text-white transition-colors duration-700"
+                >
+                  <h3>{service.title}</h3>
+                </Link>
+                {service.badge && (
+                  <span className="inline-block mt-1.5 rounded-full bg-white px-2.5 py-0.5 text-[11px] font-bold font-display text-[#101010] group-hover:bg-white/20 group-hover:text-white transition-all duration-700">
+                    {service.badge}
+                  </span>
+                )}
+              </div>
+
+              {/* Description */}
+              <p className="text-[15px] leading-relaxed text-[#747474] font-sans group-hover:text-white/90 transition-colors duration-700 mb-6">
+                {service.shortDesc}
+              </p>
+
+              {/* Bullet Features */}
+              <ul className="space-y-2 border-t border-[#101010]/10 group-hover:border-white/20 pt-4 mb-6 transition-colors duration-700">
+                {service.features.map((feat, idx) => (
+                  <li key={idx} className="flex items-start gap-2 text-[13px] text-[#101010] group-hover:text-white leading-snug font-sans transition-colors duration-700">
+                    <Check className="h-4 w-4 text-[#E9204F] group-hover:text-white shrink-0 mt-0.5 transition-colors duration-700" />
+                    <span>{feat}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Bottom Card Action */}
+            <Link
+              href={`/contact?service=${encodeURIComponent(service.title)}`}
+              className="inline-flex items-center justify-between pt-4 border-t border-[#101010]/10 group-hover:border-white/20 text-[13px] font-bold font-display uppercase tracking-wider text-[#101010] group-hover:text-white transition-colors duration-700 min-h-[44px]"
+            >
+              <span>{service.ctaLabel}</span>
+              <ArrowUpRight className="h-4 w-4 transition-transform duration-700 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
+          </div>
+        ))}
       </div>
     </section>
   );

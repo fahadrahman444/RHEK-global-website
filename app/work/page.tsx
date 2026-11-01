@@ -6,17 +6,17 @@ import { PortfolioSection } from "@/components/sections/PortfolioSection";
 import { Briefcase } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Our Work & Case Studies — Rate Global",
+  title: "Our Work & Case Studies — RHEK GLOBAL",
   description:
-    "Explore Rate Global's portfolio of custom SaaS platforms, high-performance web applications, headless e-commerce storefronts, and design systems.",
+    "Explore RHEK GLOBAL's portfolio of custom web platforms, digital systems, and verified client outcomes.",
 };
 
 export default function WorkPage() {
   return (
-    <main className="min-h-screen bg-slate-50/70 py-4 sm:py-8 space-y-12 sm:space-y-16">
+    <main className="min-h-screen py-4 sm:py-8 space-y-12 sm:space-y-16">
       {/* 1. Hero Island — Floating Elevated Canvas */}
       <div className="site-container">
-        <div className="hero-canvas relative overflow-hidden rounded-[32px] bg-white pt-6 pb-10 sm:pb-12 shadow-sm ring-1 ring-slate-900/5 px-6 lg:px-10">
+        <div className="hero-canvas relative overflow-hidden rounded-[32px] bg-white pt-6 pb-10 sm:pb-12 shadow-xs border border-[#F3F3F3] px-6 lg:px-10">
           {/* Architectural Grid Overlay */}
           <div
             className="hero-grid pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_92%_85%_at_50%_45%,#000_70%,transparent_100%)]"
@@ -40,7 +40,7 @@ export default function WorkPage() {
 
       {/* 2. Full Interactive Portfolio Section */}
       <div className="site-container">
-        <div className="rounded-[32px] bg-white shadow-sm ring-1 ring-slate-900/5 overflow-hidden">
+        <div className="rounded-[32px] bg-white shadow-xs border border-[#F3F3F3] overflow-hidden">
           <PortfolioSection isPage={true} />
         </div>
       </div>

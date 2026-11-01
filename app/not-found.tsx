@@ -5,7 +5,7 @@ import { FileQuestion, ArrowLeft, Home, Compass } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <main className="min-h-screen bg-slate-50/70 py-4 sm:py-8 space-y-12 sm:space-y-16">
+    <main className="min-h-screen py-4 sm:py-8 space-y-12 sm:space-y-16">
       <div className="site-container">
         <div className="relative overflow-hidden rounded-[32px] bg-white shadow-sm ring-1 ring-slate-900/5">
           

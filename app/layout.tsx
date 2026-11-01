@@ -1,59 +1,61 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Poppins, Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["600", "700", "800", "900"],
+  variable: "--font-poppins",
   display: "swap",
 });
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const robotoCondensed = Roboto_Condensed({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-plus-jakarta",
+  weight: ["400", "500", "700"],
+  variable: "--font-roboto-condensed",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://rateglobal.com"),
+  metadataBase: new URL("https://rhekglobal.com"),
   title: {
-    default: "Rate Global — High-Performing Web Experiences & Digital Engineering",
-    template: "%s | Rate Global",
+    default: "RHEK GLOBAL — Intelligent Digital, Operational & Outsourcing Solutions",
+    template: "%s | RHEK GLOBAL",
   },
   description:
-    "Rate Global engineers bespoke web platforms, custom SaaS products, and high-converting digital experiences with Next.js, TypeScript, and modern architectures.",
+    "RHEK GLOBAL empowers businesses with verified janitorial lead generation, B2B sales development, premium 3D web experiences, performance marketing, and dedicated outsourcing solutions.",
   keywords: [
-    "Web Development",
-    "Next.js Agency",
-    "SaaS Development",
-    "Custom Web Applications",
-    "Full-Stack Engineering",
-    "Rate Global",
-    "Digital Product Studio",
+    "Janitorial Lead Generation",
+    "Commercial Cleaning Leads",
+    "B2B Appointment Setting",
+    "Sales Development Representative",
+    "Premium 3D Web Design",
+    "Digital Outsourcing",
+    "RHEK GLOBAL",
+    "Virtual Assistant Support",
   ],
-  authors: [{ name: "Rate Global Engineering Team" }],
-  creator: "Rate Global",
-  publisher: "Rate Global",
+  authors: [{ name: "RHEK GLOBAL Team" }],
+  creator: "RHEK GLOBAL",
+  publisher: "RHEK GLOBAL",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: "Rate Global — High-Performing Web Experiences",
+    title: "RHEK GLOBAL — Intelligent Digital, Operational & Outsourcing Solutions",
     description:
-      "We design and build bespoke web applications, platforms, and SaaS products — user-first, outcome-driven.",
-    url: "https://rateglobal.com",
-    siteName: "Rate Global",
+      "Empowering businesses through intelligent digital, operational and outsourcing solutions. 100% exclusive leads, 3D web engineering, and verified outcomes.",
+    url: "https://rhekglobal.com",
+    siteName: "RHEK GLOBAL",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rate Global — High-Performing Web Experiences",
+    title: "RHEK GLOBAL — Intelligent Digital & Outsourcing Solutions",
     description:
-      "Bespoke web platforms, SaaS applications, and modern digital engineering.",
+      "Empowering businesses through intelligent digital, operational and outsourcing solutions.",
   },
   robots: {
     index: true,
@@ -74,8 +76,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${plusJakartaSans.variable}`}>
-      <body className="antialiased selection:bg-blue-100 selection:text-blue-900 bg-[#F4F6FB] text-brand-charcoal">
+    <html lang="en" className={`${poppins.variable} ${robotoCondensed.variable}`}>
+      <body className="antialiased selection:bg-[#E9204F] selection:text-white bg-white text-[#747474] font-sans">
         {children}
       </body>
     </html>
