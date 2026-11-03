@@ -70,11 +70,11 @@ export const RHEK_CONFIG = {
 
   navigation: [
     { href: "/", label: "Home" },
+    { href: "/about", label: "About us" },
     { href: "/services", label: "Services" },
-    { href: "/about", label: "About Us" },
+    { href: "/team", label: "Team" },
+    { href: "/careers", label: "Careers" },
     { href: "/contact", label: "Contact" },
-    { href: "/work", label: "Work" },
-    { href: "/privacy-policy", label: "Privacy Policy" },
   ],
 
   stats: [

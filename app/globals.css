@@ -11,19 +11,32 @@
   --color-light-gray: #F3F3F3;   /* service box background */
   --color-dark-text: #ACACAC;    /* text on dark backgrounds */
 
-  /* Spacing Scale */
-  --header-height: 100px;
-  --section-padding: 140px;
-  --container-width: 1240px;
+  /* 8-Point B2B Master Spacing & Layout Foundation */
+  --header-height: 88px;
+  --section-padding: 112px;
+  --container-width: 1280px;
   --page-gutter: 24px;
   --grid-gap: 24px;
+  --radius-standard: 12px;
+  --radius-micro: 8px;
+
+  /* Discrete 8-Point Spacing Tokens */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+  --space-4xl: 128px;
+  --space-5xl: 160px;
 }
 
 @media (max-width: 767px) {
   :root {
-    --header-height: 80px;
-    --section-padding: 80px;
-    --page-gutter: 18px;
+    --header-height: 76px;
+    --section-padding: 64px;
+    --page-gutter: 16px;
     --grid-gap: 16px;
   }
 }
@@ -44,39 +57,38 @@
 
 body {
   background-color: #FFFFFF;
-  color: #747474;
-  font-family: var(--font-roboto-condensed), sans-serif;
-  font-size: 17px;
+  color: #525252;
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
   font-weight: 400;
   letter-spacing: -0.01em;
   overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-poppins), sans-serif;
-  font-weight: 800;
-  letter-spacing: -0.04em;
+  font-family: var(--font-heading), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
   color: #101010;
 }
 
-/* 700ms Custom Bezier Transition (Red Sparrow Visual Spec) */
+/* Smooth Architectural Transition */
 .transition-agency {
-  transition: all 700ms cubic-bezier(0.17, 0.67, 0, 1.01);
+  transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Red Sparrow Signature Service Card Hover Inversion */
+/* Refined Editorial Service Card */
 .service-card-agency {
-  background-color: #F3F3F3;
-  transition: all 700ms cubic-bezier(0.17, 0.67, 0, 1.01);
+  background-color: #FAFAFA;
+  border: 1px solid #EBEBEB;
+  transition: all 350ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 .service-card-agency:hover {
-  background-color: #E9204F !important;
-  color: #FFFFFF !important;
-  transform: translateY(-4px);
-}
-.service-card-agency:hover * {
-  color: #FFFFFF !important;
-  border-color: rgba(255, 255, 255, 0.25) !important;
+  background-color: #FFFFFF;
+  border-color: #101010;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
 }
 
 /* Grayscale to Color Partner Logos */

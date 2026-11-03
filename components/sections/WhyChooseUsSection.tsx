@@ -6,41 +6,40 @@ export function WhyChooseUsSection() {
 
   return (
     <section className="site-container">
-      <div className="rounded-[32px] bg-[#101010] text-white p-6 sm:p-10 lg:p-14 shadow-xl border border-white/10">
+      <div className="rounded-2xl bg-[#101010] text-white p-7 sm:p-11 lg:p-14 shadow-lg border border-white/10">
         {/* Header */}
-        <div className="max-w-[760px] mb-12">
-          <span className="inline-block text-[12px] font-extrabold uppercase tracking-wider text-[#E9204F] bg-white/10 border border-white/20 px-3.5 py-1 rounded-full mb-3 shadow-2xs font-display">
-            Why Choose RHEK GLOBAL
+        <div className="max-w-[760px] mb-10">
+          <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-[#E9204F] bg-white/10 border border-white/15 px-3 py-1 rounded mb-3">
+            Institutional Advantages
           </span>
-          <h2 className="font-display text-[32px] sm:text-[42px] font-extrabold tracking-[-0.04em] leading-[1.15] mt-1.5 text-white">
-            Your Trusted Partner in{" "}
-            <span className="text-[#E9204F]">Intelligent Growth</span>
+          <h2 className="font-heading text-[30px] sm:text-[40px] font-bold tracking-[-0.035em] leading-[1.15] mt-1 text-white">
+            Your Dedicated Partner in Commercial Growth
           </h2>
-          <p className="mt-3 text-[16px] leading-relaxed text-[#ACACAC] font-sans">
-            At RHEK GLOBAL, we bring together digital expertise, creative design, sales development, and dedicated operational outsourcing under one roof to simplify your operations and maximize business outcomes.
+          <p className="mt-3 text-[15px] leading-relaxed text-[#A3A3A3]">
+            RHEK GLOBAL combines targeted B2B sales pipelines, precision digital engineering, and specialized operational support to generate measurable enterprise outcomes.
           </p>
         </div>
 
         {/* 6 Value Pillars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
           {whyChooseUs.map((item, idx) => (
             <div
               key={idx}
-              className="flex flex-col justify-between rounded-2xl bg-white/5 border border-white/10 p-6 transition-all duration-700 ease-[cubic-bezier(0.17,0.67,0,1.01)] hover:bg-[#E9204F] hover:border-[#E9204F] group"
+              className="flex flex-col justify-between rounded-xl bg-white/[0.03] border border-white/10 p-5 hover:border-white/25 transition-colors"
             >
               <div>
-                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-[#E9204F] group-hover:bg-white group-hover:text-[#E9204F] transition-all duration-700">
-                  {idx === 0 && <Sparkles className="h-5 w-5" />}
-                  {idx === 1 && <Zap className="h-5 w-5" />}
-                  {idx === 2 && <Users className="h-5 w-5" />}
-                  {idx === 3 && <ShieldCheck className="h-5 w-5" />}
-                  {idx === 4 && <CheckCircle2 className="h-5 w-5" />}
-                  {idx === 5 && <Handshake className="h-5 w-5" />}
+                <div className="mb-3.5 flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 text-[#E9204F]">
+                  {idx === 0 && <Sparkles className="h-4 w-4" />}
+                  {idx === 1 && <Zap className="h-4 w-4" />}
+                  {idx === 2 && <Users className="h-4 w-4" />}
+                  {idx === 3 && <ShieldCheck className="h-4 w-4" />}
+                  {idx === 4 && <CheckCircle2 className="h-4 w-4" />}
+                  {idx === 5 && <Handshake className="h-4 w-4" />}
                 </div>
-                <h3 className="text-[18px] font-extrabold font-display text-white mb-2 leading-snug">
+                <h3 className="text-[16px] font-bold text-white mb-1.5 leading-snug">
                   {item.title}
                 </h3>
-                <p className="text-[14px] text-[#ACACAC] group-hover:text-white/90 leading-relaxed font-sans transition-colors duration-700">
+                <p className="text-[13px] text-[#A3A3A3] leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -49,47 +48,47 @@ export function WhyChooseUsSection() {
         </div>
 
         {/* Mission, Vision & Core Values Strip */}
-        <div className="border-t border-white/10 pt-10 grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="border-t border-white/10 pt-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="space-y-6">
             <div>
-              <span className="text-[12px] font-extrabold uppercase tracking-wider text-[#E9204F] font-display">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#E9204F]">
                 Our Mission
               </span>
-              <h4 className="text-[20px] font-extrabold font-display text-white mt-1">
+              <h4 className="text-[17px] font-bold text-white mt-1">
                 {companyProfile.mission.headline}
               </h4>
-              <p className="text-[14.5px] text-[#ACACAC] mt-1.5 leading-relaxed font-sans">
+              <p className="text-[13.5px] text-[#A3A3A3] mt-1 leading-relaxed">
                 {companyProfile.mission.text}
               </p>
             </div>
 
             <div>
-              <span className="text-[12px] font-extrabold uppercase tracking-wider text-[#E9204F] font-display">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#E9204F]">
                 Our Vision
               </span>
-              <h4 className="text-[20px] font-extrabold font-display text-white mt-1">
+              <h4 className="text-[17px] font-bold text-white mt-1">
                 {companyProfile.vision.headline}
               </h4>
-              <p className="text-[14.5px] text-[#ACACAC] mt-1.5 leading-relaxed font-sans">
+              <p className="text-[13.5px] text-[#A3A3A3] mt-1 leading-relaxed">
                 {companyProfile.vision.text}
               </p>
             </div>
           </div>
 
           <div>
-            <span className="text-[12px] font-extrabold uppercase tracking-wider text-[#E9204F] font-display">
-              Our 5 Core Values
+            <span className="text-[11px] font-bold uppercase tracking-wider text-[#E9204F]">
+              5 Core Values
             </span>
-            <div className="mt-4 space-y-3">
+            <div className="mt-3 space-y-2.5">
               {companyProfile.coreValues.map((val, idx) => (
                 <div
                   key={idx}
-                  className="flex items-start gap-3 text-[13.5px] rounded-xl bg-white/5 border border-white/5 p-3.5 transition-colors duration-700 hover:border-white/20"
+                  className="flex items-start gap-2.5 text-[13px] rounded-lg bg-white/[0.02] border border-white/5 p-3 hover:border-white/15 transition-colors"
                 >
-                  <span className="font-extrabold font-display text-white whitespace-nowrap">
+                  <span className="font-bold text-white whitespace-nowrap">
                     {val.name}:
                   </span>
-                  <span className="text-[#ACACAC] font-sans">{val.desc}</span>
+                  <span className="text-[#A3A3A3]">{val.desc}</span>
                 </div>
               ))}
             </div>

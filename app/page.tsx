@@ -13,9 +13,9 @@ import { Footer } from "@/components/layout/Footer";
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-white space-y-16 sm:space-y-24">
-      {/* 1. Hero Wrapper (#FAFAFA) */}
-      <div className="site-container pt-4">
-        <div className="bg-[#FAFAFA] border border-[#F3F3F3] rounded-[32px] px-6 sm:px-10 lg:px-12 pt-3 pb-12 shadow-xs">
+      {/* 1. Hero Wrapper */}
+      <div className="site-container pt-3">
+        <div className="bg-[#FAFAFA] border border-[#EBEBEB] rounded-2xl px-6 sm:px-10 lg:px-12 pt-2 pb-12 shadow-xs">
           <Navbar />
           <Hero />
           <PartnerLogos />

@@ -15,7 +15,6 @@ import {
   CheckCircle2,
   ArrowRight,
   ShieldCheck,
-  Calendar,
 } from "lucide-react";
 import { RHEK_CONFIG } from "@/data/rhek-config";
 
@@ -26,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 function getServiceIcon(id: string) {
-  const cls = "h-6 w-6 text-[#E9204F]";
+  const cls = "h-5 w-5 text-[#101010]";
   switch (id) {
     case "janitorial-leads":
       return <Sparkles className={cls} />;
@@ -51,15 +50,10 @@ function getServiceIcon(id: string) {
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen py-4 sm:py-8 space-y-12 sm:space-y-16">
-      {/* 1. Hero Island — Floating Elevated Canvas */}
+    <main className="min-h-screen py-4 sm:py-6 space-y-10 sm:space-y-12 lg:space-y-14">
+      {/* 1. Hero Canvas */}
       <div className="site-container">
-        <div className="hero-canvas relative overflow-hidden rounded-[32px] bg-white pt-6 pb-10 sm:pb-12 shadow-xs border border-[#F3F3F3] px-6 lg:px-10">
-          <div
-            className="hero-grid pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_92%_85%_at_50%_45%,#000_70%,transparent_100%)]"
-            aria-hidden="true"
-          />
-
+        <div className="relative overflow-hidden rounded-2xl bg-white p-6 sm:p-8 lg:p-10 shadow-xs border border-[#EBEBEB]">
           <div className="relative z-10 mx-auto max-w-[1080px]">
             <Navbar />
 
@@ -68,7 +62,7 @@ export default function ServicesPage() {
               badge="Integrated Solutions"
               icon={Sparkles}
               title="8 Core Solutions Built for Business Acceleration."
-              description="From guaranteed commercial janitorial leads and high-velocity SDR outbound to premium 3D web applications and global outsourcing."
+              description="From guaranteed commercial janitorial leads and high-velocity SDR outbound to modern web engineering and global outsourcing."
             />
           </div>
         </div>
@@ -76,57 +70,63 @@ export default function ServicesPage() {
 
       {/* 2. Detailed Service Offerings */}
       <div className="site-container">
-        <div className="rounded-[32px] bg-white shadow-xs border border-[#F3F3F3] overflow-hidden p-6 sm:p-10 lg:p-14">
-          <div className="mx-auto max-w-[1080px] space-y-16">
+        <div className="rounded-2xl bg-white shadow-xs border border-[#EBEBEB] overflow-hidden p-6 sm:p-10 lg:p-12">
+          <div className="mx-auto max-w-[1080px] space-y-12">
             {RHEK_CONFIG.services.map((service, idx) => (
               <div
                 key={service.id}
                 id={service.id}
-                className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start pt-14 first:pt-0 ${
-                  idx !== 0 ? "border-t border-[#F3F3F3]" : ""
+                className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start pt-12 first:pt-0 ${
+                  idx !== 0 ? "border-t border-[#EBEBEB]" : ""
                 }`}
               >
                 <div className="lg:col-span-5">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FAFAFA] border border-[#F3F3F3] mb-4 shadow-2xs">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#FAFAFA] border border-[#EBEBEB] mb-3.5">
                     {getServiceIcon(service.id)}
                   </div>
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="font-display text-[12px] font-extrabold uppercase tracking-wider text-[#747474]">
+                    <span className="font-mono text-[11px] font-semibold text-[#737373]">
                       Service {service.number}
                     </span>
                     {service.badge && (
-                      <span className="rounded-full bg-[#FAFAFA] border border-[#F3F3F3] px-2.5 py-0.5 text-[11px] font-bold font-display text-[#E9204F]">
+                      <span className="rounded bg-[#FAFAFA] border border-[#EBEBEB] px-2 py-0.5 text-[10.5px] font-semibold text-[#101010]">
                         {service.badge}
                       </span>
                     )}
                   </div>
-                  <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-[#101010] tracking-tight">
+                  <h2 className="font-heading text-xl sm:text-2xl font-bold text-[#101010] tracking-tight">
                     {service.title}
                   </h2>
-                  <p className="mt-4 text-[16px] text-[#747474] font-sans leading-relaxed">
+                  <p className="mt-3 text-[14.5px] text-[#525252] leading-relaxed">
                     {service.shortDesc}
                   </p>
 
-                  <div className="mt-6 pt-4 border-t border-[#F3F3F3] flex flex-wrap items-center gap-3">
+                  <div className="mt-5 pt-4 border-t border-[#EBEBEB] flex flex-wrap items-center gap-3">
+                    <Link
+                      href={`/services/${service.id}`}
+                      className="inline-flex items-center gap-1.5 rounded-lg bg-[#101010] hover:bg-[#E9204F] px-4 py-2 text-[12.5px] font-semibold text-white transition-colors min-h-[40px]"
+                    >
+                      <span>Explore Detail</span>
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </Link>
                     <Link
                       href={`/contact?service=${encodeURIComponent(service.title)}`}
-                      className="inline-flex items-center gap-2 rounded-full bg-[#E9204F] hover:bg-[#101010] px-6 py-2.5 text-[13px] font-bold font-display uppercase tracking-wider text-white transition-all duration-700 ease-[cubic-bezier(0.17,0.67,0,1.01)] shadow-xs min-h-[44px]"
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-[#E5E5E5] bg-white hover:border-[#101010] px-4 py-2 text-[12.5px] font-semibold text-[#101010] transition-colors min-h-[40px]"
                     >
                       <span>{service.ctaLabel}</span>
-                      <ArrowRight className="h-4 w-4" />
                     </Link>
                   </div>
                 </div>
 
-                <div className="lg:col-span-7 bg-[#FAFAFA] border border-[#F3F3F3] rounded-2xl p-6 sm:p-8">
-                  <div className="text-[12px] font-extrabold font-display uppercase tracking-wider text-[#E9204F] mb-4">
-                    Key Features & Deliverables
+                <div className="lg:col-span-7 bg-[#FAFAFA] border border-[#EBEBEB] rounded-xl p-6 sm:p-7">
+                  <div className="text-[11px] font-bold uppercase tracking-wider text-[#737373] mb-3.5">
+                    Key Features &amp; Deliverables
                   </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {service.features.map((feature, fIdx) => (
-                      <div key={fIdx} className="flex items-start gap-2.5">
-                        <CheckCircle2 className="h-4 w-4 text-[#E9204F] shrink-0 mt-0.5" />
-                        <span className="text-[14px] text-[#101010] font-sans font-medium leading-snug">
+                      <div key={fIdx} className="flex items-start gap-2">
+                        <CheckCircle2 className="h-4 w-4 text-[#16A34A] shrink-0 mt-0.5" />
+                        <span className="text-[13px] text-[#101010] font-medium leading-snug">
                           {feature}
                         </span>
                       </div>
@@ -134,11 +134,11 @@ export default function ServicesPage() {
                   </div>
 
                   {service.id === "janitorial-leads" && (
-                    <div className="mt-6 pt-4 border-t border-[#F3F3F3] flex items-center justify-between text-[13px] text-[#101010] bg-white p-3.5 rounded-xl border border-[#F3F3F3]">
-                      <span className="font-sans">
+                    <div className="mt-5 pt-3.5 border-t border-[#EBEBEB] flex items-center justify-between text-[12.5px] text-[#525252] bg-white p-3 rounded-lg border border-[#EBEBEB]">
+                      <span>
                         Exclusive appointments with confirmed facility managers.
                       </span>
-                      <span className="font-bold font-display uppercase tracking-wider bg-[#E9204F] text-white px-2.5 py-0.5 rounded-md text-[11px]">
+                      <span className="font-semibold uppercase tracking-wider bg-[#FAFAFA] text-[#101010] border border-[#EBEBEB] px-2 py-0.5 rounded text-[10.5px]">
                         Verified
                       </span>
                     </div>
@@ -149,25 +149,25 @@ export default function ServicesPage() {
           </div>
 
           {/* 100% Money-Back Guarantee Strip */}
-          <div className="mt-16 rounded-2xl bg-[#101010] border border-white/10 p-8 sm:p-10 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+          <div className="mt-12 rounded-xl bg-[#101010] border border-white/10 p-7 sm:p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-md">
             <div className="max-w-[620px]">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 text-[#E9204F] text-[12px] font-extrabold font-display uppercase tracking-wider px-3.5 py-1 mb-3">
-                <ShieldCheck className="h-4 w-4 text-[#E9204F]" />
+              <div className="inline-flex items-center gap-2 rounded bg-white/10 border border-white/15 text-[#E9204F] text-[11px] font-semibold uppercase tracking-wider px-2.5 py-0.5 mb-2.5">
+                <ShieldCheck className="h-3.5 w-3.5 text-[#E9204F]" />
                 <span>Zero Risk Guarantee</span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-extrabold font-display text-white">
+              <h3 className="text-lg sm:text-xl font-bold font-heading text-white">
                 100% Money-Back Guarantee on Eligible Services
               </h3>
-              <p className="text-[15px] text-[#ACACAC] font-sans mt-2 leading-relaxed">
+              <p className="text-[13.5px] text-[#A3A3A3] mt-1 leading-relaxed">
                 {RHEK_CONFIG.moneyBackGuarantee.description}
               </p>
             </div>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-[#E9204F] hover:bg-white hover:text-[#101010] px-7 py-3 text-[13px] font-bold font-display uppercase tracking-wider text-white whitespace-nowrap transition-all duration-700 ease-[cubic-bezier(0.17,0.67,0,1.01)] shadow-md min-h-[44px]"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-[#E9204F] hover:bg-white hover:text-[#101010] px-5 py-2.5 text-[13px] font-semibold text-white whitespace-nowrap transition-colors min-h-[42px] shrink-0"
             >
               <span>Schedule Initial Consultation</span>
-              <ArrowRight className="h-4 w-4" />
+              <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </div>
         </div>

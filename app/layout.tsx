@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { Poppins, Roboto_Condensed } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["600", "700", "800", "900"],
-  variable: "--font-poppins",
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-heading",
   display: "swap",
 });
 
-const robotoCondensed = Roboto_Condensed({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-roboto-condensed",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-sans",
   display: "swap",
 });
 
@@ -76,8 +76,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${robotoCondensed.variable}`}>
-      <body className="antialiased selection:bg-[#E9204F] selection:text-white bg-white text-[#747474] font-sans">
+    <html lang="en" className={`${plusJakartaSans.variable} ${inter.variable}`}>
+      <body className="antialiased selection:bg-[#E9204F] selection:text-white bg-white text-[#525252] font-sans">
         {children}
       </body>
     </html>

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { BrandLogo } from "./BrandLogo";
+import { ContactQrCode } from "../common/ContactQrCode";
 import { RHEK_CONFIG } from "@/data/rhek-config";
 import { ArrowRight, CheckCircle2, Mail, ShieldCheck } from "lucide-react";
 
@@ -17,7 +18,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-[#101010] text-white rounded-[32px] border border-white/10 shadow-2xl py-12 px-6 sm:px-10 lg:px-14">
+    <footer className="bg-[#101010] text-white rounded-xl border border-white/10 shadow-2xl py-12 px-6 sm:px-10 lg:px-14">
       {/* Top Newsletter & Callout Strip */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pb-10 border-b border-white/10">
         <div>
@@ -34,29 +35,29 @@ export function Footer() {
 
         <div className="flex items-center">
           {subscribed ? (
-            <div className="flex items-center gap-2 rounded-2xl bg-white/10 border border-[#E9204F]/40 p-4 text-[14px] font-medium text-white w-full">
-              <CheckCircle2 className="h-5 w-5 text-[#E9204F] shrink-0" />
+            <div className="flex items-center gap-2 rounded-xl bg-white/10 border border-white/20 p-4 text-[14px] font-medium text-white w-full">
+              <CheckCircle2 className="h-5 w-5 text-[#16A34A] shrink-0" />
               <span>Thank you! You are now subscribed to RHEK Global market insights.</span>
             </div>
           ) : (
             <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2.5 w-full max-w-[500px]">
               <div className="relative flex-1">
-                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-[#ACACAC]" />
+                <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-[#A3A3A3]" />
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your business email"
                   required
-                  className="w-full rounded-full border border-white/20 bg-white/5 pl-11 pr-4 py-3 text-[14px] text-white placeholder:text-[#ACACAC] focus:outline-none focus:border-[#E9204F] transition-all min-h-[44px]"
+                  className="w-full rounded-lg border border-white/20 bg-white/5 pl-10 pr-4 py-2.5 text-[14px] text-white placeholder:text-[#A3A3A3] focus:outline-none focus:border-white transition-all min-h-[42px]"
                 />
               </div>
               <button
                 type="submit"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#E9204F] hover:bg-white hover:text-[#101010] px-7 py-3 text-[13px] font-bold font-display uppercase tracking-wider text-white shadow-md transition-all duration-700 ease-[cubic-bezier(0.17,0.67,0,1.01)] whitespace-nowrap min-h-[44px]"
+                className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-[#E9204F] hover:bg-white hover:text-[#101010] px-5 py-2.5 text-[13px] font-semibold text-white transition-colors duration-200 whitespace-nowrap min-h-[42px]"
               >
                 <span>Subscribe</span>
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-3.5 w-3.5" />
               </button>
             </form>
           )}
@@ -76,6 +77,15 @@ export function Footer() {
             <ShieldCheck className="h-4 w-4 text-[#E9204F]" />
             <span>100% Money-Back Guarantee Policy</span>
           </div>
+
+          <div className="mt-6">
+            <ContactQrCode
+              size={105}
+              label="Direct Booking & Inquiry"
+              sublabel="+1 (646) 694-8464"
+              className="w-fit bg-white/5 border-white/15 text-white"
+            />
+          </div>
         </div>
 
         <div>
@@ -84,22 +94,28 @@ export function Footer() {
           </h4>
           <ul className="space-y-2.5 text-[14px] text-[#ACACAC] font-sans">
             <li>
-              <Link href="/services#janitorial-leads" className="hover:text-[#E9204F] transition-colors duration-700">Janitorial Leads</Link>
+              <Link href="/services/janitorial-leads" className="hover:text-[#E9204F] transition-colors duration-700">Janitorial Leads</Link>
             </li>
             <li>
-              <Link href="/services#sales-development" className="hover:text-[#E9204F] transition-colors duration-700">Sales Development</Link>
+              <Link href="/services/sales-development" className="hover:text-[#E9204F] transition-colors duration-700">Sales Development</Link>
             </li>
             <li>
-              <Link href="/services#social-media-ads" className="hover:text-[#E9204F] transition-colors duration-700">Social Media Ads</Link>
+              <Link href="/services/social-media-ads" className="hover:text-[#E9204F] transition-colors duration-700">Social Media Ads</Link>
             </li>
             <li>
-              <Link href="/services#web-development" className="hover:text-[#E9204F] transition-colors duration-700">Web Design & 3D</Link>
+              <Link href="/services/web-development" className="hover:text-[#E9204F] transition-colors duration-700">Web Design & Dev</Link>
             </li>
             <li>
-              <Link href="/services#email-marketing" className="hover:text-[#E9204F] transition-colors duration-700">Email Marketing</Link>
+              <Link href="/services/graphic-design" className="hover:text-[#E9204F] transition-colors duration-700">Graphic Design</Link>
             </li>
             <li>
-              <Link href="/services#virtual-assistant" className="hover:text-[#E9204F] transition-colors duration-700">Virtual Assistant</Link>
+              <Link href="/services/video-production" className="hover:text-[#E9204F] transition-colors duration-700">Video Editing</Link>
+            </li>
+            <li>
+              <Link href="/services/email-marketing" className="hover:text-[#E9204F] transition-colors duration-700">Email Marketing</Link>
+            </li>
+            <li>
+              <Link href="/services/virtual-assistant" className="hover:text-[#E9204F] transition-colors duration-700">Virtual Assistant</Link>
             </li>
           </ul>
         </div>
@@ -131,6 +147,12 @@ export function Footer() {
           <ul className="space-y-2.5 text-[14px] text-[#ACACAC] font-sans">
             <li>
               <Link href="/about" className="hover:text-[#E9204F] transition-colors duration-700">About Us</Link>
+            </li>
+            <li>
+              <Link href="/team" className="hover:text-[#E9204F] transition-colors duration-700">Team</Link>
+            </li>
+            <li>
+              <Link href="/careers" className="hover:text-[#E9204F] transition-colors duration-700">Careers</Link>
             </li>
             <li>
               <Link href="/contact" className="hover:text-[#E9204F] transition-colors duration-700">Contact & Inquiry</Link>

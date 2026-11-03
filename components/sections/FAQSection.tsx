@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ChevronDown, HelpCircle } from "lucide-react";
-import { RHEK_CONFIG } from "@/data/rhek-config";
 
 interface FAQItem {
   question: string;
@@ -14,32 +13,32 @@ const faqs: FAQItem[] = [
   {
     question: "How do I get started with RHEK GLOBAL?",
     answer:
-      "Simply contact our team or book a meeting through our website. We will discuss your requirements, understand your goals, and recommend suitable solutions for your business.",
+      "Simply submit an inquiry or schedule a scoping call through our website. We analyze your requirements, review target geography, and recommend direct solutions tailored to your operational goals.",
   },
   {
     question: "Does RHEK GLOBAL offer a Money-Back Guarantee?",
     answer:
-      "Yes. We offer a 100% Money-Back Guarantee for eligible services under our applicable refund policy. Our commitment is to provide professional service, transparency, and client satisfaction. Please review our official guarantee terms for eligibility and conditions.",
+      "Yes. We offer a 100% Money-Back Guarantee on eligible campaigns under our standard SLA policy. Our commitment is rooted in direct accountability, verified appointment criteria, and replacement protection.",
   },
   {
     question: "How are Janitorial Commercial Cleaning leads generated and verified?",
     answer:
-      "Our dedicated B2B SDR cold-calling team directly contacts verified business facility decision-makers, confirms their current cleaning needs, square footage, and schedule requirements, and locks in a confirmed walkthrough date and time. Every lead is 100% exclusive to your company.",
+      "Our dedicated outbound SDR team directly connects with commercial facility decision-makers, confirms active cleaning requirements, square footage, and schedule frequency, and confirms a direct walkthrough date and time. Every appointment is 100% exclusive to your company.",
   },
   {
-    question: "What web development and 3D technologies does RHEK GLOBAL specialize in?",
+    question: "What web development technologies does RHEK GLOBAL specialize in?",
     answer:
-      "We design and engineer premium 3D websites, custom corporate portals, Shopify eCommerce stores, and full-stack Next.js/React applications with modern UI/UX, strict TypeScript type safety, and optimized search performance.",
+      "We design and engineer Next.js App Router websites, bespoke corporate portals, eCommerce stores, and full-stack web applications with modern UI/UX, strict TypeScript type safety, and optimized Core Web Vitals.",
   },
   {
     question: "What industries does RHEK GLOBAL service?",
     answer:
-      "We provide tailored digital marketing, sales development, and outsourcing solutions across 10+ core industries including Commercial Cleaning, Real Estate, Healthcare, E-Commerce, Tech/SaaS, Hospitality, Education, Logistics, and Startups.",
+      "We provide targeted digital marketing, sales development, and outsourcing solutions across 10+ core industries including Commercial Cleaning, Real Estate, Healthcare, E-Commerce, Tech/SaaS, Hospitality, Education, Logistics, and Professional Services.",
   },
   {
-    question: "What is your typical project delivery and onboarding timeline?",
+    question: "What is your typical onboarding timeline?",
     answer:
-      "Following our 7-step work process (Initial Consultation $\\rightarrow$ Requirement Planning $\\rightarrow$ Strategy), campaigns and engineering sprints typically kick off within 3 to 5 business days after requirements alignment.",
+      "Following our disciplined 7-step process, client onboarding and outbound sprint configurations typically initiate within 3 to 5 business days after requirements sign-off.",
   },
 ];
 
@@ -51,44 +50,44 @@ export function FAQSection() {
   };
 
   return (
-    <section id="faq" className="py-12 lg:py-16 px-6 lg:px-10 bg-white border-t border-[#F3F3F3]">
+    <section id="faq" className="py-10 lg:py-14 px-6 lg:px-10 bg-white border-t border-[#EBEBEB]">
       <div className="mx-auto max-w-[840px]">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#F3F3F3] bg-[#FAFAFA] px-3.5 py-1 text-[12px] font-extrabold uppercase tracking-wider text-[#E9204F] mb-3 font-display">
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center gap-2 rounded-md border border-[#EBEBEB] bg-[#FAFAFA] px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-[#101010] mb-2.5 shadow-2xs">
             <HelpCircle className="h-3.5 w-3.5 text-[#E9204F]" />
             <span>Frequently Asked Questions</span>
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-[#101010] tracking-[-0.04em]">
+          <h2 className="font-heading text-2xl sm:text-3xl font-bold text-[#101010] tracking-[-0.035em]">
             Common Questions About RHEK GLOBAL
           </h2>
-          <p className="mt-2.5 text-[16px] text-[#747474] max-w-[540px] mx-auto font-sans">
-            Everything you need to know about our services, guarantees, and workflow.
+          <p className="mt-2 text-[14.5px] text-[#525252] max-w-[540px] mx-auto">
+            Operational details regarding our campaigns, SLA guarantees, and engagement processes.
           </p>
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-2.5">
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
               <div
                 key={idx}
-                className="rounded-2xl border border-[#F3F3F3] bg-[#FAFAFA] transition-all duration-700 ease-[cubic-bezier(0.17,0.67,0,1.01)] hover:border-[#E9204F]"
+                className="rounded-xl border border-[#EBEBEB] bg-[#FAFAFA] transition-colors hover:border-[#101010]"
               >
                 <button
                   type="button"
                   onClick={() => toggle(idx)}
-                  className="flex w-full items-center justify-between p-5 text-left text-[16px] font-extrabold font-display text-[#101010] min-h-[44px]"
+                  className="flex w-full items-center justify-between p-4.5 sm:p-5 text-left text-[15px] font-bold text-[#101010] min-h-[44px]"
                   aria-expanded={isOpen}
                 >
                   <span className="pr-4">{faq.question}</span>
                   <ChevronDown
-                    className={`h-4 w-4 shrink-0 transition-transform duration-700 ease-[cubic-bezier(0.17,0.67,0,1.01)] ${
-                      isOpen ? "rotate-180 text-[#E9204F]" : "text-[#747474]"
+                    className={`h-4 w-4 shrink-0 transition-transform duration-200 ${
+                      isOpen ? "rotate-180 text-[#101010]" : "text-[#737373]"
                     }`}
                   />
                 </button>
                 {isOpen && (
-                  <div className="border-t border-[#F3F3F3] px-5 pb-5 pt-3 text-[15px] leading-relaxed text-[#747474] font-sans">
+                  <div className="border-t border-[#EBEBEB] px-4.5 sm:px-5 pb-4.5 sm:pb-5 pt-3 text-[14px] leading-relaxed text-[#525252]">
                     {faq.answer}
                   </div>
                 )}
@@ -97,14 +96,14 @@ export function FAQSection() {
           })}
         </div>
 
-        <div className="mt-10 text-center">
-          <p className="text-[14px] text-[#747474] font-sans">
-            Have a custom question or need a tailored proposal?{" "}
+        <div className="mt-8 text-center">
+          <p className="text-[13.5px] text-[#737373]">
+            Have a custom scoping requirement?{" "}
             <Link
               href="/contact"
-              className="font-bold font-display text-[#E9204F] hover:text-[#101010] transition-colors duration-700"
+              className="font-semibold text-[#101010] hover:text-[#E9204F] transition-colors"
             >
-              Get in touch with our team &rarr;
+              Consult our team &rarr;
             </Link>
           </p>
         </div>

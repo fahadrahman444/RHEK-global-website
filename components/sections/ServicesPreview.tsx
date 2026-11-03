@@ -17,26 +17,26 @@ import { RHEK_CONFIG, ServiceItem } from "@/data/rhek-config";
 
 // Map service id to specific icon
 function getServiceIcon(id: string) {
-  const iconClasses = "h-5 w-5 transition-colors duration-700 group-hover:text-white";
+  const iconClasses = "h-4 w-4 text-[#101010] group-hover:text-[#E9204F] transition-colors";
   switch (id) {
     case "janitorial-leads":
-      return <Sparkles className={`${iconClasses} text-[#E9204F]`} />;
+      return <Sparkles className={iconClasses} />;
     case "sales-development":
-      return <PhoneCall className={`${iconClasses} text-[#101010]`} />;
+      return <PhoneCall className={iconClasses} />;
     case "social-media-ads":
-      return <Megaphone className={`${iconClasses} text-[#E9204F]`} />;
+      return <Megaphone className={iconClasses} />;
     case "web-development":
-      return <Code2 className={`${iconClasses} text-[#101010]`} />;
+      return <Code2 className={iconClasses} />;
     case "graphic-design":
-      return <Palette className={`${iconClasses} text-[#E9204F]`} />;
+      return <Palette className={iconClasses} />;
     case "video-production":
-      return <Video className={`${iconClasses} text-[#101010]`} />;
+      return <Video className={iconClasses} />;
     case "email-marketing":
-      return <Mail className={`${iconClasses} text-[#E9204F]`} />;
+      return <Mail className={iconClasses} />;
     case "virtual-assistant":
-      return <Headphones className={`${iconClasses} text-[#101010]`} />;
+      return <Headphones className={iconClasses} />;
     default:
-      return <Sparkles className={`${iconClasses} text-[#E9204F]`} />;
+      return <Sparkles className={iconClasses} />;
   }
 }
 
@@ -44,75 +44,71 @@ export function ServicesPreview() {
   return (
     <section id="services" className="site-container scroll-mt-24">
       {/* Section Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
         <div className="max-w-[620px]">
-          <div className="w-10 h-0.5 bg-[#E9204F] mb-3" />
-          <span className="inline-block text-[12px] font-extrabold uppercase tracking-widest text-[#E9204F] mb-1 font-display">
+          <span className="inline-block text-[11px] font-bold uppercase tracking-widest text-[#737373] mb-2">
             Integrated Solutions
           </span>
-          <h2 className="font-display text-[32px] sm:text-[42px] font-extrabold text-[#101010] tracking-[-0.04em] leading-[1.15]">
-            Full-Spectrum Services Built for{" "}
-            <span className="text-[#E9204F]">
-              Growth &amp; Scale
-            </span>
+          <h2 className="font-heading text-[30px] sm:text-[38px] font-bold text-[#101010] tracking-[-0.035em] leading-[1.15]">
+            Full-Spectrum Services Built for Scale
           </h2>
-          <p className="mt-3 text-[17px] leading-relaxed text-[#747474] font-sans">
-            From high-conversion sales pipelines to cutting-edge 3D web platforms and operational outsourcing, we supply the dedicated talent and technology to accelerate your business.
+          <p className="mt-3 text-[16px] leading-relaxed text-[#525252]">
+            From verified commercial sales pipelines to modern web engineering and dedicated operational support.
           </p>
         </div>
 
         <Link
           href="/#contact"
-          className="inline-flex items-center gap-2 rounded-full border-2 border-[#101010] bg-[#101010] hover:bg-[#E9204F] hover:border-[#E9204F] text-white px-6 py-3 text-[13px] font-bold font-display uppercase tracking-wider transition-all duration-700 ease-[cubic-bezier(0.17,0.67,0,1.01)] min-h-[44px] shrink-0 self-start md:self-auto shadow-sm"
+          className="inline-flex items-center gap-1.5 rounded-lg bg-[#101010] hover:bg-[#E9204F] text-white px-5 py-2.5 text-[13px] font-semibold transition-colors duration-200 min-h-[42px] shrink-0 self-start md:self-auto shadow-xs"
         >
-          <span>Schedule Service Discovery</span>
+          <span>Schedule Discovery</span>
           <ArrowUpRight className="h-4 w-4" />
         </Link>
       </div>
 
-      {/* 8 Services Bento Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+      {/* 8 Services Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {RHEK_CONFIG.services.map((service: ServiceItem) => (
           <div
             key={service.id}
-            className="group flex flex-col justify-between rounded-2xl bg-[#F3F3F3] p-7 transition-all duration-700 ease-[cubic-bezier(0.17,0.67,0,1.01)] hover:bg-[#E9204F] hover:shadow-2xl"
+            className="group flex flex-col justify-between rounded-xl bg-[#FAFAFA] border border-[#EBEBEB] p-6 transition-all duration-200 hover:bg-white hover:border-[#101010] hover:shadow-md"
           >
             <div>
               {/* Header with Number and Icon */}
-              <div className="flex items-center justify-between mb-5">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white group-hover:bg-white/20 transition-all duration-700">
+              <div className="flex items-center justify-between mb-4">
+                <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white border border-[#EBEBEB] shadow-2xs">
                   {getServiceIcon(service.id)}
                 </span>
-                <span className="font-display text-[13px] font-extrabold text-[#101010] group-hover:text-white transition-colors duration-700">
+                <span className="text-[12px] font-mono font-semibold text-[#A3A3A3]">
                   {service.number}
                 </span>
               </div>
 
               {/* Title & Badge */}
-              <div className="mb-3">
+              <div className="mb-2">
                 <Link
                   href={`/services#${service.id}`}
-                  className="block text-[19px] font-extrabold font-display text-[#101010] leading-snug group-hover:text-white transition-colors duration-700"
+                  className="block text-[16px] font-bold text-[#101010] group-hover:text-[#E9204F] transition-colors leading-snug"
                 >
                   <h3>{service.title}</h3>
                 </Link>
                 {service.badge && (
-                  <span className="inline-block mt-1.5 rounded-full bg-white px-2.5 py-0.5 text-[11px] font-bold font-display text-[#101010] group-hover:bg-white/20 group-hover:text-white transition-all duration-700">
+                  <span className="inline-block mt-1 rounded bg-[#EBEBEB] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-[#525252]">
                     {service.badge}
                   </span>
                 )}
               </div>
 
               {/* Description */}
-              <p className="text-[15px] leading-relaxed text-[#747474] font-sans group-hover:text-white/90 transition-colors duration-700 mb-6">
+              <p className="text-[13.5px] leading-relaxed text-[#525252] mb-5">
                 {service.shortDesc}
               </p>
 
               {/* Bullet Features */}
-              <ul className="space-y-2 border-t border-[#101010]/10 group-hover:border-white/20 pt-4 mb-6 transition-colors duration-700">
+              <ul className="space-y-1.5 border-t border-[#EBEBEB] pt-3.5 mb-5">
                 {service.features.map((feat, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-[13px] text-[#101010] group-hover:text-white leading-snug font-sans transition-colors duration-700">
-                    <Check className="h-4 w-4 text-[#E9204F] group-hover:text-white shrink-0 mt-0.5 transition-colors duration-700" />
+                  <li key={idx} className="flex items-start gap-2 text-[12.5px] text-[#525252] leading-snug">
+                    <Check className="h-3.5 w-3.5 text-[#101010] shrink-0 mt-0.5" />
                     <span>{feat}</span>
                   </li>
                 ))}
@@ -122,10 +118,10 @@ export function ServicesPreview() {
             {/* Bottom Card Action */}
             <Link
               href={`/contact?service=${encodeURIComponent(service.title)}`}
-              className="inline-flex items-center justify-between pt-4 border-t border-[#101010]/10 group-hover:border-white/20 text-[13px] font-bold font-display uppercase tracking-wider text-[#101010] group-hover:text-white transition-colors duration-700 min-h-[44px]"
+              className="inline-flex items-center justify-between pt-3.5 border-t border-[#EBEBEB] text-[12.5px] font-semibold text-[#101010] group-hover:text-[#E9204F] transition-colors min-h-[38px]"
             >
               <span>{service.ctaLabel}</span>
-              <ArrowUpRight className="h-4 w-4 transition-transform duration-700 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
           </div>
         ))}

@@ -42,11 +42,11 @@ export function BrandLogo({
       </div>
 
       {showText && (
-        <span className="font-display text-[20px] sm:text-[22px] font-extrabold tracking-[-0.04em] flex items-center select-none">
+        <span className="font-heading text-[19px] sm:text-[21px] font-bold tracking-tight flex items-center select-none">
           <span className={variant === "dark" ? "text-white" : "text-[#101010]"}>
             RHEK
           </span>
-          <span className="text-[#E9204F] ml-1.5 font-extrabold tracking-normal text-[19px] sm:text-[21px]">
+          <span className="text-[#E9204F] ml-1.5 font-bold tracking-normal text-[18px] sm:text-[20px]">
             GLOBAL
           </span>
         </span>
