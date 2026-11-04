@@ -138,17 +138,17 @@ export function Navbar({ variant = "light" }: NavbarProps = {}) {
           : "bg-white/95 backdrop-blur-md border-b border-[#F0F0F0]"
       }`}
     >
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
+      <div className="max-w-[1280px] mx-auto px-3 sm:px-6">
         <nav
-          className="flex h-[74px] lg:h-[82px] w-full items-center justify-between"
+          className="flex h-[58px] sm:h-[68px] lg:h-[76px] w-full items-center justify-between"
         >
-        {/* Brand Logo */}
+        {/* Brand Logo — Clean, static typography */}
         <Link
           href="/"
-          className="transition hover:opacity-95 shrink-0"
+          className="transition hover:opacity-90 shrink-0"
           aria-label="RHEK GLOBAL Homepage"
         >
-          <BrandLogo size={36} variant={variant} />
+          <BrandLogo showIcon={false} variant={variant} />
         </Link>
 
         {/* Desktop Navigation Links */}
@@ -419,20 +419,22 @@ export function Navbar({ variant = "light" }: NavbarProps = {}) {
         </div>
 
         {/* Action Button & Mobile Toggle */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <Link
             href="/book-a-meeting"
-            className="inline-flex items-center gap-1.5 rounded-lg bg-[#E9204F] hover:bg-[#101010] text-white px-4 sm:px-5 py-2 text-[13px] font-bold transition-all duration-200 min-h-[40px] shadow-sm hover:shadow-md"
+            className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-lg bg-[#E9204F] hover:bg-[#101010] text-white px-2.5 sm:px-4 py-2 text-[12px] sm:text-[13px] font-bold transition-all duration-200 min-h-[38px] sm:min-h-[40px] shadow-sm hover:shadow-md"
           >
-            <span>Book a Meeting</span>
-            <ArrowUpRight className="h-4 w-4" />
+            <Calendar className="h-3.5 w-3.5 sm:hidden" />
+            <span className="hidden sm:inline">Book a Meeting</span>
+            <span className="sm:hidden">Book Call</span>
+            <ArrowUpRight className="h-3.5 w-3.5 hidden sm:inline" />
           </Link>
 
           {/* Mobile Menu Button */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`flex h-10 w-10 items-center justify-center rounded-lg border lg:hidden transition min-h-[40px] min-w-[40px] ${
+            className={`flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-lg border lg:hidden transition min-h-[36px] min-w-[36px] sm:min-h-[40px] sm:min-w-[40px] ${
               isDark
                 ? "border-white/15 bg-white/5 text-white hover:border-white"
                 : "border-[#E5E5E5] bg-white text-[#101010] hover:border-[#101010]"
@@ -450,11 +452,11 @@ export function Navbar({ variant = "light" }: NavbarProps = {}) {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -8 }}
+            initial={{ opacity: 0, y: -6 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.2 }}
-            className="absolute top-[88px] left-4 right-4 z-50 rounded-3xl border border-[#F3F3F3] bg-white p-5 shadow-2xl lg:hidden text-[#101010] max-h-[calc(100vh-110px)] overflow-y-auto"
+            exit={{ opacity: 0, y: -6 }}
+            transition={{ duration: 0.18 }}
+            className="absolute top-[64px] sm:top-[74px] left-3 right-3 sm:left-4 sm:right-4 z-50 rounded-2xl sm:rounded-3xl border border-[#F3F3F3] bg-white p-4 sm:p-5 shadow-2xl lg:hidden text-[#101010] max-h-[calc(100vh-80px)] overflow-y-auto"
           >
             <div className="flex flex-col gap-1 text-[15px] font-bold">
               {/* Home */}

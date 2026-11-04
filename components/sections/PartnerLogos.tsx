@@ -29,19 +29,19 @@ export function PartnerLogos() {
   ];
 
   return (
-    <div className="mt-6 pt-5 border-t border-[#EBEBEB]">
-      <div className="flex flex-wrap items-center justify-between gap-6 sm:gap-10">
+    <div className="mt-5 sm:mt-6 pt-4 sm:pt-5 border-t border-[#EBEBEB]">
+      <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-between gap-4 sm:gap-10">
         {partners.map((partner) => (
           <div
             key={partner.name}
-            className="flex items-center justify-center opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+            className="flex items-center justify-center opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 hover:scale-105"
           >
             <Image
               src={partner.src}
               alt={partner.name}
               width={partner.width}
               height={partner.height}
-              className="h-8 sm:h-9 w-auto object-contain"
+              className="h-7 sm:h-9 w-auto object-contain"
             />
           </div>
         ))}

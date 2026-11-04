@@ -116,182 +116,177 @@ export default function CareersPage() {
   const { company } = RHEK_CONFIG;
 
   return (
-    <main className="min-h-screen py-3 sm:py-5 space-y-6 sm:space-y-8">
-      {/* 1. Hero Canvas */}
-      <div className="site-container">
-        <div className="relative overflow-hidden rounded-2xl bg-white p-5 sm:p-7 lg:p-8 shadow-xs border border-[#EBEBEB]">
-          <div className="relative z-10 mx-auto max-w-[1080px]">
-            <Navbar />
+    <main className="min-h-screen bg-white">
+      {/* 1. Global Navigation */}
+      <Navbar />
 
-            <SubpageHeader
-              currentLabel="Careers"
-              badge="Talent Network"
-              icon={Briefcase}
-              title="Build High-Performance Systems and Accelerate Your Career."
-              description="Join a disciplined agency team delivering commercial growth engines, modern web engineering, and operational excellence."
-            />
-          </div>
-        </div>
+      {/* 2. Subpage Header */}
+      <div className="site-container pt-4 sm:pt-6">
+        <SubpageHeader
+          currentLabel="Careers"
+          badge="Talent Network"
+          icon={Briefcase}
+          title="Build High-Performance Systems and Accelerate Your Career."
+          description="Join a disciplined agency team delivering commercial growth engines, modern web engineering, and operational excellence."
+        />
       </div>
 
-      {/* 2. Perks & Culture */}
-      <div className="site-container">
-        <div className="rounded-2xl bg-white shadow-xs border border-[#EBEBEB] overflow-hidden p-5 sm:p-7 lg:p-9">
-          <div className="mx-auto max-w-[1080px]">
-            <div className="max-w-2xl mb-6">
-              <span className="inline-block text-[10.5px] font-bold uppercase tracking-wider text-[#737373] mb-1">
-                Why Work With Us
+      {/* 3. Perks & Culture */}
+      <section className="py-8 sm:py-12 border-b border-[#EBEBEB]">
+        <div className="site-container">
+          <div className="max-w-2xl mb-6">
+            <span className="inline-block text-[10.5px] font-bold uppercase tracking-wider text-[#737373] mb-1">
+              Why Work With Us
+            </span>
+            <h2 className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-[#101010] tracking-[-0.03em] leading-snug">
+              High Standards, Meaningful Freedom, Real Impact
+            </h2>
+            <p className="text-[13.5px] text-[#525252] leading-relaxed mt-1.5">
+              We believe in autonomous high-performers, transparent compensation, and eliminating unnecessary meetings so you can do your best work.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3">
+            {BENEFITS.map((b) => {
+              const Icon = b.icon;
+              return (
+                <div
+                  key={b.title}
+                  className="rounded-xl border border-[#EBEBEB] bg-[#FAFAFA] p-3.5 sm:p-4 hover:bg-white hover:border-[#101010] transition-colors"
+                >
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white border border-[#EBEBEB] text-[#101010] mb-2.5">
+                    <Icon className="h-3.5 w-3.5" />
+                  </div>
+                  <h3 className="text-[13px] sm:text-[13.5px] font-bold text-[#101010] mb-1">
+                    {b.title}
+                  </h3>
+                  <p className="text-[11.5px] sm:text-[12px] text-[#525252] leading-relaxed">
+                    {b.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Open Positions */}
+      <section className="py-8 sm:py-12">
+        <div className="site-container">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6">
+            <div>
+              <span className="text-[10.5px] font-bold uppercase tracking-wider text-[#737373]">
+                Open Opportunities
               </span>
-              <h2 className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-[#101010] tracking-[-0.03em] leading-snug">
-                High Standards, Meaningful Freedom, Real Impact
-              </h2>
-              <p className="text-[13.5px] text-[#525252] leading-relaxed mt-1.5">
-                We believe in autonomous high-performers, transparent compensation, and eliminating unnecessary meetings so you can do your best work.
+              <h3 className="text-lg sm:text-2xl font-bold font-heading text-[#101010] mt-0.5">
+                Current Openings at RHEK GLOBAL
+              </h3>
+            </div>
+            <p className="text-[12px] text-[#737373]">
+              {OPEN_ROLES.length} active positions available
+            </p>
+          </div>
+
+          <div className="space-y-3.5">
+            {OPEN_ROLES.map((role) => (
+              <div
+                key={role.id}
+                className="rounded-xl border border-[#EBEBEB] bg-[#FAFAFA] p-4 sm:p-5 hover:bg-white hover:border-[#101010] transition-colors"
+              >
+                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 pb-3 border-b border-[#EBEBEB]">
+                  <div>
+                    <div className="flex flex-wrap items-center gap-1.5 mb-1.5">
+                      <span className="text-[10px] font-semibold text-[#101010] bg-white border border-[#EBEBEB] px-2 py-0.5 rounded">
+                        {role.department}
+                      </span>
+                      <span className="text-[10.5px] font-semibold text-[#737373] bg-white border border-[#EBEBEB] px-2 py-0.5 rounded">
+                        {role.type}
+                      </span>
+                    </div>
+                    <h4 className="text-base sm:text-lg font-bold text-[#101010]">
+                      {role.title}
+                    </h4>
+                  </div>
+
+                  <div className="flex items-center gap-4 text-[12px] sm:text-[12.5px] text-[#525252]">
+                    <span className="inline-flex items-center gap-1.5">
+                      <MapPin className="h-3.5 w-3.5 text-[#101010]" />
+                      <span>{role.location}</span>
+                    </span>
+                    <span className="inline-flex items-center gap-1.5">
+                      <Clock className="h-3.5 w-3.5 text-[#101010]" />
+                      <span>{role.experience}</span>
+                    </span>
+                  </div>
+                </div>
+
+                <div className="pt-3.5 sm:pt-4">
+                  <p className="text-[13px] sm:text-[13.5px] text-[#525252] leading-relaxed mb-4">
+                    {role.description}
+                  </p>
+
+                  <div className="space-y-1.5 mb-5">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider text-[#737373] mb-1.5">
+                      Key Deliverables:
+                    </p>
+                    {role.responsibilities.map((resp) => (
+                      <div
+                        key={resp}
+                        className="flex items-start gap-2 text-[12px] sm:text-[12.5px] text-[#525252]"
+                      >
+                        <CheckCircle2 className="h-3.5 w-3.5 text-[#16A34A] shrink-0 mt-0.5" />
+                        <span>{resp}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="pt-3.5 border-t border-[#EBEBEB] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <p className="text-[11.5px] sm:text-[12px] text-[#737373]">
+                      Direct application via email with portfolio or track record.
+                    </p>
+                    <a
+                      href={`mailto:${company.contactEmail}?subject=Application:%20${encodeURIComponent(
+                        role.title
+                      )}`}
+                      className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-[#101010] hover:bg-[#E9204F] text-white px-4 py-2 text-[12.5px] font-semibold transition-colors min-h-[40px]"
+                    >
+                      <Mail className="h-3.5 w-3.5" />
+                      <span>Apply For Role</span>
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* General Inquiries */}
+          <div className="mt-8 rounded-xl bg-[#101010] border border-white/10 p-5 sm:p-6 text-white flex flex-col md:flex-row items-center justify-between gap-5 shadow-sm">
+            <div className="max-w-[620px]">
+              <span className="inline-block text-[10.5px] font-semibold uppercase tracking-wider text-[#E9204F] mb-1">
+                General Inquiries
+              </span>
+              <h3 className="text-base sm:text-lg font-bold font-heading text-white">
+                Don&apos;t see an exact match for your skillset?
+              </h3>
+              <p className="text-[12px] sm:text-[12.5px] text-[#A3A3A3] mt-0.5 leading-relaxed">
+                We are always open to connecting with top-tier SDRs, designers, full-stack engineers, and ops specialists.
               </p>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
-              {BENEFITS.map((b) => {
-                const Icon = b.icon;
-                return (
-                  <div
-                    key={b.title}
-                    className="rounded-xl border border-[#EBEBEB] bg-[#FAFAFA] p-4 hover:bg-white hover:border-[#101010] transition-colors"
-                  >
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white border border-[#EBEBEB] text-[#101010] mb-2.5">
-                      <Icon className="h-3.5 w-3.5" />
-                    </div>
-                    <h3 className="text-[13.5px] font-bold text-[#101010] mb-1">
-                      {b.title}
-                    </h3>
-                    <p className="text-[12px] text-[#525252] leading-relaxed">
-                      {b.description}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* 3. Open Positions */}
-            <div className="mt-8 pt-6 border-t border-[#EBEBEB]">
-              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-5">
-                <div>
-                  <span className="text-[10.5px] font-bold uppercase tracking-wider text-[#737373]">
-                    Open Opportunities
-                  </span>
-                  <h3 className="text-lg sm:text-xl font-bold font-heading text-[#101010] mt-0.5">
-                    Current Openings at RHEK GLOBAL
-                  </h3>
-                </div>
-                <p className="text-[12px] text-[#737373]">
-                  {OPEN_ROLES.length} active positions available
-                </p>
-              </div>
-
-              <div className="space-y-3">
-                {OPEN_ROLES.map((role) => (
-                  <div
-                    key={role.id}
-                    className="rounded-xl border border-[#EBEBEB] bg-[#FAFAFA] p-4 sm:p-5 hover:bg-white hover:border-[#101010] transition-colors"
-                  >
-                    <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 pb-3 border-b border-[#EBEBEB]">
-                      <div>
-                        <div className="flex flex-wrap items-center gap-1.5 mb-1.5">
-                          <span className="text-[10px] font-semibold text-[#101010] bg-white border border-[#EBEBEB] px-2 py-0.5 rounded">
-                            {role.department}
-                          </span>
-                          <span className="text-[10.5px] font-semibold text-[#737373] bg-white border border-[#EBEBEB] px-2 py-0.5 rounded">
-                            {role.type}
-                          </span>
-                        </div>
-                        <h4 className="text-lg font-bold text-[#101010]">
-                          {role.title}
-                        </h4>
-                      </div>
-
-                      <div className="flex items-center gap-4 text-[12.5px] text-[#525252]">
-                        <span className="inline-flex items-center gap-1.5">
-                          <MapPin className="h-3.5 w-3.5 text-[#101010]" />
-                          <span>{role.location}</span>
-                        </span>
-                        <span className="inline-flex items-center gap-1.5">
-                          <Clock className="h-3.5 w-3.5 text-[#101010]" />
-                          <span>{role.experience}</span>
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="pt-4">
-                      <p className="text-[13.5px] text-[#525252] leading-relaxed mb-4">
-                        {role.description}
-                      </p>
-
-                      <div className="space-y-1.5 mb-5">
-                        <p className="text-[11px] font-semibold uppercase tracking-wider text-[#737373] mb-1.5">
-                          Key Deliverables:
-                        </p>
-                        {role.responsibilities.map((resp) => (
-                          <div
-                            key={resp}
-                            className="flex items-start gap-2 text-[12.5px] text-[#525252]"
-                          >
-                            <CheckCircle2 className="h-3.5 w-3.5 text-[#16A34A] shrink-0 mt-0.5" />
-                            <span>{resp}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      <div className="pt-3.5 border-t border-[#EBEBEB] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                        <p className="text-[12px] text-[#737373]">
-                          Direct application via email with portfolio or track record.
-                        </p>
-                        <a
-                          href={`mailto:${company.contactEmail}?subject=Application:%20${encodeURIComponent(
-                            role.title
-                          )}`}
-                          className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-[#101010] hover:bg-[#E9204F] text-white px-4 py-2 text-[12.5px] font-semibold transition-colors min-h-[38px]"
-                        >
-                          <Mail className="h-3.5 w-3.5" />
-                          <span>Apply For Role</span>
-                          <ArrowRight className="h-3.5 w-3.5" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* General Inquiries */}
-            <div className="mt-8 rounded-xl bg-[#101010] border border-white/10 p-5 sm:p-6 text-white flex flex-col md:flex-row items-center justify-between gap-5 shadow-md">
-              <div className="max-w-[620px]">
-                <span className="inline-block text-[10.5px] font-semibold uppercase tracking-wider text-[#E9204F] mb-1">
-                  General Inquiries
-                </span>
-                <h3 className="text-base sm:text-lg font-bold font-heading text-white">
-                  Don&apos;t see an exact match for your skillset?
-                </h3>
-                <p className="text-[12.5px] text-[#A3A3A3] mt-0.5 leading-relaxed">
-                  We are always open to connecting with top-tier SDRs, designers, full-stack engineers, and ops specialists.
-                </p>
-              </div>
-              <a
-                href={`mailto:${company.contactEmail}?subject=General%20Application%20-%20RHEK%20GLOBAL`}
-                className="inline-flex items-center gap-1.5 rounded-lg bg-[#E9204F] hover:bg-white hover:text-[#101010] px-4 py-2 text-[12px] font-semibold text-white whitespace-nowrap transition-colors min-h-[38px] shrink-0"
-              >
-                <Mail className="h-3.5 w-3.5" />
-                <span>Send Open Application</span>
-                <ArrowRight className="h-3.5 w-3.5" />
-              </a>
-            </div>
+            <a
+              href={`mailto:${company.contactEmail}?subject=General%20Application%20-%20RHEK%20GLOBAL`}
+              className="inline-flex items-center gap-1.5 rounded-lg bg-[#E9204F] hover:bg-white hover:text-[#101010] px-4 py-2 text-[12px] font-semibold text-white whitespace-nowrap transition-colors min-h-[40px] shrink-0"
+            >
+              <Mail className="h-3.5 w-3.5" />
+              <span>Send Open Application</span>
+              <ArrowRight className="h-3.5 w-3.5" />
+            </a>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* 4. Footer */}
-      <div className="site-container pb-6">
-        <Footer />
-      </div>
+      {/* 5. Edge-to-edge Footer */}
+      <Footer />
     </main>
   );
 }

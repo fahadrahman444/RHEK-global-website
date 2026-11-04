@@ -12,41 +12,41 @@ import { Footer } from "@/components/layout/Footer";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-white space-y-8 sm:space-y-12">
-      {/* 1. Hero Wrapper */}
-      <div className="site-container pt-3">
-        <div className="bg-[#FAFAFA] border border-[#EBEBEB] rounded-2xl px-5 sm:px-8 lg:px-10 pt-2 pb-8 shadow-xs">
-          <Navbar />
-          <Hero />
-          <PartnerLogos />
-        </div>
+    <main className="min-h-screen bg-white">
+      {/* 1. Global Navbar */}
+      <Navbar />
+
+      {/* 2. Hero & Partner Trust Logos */}
+      <div className="site-container pt-4 sm:pt-6">
+        <Hero />
+        <PartnerLogos />
       </div>
 
-      {/* 2. Janitorial Lead Generation Spotlight & Verified Live Samples */}
-      <JanitorialLeadsSection />
+      <div className="space-y-10 sm:space-y-16 mt-8 sm:mt-16">
+        {/* 3. Janitorial Lead Generation Spotlight & Verified Live Samples */}
+        <JanitorialLeadsSection />
 
-      {/* 3. Core 8-Service Catalog Bento */}
-      <ServicesPreview />
+        {/* 4. Core 8-Service Catalog Bento */}
+        <ServicesPreview />
 
-      {/* 4. 7-Step Smarter Work Process & 4 Execution Principles */}
-      <ProcessSection />
+        {/* 5. 7-Step Smarter Work Process & 4 Execution Principles */}
+        <ProcessSection />
 
-      {/* 5. 10 Industries We Service */}
-      <IndustriesSection />
+        {/* 6. 10 Industries We Service */}
+        <IndustriesSection />
 
-      {/* 6. 100% Money-Back Guarantee Trust Section */}
-      <GuaranteeSection />
+        {/* 7. 100% Money-Back Guarantee Trust Section */}
+        <GuaranteeSection />
 
-      {/* 7. Why Choose RHEK GLOBAL, Mission & Vision */}
-      <WhyChooseUsSection />
+        {/* 8. Why Choose RHEK GLOBAL, Mission & Vision */}
+        <WhyChooseUsSection />
 
-      {/* 8. Lead Inquiry & Direct Scoping Form */}
-      <ContactSection />
-
-      {/* 9. Comprehensive Company Footer */}
-      <div className="site-container pb-8">
-        <Footer />
+        {/* 9. Lead Inquiry & Direct Scoping Form */}
+        <ContactSection />
       </div>
+
+      {/* 10. Comprehensive Company Footer */}
+      <Footer />
     </main>
   );
 }

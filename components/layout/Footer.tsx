@@ -18,8 +18,9 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-[#101010] text-white rounded-xl border border-white/10 shadow-2xl py-7 px-5 sm:px-8 lg:px-10">
-      {/* Top Newsletter & Callout Strip */}
+    <footer className="w-full bg-[#0d0d0d] text-white border-t border-white/10 mt-12 sm:mt-20">
+      <div className="site-container py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
+        {/* Top Newsletter & Callout Strip */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pb-6 border-b border-white/10 items-center">
         <div className="lg:col-span-7">
           <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#E9204F] font-display">
@@ -165,9 +166,10 @@ export function Footer() {
       </div>
 
       {/* Bottom Copyright Strip */}
-      <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-[12px] text-[#ACACAC] font-sans">
+      <div className="pt-6 mt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-[12px] text-[#ACACAC] font-sans">
         <p>© {new Date().getFullYear()} {RHEK_CONFIG.company.legalName}. All rights reserved.</p>
         <p>{RHEK_CONFIG.company.tagline}</p>
+      </div>
       </div>
     </footer>
   );

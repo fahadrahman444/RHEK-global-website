@@ -124,7 +124,7 @@ export function ContactSection({
     setError(null);
 
     try {
-      const res = await fetch("/api/inquiry", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -164,63 +164,63 @@ export function ContactSection({
         className={
           embedded
             ? "mx-auto max-w-[1080px]"
-            : "bg-white rounded-2xl shadow-xs border border-[#EBEBEB] p-5 sm:p-7 lg:p-9"
+            : "bg-white py-2 sm:py-4"
         }
       >
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-start">
           
           {/* Left Column: Context & Trust Signals */}
           <div className="lg:col-span-5">
-            <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-[#737373] mb-2">
+            <span className="inline-block text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#737373] mb-1.5">
               Direct Scoping
             </span>
-            <h2 className="font-heading text-2xl sm:text-3xl font-bold tracking-[-0.035em] text-[#101010] leading-tight mb-3">
+            <h2 className="font-heading text-[22px] sm:text-3xl font-bold tracking-[-0.035em] text-[#101010] leading-tight mb-2 sm:mb-3">
               {customTitle || "Start your engagement with a senior team."}
             </h2>
-            <p className="text-[15px] text-[#525252] leading-relaxed mb-7">
+            <p className="text-[13.5px] sm:text-[15px] text-[#525252] leading-relaxed mb-5 sm:mb-7">
               {customSubtitle ||
                 "Specify your target territory, project scope, or operational requirements. We reply with scoping details within 24 hours."}
             </p>
 
             {/* Trust Points */}
-            <div className="space-y-4 pt-4 border-t border-[#EBEBEB]">
-              <div className="flex items-start gap-3">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#FAFAFA] border border-[#EBEBEB] text-[#101010]">
+            <div className="space-y-3 sm:space-y-4 pt-4 border-t border-[#EBEBEB]">
+              <div className="group flex items-start gap-3 rounded-lg p-1.5 transition-colors hover:bg-[#FAFAFA]">
+                <div className="flex h-8 sm:h-9 w-8 sm:w-9 shrink-0 items-center justify-center rounded-lg bg-[#FAFAFA] border border-[#EBEBEB] text-[#101010] group-hover:bg-[#101010] group-hover:text-white transition-colors">
                   <Clock className="h-4 w-4" />
                 </div>
                 <div>
-                  <h4 className="text-[14px] font-bold text-[#101010]">
+                  <h4 className="text-[13.5px] sm:text-[14px] font-bold text-[#101010]">
                     24-Hour SLA Response
                   </h4>
-                  <p className="text-[13px] text-[#525252]">
+                  <p className="text-[12px] sm:text-[13px] text-[#525252]">
                     Direct consultation from our lead generation and tech leads.
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#FAFAFA] border border-[#EBEBEB] text-[#101010]">
+              <div className="group flex items-start gap-3 rounded-lg p-1.5 transition-colors hover:bg-[#FAFAFA]">
+                <div className="flex h-8 sm:h-9 w-8 sm:w-9 shrink-0 items-center justify-center rounded-lg bg-[#FAFAFA] border border-[#EBEBEB] text-[#101010] group-hover:bg-[#101010] group-hover:text-white transition-colors">
                   <ShieldCheck className="h-4 w-4" />
                 </div>
                 <div>
-                  <h4 className="text-[14px] font-bold text-[#101010]">
+                  <h4 className="text-[13.5px] sm:text-[14px] font-bold text-[#101010]">
                     Strict Exclusivity &amp; IP Protection
                   </h4>
-                  <p className="text-[13px] text-[#525252]">
+                  <p className="text-[12px] sm:text-[13px] text-[#525252]">
                     Exclusive territory rights for janitorial leads and 100% IP ownership for code.
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#FAFAFA] border border-[#EBEBEB] text-[#101010]">
+              <div className="group flex items-start gap-3 rounded-lg p-1.5 transition-colors hover:bg-[#FAFAFA]">
+                <div className="flex h-8 sm:h-9 w-8 sm:w-9 shrink-0 items-center justify-center rounded-lg bg-[#FAFAFA] border border-[#EBEBEB] text-[#101010] group-hover:bg-[#101010] group-hover:text-white transition-colors">
                   <Mail className="h-4 w-4" />
                 </div>
                 <div>
-                  <h4 className="text-[14px] font-bold text-[#101010]">
+                  <h4 className="text-[13.5px] sm:text-[14px] font-bold text-[#101010]">
                     Direct Correspondence
                   </h4>
-                  <p className="text-[13px] text-[#525252]">
+                  <p className="text-[12px] sm:text-[13px] text-[#525252]">
                     Reach us directly at <span className="text-[#101010] font-semibold">{RHEK_CONFIG.company.contactEmail}</span>.
                   </p>
                 </div>

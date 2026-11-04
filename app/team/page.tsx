@@ -129,146 +129,134 @@ const WORKING_VALUES = [
 
 export default function TeamPage() {
   return (
-    <main className="min-h-screen py-3 sm:py-5 space-y-6 sm:space-y-8">
-      {/* 1. Hero Canvas */}
-      <div className="site-container">
-        <div className="relative overflow-hidden rounded-2xl bg-white p-5 sm:p-7 lg:p-8 shadow-xs border border-[#EBEBEB]">
-          <div className="relative z-10 mx-auto max-w-[1080px]">
-            <Navbar />
+    <main className="min-h-screen bg-white">
+      {/* 1. Global Navigation */}
+      <Navbar />
 
-            <SubpageHeader
-              currentLabel="Team"
-              badge="Domain Divisions"
-              icon={Users}
-              title="The Specialist Divisions Behind Your Business Engine."
-              description="A multidisciplinary collective of commercial lead researchers, B2B sales development representatives, creative producers, and full-stack engineers."
-            />
-          </div>
-        </div>
+      {/* 2. Subpage Header */}
+      <div className="site-container pt-4 sm:pt-6">
+        <SubpageHeader
+          currentLabel="Team"
+          badge="Domain Divisions"
+          icon={Users}
+          title="The Specialist Divisions Behind Your Business Engine."
+          description="A multidisciplinary collective of commercial lead researchers, B2B sales development representatives, creative producers, and full-stack engineers."
+        />
       </div>
 
-      {/* 2. Functional Team Divisions */}
-      <div className="site-container">
-        <div className="rounded-2xl bg-white shadow-xs border border-[#EBEBEB] overflow-hidden p-5 sm:p-7 lg:p-9">
-          <div className="mx-auto max-w-[1080px]">
-            <div className="max-w-2xl mb-6">
-              <span className="inline-block text-[10.5px] font-bold uppercase tracking-wider text-[#737373] mb-1">
-                Dedicated Domain Experts
-              </span>
-              <h2 className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-[#101010] tracking-[-0.03em] leading-snug">
-                Specialized Teams for Every Stage of Your Pipeline
-              </h2>
-              <p className="text-[13.5px] text-[#525252] leading-relaxed mt-1.5">
-                We organize our talent into focused functional units so you receive industry-tested methodology and reliable execution.
-              </p>
-            </div>
+      {/* 3. Functional Team Divisions Flow */}
+      <div className="site-container py-8 sm:py-12 space-y-10 sm:space-y-14">
+        <div>
+          <div className="max-w-2xl mb-6">
+            <span className="inline-block text-[10.5px] font-bold uppercase tracking-wider text-[#737373] mb-1">
+              Dedicated Domain Experts
+            </span>
+            <h2 className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-[#101010] tracking-[-0.03em] leading-snug">
+              Specialized Teams for Every Stage of Your Pipeline
+            </h2>
+            <p className="text-[13.5px] text-[#525252] leading-relaxed mt-1.5">
+              We organize our talent into focused functional units so you receive industry-tested methodology and reliable execution.
+            </p>
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
-              {TEAM_DIVISIONS.map((team) => {
-                const Icon = team.icon;
-                return (
-                  <div
-                    key={team.name}
-                    className="rounded-xl border border-[#EBEBEB] bg-[#FAFAFA] p-4 sm:p-5 flex flex-col justify-between hover:border-[#101010] hover:bg-white transition-colors"
-                  >
-                    <div>
-                      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white border border-[#EBEBEB] text-[#101010] mb-3">
-                        <Icon className="h-4.5 w-4.5" />
-                      </div>
-                      <span className="text-[10.5px] font-semibold uppercase tracking-wider text-[#737373]">
-                        {team.focus}
-                      </span>
-                      <h3 className="text-base font-bold text-[#101010] mt-0.5 mb-1.5 leading-snug">
-                        {team.name}
-                      </h3>
-                      <p className="text-[12.5px] text-[#525252] leading-relaxed mb-3">
-                        {team.description}
-                      </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
+            {TEAM_DIVISIONS.map((team) => {
+              const Icon = team.icon;
+              return (
+                <div
+                  key={team.name}
+                  className="rounded-xl border border-[#EBEBEB] bg-[#FAFAFA] p-4 sm:p-5 flex flex-col justify-between hover:border-[#101010] hover:bg-white hover:shadow-md transition-all duration-300"
+                >
+                  <div>
+                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white border border-[#EBEBEB] text-[#101010] mb-3 shadow-2xs">
+                      <Icon className="h-4.5 w-4.5" />
                     </div>
-
-                    <div className="pt-3 border-t border-[#EBEBEB]">
-                      <p className="text-[10px] font-bold uppercase tracking-wider text-[#737373] mb-1.5">
-                        Core Disciplines:
-                      </p>
-                      <ul className="space-y-1">
-                        {team.capabilities.map((cap) => (
-                          <li
-                            key={cap}
-                            className="flex items-center gap-1.5 text-[11.5px] text-[#525252]"
-                          >
-                            <CheckCircle2 className="h-3 w-3 text-[#16A34A] shrink-0" />
-                            <span>{cap}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Core Values / Work Ethic */}
-            <div className="mt-8 pt-6 border-t border-[#EBEBEB]">
-              <div className="max-w-xl mb-4">
-                <span className="text-[10.5px] font-bold uppercase tracking-wider text-[#737373]">
-                  Execution Standards
-                </span>
-                <h3 className="text-lg sm:text-xl font-bold font-heading text-[#101010] mt-0.5">
-                  How Our Team Delivers Reliable Results
-                </h3>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                {WORKING_VALUES.map((val, idx) => (
-                  <div
-                    key={val.title}
-                    className="rounded-lg border border-[#EBEBEB] bg-[#FAFAFA] p-3.5 hover:border-[#101010] transition-colors"
-                  >
-                    <span className="font-mono text-[11px] font-bold text-[#101010]">
-                      0{idx + 1}
+                    <span className="text-[10.5px] font-semibold uppercase tracking-wider text-[#737373]">
+                      {team.focus}
                     </span>
-                    <h4 className="text-[13.5px] font-bold text-[#101010] mt-0.5 mb-1">
-                      {val.title}
-                    </h4>
-                    <p className="text-[12px] text-[#525252] leading-relaxed">
-                      {val.description}
+                    <h3 className="font-heading text-lg font-bold text-[#101010] mt-0.5 mb-2 leading-snug">
+                      {team.name}
+                    </h3>
+                    <p className="text-[13px] text-[#525252] leading-relaxed mb-4">
+                      {team.description}
                     </p>
                   </div>
-                ))}
-              </div>
-            </div>
 
-            {/* Guaranteed Consultation CTA */}
-            <div className="mt-8 rounded-xl bg-[#101010] border border-white/10 p-5 sm:p-6 text-white flex flex-col md:flex-row items-center justify-between gap-5 shadow-md">
-              <div className="max-w-[620px]">
-                <div className="inline-flex items-center gap-1.5 rounded bg-white/10 border border-white/15 text-[#E9204F] text-[10.5px] font-semibold uppercase tracking-wider px-2 py-0.5 mb-1.5">
-                  <ShieldCheck className="h-3.5 w-3.5 text-[#E9204F]" />
-                  <span>Direct Team Access</span>
+                  <ul className="space-y-1.5 border-t border-[#EBEBEB] pt-3.5">
+                    {team.capabilities.map((cap, cIdx) => (
+                      <li
+                        key={cIdx}
+                        className="flex items-center gap-2 text-[12px] text-[#525252]"
+                      >
+                        <CheckCircle2 className="h-3.5 w-3.5 text-[#E9204F] shrink-0" />
+                        <span>{cap}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h3 className="text-base sm:text-lg font-bold font-heading text-white">
-                  Ready to Deploy a Dedicated Extension to Your Business?
-                </h3>
-                <p className="text-[12.5px] text-[#A3A3A3] mt-0.5 leading-relaxed">
-                  Schedule an initial consultation to review your requirements, market territory, or production scope with our specialists.
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Operating Standards Strip */}
+        <div className="border-t border-[#EBEBEB] pt-8">
+          <div className="max-w-xl mb-5">
+            <span className="text-[10.5px] font-bold uppercase tracking-wider text-[#737373]">
+              Operating Values
+            </span>
+            <h3 className="text-xl font-bold font-heading text-[#101010] mt-0.5">
+              How Our Specialist Divisions Deliver
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3">
+            {WORKING_VALUES.map((val, idx) => (
+              <div
+                key={idx}
+                className="rounded-xl border border-[#EBEBEB] bg-[#FAFAFA] p-3 sm:p-4 hover:border-[#101010] hover:bg-white hover:shadow-xs transition-all duration-200"
+              >
+                <span className="font-mono text-[11px] font-bold text-[#737373]">
+                  0{idx + 1}
+                </span>
+                <h4 className="text-[13px] sm:text-[13.5px] font-bold text-[#101010] mt-0.5 mb-1 leading-snug">
+                  {val.title}
+                </h4>
+                <p className="text-[11px] sm:text-[12px] text-[#525252] leading-relaxed line-clamp-3 sm:line-clamp-none">
+                  {val.description}
                 </p>
               </div>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-1.5 rounded-lg bg-[#E9204F] hover:bg-white hover:text-[#101010] px-4 py-2 text-[12.5px] font-semibold text-white whitespace-nowrap transition-colors min-h-[38px] shrink-0"
-              >
-                <Calendar className="h-3.5 w-3.5" />
-                <span>Schedule Consultation</span>
-                <ArrowRight className="h-3.5 w-3.5" />
-              </Link>
-            </div>
+            ))}
           </div>
+        </div>
+
+        {/* Guaranteed Consultation CTA */}
+        <div className="rounded-2xl bg-[#101010] text-white p-5 sm:p-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+          <div className="max-w-[620px]">
+            <div className="inline-flex items-center gap-1.5 rounded bg-white/10 text-[#E9204F] text-[10.5px] font-semibold uppercase tracking-wider px-2.5 py-0.5 mb-1.5">
+              <ShieldCheck className="h-3.5 w-3.5" />
+              <span>Direct Team Access</span>
+            </div>
+            <h3 className="text-lg sm:text-xl font-bold font-heading text-white">
+              Ready to Deploy a Dedicated Extension to Your Business?
+            </h3>
+            <p className="text-[12.5px] text-[#A3A3A3] mt-0.5 leading-relaxed">
+              Schedule an initial consultation to review your requirements, market territory, or production scope with our specialists.
+            </p>
+          </div>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-[#E9204F] hover:bg-white hover:text-[#101010] px-4 py-2 text-[12.5px] font-semibold text-white whitespace-nowrap transition-all duration-200 min-h-[38px] shrink-0 hover:shadow-md hover:-translate-y-0.5"
+          >
+            <Calendar className="h-3.5 w-3.5" />
+            <span>Schedule Consultation</span>
+            <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
         </div>
       </div>
 
-      {/* 3. Footer */}
-      <div className="site-container pb-6">
-        <Footer />
-      </div>
+      {/* 4. Global Footer */}
+      <Footer />
     </main>
   );
 }

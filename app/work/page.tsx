@@ -13,35 +13,28 @@ export const metadata: Metadata = {
 
 export default function WorkPage() {
   return (
-    <main className="min-h-screen py-3 sm:py-5 space-y-6 sm:space-y-8">
-      {/* 1. Hero Canvas */}
-      <div className="site-container">
-        <div className="relative overflow-hidden rounded-2xl bg-white p-5 sm:p-7 lg:p-8 shadow-xs border border-[#EBEBEB]">
-          <div className="relative z-10 mx-auto max-w-[1080px]">
-            <Navbar />
+    <main className="min-h-screen bg-white">
+      {/* 1. Global Navigation */}
+      <Navbar />
 
-            <SubpageHeader
-              currentLabel="Our Work"
-              badge="Selected Case Studies"
-              icon={Briefcase}
-              title="Proven software engineering, measured in verified outcomes."
-              description="Explore our archive of production web applications, multi-tenant SaaS architectures, and headless digital storefronts engineered for high-growth teams."
-            />
-          </div>
-        </div>
+      {/* 2. Subpage Header */}
+      <div className="site-container pt-4 sm:pt-6">
+        <SubpageHeader
+          currentLabel="Our Work"
+          badge="Selected Case Studies"
+          icon={Briefcase}
+          title="Proven software engineering, measured in verified outcomes."
+          description="Explore our archive of production web applications, multi-tenant SaaS architectures, and headless digital storefronts engineered for high-growth teams."
+        />
       </div>
 
-      {/* 2. Full Interactive Portfolio Section */}
-      <div className="site-container">
-        <div className="rounded-2xl bg-white shadow-xs border border-[#EBEBEB] overflow-hidden">
-          <PortfolioSection isPage={true} />
-        </div>
+      {/* 3. Full Interactive Portfolio Section */}
+      <div className="site-container py-8 sm:py-12">
+        <PortfolioSection isPage={true} />
       </div>
 
-      {/* 3. Consistent Company Footer */}
-      <div className="site-container pb-6">
-        <Footer />
-      </div>
+      {/* 4. Global Footer */}
+      <Footer />
     </main>
   );
 }
