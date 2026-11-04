@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
   Sparkles,
@@ -12,100 +14,163 @@ import {
   Rocket,
   ArrowRight,
 } from "lucide-react";
-import { RHEK_CONFIG, IndustryItem } from "@/data/rhek-config";
 
-function getIndustryIcon(iconName: string) {
-  const cls = "h-4 w-4 text-[#101010] group-hover:text-white transition-colors duration-300";
-  switch (iconName) {
-    case "Sparkles":
-      return <Sparkles className={cls} />;
-    case "Building2":
-      return <Building2 className={cls} />;
-    case "Activity":
-      return <Activity className={cls} />;
-    case "ShoppingBag":
-      return <ShoppingBag className={cls} />;
-    case "Laptop":
-      return <Laptop className={cls} />;
-    case "Compass":
-      return <Compass className={cls} />;
-    case "GraduationCap":
-      return <GraduationCap className={cls} />;
-    case "ShieldCheck":
-      return <ShieldCheck className={cls} />;
-    case "Truck":
-      return <Truck className={cls} />;
-    case "Rocket":
-      return <Rocket className={cls} />;
-    default:
-      return <Sparkles className={cls} />;
-  }
-}
+const SECTOR_DATA = [
+  {
+    name: "Medical & Healthcare",
+    icon: Activity,
+    typicalScope: "35,000 sq ft avg",
+    cadence: "7-Day Night Shift",
+    compliance: "Terminal Clean Protocol",
+  },
+  {
+    name: "Corporate Tech Campuses",
+    icon: Laptop,
+    typicalScope: "45,000–80,000 sq ft",
+    cadence: "Day Porter + Evening",
+    compliance: "High-Security Access",
+  },
+  {
+    name: "Commercial Real Estate",
+    icon: Building2,
+    typicalScope: "Class-A Atriums",
+    cadence: "Daily Scheduled Cadence",
+    compliance: "Multi-Tenant Management",
+  },
+  {
+    name: "Education & Academies",
+    icon: GraduationCap,
+    typicalScope: "Campus Classrooms & Gyms",
+    cadence: "Daily Porter Service",
+    compliance: "Child Safety Clearance",
+  },
+  {
+    name: "Logistics & Warehouses",
+    icon: Truck,
+    typicalScope: "100,000+ sq ft",
+    cadence: "Floor Scrub & Dust Control",
+    compliance: "OSHA & Heavy Machine",
+  },
+  {
+    name: "Retail & Dealerships",
+    icon: ShoppingBag,
+    typicalScope: "High-Traffic Showrooms",
+    cadence: "Glass & Floor Buffing",
+    compliance: "Public Presentation",
+  },
+  {
+    name: "Financial Institutions",
+    icon: ShieldCheck,
+    typicalScope: "Multi-Branch Bank Retail",
+    cadence: "Nightly Sanitization",
+    compliance: "Vault & Teller Security",
+  },
+  {
+    name: "Hospitality & Venues",
+    icon: Compass,
+    typicalScope: "Event & Banquet Halls",
+    cadence: "Turnover Between Events",
+    compliance: "Rapid Incident Response",
+  },
+  {
+    name: "Industrial Facilities",
+    icon: Rocket,
+    typicalScope: "Cleanrooms & Assembly",
+    cadence: "HEPA Filtration & Sanitizing",
+    compliance: "ISO Standard Cleans",
+  },
+  {
+    name: "Professional Offices",
+    icon: Sparkles,
+    typicalScope: "Law & CPA Suites",
+    cadence: "5-Day Weekly Janitorial",
+    compliance: "Document Confidentiality",
+  },
+];
 
 export function IndustriesSection() {
   return (
     <section id="industries" className="site-container scroll-mt-24">
       {/* Header */}
-      <div className="max-w-[760px] mb-5 sm:mb-6">
-        <span className="inline-block text-[10px] sm:text-[10.5px] font-bold uppercase tracking-widest text-[#737373] mb-1">
-          Sector Coverage
-        </span>
-        <h2 className="font-heading text-[22px] sm:text-[30px] lg:text-[32px] font-bold text-[#101010] tracking-[-0.035em] leading-[1.15]">
-          Empowering Enterprises Across Key Verticals
-        </h2>
-        <p className="mt-1.5 text-[13.5px] sm:text-[14.5px] leading-relaxed text-[#525252]">
-          Our lead generation cadences, digital infrastructure, and dedicated back-office workflows adapt to the unique contract sizes and compliance demands of each industry.
-        </p>
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-4 mb-5 sm:mb-6">
+        <div className="max-w-[620px]">
+          <span className="inline-block text-[10px] sm:text-[10.5px] font-bold uppercase tracking-widest text-[#737373] mb-1">
+            Sector Coverage
+          </span>
+          <h2 className="font-heading text-[22px] sm:text-[30px] lg:text-[32px] font-bold text-[#101010] tracking-[-0.035em] leading-[1.15]">
+            Tailored Lead Criteria Across 10 Commercial Verticals
+          </h2>
+          <p className="mt-1.5 text-[13.5px] sm:text-[14.5px] leading-relaxed text-[#525252]">
+            Every industry has unique cleaning schedules, compliance gates, and decision-maker profiles. We filter specifically for your ideal account profile.
+          </p>
+        </div>
+
+        <Link
+          href="/#contact"
+          className="inline-flex items-center gap-1.5 rounded-lg bg-[#101010] hover:bg-[#E9204F] text-white px-4 py-2 text-[12.5px] font-semibold transition-all duration-300 min-h-[38px] shrink-0 self-start md:self-auto shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
+        >
+          <span>Target My Sector</span>
+          <ArrowRight className="h-3.5 w-3.5" />
+        </Link>
       </div>
 
-      {/* Mobile Swipe Hint */}
-      <div className="md:hidden flex items-center justify-between text-[10.5px] text-[#737373] mb-2 px-0.5">
-        <span>Swipe across 10 industry verticals</span>
-        <span className="font-semibold text-[#101010]">10 Verticals →</span>
-      </div>
+      {/* Visual Sector Matrix: 5 Columns Desktop, 2 Columns Mobile */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-3">
+        {SECTOR_DATA.map((sector, i) => {
+          const Icon = sector.icon;
+          return (
+            <div
+              key={i}
+              className="group rounded-xl border border-neutral-200/80 bg-white p-3 sm:p-3.5 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:border-[#101010] hover:shadow-md hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-neutral-100 text-[#101010] group-hover:bg-[#101010] group-hover:text-white transition-colors">
+                    <Icon className="h-3.5 w-3.5" />
+                  </div>
+                  <span className="text-[9.5px] font-mono font-semibold text-[#737373] bg-neutral-50 px-1.5 py-0.5 rounded border border-neutral-200/50">
+                    0{i + 1}
+                  </span>
+                </div>
 
-      {/* 10 Industries: Mobile Horizontal Snap Carousel & Desktop 5-Column Grid */}
-      <div className="flex md:grid md:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-3 overflow-x-auto snap-x snap-mandatory pb-2 md:pb-0 scrollbar-none -mx-1 px-1 sm:mx-0 sm:px-0">
-        {RHEK_CONFIG.industries.map((ind: IndustryItem, i) => (
-          <div
-            key={i}
-            className="min-w-[68%] sm:min-w-[240px] md:min-w-0 snap-center shrink-0 md:shrink group flex flex-col justify-between rounded-xl bg-[#FAFAFA] border border-[#EBEBEB] p-3 sm:p-4 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#101010] hover:bg-white hover:shadow-lg hover:shadow-black/5"
-          >
-            <div>
-              <div className="mb-2 sm:mb-2.5 flex h-7 sm:h-8 w-7 sm:w-8 items-center justify-center rounded-lg bg-white border border-[#EBEBEB] group-hover:bg-[#101010] group-hover:border-[#101010] transition-colors duration-300">
-                {getIndustryIcon(ind.iconName)}
+                <h3 className="text-[12.5px] sm:text-[13.5px] font-bold text-[#101010] leading-snug group-hover:text-[#E9204F] transition-colors">
+                  {sector.name}
+                </h3>
+
+                <div className="mt-2.5 space-y-1">
+                  <div className="text-[10.5px] font-semibold text-[#101010] bg-neutral-50 rounded px-1.5 py-0.5 border border-neutral-100 truncate">
+                    {sector.typicalScope}
+                  </div>
+                  <div className="text-[10px] text-[#525252] truncate">
+                    {sector.cadence}
+                  </div>
+                </div>
               </div>
-              <h3 className="text-[13px] sm:text-[14px] font-bold text-[#101010] group-hover:text-[#E9204F] transition-colors leading-snug">
-                {ind.name}
-              </h3>
-              <p className="mt-1 sm:mt-1.5 text-[11px] sm:text-[12px] text-[#525252] leading-relaxed line-clamp-2 sm:line-clamp-none">
-                {ind.description}
-              </p>
-            </div>
 
-            <div className="mt-2.5 pt-2 sm:mt-3.5 sm:pt-2.5 border-t border-[#EBEBEB] flex items-center justify-between text-[10.5px] sm:text-[11px] font-semibold text-[#737373] group-hover:text-[#101010] transition-colors">
-              <span>View Fit</span>
-              <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1 group-hover:text-[#E9204F]" />
+              <div className="mt-3 pt-2 border-t border-neutral-100 flex items-center justify-between text-[10.5px] font-semibold text-[#737373] group-hover:text-[#101010]">
+                <span>Scope Ready</span>
+                <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1 group-hover:text-[#E9204F]" />
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
-      {/* Customized Solutions Sub-banner */}
-      <div className="mt-4 sm:mt-5 rounded-xl border border-[#EBEBEB] bg-[#FAFAFA] p-3 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 sm:gap-4 transition-all duration-300 hover:border-[#101010]/30 hover:shadow-sm">
+      {/* Customized Scope Callout Banner */}
+      <div className="mt-4 sm:mt-5 rounded-xl border border-neutral-200/90 bg-[#FAFAFA] p-3.5 sm:p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-2xs">
         <div>
-          <h4 className="text-[13.5px] sm:text-[15px] font-bold text-[#101010]">
-            Bespoke Scoping for Niche Verticals
-          </h4>
-          <p className="text-[11.5px] sm:text-[13px] text-[#525252] mt-0.5">
-            Operating in a specialized domain? We build custom targeting filters and verified qualification matrices for your exact criteria.
+          <div className="text-[13px] sm:text-[14px] font-bold text-[#101010]">
+            Operating in a specialized regional niche?
+          </div>
+          <p className="text-[11.5px] sm:text-[12.5px] text-[#525252] mt-0.5">
+            We configure custom square footage thresholds, emergency cleaning filters, and local zip codes for your exact capability profile.
           </p>
         </div>
         <Link
           href="/#contact"
-          className="inline-flex items-center gap-1.5 rounded-lg bg-[#101010] hover:bg-[#E9204F] px-3.5 py-1.5 sm:px-4 sm:py-2 text-[11.5px] sm:text-[12.5px] font-semibold text-white whitespace-nowrap transition-all duration-200 min-h-[36px] sm:min-h-[38px] shadow-xs shrink-0 hover:shadow-md hover:-translate-y-0.5"
+          className="inline-flex items-center gap-1.5 rounded-lg bg-white border border-neutral-200 hover:border-[#101010] px-3.5 py-1.5 text-[12px] font-semibold text-[#101010] whitespace-nowrap transition-colors min-h-[36px] shrink-0 shadow-2xs"
         >
-          <span>Discuss Scope</span>
+          <span>Request Custom Scoping</span>
           <ArrowRight className="h-3.5 w-3.5" />
         </Link>
       </div>
