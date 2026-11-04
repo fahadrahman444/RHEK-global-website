@@ -44,34 +44,34 @@ export function ServicesPreview() {
   return (
     <section id="services" className="site-container scroll-mt-24">
       {/* Section Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
         <div className="max-w-[620px]">
-          <span className="inline-block text-[11px] font-bold uppercase tracking-widest text-[#737373] mb-2">
+          <span className="inline-block text-[10.5px] font-bold uppercase tracking-widest text-[#737373] mb-1">
             Integrated Solutions
           </span>
-          <h2 className="font-heading text-[30px] sm:text-[38px] font-bold text-[#101010] tracking-[-0.035em] leading-[1.15]">
+          <h2 className="font-heading text-[24px] sm:text-[32px] font-bold text-[#101010] tracking-[-0.035em] leading-[1.15]">
             Full-Spectrum Services Built for Scale
           </h2>
-          <p className="mt-3 text-[16px] leading-relaxed text-[#525252]">
+          <p className="mt-1.5 text-[14.5px] leading-relaxed text-[#525252]">
             From verified commercial sales pipelines to modern web engineering and dedicated operational support.
           </p>
         </div>
 
         <Link
           href="/#contact"
-          className="inline-flex items-center gap-1.5 rounded-lg bg-[#101010] hover:bg-[#E9204F] text-white px-5 py-2.5 text-[13px] font-semibold transition-colors duration-200 min-h-[42px] shrink-0 self-start md:self-auto shadow-xs"
+          className="inline-flex items-center gap-1.5 rounded-lg bg-[#101010] hover:bg-[#E9204F] text-white px-4 py-2 text-[12.5px] font-semibold transition-colors duration-200 min-h-[38px] shrink-0 self-start md:self-auto shadow-xs"
         >
           <span>Schedule Discovery</span>
-          <ArrowUpRight className="h-4 w-4" />
+          <ArrowUpRight className="h-3.5 w-3.5" />
         </Link>
       </div>
 
       {/* 8 Services Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3.5">
         {RHEK_CONFIG.services.map((service: ServiceItem) => (
           <div
             key={service.id}
-            className="group flex flex-col justify-between rounded-xl bg-[#FAFAFA] border border-[#EBEBEB] p-6 transition-all duration-200 hover:bg-white hover:border-[#101010] hover:shadow-md"
+            className="group flex flex-col justify-between rounded-xl bg-[#FAFAFA] border border-[#EBEBEB] p-5 transition-all duration-200 hover:bg-white hover:border-[#101010] hover:shadow-xs"
           >
             <div>
               {/* Header with Number and Icon */}

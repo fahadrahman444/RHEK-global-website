@@ -12,10 +12,10 @@ import { Footer } from "@/components/layout/Footer";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-white space-y-16 sm:space-y-24">
+    <main className="min-h-screen bg-white space-y-8 sm:space-y-12">
       {/* 1. Hero Wrapper */}
       <div className="site-container pt-3">
-        <div className="bg-[#FAFAFA] border border-[#EBEBEB] rounded-2xl px-6 sm:px-10 lg:px-12 pt-2 pb-12 shadow-xs">
+        <div className="bg-[#FAFAFA] border border-[#EBEBEB] rounded-2xl px-5 sm:px-8 lg:px-10 pt-2 pb-8 shadow-xs">
           <Navbar />
           <Hero />
           <PartnerLogos />

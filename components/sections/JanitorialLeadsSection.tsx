@@ -9,29 +9,29 @@ export function JanitorialLeadsSection() {
 
   return (
     <section id="leads" className="site-container scroll-mt-24">
-      <div className="rounded-2xl bg-[#FAFAFA] border border-[#EBEBEB] p-7 sm:p-11 lg:p-14">
+      <div className="rounded-2xl bg-[#FAFAFA] border border-[#EBEBEB] p-5 sm:p-7 lg:p-9">
         {/* Section Header */}
         <div className="max-w-[780px]">
-          <div className="inline-flex items-center gap-2 rounded-md border border-[#EBEBEB] bg-white px-3 py-1 text-[11px] font-semibold text-[#101010] uppercase tracking-wider mb-4 shadow-xs">
+          <div className="inline-flex items-center gap-1.5 rounded-md border border-[#EBEBEB] bg-white px-2.5 py-0.5 text-[10.5px] font-semibold text-[#101010] uppercase tracking-wider mb-2.5 shadow-2xs">
             <ShieldCheck className="h-3.5 w-3.5 text-[#E9204F]" />
             <span>Pay Nothing Upfront Available</span>
           </div>
 
-          <h2 className="font-heading text-[30px] sm:text-[40px] font-bold text-[#101010] tracking-[-0.035em] leading-tight">
+          <h2 className="font-heading text-[24px] sm:text-[32px] font-bold text-[#101010] tracking-[-0.035em] leading-tight">
             Exclusive Commercial Cleaning Leads &amp; Walkthroughs
           </h2>
 
-          <p className="mt-4 text-[16px] leading-[1.65] text-[#525252]">
+          <p className="mt-2 text-[14.5px] leading-relaxed text-[#525252]">
             We connect commercial cleaning contractors directly with verified facility managers actively seeking daily, weekly, or specialized janitorial contracts.
           </p>
         </div>
 
         {/* Feature Highlights Grid */}
-        <div className="mt-9 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
           {janitorialService?.features.map((feature, i) => (
             <div
               key={i}
-              className="flex items-center gap-3 rounded-lg bg-white border border-[#EBEBEB] p-4 text-[13.5px] font-semibold text-[#101010] transition-colors hover:border-[#101010] shadow-xs"
+              className="flex items-center gap-2.5 rounded-lg bg-white border border-[#EBEBEB] p-3 text-[12.5px] font-semibold text-[#101010] transition-colors hover:border-[#101010] shadow-2xs"
             >
               <CheckCircle2 className="h-4 w-4 text-[#E9204F] shrink-0" />
               <span>{feature}</span>
@@ -40,24 +40,24 @@ export function JanitorialLeadsSection() {
         </div>
 
         {/* Live Leads Sample Showcase */}
-        <div className="mt-12 pt-8 border-t border-[#EBEBEB]">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-7">
+        <div className="mt-8 pt-6 border-t border-[#EBEBEB]">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5">
             <div>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-[#737373]">
+              <span className="text-[10.5px] font-bold uppercase tracking-wider text-[#737373]">
                 Recent Sample Inquiries
               </span>
-              <h3 className="text-[20px] sm:text-[24px] font-bold text-[#101010] mt-0.5">
+              <h3 className="text-[18px] sm:text-[22px] font-bold text-[#101010] mt-0.5">
                 Verified Decision-Maker Appointments
               </h3>
             </div>
-            <div className="flex items-center gap-2 text-[12.5px] text-[#525252]">
+            <div className="flex items-center gap-2 text-[12px] text-[#525252]">
               <span className="h-2 w-2 rounded-full bg-[#16A34A] animate-pulse" />
               <span className="font-semibold text-[#101010]">100% Exclusive Protection</span>
             </div>
           </div>
 
           {/* Leads Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
             {RHEK_CONFIG.leadSamples.map((lead) => (
               <div
                 key={lead.id}

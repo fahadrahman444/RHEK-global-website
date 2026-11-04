@@ -6,29 +6,29 @@ export function WhyChooseUsSection() {
 
   return (
     <section className="site-container">
-      <div className="rounded-2xl bg-[#101010] text-white p-7 sm:p-11 lg:p-14 shadow-lg border border-white/10">
+      <div className="rounded-2xl bg-[#101010] text-white p-5 sm:p-7 lg:p-9 shadow-lg border border-white/10">
         {/* Header */}
-        <div className="max-w-[760px] mb-10">
-          <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-[#E9204F] bg-white/10 border border-white/15 px-3 py-1 rounded mb-3">
+        <div className="max-w-[760px] mb-6">
+          <span className="inline-block text-[10.5px] font-bold uppercase tracking-wider text-[#E9204F] bg-white/10 border border-white/15 px-2.5 py-0.5 rounded mb-2">
             Institutional Advantages
           </span>
-          <h2 className="font-heading text-[30px] sm:text-[40px] font-bold tracking-[-0.035em] leading-[1.15] mt-1 text-white">
+          <h2 className="font-heading text-[24px] sm:text-[32px] font-bold tracking-[-0.035em] leading-[1.15] mt-0.5 text-white">
             Your Dedicated Partner in Commercial Growth
           </h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-[#A3A3A3]">
+          <p className="mt-1.5 text-[14.5px] leading-relaxed text-[#A3A3A3]">
             RHEK GLOBAL combines targeted B2B sales pipelines, precision digital engineering, and specialized operational support to generate measurable enterprise outcomes.
           </p>
         </div>
 
         {/* 6 Value Pillars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
           {whyChooseUs.map((item, idx) => (
             <div
               key={idx}
-              className="flex flex-col justify-between rounded-xl bg-white/[0.03] border border-white/10 p-5 hover:border-white/25 transition-colors"
+              className="flex flex-col justify-between rounded-xl bg-white/[0.03] border border-white/10 p-4 hover:border-white/25 transition-colors"
             >
               <div>
-                <div className="mb-3.5 flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 text-[#E9204F]">
+                <div className="mb-2.5 flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 text-[#E9204F]">
                   {idx === 0 && <Sparkles className="h-4 w-4" />}
                   {idx === 1 && <Zap className="h-4 w-4" />}
                   {idx === 2 && <Users className="h-4 w-4" />}
@@ -36,10 +36,10 @@ export function WhyChooseUsSection() {
                   {idx === 4 && <CheckCircle2 className="h-4 w-4" />}
                   {idx === 5 && <Handshake className="h-4 w-4" />}
                 </div>
-                <h3 className="text-[16px] font-bold text-white mb-1.5 leading-snug">
+                <h3 className="text-[15px] font-bold text-white mb-1 leading-snug">
                   {item.title}
                 </h3>
-                <p className="text-[13px] text-[#A3A3A3] leading-relaxed">
+                <p className="text-[12.5px] text-[#A3A3A3] leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -48,7 +48,7 @@ export function WhyChooseUsSection() {
         </div>
 
         {/* Mission, Vision & Core Values Strip */}
-        <div className="border-t border-white/10 pt-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="border-t border-white/10 pt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="space-y-6">
             <div>
               <span className="text-[11px] font-bold uppercase tracking-wider text-[#E9204F]">

@@ -158,16 +158,16 @@ export function ContactSection({
   return (
     <section
       id="contact"
-      className={embedded ? "py-10 px-4" : "site-container"}
+      className={embedded ? "py-6 px-4" : "site-container"}
     >
       <div
         className={
           embedded
             ? "mx-auto max-w-[1080px]"
-            : "bg-white rounded-2xl shadow-xs border border-[#EBEBEB] p-7 sm:p-11 lg:p-14"
+            : "bg-white rounded-2xl shadow-xs border border-[#EBEBEB] p-5 sm:p-7 lg:p-9"
         }
       >
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
           
           {/* Left Column: Context & Trust Signals */}
           <div className="lg:col-span-5">

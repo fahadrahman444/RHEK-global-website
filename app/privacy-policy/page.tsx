@@ -15,10 +15,10 @@ export default function PrivacyPolicyPage() {
   const lastUpdated = "October 28, 2026";
 
   return (
-    <main className="min-h-screen py-4 sm:py-6 space-y-10 sm:space-y-12 lg:space-y-14">
+    <main className="min-h-screen py-3 sm:py-5 space-y-6 sm:space-y-8">
       {/* 1. Hero Canvas */}
       <div className="site-container">
-        <div className="relative overflow-hidden rounded-2xl bg-white p-6 sm:p-8 lg:p-10 shadow-xs border border-[#EBEBEB]">
+        <div className="relative overflow-hidden rounded-2xl bg-white p-5 sm:p-7 lg:p-8 shadow-xs border border-[#EBEBEB]">
           <div className="relative z-10 mx-auto max-w-[1080px]">
             <Navbar />
 
@@ -36,7 +36,7 @@ export default function PrivacyPolicyPage() {
       {/* 2. Privacy Policy Document Island */}
       <div className="site-container">
         <div className="rounded-2xl bg-white shadow-xs border border-[#EBEBEB] overflow-hidden">
-          <div className="py-10 lg:py-14 px-6 lg:px-10 bg-white">
+          <div className="py-7 lg:py-9 px-6 lg:px-10 bg-white">
             <div className="mx-auto max-w-[780px] text-[15px] leading-relaxed text-[#525252] space-y-7">
               <section>
                 <h2 className="text-xl font-bold font-heading text-[#101010] mb-2.5">

@@ -116,10 +116,10 @@ export default function CareersPage() {
   const { company } = RHEK_CONFIG;
 
   return (
-    <main className="min-h-screen py-4 sm:py-6 space-y-10 sm:space-y-12 lg:space-y-14">
+    <main className="min-h-screen py-3 sm:py-5 space-y-6 sm:space-y-8">
       {/* 1. Hero Canvas */}
       <div className="site-container">
-        <div className="relative overflow-hidden rounded-2xl bg-white p-6 sm:p-8 lg:p-10 shadow-xs border border-[#EBEBEB]">
+        <div className="relative overflow-hidden rounded-2xl bg-white p-5 sm:p-7 lg:p-8 shadow-xs border border-[#EBEBEB]">
           <div className="relative z-10 mx-auto max-w-[1080px]">
             <Navbar />
 
@@ -136,35 +136,35 @@ export default function CareersPage() {
 
       {/* 2. Perks & Culture */}
       <div className="site-container">
-        <div className="rounded-2xl bg-white shadow-xs border border-[#EBEBEB] overflow-hidden p-6 sm:p-10 lg:p-12">
+        <div className="rounded-2xl bg-white shadow-xs border border-[#EBEBEB] overflow-hidden p-5 sm:p-7 lg:p-9">
           <div className="mx-auto max-w-[1080px]">
-            <div className="max-w-2xl mb-10">
-              <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-[#737373] mb-2">
+            <div className="max-w-2xl mb-6">
+              <span className="inline-block text-[10.5px] font-bold uppercase tracking-wider text-[#737373] mb-1">
                 Why Work With Us
               </span>
-              <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-[#101010] tracking-[-0.035em] leading-[1.15]">
+              <h2 className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-[#101010] tracking-[-0.03em] leading-snug">
                 High Standards, Meaningful Freedom, Real Impact
               </h2>
-              <p className="text-[15px] text-[#525252] leading-relaxed mt-2.5">
+              <p className="text-[13.5px] text-[#525252] leading-relaxed mt-1.5">
                 We believe in autonomous high-performers, transparent compensation, and eliminating unnecessary meetings so you can do your best work.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
               {BENEFITS.map((b) => {
                 const Icon = b.icon;
                 return (
                   <div
                     key={b.title}
-                    className="rounded-xl border border-[#EBEBEB] bg-[#FAFAFA] p-5 hover:bg-white hover:border-[#101010] transition-colors"
+                    className="rounded-xl border border-[#EBEBEB] bg-[#FAFAFA] p-4 hover:bg-white hover:border-[#101010] transition-colors"
                   >
-                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white border border-[#EBEBEB] text-[#101010] mb-3.5">
-                      <Icon className="h-4 w-4" />
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white border border-[#EBEBEB] text-[#101010] mb-2.5">
+                      <Icon className="h-3.5 w-3.5" />
                     </div>
-                    <h3 className="text-[14.5px] font-bold text-[#101010] mb-1.5">
+                    <h3 className="text-[13.5px] font-bold text-[#101010] mb-1">
                       {b.title}
                     </h3>
-                    <p className="text-[12.5px] text-[#525252] leading-relaxed">
+                    <p className="text-[12px] text-[#525252] leading-relaxed">
                       {b.description}
                     </p>
                   </div>
@@ -173,31 +173,31 @@ export default function CareersPage() {
             </div>
 
             {/* 3. Open Positions */}
-            <div className="mt-14 pt-10 border-t border-[#EBEBEB]">
-              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+            <div className="mt-8 pt-6 border-t border-[#EBEBEB]">
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-5">
                 <div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#737373]">
+                  <span className="text-[10.5px] font-bold uppercase tracking-wider text-[#737373]">
                     Open Opportunities
                   </span>
-                  <h3 className="text-xl sm:text-2xl font-bold font-heading text-[#101010] mt-1">
+                  <h3 className="text-lg sm:text-xl font-bold font-heading text-[#101010] mt-0.5">
                     Current Openings at RHEK GLOBAL
                   </h3>
                 </div>
-                <p className="text-[12.5px] text-[#737373]">
+                <p className="text-[12px] text-[#737373]">
                   {OPEN_ROLES.length} active positions available
                 </p>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {OPEN_ROLES.map((role) => (
                   <div
                     key={role.id}
-                    className="rounded-xl border border-[#EBEBEB] bg-[#FAFAFA] p-6 hover:bg-white hover:border-[#101010] transition-colors"
+                    className="rounded-xl border border-[#EBEBEB] bg-[#FAFAFA] p-4 sm:p-5 hover:bg-white hover:border-[#101010] transition-colors"
                   >
-                    <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-[#EBEBEB]">
+                    <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 pb-3 border-b border-[#EBEBEB]">
                       <div>
-                        <div className="flex flex-wrap items-center gap-2 mb-2">
-                          <span className="text-[10.5px] font-semibold text-[#101010] bg-white border border-[#EBEBEB] px-2 py-0.5 rounded">
+                        <div className="flex flex-wrap items-center gap-1.5 mb-1.5">
+                          <span className="text-[10px] font-semibold text-[#101010] bg-white border border-[#EBEBEB] px-2 py-0.5 rounded">
                             {role.department}
                           </span>
                           <span className="text-[10.5px] font-semibold text-[#737373] bg-white border border-[#EBEBEB] px-2 py-0.5 rounded">
@@ -263,21 +263,21 @@ export default function CareersPage() {
             </div>
 
             {/* General Inquiries */}
-            <div className="mt-10 rounded-xl bg-[#101010] border border-white/10 p-7 text-white flex flex-col md:flex-row items-center justify-between gap-5 shadow-md">
+            <div className="mt-8 rounded-xl bg-[#101010] border border-white/10 p-5 sm:p-6 text-white flex flex-col md:flex-row items-center justify-between gap-5 shadow-md">
               <div className="max-w-[620px]">
-                <span className="inline-block text-[11px] font-semibold uppercase tracking-wider text-[#E9204F] mb-1.5">
+                <span className="inline-block text-[10.5px] font-semibold uppercase tracking-wider text-[#E9204F] mb-1">
                   General Inquiries
                 </span>
-                <h3 className="text-lg sm:text-xl font-bold font-heading text-white">
+                <h3 className="text-base sm:text-lg font-bold font-heading text-white">
                   Don&apos;t see an exact match for your skillset?
                 </h3>
-                <p className="text-[13.5px] text-[#A3A3A3] mt-1 leading-relaxed">
+                <p className="text-[12.5px] text-[#A3A3A3] mt-0.5 leading-relaxed">
                   We are always open to connecting with top-tier SDRs, designers, full-stack engineers, and ops specialists.
                 </p>
               </div>
               <a
                 href={`mailto:${company.contactEmail}?subject=General%20Application%20-%20RHEK%20GLOBAL`}
-                className="inline-flex items-center gap-1.5 rounded-lg bg-[#E9204F] hover:bg-white hover:text-[#101010] px-5 py-2.5 text-[12.5px] font-semibold text-white whitespace-nowrap transition-colors min-h-[40px] shrink-0"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-[#E9204F] hover:bg-white hover:text-[#101010] px-4 py-2 text-[12px] font-semibold text-white whitespace-nowrap transition-colors min-h-[38px] shrink-0"
               >
                 <Mail className="h-3.5 w-3.5" />
                 <span>Send Open Application</span>
