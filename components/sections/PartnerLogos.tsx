@@ -29,7 +29,7 @@ export function PartnerLogos() {
   ];
 
   return (
-    <div className="mt-8 lg:mt-10 pt-7 border-t border-[#EBEBEB]">
+    <div className="mt-6 pt-5 border-t border-[#EBEBEB]">
       <div className="flex flex-wrap items-center justify-between gap-6 sm:gap-10">
         {partners.map((partner) => (
           <div

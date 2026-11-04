@@ -47,10 +47,14 @@ const config: Config = {
         "4xl": "28px",
       },
       boxShadow: {
+        "2xs": "0 1px 1px 0 rgba(0, 0, 0, 0.04)",
         xs: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
         glass: "0 24px 50px -12px rgba(28, 56, 102, 0.08), inset 0 1px 1px #FFFFFF",
         "nav-glass": "0 4px 20px rgba(0, 0, 0, 0.03)",
         "pill-blue": "0 8px 20px -4px rgba(37, 99, 235, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.6)",
+      },
+      spacing: {
+        4.5: "1.125rem",
       },
     },
   },

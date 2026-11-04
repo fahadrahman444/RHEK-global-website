@@ -40,18 +40,18 @@ export function PortfolioSection({
     return (
       <section id="work" className="site-container">
         {/* Inset Framed Island */}
-        <div className="relative overflow-hidden rounded-2xl bg-[#101010] text-white p-7 sm:p-11 lg:p-14 shadow-lg border border-white/10">
+        <div className="relative overflow-hidden rounded-2xl bg-[#101010] text-white p-5 sm:p-7 lg:p-9 shadow-lg border border-white/10">
           <div className="relative z-10">
             {/* Header Row */}
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
               <div>
-                <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-[#E9204F] bg-white/10 border border-white/15 px-3 py-1 rounded mb-2.5">
+                <span className="inline-block text-[10.5px] font-bold uppercase tracking-wider text-[#E9204F] bg-white/10 border border-white/15 px-2.5 py-0.5 rounded mb-2">
                   Selected Case Studies
                 </span>
-                <h2 className="font-heading text-[28px] sm:text-[38px] font-bold tracking-[-0.035em] leading-[1.15] text-white">
+                <h2 className="font-heading text-[24px] sm:text-[32px] font-bold tracking-[-0.035em] leading-[1.15] text-white">
                   Proven Results, Engineered for Impact.
                 </h2>
-                <p className="mt-2 text-[14.5px] text-[#A3A3A3] max-w-xl leading-relaxed">
+                <p className="mt-1.5 text-[14px] text-[#A3A3A3] max-w-xl leading-relaxed">
                   Deep architectural case studies delivering verified performance metrics, zero-downtime reliability, and measurable business growth.
                 </p>
               </div>
@@ -65,7 +65,7 @@ export function PortfolioSection({
                       key={cat}
                       type="button"
                       onClick={() => setActiveCategory(cat)}
-                      className={`rounded-lg px-3.5 py-1.5 text-[12px] font-semibold transition-colors min-h-[38px] inline-flex items-center ${
+                      className={`rounded-lg px-3 py-1 text-[11.5px] font-semibold transition-colors min-h-[34px] inline-flex items-center ${
                         isActive
                           ? "bg-white text-[#101010]"
                           : "bg-white/5 text-[#A3A3A3] border border-white/10 hover:border-white/20 hover:text-white"

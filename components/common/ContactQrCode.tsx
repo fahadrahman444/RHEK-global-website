@@ -25,7 +25,7 @@ export function ContactQrCode({
           xmlns="http://www.w3.org/2000/svg"
           aria-label="QR Code to contact RHEK GLOBAL"
           role="img"
-          className="transition-transform hover:scale-102"
+          className="transition-transform hover:scale-[1.02]"
         >
           {/* Background */}
           <rect width="160" height="160" fill="white" rx="8" />

@@ -74,7 +74,7 @@ export function InteractiveLeadShowcase({ leadSamples, serviceTitle }: Interacti
                 }`}
               >
                 <span>{cat}</span>
-                <span className={`text-[9.5px] rounded px-1.5 py-0.2 font-mono ${isActive ? "bg-white/20 text-white" : "bg-[#F0F0F0] text-[#737373]"}`}>
+                <span className={`text-[9.5px] rounded px-1.5 py-0.5 font-mono ${isActive ? "bg-white/20 text-white" : "bg-[#F0F0F0] text-[#737373]"}`}>
                   {count}
                 </span>
               </button>
