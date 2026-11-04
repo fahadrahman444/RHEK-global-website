@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { ServiceSubNav } from "@/components/services/ServiceSubNav";
 import { WebDevHeroClean } from "@/components/services/web-dev/WebDevHeroClean";
 import { WebDevProblemSolution } from "@/components/services/web-dev/WebDevProblemSolution";
 import { WebDevServicesGrid } from "@/components/services/web-dev/WebDevServicesGrid";
@@ -28,28 +27,11 @@ export const metadata: Metadata = {
   },
 };
 
-const WEB_DEV_SUBNAV_ITEMS = [
-  { id: "overview", label: "Overview" },
-  { id: "process", label: "Our Process" },
-  { id: "technologies", label: "Technologies" },
-  { id: "pricing", label: "Pricing" },
-  { id: "faqs", label: "FAQs" },
-];
-
 export default function WebDevelopmentPage() {
   return (
     <div className="relative min-h-screen bg-white text-[#525252] selection:bg-[#E9204F] selection:text-white">
-      {/* 1. Global Master Navigation (Consistent across the entire site) */}
+      {/* 1. Global Master Navigation (Single clean navbar) */}
       <Navbar variant="light" />
-
-      {/* 2. Contextual Secondary Service Navigation (Sticks below master navbar) */}
-      <ServiceSubNav
-        serviceName="Web Design & Development"
-        serviceCategory="Service Navigation"
-        items={WEB_DEV_SUBNAV_ITEMS}
-        ctaLabel="Book a Meeting"
-        ctaTargetId="cta"
-      />
 
       <main>
         {/* 1. Hero section */}

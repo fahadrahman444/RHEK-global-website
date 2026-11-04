@@ -73,7 +73,7 @@ export function ServiceSubNav({
   return (
     <nav
       aria-label={`${serviceName} contextual navigation`}
-      className={`sticky top-[74px] lg:top-[82px] z-40 w-full transition-all duration-200 border-b ${
+      className={`hidden md:block sticky top-[74px] lg:top-[82px] z-40 w-full transition-all duration-200 border-b ${
         isScrolled
           ? "bg-white/95 backdrop-blur-md border-[#E5E5E5] shadow-xs"
           : "bg-white/90 backdrop-blur-sm border-[#EBEBEB]"

@@ -94,13 +94,13 @@ export function IndustriesSection() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-4 mb-5 sm:mb-6">
         <div className="max-w-[620px]">
-          <span className="inline-block text-[10px] sm:text-[10.5px] font-bold uppercase tracking-widest text-[#737373] mb-1">
+          <span className="inline-block text-[11px] font-bold uppercase tracking-widest text-[#737373] mb-1">
             Sector Coverage
           </span>
-          <h2 className="font-heading text-[22px] sm:text-[30px] lg:text-[32px] font-bold text-[#101010] tracking-[-0.035em] leading-[1.15]">
+          <h2 className="font-heading text-[22px] sm:text-[28px] lg:text-[32px] font-bold text-[#101010] tracking-[-0.035em] leading-tight">
             Tailored Lead Criteria Across 10 Commercial Verticals
           </h2>
-          <p className="mt-1.5 text-[13.5px] sm:text-[14.5px] leading-relaxed text-[#525252]">
+          <p className="mt-1.5 text-[14px] sm:text-[15px] leading-relaxed text-[#525252]">
             Every industry has unique cleaning schedules, compliance gates, and decision-maker profiles. We filter specifically for your ideal account profile.
           </p>
         </div>
@@ -114,7 +114,7 @@ export function IndustriesSection() {
         </Link>
       </div>
 
-      {/* Visual Sector Matrix: 5 Columns Desktop, 2 Columns Mobile */}
+      {/* Visual Sector Matrix */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-3">
         {SECTOR_DATA.map((sector, i) => {
           const Icon = sector.icon;
@@ -128,26 +128,26 @@ export function IndustriesSection() {
                   <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-neutral-100 text-[#101010] group-hover:bg-[#101010] group-hover:text-white transition-colors">
                     <Icon className="h-3.5 w-3.5" />
                   </div>
-                  <span className="text-[9.5px] font-mono font-semibold text-[#737373] bg-neutral-50 px-1.5 py-0.5 rounded border border-neutral-200/50">
-                    0{i + 1}
+                  <span className="text-[11px] font-mono font-semibold text-[#737373] bg-neutral-50 px-1.5 py-0.5 rounded border border-neutral-200/50">
+                    {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
 
-                <h3 className="text-[12.5px] sm:text-[13.5px] font-bold text-[#101010] leading-snug group-hover:text-[#E9204F] transition-colors">
+                <h3 className="text-[13.5px] sm:text-[14.5px] font-bold text-[#101010] leading-snug group-hover:text-[#E9204F] transition-colors">
                   {sector.name}
                 </h3>
 
                 <div className="mt-2.5 space-y-1">
-                  <div className="text-[10.5px] font-semibold text-[#101010] bg-neutral-50 rounded px-1.5 py-0.5 border border-neutral-100 truncate">
+                  <div className="text-[11px] sm:text-[11.5px] font-semibold text-[#101010] bg-neutral-50 rounded px-1.5 py-0.5 border border-neutral-100 truncate">
                     {sector.typicalScope}
                   </div>
-                  <div className="text-[10px] text-[#525252] truncate">
+                  <div className="text-[11px] text-[#525252] truncate">
                     {sector.cadence}
                   </div>
                 </div>
               </div>
 
-              <div className="mt-3 pt-2 border-t border-neutral-100 flex items-center justify-between text-[10.5px] font-semibold text-[#737373] group-hover:text-[#101010]">
+              <div className="mt-3 pt-2 border-t border-neutral-100 flex items-center justify-between text-[11.5px] font-semibold text-[#737373] group-hover:text-[#101010]">
                 <span>Scope Ready</span>
                 <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1 group-hover:text-[#E9204F]" />
               </div>
@@ -159,10 +159,10 @@ export function IndustriesSection() {
       {/* Customized Scope Callout Banner */}
       <div className="mt-4 sm:mt-5 rounded-xl border border-neutral-200/90 bg-[#FAFAFA] p-3.5 sm:p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-2xs">
         <div>
-          <div className="text-[13px] sm:text-[14px] font-bold text-[#101010]">
+          <div className="text-[13.5px] sm:text-[14.5px] font-bold text-[#101010]">
             Operating in a specialized regional niche?
           </div>
-          <p className="text-[11.5px] sm:text-[12.5px] text-[#525252] mt-0.5">
+          <p className="text-[12px] sm:text-[13px] text-[#525252] mt-0.5">
             We configure custom square footage thresholds, emergency cleaning filters, and local zip codes for your exact capability profile.
           </p>
         </div>

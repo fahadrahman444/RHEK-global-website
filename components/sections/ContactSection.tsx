@@ -172,13 +172,13 @@ export function ContactSection({
           {/* Left Column: Context, Trust Signals & Direct Meeting Card */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-4">
             <div>
-              <span className="inline-block text-[10px] sm:text-[10.5px] font-bold uppercase tracking-wider text-[#737373] mb-1">
+              <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-[#737373] mb-1">
                 Direct Scoping
               </span>
-              <h2 className="font-heading text-xl sm:text-2xl lg:text-[26px] font-bold tracking-[-0.03em] text-[#101010] leading-snug mb-1.5">
+              <h2 className="font-heading text-[22px] sm:text-[26px] font-bold tracking-[-0.03em] text-[#101010] leading-snug mb-1.5">
                 {customTitle || "Start your engagement with a senior team."}
               </h2>
-              <p className="text-[13px] sm:text-[14px] text-[#525252] leading-relaxed">
+              <p className="text-[13.5px] sm:text-[14.5px] text-[#525252] leading-relaxed">
                 {customSubtitle ||
                   "Specify your target territory, project scope, or operational requirements. We reply with scoping details within 24 hours."}
               </p>
@@ -186,37 +186,37 @@ export function ContactSection({
 
             {/* Compact Trust Badges (Horizontal / 2-Col on mobile) */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2 pt-3 border-t border-[#EBEBEB]">
-              <div className="flex items-center gap-2.5 rounded-lg p-2 bg-[#FAFAFA] border border-[#EBEBEB]/80 text-[#101010]">
+              <div className="flex items-center gap-2.5 rounded-lg p-2.5 bg-[#FAFAFA] border border-[#EBEBEB]/80 text-[#101010]">
                 <Clock className="h-4 w-4 text-[#101010] shrink-0" />
                 <div className="min-w-0">
-                  <h4 className="text-[12px] font-bold text-[#101010] leading-tight">
+                  <h4 className="text-[12.5px] sm:text-[13px] font-bold text-[#101010] leading-tight">
                     24-Hour SLA Response
                   </h4>
-                  <p className="text-[11px] text-[#737373] truncate">
+                  <p className="text-[11.5px] text-[#737373] truncate">
                     Direct tech and outreach consultation.
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-2.5 rounded-lg p-2 bg-[#FAFAFA] border border-[#EBEBEB]/80 text-[#101010]">
+              <div className="flex items-center gap-2.5 rounded-lg p-2.5 bg-[#FAFAFA] border border-[#EBEBEB]/80 text-[#101010]">
                 <ShieldCheck className="h-4 w-4 text-[#101010] shrink-0" />
                 <div className="min-w-0">
-                  <h4 className="text-[12px] font-bold text-[#101010] leading-tight">
+                  <h4 className="text-[12.5px] sm:text-[13px] font-bold text-[#101010] leading-tight">
                     Territory Exclusivity &amp; IP
                   </h4>
-                  <p className="text-[11px] text-[#737373] truncate">
+                  <p className="text-[11.5px] text-[#737373] truncate">
                     Exclusive county rights &amp; 100% IP ownership.
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-2.5 rounded-lg p-2 bg-[#FAFAFA] border border-[#EBEBEB]/80 text-[#101010] sm:col-span-2 lg:col-span-1">
+              <div className="flex items-center gap-2.5 rounded-lg p-2.5 bg-[#FAFAFA] border border-[#EBEBEB]/80 text-[#101010] sm:col-span-2 lg:col-span-1">
                 <Mail className="h-4 w-4 text-[#101010] shrink-0" />
                 <div className="min-w-0">
-                  <h4 className="text-[12px] font-bold text-[#101010] leading-tight">
+                  <h4 className="text-[12.5px] sm:text-[13px] font-bold text-[#101010] leading-tight">
                     Direct Executive Inbox
                   </h4>
-                  <p className="text-[11px] text-[#737373] truncate">
+                  <p className="text-[11.5px] text-[#737373] truncate">
                     {RHEK_CONFIG.company.contactEmail}
                   </p>
                 </div>
@@ -230,17 +230,17 @@ export function ContactSection({
                   <Calendar className="h-4 w-4" />
                 </div>
                 <div>
-                  <div className="text-[12px] font-bold text-[#101010] leading-tight">
+                  <div className="text-[12.5px] sm:text-[13px] font-bold text-[#101010] leading-tight">
                     Prefer a live walkthrough?
                   </div>
-                  <div className="text-[11px] text-[#737373]">
+                  <div className="text-[11.5px] text-[#737373]">
                     Book a 20-min scoping call directly on our calendar.
                   </div>
                 </div>
               </div>
               <Link
                 href="/book-a-meeting"
-                className="inline-flex items-center gap-1 rounded-lg bg-white border border-[#EBEBEB] hover:border-[#101010] px-3 py-1.5 text-[11.5px] font-semibold text-[#101010] whitespace-nowrap transition-colors shrink-0 shadow-2xs"
+                className="inline-flex items-center gap-1 rounded-lg bg-white border border-[#EBEBEB] hover:border-[#101010] px-3 py-1.5 text-[12px] font-semibold text-[#101010] whitespace-nowrap transition-colors shrink-0 shadow-2xs"
               >
                 <span>Book Call</span>
                 <ArrowRight className="h-3 w-3" />
@@ -286,7 +286,7 @@ export function ContactSection({
                   {/* Name and Email */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                     <div>
-                      <label htmlFor="name" className="block text-[11.5px] font-semibold text-[#101010] mb-1">
+                      <label htmlFor="name" className="block text-[12px] font-semibold text-[#101010] mb-1">
                         Your Name <span className="text-[#E9204F]">*</span>
                       </label>
                       <input
@@ -301,7 +301,7 @@ export function ContactSection({
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="block text-[11.5px] font-semibold text-[#101010] mb-1">
+                      <label htmlFor="email" className="block text-[12px] font-semibold text-[#101010] mb-1">
                         Work Email <span className="text-[#E9204F]">*</span>
                       </label>
                       <input
@@ -318,7 +318,7 @@ export function ContactSection({
 
                   {/* Service Requirement Dropdown */}
                   <div>
-                    <label htmlFor="service" className="block text-[11.5px] font-semibold text-[#101010] mb-1">
+                    <label htmlFor="service" className="block text-[12px] font-semibold text-[#101010] mb-1">
                       Required Discipline
                     </label>
                     <select
@@ -337,7 +337,7 @@ export function ContactSection({
 
                   {/* Budget Selector */}
                   <div>
-                    <span className="block text-[11.5px] font-semibold text-[#101010] mb-1">
+                    <span className="block text-[12px] font-semibold text-[#101010] mb-1">
                       Estimated Project Budget
                     </span>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
@@ -348,7 +348,7 @@ export function ContactSection({
                             key={b}
                             type="button"
                             onClick={() => setFormData({ ...formData, budget: b })}
-                            className={`rounded-lg px-2.5 py-1 text-[11.5px] font-semibold transition-colors min-h-[34px] inline-flex items-center justify-center ${
+                            className={`rounded-lg px-2.5 py-1 text-[12px] font-semibold transition-colors min-h-[34px] inline-flex items-center justify-center ${
                               isSelected
                                 ? "bg-[#101010] text-white"
                                 : "bg-white border border-[#E5E5E5] text-[#525252] hover:border-[#101010] hover:text-[#101010]"
@@ -363,7 +363,7 @@ export function ContactSection({
 
                   {/* Message Field (Snug 3 rows) */}
                   <div>
-                    <label htmlFor="message" className="block text-[11.5px] font-semibold text-[#101010] mb-1">
+                    <label htmlFor="message" className="block text-[12px] font-semibold text-[#101010] mb-1">
                       Goals &amp; Requirements
                     </label>
                     <textarea

@@ -63,13 +63,13 @@ export function ProcessSection() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-4 mb-5 sm:mb-6">
         <div className="max-w-[620px]">
-          <span className="inline-block text-[10px] sm:text-[10.5px] font-bold uppercase tracking-widest text-[#737373] mb-1">
+          <span className="inline-block text-[11px] font-bold uppercase tracking-widest text-[#737373] mb-1">
             Execution Framework
           </span>
-          <h2 className="font-heading text-[22px] sm:text-[30px] lg:text-[32px] font-bold text-[#101010] tracking-[-0.035em] leading-[1.15]">
+          <h2 className="font-heading text-[22px] sm:text-[28px] lg:text-[32px] font-bold text-[#101010] tracking-[-0.035em] leading-tight">
             4-Stage Pipeline from Scoping to Confirmed Handover
           </h2>
-          <p className="mt-1.5 text-[13.5px] sm:text-[14.5px] leading-relaxed text-[#525252]">
+          <p className="mt-1.5 text-[14px] sm:text-[15px] leading-relaxed text-[#525252]">
             A systematic, repeatable operating cadence designed to eliminate dry pipeline spells and protect your margins.
           </p>
         </div>
@@ -89,7 +89,7 @@ export function ProcessSection() {
         <div className="hidden lg:block absolute top-[28px] left-[40px] right-[40px] h-[2px] bg-neutral-200 z-0" />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 relative z-10">
-          {PIPELINE_PHASES.map((p, idx) => (
+          {PIPELINE_PHASES.map((p) => (
             <div
               key={p.phase}
               className="rounded-2xl border border-neutral-200/90 bg-white p-4 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-[#101010] transition-all flex flex-col justify-between group"
@@ -97,29 +97,29 @@ export function ProcessSection() {
               <div>
                 {/* Node Pill & Phase Number */}
                 <div className="flex items-center justify-between mb-3">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#101010] text-white font-mono text-[12px] font-bold group-hover:bg-[#E9204F] transition-colors shadow-2xs">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#101010] text-white font-mono text-[13px] font-bold group-hover:bg-[#E9204F] transition-colors shadow-2xs">
                     {p.phase}
                   </div>
-                  <span className="text-[10px] font-bold font-mono text-[#737373] bg-neutral-100 px-2 py-0.5 rounded">
+                  <span className="text-[11px] font-bold font-mono text-[#737373] bg-neutral-100 px-2 py-0.5 rounded">
                     {p.subtitle}
                   </span>
                 </div>
 
-                <span className="inline-block text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200/50 mb-1.5">
+                <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200/50 mb-1.5">
                   {p.badge}
                 </span>
 
-                <h3 className="font-heading text-[14.5px] sm:text-[16px] font-bold text-[#101010] leading-snug group-hover:text-[#E9204F] transition-colors">
+                <h3 className="font-heading text-[15px] sm:text-[16px] font-bold text-[#101010] leading-snug group-hover:text-[#E9204F] transition-colors">
                   {p.title}
                 </h3>
 
-                <p className="mt-1.5 text-[12px] text-[#525252] leading-relaxed">
+                <p className="mt-1.5 text-[12.5px] sm:text-[13px] text-[#525252] leading-relaxed">
                   {p.description}
                 </p>
               </div>
 
-              <div className="mt-3.5 pt-2.5 border-t border-neutral-100 flex items-center gap-1.5 text-[11px] font-semibold text-[#101010]">
-                <CheckCircle2 className="h-3 w-3 text-[#16A34A]" />
+              <div className="mt-3.5 pt-2.5 border-t border-neutral-100 flex items-center gap-1.5 text-[11.5px] sm:text-[12px] font-semibold text-[#101010]">
+                <CheckCircle2 className="h-3.5 w-3.5 text-[#16A34A]" />
                 <span>Phase Milestone Verified</span>
               </div>
             </div>
@@ -140,10 +140,10 @@ export function ProcessSection() {
                 <Icon className="h-3.5 w-3.5 text-[#E9204F]" />
               </div>
               <div>
-                <div className="text-[12px] font-bold text-[#101010] leading-tight">
+                <div className="text-[12.5px] sm:text-[13px] font-bold text-[#101010] leading-tight">
                   {m.label}
                 </div>
-                <div className="text-[10.5px] sm:text-[11px] text-[#525252] mt-0.5 leading-snug">
+                <div className="text-[11px] sm:text-[11.5px] text-[#525252] mt-0.5 leading-snug">
                   {m.detail}
                 </div>
               </div>

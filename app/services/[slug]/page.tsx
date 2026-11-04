@@ -3,7 +3,6 @@ import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { ServiceSubNav } from "@/components/services/ServiceSubNav";
 import { ServiceFaqAccordion } from "@/components/services/ServiceFaqAccordion";
 import { InteractiveLeadShowcase } from "@/components/services/InteractiveLeadShowcase";
 import { SERVICES_DETAILED_DATA } from "@/data/services-data";
@@ -138,15 +137,6 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
     <div className="relative min-h-screen bg-white text-[#525252] selection:bg-[#E9204F] selection:text-white">
       {/* 1. Global Master Navigation (Sticky on every page) */}
       <Navbar variant="light" />
-
-      {/* 2. Contextual Secondary Service Navigation (Sticks below master navbar) */}
-      <ServiceSubNav
-        serviceName={service.title}
-        serviceCategory="Service Navigation"
-        items={extension.subNavItems}
-        ctaLabel="Book a Meeting"
-        ctaTargetId="cta"
-      />
 
       <main className="space-y-16 sm:space-y-24 py-8 sm:py-12">
         {/* =========================================================================

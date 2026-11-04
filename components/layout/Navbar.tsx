@@ -129,6 +129,17 @@ export function Navbar({ variant = "light" }: NavbarProps = {}) {
   }, [pathname]);
 
   const isServicesActive = pathname.startsWith("/services");
+  const isWebDevPage = pathname === "/services/web-development";
+
+  const scrollToSection = (id: string) => {
+    setMobileMenuOpen(false);
+    const el = document.getElementById(id);
+    if (el) {
+      const offset = 80;
+      const pos = el.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: pos, behavior: "smooth" });
+    }
+  };
 
   return (
     <header
@@ -459,6 +470,39 @@ export function Navbar({ variant = "light" }: NavbarProps = {}) {
             className="absolute top-[64px] sm:top-[74px] left-3 right-3 sm:left-4 sm:right-4 z-50 rounded-2xl sm:rounded-3xl border border-[#F3F3F3] bg-white p-4 sm:p-5 shadow-2xl lg:hidden text-[#101010] max-h-[calc(100vh-80px)] overflow-y-auto"
           >
             <div className="flex flex-col gap-1 text-[15px] font-bold">
+              {/* Contextual Jump Index if on Web Development Page */}
+              {isWebDevPage && (
+                <div className="mb-2 p-3 rounded-xl bg-[#FAFAFA] border border-[#EBEBEB]">
+                  <div className="flex items-center justify-between pb-2 mb-1.5 border-b border-[#F0F0F0]">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#737373] flex items-center gap-1.5">
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#E9204F]" />
+                      On This Page
+                    </span>
+                    <span className="text-[10px] font-mono font-bold text-[#E9204F]">Web Dev</span>
+                  </div>
+                  <div className="grid grid-cols-2 gap-1.5 text-[12px]">
+                    {[
+                      { id: "overview", label: "Overview" },
+                      { id: "services", label: "Capabilities" },
+                      { id: "process", label: "Process" },
+                      { id: "technologies", label: "Tech Stack" },
+                      { id: "pricing", label: "Pricing" },
+                      { id: "faqs", label: "FAQs" },
+                    ].map((sec) => (
+                      <button
+                        key={sec.id}
+                        type="button"
+                        onClick={() => scrollToSection(sec.id)}
+                        className="flex items-center justify-between py-2 px-2.5 rounded-lg bg-white border border-[#EFEFEF] hover:border-[#101010] text-[#101010] font-semibold text-left transition-colors min-h-[38px]"
+                      >
+                        <span className="truncate">{sec.label}</span>
+                        <ArrowRight className="h-3 w-3 text-[#A3A3A3] shrink-0 ml-1" />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {/* Home */}
               <Link
                 href="/"
