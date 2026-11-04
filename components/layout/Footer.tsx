@@ -94,16 +94,16 @@ export function Footer() {
           </h4>
           <ul className="space-y-1.5 text-[13px] text-[#ACACAC] font-sans">
             <li>
-              <Link href="/services/janitorial-leads" className="hover:text-[#E9204F] transition-colors duration-700">Janitorial Leads</Link>
+              <Link href="/services/janitorial-lead-generation" className="hover:text-[#E9204F] transition-colors duration-700">Janitorial Leads</Link>
             </li>
             <li>
               <Link href="/services/sales-development" className="hover:text-[#E9204F] transition-colors duration-700">Sales Development</Link>
             </li>
             <li>
-              <Link href="/services/social-media-ads" className="hover:text-[#E9204F] transition-colors duration-700">Social Media Ads</Link>
+              <Link href="/services/social-media-advertising" className="hover:text-[#E9204F] transition-colors duration-700">Social Media Ads</Link>
             </li>
             <li>
-              <Link href="/services/web-development" className="hover:text-[#E9204F] transition-colors duration-700">Web Design & Dev</Link>
+              <Link href="/services/web-design-development" className="hover:text-[#E9204F] transition-colors duration-700">Web Design &amp; Dev</Link>
             </li>
             <li>
               <Link href="/services/graphic-design" className="hover:text-[#E9204F] transition-colors duration-700">Graphic Design</Link>
@@ -135,7 +135,7 @@ export function Footer() {
               <Link href="/#guarantee" className="hover:text-[#E9204F] transition-colors duration-700">Money-Back Guarantee</Link>
             </li>
             <li>
-              <Link href="/contact" className="hover:text-[#E9204F] transition-colors duration-700">Book a Meeting</Link>
+              <Link href="/book-a-meeting" className="hover:text-[#E9204F] transition-colors duration-700">Book a Meeting</Link>
             </li>
           </ul>
         </div>

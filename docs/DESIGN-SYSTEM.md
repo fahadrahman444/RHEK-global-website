@@ -92,3 +92,28 @@ Enforce divisible 12-column sub-units with unified 24px gutters:
 2. **Center Alignment (Selective):** Reserved strictly for standalone trust quotes and compact badges.
 3. **Asymmetrical Balance (Z-Pattern):** Top-left logo $\rightarrow$ Top-right booking CTA $\rightarrow$ Center-left value pitch $\rightarrow$ Bottom-right visual proof ticket.
 4. **Baseline & Edge Alignment:** Align text, numbers, and buttons to shared container baselines and 1280px edge boundaries.
+
+---
+
+## 9. Flagship Web Development Layout Specification
+
+Dedicated section architecture for `/services/web-development`:
+1. **Navbar:** Space-between horizontal alignment (80px height).
+2. **Hero Section (7 / 5 Grid):**
+   - Left 7 Columns: Left-aligned display headline (`leading-[1.08]`), subheadline, Next.js 15 badge, dual CTAs ("Request Architecture Review" + "Explore Case Studies").
+   - Right 5 Columns: Modern Dark `#101010` live architecture anchor with interactive tabs (Core Web Vitals, Lighthouse scores, strict tech stack).
+3. **Capabilities (3-Column Grid):**
+   - 3 equal-width cards: Next.js 15 & React RSC, High-Conversion UI/UX, Full-Stack SaaS.
+4. **Asymmetric Portfolio (7/5 and 5/7 Alternation):**
+   - Row 1: 7-Col Strata Financial OS + 5-Col Aurora Telehealth.
+   - Row 2: 5-Col Vanguard Design System + 7-Col Nordic Minimalist E-Commerce.
+5. **Engineering Rigor (2-Column Layout):**
+   - Left 5 Columns: Craftsmanship philosophy vs bloated page-builders.
+   - Right 7 Columns: 4-pillar architectural standards grid (Sub-second LCP, strict typing, minimal dependencies, 100% code ownership).
+6. **Delivery Process (4-Column Grid):**
+   - Stage 01 Discovery → Stage 02 Design System → Stage 03 Engineering → Stage 04 Launch & Audit.
+7. **Pricing Packages (3-Column Grid):**
+   - Landing Page ($2,200), Corporate Platform ($4,800 featured dark card), Bespoke Web App (Custom).
+8. **Direct Consultation (2-Column Layout):**
+   - Left 5 Columns: Technical guarantees, direct email, 24-hr response SLA.
+   - Right 7 Columns: Direct RFP Form with button mutation locks and validation.

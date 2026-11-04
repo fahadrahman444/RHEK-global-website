@@ -42,6 +42,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/book-a-meeting`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/work`,
       lastModified: new Date(),
       changeFrequency: "weekly",
@@ -55,7 +61,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  const serviceRoutes: MetadataRoute.Sitemap = Object.keys(SERVICES_DETAILED_DATA).map((slug) => ({
+  const CANONICAL_SERVICE_SLUGS = [
+    "janitorial-lead-generation",
+    "sales-development",
+    "social-media-advertising",
+    "web-development",
+    "graphic-design",
+    "video-production",
+    "email-marketing",
+    "virtual-assistant",
+  ];
+
+  const serviceRoutes: MetadataRoute.Sitemap = CANONICAL_SERVICE_SLUGS.map((slug) => ({
     url: `${baseUrl}/services/${slug}`,
     lastModified: new Date(),
     changeFrequency: "weekly",

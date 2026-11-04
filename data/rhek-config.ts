@@ -63,8 +63,10 @@ export const RHEK_CONFIG = {
     headline: "Empowering businesses through intelligent digital, operational and outsourcing solutions.",
     subheadline:
       "From high-conversion janitorial lead generation and sales appointment setting to premium 3D web development and global back-office outsourcing.",
-    meetingUrl: "/contact", // Directs all consultation and booking CTAs to RHEK internal inquiry
+    meetingUrl: "/book-a-meeting", // Directs all consultation and booking CTAs to RHEK internal inquiry
     contactEmail: "contact@rhekglobal.com",
+    contactPhone: "+16466948464",
+    displayPhone: "+1 (646) 694-8464",
     tagline: "Your Trust, Our Commitment, Your Satisfaction.",
   },
 

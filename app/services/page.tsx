@@ -48,6 +48,17 @@ function getServiceIcon(id: string) {
   }
 }
 
+const SERVICE_CANONICAL_SLUGS: Record<string, string> = {
+  "janitorial-leads": "janitorial-lead-generation",
+  "sales-development": "sales-development",
+  "social-media-ads": "social-media-advertising",
+  "web-development": "web-design-development",
+  "graphic-design": "graphic-design",
+  "video-production": "video-production",
+  "email-marketing": "email-marketing",
+  "virtual-assistant": "virtual-assistant",
+};
+
 export default function ServicesPage() {
   return (
     <main className="min-h-screen py-3 sm:py-5 space-y-6 sm:space-y-8">
@@ -103,7 +114,7 @@ export default function ServicesPage() {
 
                   <div className="mt-4 pt-3 border-t border-[#EBEBEB] flex flex-wrap items-center gap-2.5">
                     <Link
-                      href={`/services/${service.id}`}
+                      href={`/services/${SERVICE_CANONICAL_SLUGS[service.id] || service.id}`}
                       className="inline-flex items-center gap-1.5 rounded-lg bg-[#101010] hover:bg-[#E9204F] px-3.5 py-1.5 text-[12px] font-semibold text-white transition-colors min-h-[36px]"
                     >
                       <span>Explore Detail</span>

@@ -32,10 +32,10 @@ export interface NavServiceItem {
 
 export const SERVICES_LIST: NavServiceItem[] = [
   {
-    id: "janitorial-leads",
+    id: "janitorial-lead-generation",
     title: "Janitorial Lead Generation",
     shortDesc: "Confirmed facility decision-maker appointments",
-    href: "/services/janitorial-leads",
+    href: "/services/janitorial-lead-generation",
     icon: Sparkles,
   },
   {
@@ -46,17 +46,17 @@ export const SERVICES_LIST: NavServiceItem[] = [
     icon: PhoneCall,
   },
   {
-    id: "social-media-ads",
+    id: "social-media-advertising",
     title: "Social Media Advertising",
     shortDesc: "High-ROI paid customer acquisition campaigns",
-    href: "/services/social-media-ads",
+    href: "/services/social-media-advertising",
     icon: Megaphone,
   },
   {
-    id: "web-development",
+    id: "web-design-development",
     title: "Web Design & Development",
     shortDesc: "High-performance modern web applications",
-    href: "/services/web-development",
+    href: "/services/web-design-development",
     icon: Code2,
   },
   {
@@ -89,12 +89,18 @@ export const SERVICES_LIST: NavServiceItem[] = [
   },
 ];
 
-export function Navbar() {
+export interface NavbarProps {
+  variant?: "light" | "dark";
+}
+
+export function Navbar({ variant = "light" }: NavbarProps = {}) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [mobileServicesExpanded, setMobileServicesExpanded] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
+
+  const isDark = variant === "dark";
 
   // Close desktop dropdown on click outside or escape key
   useEffect(() => {
@@ -125,15 +131,24 @@ export function Navbar() {
   const isServicesActive = pathname.startsWith("/services");
 
   return (
-    <header className="relative z-50 flex justify-center w-full max-w-[1280px] mx-auto pt-2 pb-4">
-      <nav className="flex h-[76px] lg:h-[86px] w-full items-center justify-between border-b border-[#F3F3F3] bg-transparent px-2 sm:px-4 transition-all">
+    <header
+      className={`sticky top-0 z-50 w-full transition-all duration-200 ${
+        isDark
+          ? "bg-[#0A0A0B]/95 backdrop-blur-md border-b border-white/10"
+          : "bg-white/95 backdrop-blur-md border-b border-[#F0F0F0]"
+      }`}
+    >
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
+        <nav
+          className="flex h-[74px] lg:h-[82px] w-full items-center justify-between"
+        >
         {/* Brand Logo */}
         <Link
           href="/"
           className="transition hover:opacity-95 shrink-0"
           aria-label="RHEK GLOBAL Homepage"
         >
-          <BrandLogo size={36} variant="light" />
+          <BrandLogo size={36} variant={variant} />
         </Link>
 
         {/* Desktop Navigation Links */}
@@ -143,13 +158,17 @@ export function Navbar() {
             href="/"
             className={`relative py-1 font-semibold text-[13.5px] transition-colors duration-200 ${
               pathname === "/"
-                ? "text-[#101010] font-bold"
-                : "text-[#525252] hover:text-[#101010]"
+                ? isDark
+                  ? "text-white font-bold"
+                  : "text-[#101010] font-bold"
+                : isDark
+                  ? "text-[#A3A3A3] hover:text-white"
+                  : "text-[#525252] hover:text-[#101010]"
             }`}
           >
             Home
             {pathname === "/" && (
-              <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#101010]" />
+              <span className={`absolute bottom-0 left-0 right-0 h-[2px] ${isDark ? "bg-[#E9204F]" : "bg-[#101010]"}`} />
             )}
           </Link>
 
@@ -158,13 +177,17 @@ export function Navbar() {
             href="/about"
             className={`relative py-1 font-semibold text-[13.5px] transition-colors duration-200 ${
               pathname === "/about"
-                ? "text-[#101010] font-bold"
-                : "text-[#525252] hover:text-[#101010]"
+                ? isDark
+                  ? "text-white font-bold"
+                  : "text-[#101010] font-bold"
+                : isDark
+                  ? "text-[#A3A3A3] hover:text-white"
+                  : "text-[#525252] hover:text-[#101010]"
             }`}
           >
-            About
+            About Us
             {pathname === "/about" && (
-              <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#101010]" />
+              <span className={`absolute bottom-0 left-0 right-0 h-[2px] ${isDark ? "bg-[#E9204F]" : "bg-[#101010]"}`} />
             )}
           </Link>
 
@@ -180,13 +203,17 @@ export function Navbar() {
                 href="/services"
                 className={`relative py-1 font-semibold text-[13.5px] transition-colors duration-200 ${
                   isServicesActive
-                    ? "text-[#101010] font-bold"
-                    : "text-[#525252] hover:text-[#101010]"
+                    ? isDark
+                      ? "text-white font-bold"
+                      : "text-[#101010] font-bold"
+                    : isDark
+                      ? "text-[#A3A3A3] hover:text-white"
+                      : "text-[#525252] hover:text-[#101010]"
                 }`}
               >
                 Services
                 {isServicesActive && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#101010]" />
+                  <span className={`absolute bottom-0 left-0 right-0 h-[2px] ${isDark ? "bg-[#E9204F]" : "bg-[#101010]"}`} />
                 )}
               </Link>
               <button
@@ -194,11 +221,11 @@ export function Navbar() {
                 onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
                 aria-expanded={servicesDropdownOpen}
                 aria-label="Toggle Services dropdown"
-                className="ml-1 p-1 text-[#525252] hover:text-[#101010] transition-colors focus:outline-none"
+                className={`ml-1 p-1 transition-colors focus:outline-none ${isDark ? "text-[#A3A3A3] hover:text-white" : "text-[#525252] hover:text-[#101010]"}`}
               >
                 <ChevronDown
                   className={`h-3.5 w-3.5 transition-transform duration-200 ${
-                    servicesDropdownOpen ? "rotate-180 text-[#101010]" : ""
+                    servicesDropdownOpen ? `rotate-180 ${isDark ? "text-white" : "text-[#101010]"}` : ""
                   }`}
                 />
               </button>
@@ -214,15 +241,31 @@ export function Navbar() {
                   transition={{ duration: 0.15 }}
                   className="absolute top-full left-1/2 -translate-x-1/2 pt-2 z-50 w-[600px]"
                 >
-                  <div className="rounded-xl border border-[#EBEBEB] bg-white p-5 shadow-xl ring-1 ring-black/5">
-                    <div className="flex items-center justify-between pb-3 mb-2 border-b border-[#F0F0F0]">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-[#737373]">
+                  <div
+                    className={`rounded-xl border p-5 shadow-2xl ${
+                      isDark
+                        ? "border-white/10 bg-[#141416] text-white ring-1 ring-white/10"
+                        : "border-[#EBEBEB] bg-white text-[#101010] ring-1 ring-black/5"
+                    }`}
+                  >
+                    <div
+                      className={`flex items-center justify-between pb-3 mb-2 border-b ${
+                        isDark ? "border-white/10" : "border-[#F0F0F0]"
+                      }`}
+                    >
+                      <span
+                        className={`text-[11px] font-bold uppercase tracking-wider ${
+                          isDark ? "text-[#A3A3A3]" : "text-[#737373]"
+                        }`}
+                      >
                         Core Capabilities
                       </span>
                       <Link
                         href="/services"
                         onClick={() => setServicesDropdownOpen(false)}
-                        className="text-[12px] font-semibold text-[#101010] hover:text-[#E9204F] inline-flex items-center gap-1 transition-colors"
+                        className={`text-[12px] font-semibold hover:text-[#E9204F] inline-flex items-center gap-1 transition-colors ${
+                          isDark ? "text-white" : "text-[#101010]"
+                        }`}
                       >
                         <span>View Overview</span>
                         <ArrowRight className="h-3 w-3" />
@@ -232,21 +275,57 @@ export function Navbar() {
                     <div className="grid grid-cols-2 gap-2">
                       {SERVICES_LIST.map((service) => {
                         const Icon = service.icon;
+                        const isCurrent = pathname === service.href;
                         return (
                           <Link
                             key={service.id}
                             href={service.href}
                             onClick={() => setServicesDropdownOpen(false)}
-                            className="group flex items-start gap-3 p-2.5 rounded-lg hover:bg-[#FAFAFA] border border-transparent hover:border-[#EBEBEB] transition-all duration-150"
+                            className={`group flex items-start gap-3 p-2.5 rounded-lg border transition-all duration-150 ${
+                              isCurrent
+                                ? isDark
+                                  ? "bg-white/10 border-[#E9204F]/60 text-white"
+                                  : "bg-[#E9204F]/5 border-[#E9204F]/40 text-[#101010]"
+                                : isDark
+                                  ? "hover:bg-white/5 border-transparent hover:border-white/10"
+                                  : "hover:bg-[#FAFAFA] border-transparent hover:border-[#EBEBEB]"
+                            }`}
                           >
-                            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-[#FAFAFA] border border-[#EBEBEB] text-[#101010] group-hover:text-[#E9204F] transition-colors">
+                            <div
+                              className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-md border transition-colors ${
+                                isCurrent
+                                  ? "bg-[#E9204F] text-white border-[#E9204F]"
+                                  : isDark
+                                    ? "bg-white/10 border-white/10 text-white group-hover:text-[#E9204F]"
+                                    : "bg-[#FAFAFA] border-[#EBEBEB] text-[#101010] group-hover:text-[#E9204F]"
+                              }`}
+                            >
                               <Icon className="h-3.5 w-3.5" />
                             </div>
                             <div className="flex-1 min-w-0">
-                              <p className="text-[13px] font-semibold text-[#101010] group-hover:text-[#E9204F] transition-colors leading-snug truncate">
-                                {service.title}
-                              </p>
-                              <p className="text-[11px] text-[#737373] leading-tight truncate mt-0.5">
+                              <div className="flex items-center justify-between gap-1">
+                                <p
+                                  className={`text-[13px] font-semibold leading-snug truncate ${
+                                    isCurrent
+                                      ? "text-[#E9204F] font-bold"
+                                      : isDark
+                                        ? "text-white group-hover:text-[#E9204F]"
+                                        : "text-[#101010] group-hover:text-[#E9204F]"
+                                  }`}
+                                >
+                                  {service.title}
+                                </p>
+                                {isCurrent && (
+                                  <span className="text-[9px] font-bold tracking-wider uppercase px-1.5 py-0.5 rounded bg-[#E9204F]/10 text-[#E9204F]">
+                                    Current
+                                  </span>
+                                )}
+                              </div>
+                              <p
+                                className={`text-[11px] leading-tight truncate mt-0.5 ${
+                                  isDark ? "text-[#A3A3A3]" : "text-[#737373]"
+                                }`}
+                              >
                                 {service.shortDesc}
                               </p>
                             </div>
@@ -256,14 +335,20 @@ export function Navbar() {
                     </div>
 
                     {/* Bottom CTA bar */}
-                    <div className="mt-3 pt-3 border-t border-[#F0F0F0] flex items-center justify-between bg-[#FAFAFA] -mx-5 -mb-5 px-5 py-3 rounded-b-xl">
-                      <p className="text-[12px] text-[#737373]">
+                    <div
+                      className={`mt-3 pt-3 border-t flex items-center justify-between -mx-5 -mb-5 px-5 py-3 rounded-b-xl ${
+                        isDark ? "border-white/10 bg-white/5" : "border-[#F0F0F0] bg-[#FAFAFA]"
+                      }`}
+                    >
+                      <p className={`text-[12px] ${isDark ? "text-[#A3A3A3]" : "text-[#737373]"}`}>
                         Need a custom lead cadence or development scope?
                       </p>
                       <Link
                         href="/contact"
                         onClick={() => setServicesDropdownOpen(false)}
-                        className="text-[12px] font-semibold text-[#101010] hover:text-[#E9204F] inline-flex items-center gap-1 transition-colors"
+                        className={`text-[12px] font-semibold hover:text-[#E9204F] inline-flex items-center gap-1 transition-colors ${
+                          isDark ? "text-white" : "text-[#101010]"
+                        }`}
                       >
                         <span>Consult Our Team</span>
                         <ArrowUpRight className="h-3.5 w-3.5" />
@@ -280,13 +365,17 @@ export function Navbar() {
             href="/team"
             className={`relative py-1 font-semibold text-[13.5px] transition-colors duration-200 ${
               pathname === "/team"
-                ? "text-[#101010] font-bold"
-                : "text-[#525252] hover:text-[#101010]"
+                ? isDark
+                  ? "text-white font-bold"
+                  : "text-[#101010] font-bold"
+                : isDark
+                  ? "text-[#A3A3A3] hover:text-white"
+                  : "text-[#525252] hover:text-[#101010]"
             }`}
           >
             Team
             {pathname === "/team" && (
-              <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#101010]" />
+              <span className={`absolute bottom-0 left-0 right-0 h-[2px] ${isDark ? "bg-[#E9204F]" : "bg-[#101010]"}`} />
             )}
           </Link>
 
@@ -295,13 +384,17 @@ export function Navbar() {
             href="/careers"
             className={`relative py-1 font-semibold text-[13.5px] transition-colors duration-200 ${
               pathname === "/careers"
-                ? "text-[#101010] font-bold"
-                : "text-[#525252] hover:text-[#101010]"
+                ? isDark
+                  ? "text-white font-bold"
+                  : "text-[#101010] font-bold"
+                : isDark
+                  ? "text-[#A3A3A3] hover:text-white"
+                  : "text-[#525252] hover:text-[#101010]"
             }`}
           >
             Careers
             {pathname === "/careers" && (
-              <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#101010]" />
+              <span className={`absolute bottom-0 left-0 right-0 h-[2px] ${isDark ? "bg-[#E9204F]" : "bg-[#101010]"}`} />
             )}
           </Link>
 
@@ -310,13 +403,17 @@ export function Navbar() {
             href="/contact"
             className={`relative py-1 font-semibold text-[13.5px] transition-colors duration-200 ${
               pathname === "/contact"
-                ? "text-[#101010] font-bold"
-                : "text-[#525252] hover:text-[#101010]"
+                ? isDark
+                  ? "text-white font-bold"
+                  : "text-[#101010] font-bold"
+                : isDark
+                  ? "text-[#A3A3A3] hover:text-white"
+                  : "text-[#525252] hover:text-[#101010]"
             }`}
           >
             Contact
             {pathname === "/contact" && (
-              <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#101010]" />
+              <span className={`absolute bottom-0 left-0 right-0 h-[2px] ${isDark ? "bg-[#E9204F]" : "bg-[#101010]"}`} />
             )}
           </Link>
         </div>
@@ -324,17 +421,22 @@ export function Navbar() {
         {/* Action Button & Mobile Toggle */}
         <div className="flex items-center gap-3">
           <Link
-            href="/contact"
-            className="inline-flex items-center justify-center rounded-lg bg-[#101010] hover:bg-[#E9204F] text-white px-5 py-2 text-[13px] font-semibold transition-colors duration-200 min-h-[40px] shadow-xs"
+            href="/book-a-meeting"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-[#E9204F] hover:bg-[#101010] text-white px-4 sm:px-5 py-2 text-[13px] font-bold transition-all duration-200 min-h-[40px] shadow-sm hover:shadow-md"
           >
-            <span>Inquire</span>
+            <span>Book a Meeting</span>
+            <ArrowUpRight className="h-4 w-4" />
           </Link>
 
           {/* Mobile Menu Button */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#E5E5E5] bg-white text-[#101010] hover:border-[#101010] lg:hidden transition min-h-[40px] min-w-[40px]"
+            className={`flex h-10 w-10 items-center justify-center rounded-lg border lg:hidden transition min-h-[40px] min-w-[40px] ${
+              isDark
+                ? "border-white/15 bg-white/5 text-white hover:border-white"
+                : "border-[#E5E5E5] bg-white text-[#101010] hover:border-[#101010]"
+            }`}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
           >
@@ -342,6 +444,7 @@ export function Navbar() {
           </button>
         </div>
       </nav>
+      </div>
 
       {/* Mobile Menu Dropdown */}
       <AnimatePresence>
@@ -470,12 +573,12 @@ export function Navbar() {
               {/* Bottom Mobile CTA */}
               <div className="pt-3 mt-2 border-t border-[#F3F3F3]">
                 <Link
-                  href="/contact"
+                  href="/book-a-meeting"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-center gap-2 rounded-full bg-[#E9204F] hover:bg-[#101010] py-3 px-5 text-[14px] font-bold text-white shadow-md transition-all duration-700 ease-[cubic-bezier(0.17,0.67,0,1.01)] min-h-[44px] uppercase tracking-wider"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-[#E9204F] hover:bg-[#101010] py-3 px-5 text-[14px] font-bold text-white shadow-md transition-all duration-200 min-h-[44px]"
                 >
                   <Calendar className="h-4 w-4" />
-                  <span>Book A Call</span>
+                  <span>Book a Meeting</span>
                   <ArrowUpRight className="h-4 w-4" />
                 </Link>
               </div>
