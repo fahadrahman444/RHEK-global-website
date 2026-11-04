@@ -4,18 +4,18 @@ import { Footer } from "@/components/layout/Footer";
 import { BookMeetingClient } from "@/components/booking/BookMeetingClient";
 
 export const metadata: Metadata = {
-  title: "Book a Meeting — Rate Global",
+  title: "Book a Meeting — RHEK GLOBAL",
   description:
-    "Schedule a 25-minute strategy session with Rate Global. Discuss commercial cleaning leads, B2B sales pipelines, or custom web development with our leadership team.",
+    "Schedule a 25-minute strategy session with RHEK GLOBAL. Discuss commercial cleaning leads, B2B sales pipelines, or custom web development with our leadership team.",
   alternates: {
     canonical: "https://rhekglobal.com/book-a-meeting",
   },
   openGraph: {
-    title: "Book a Meeting — Rate Global",
+    title: "Book a Meeting — RHEK GLOBAL",
     description:
-      "Schedule a 25-minute strategy session with Rate Global. Discuss commercial cleaning leads, B2B sales pipelines, or custom web development with our leadership team.",
+      "Schedule a 25-minute strategy session with RHEK GLOBAL. Discuss commercial cleaning leads, B2B sales pipelines, or custom web development with our leadership team.",
     url: "https://rhekglobal.com/book-a-meeting",
-    siteName: "Rate Global",
+    siteName: "RHEK GLOBAL",
     type: "website",
   },
 };

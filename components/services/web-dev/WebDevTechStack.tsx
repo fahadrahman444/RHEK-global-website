@@ -38,7 +38,7 @@ export function WebDevTechStack() {
         {/* Header */}
         <div className="max-w-3xl mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#101010]/5 text-[#101010] text-[11px] font-bold uppercase tracking-wider mb-3">
-            Why Choose Rate Global
+            Why Choose RHEK GLOBAL
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#101010] tracking-tight leading-[1.15]">
             Modern Tech Stack &amp; Uncompromising Engineering Standards

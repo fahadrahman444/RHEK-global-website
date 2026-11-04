@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 
   if (!service) {
     return {
-      title: "Service Not Found — Rate Global",
+      title: "Service Not Found — RHEK GLOBAL",
       description: "The requested service detail page could not be located.",
     };
   }
@@ -66,7 +66,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
       title: service.metaTitle,
       description: service.metaDescription,
       url: `https://rhekglobal.com/services/${slug}`,
-      siteName: "Rate Global",
+      siteName: "RHEK GLOBAL",
       type: "website",
     },
   };
@@ -103,7 +103,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         "Low response rates and inconsistent lead volume from generic approaches.",
         "Lack of accountability and transparency in commercial contracts.",
       ],
-      solutionTitle: "The Rate Global Performance Standard",
+      solutionTitle: "The RHEK GLOBAL Performance Standard",
       solutionPoints: [
         "Dedicated domain specialists operating under rigorous performance SLAs.",
         "Transparent weekly reporting, verified metrics, and fixed deliverables.",
@@ -360,7 +360,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 </ul>
               </div>
 
-              {/* The Rate Global Way */}
+              {/* The RHEK GLOBAL Way */}
               <div className="rounded-2xl border border-[#16A34A]/30 bg-[#16A34A]/5 p-6 sm:p-8">
                 <div className="flex items-center gap-2.5 pb-4 border-b border-[#16A34A]/20 text-[#101010] mb-5">
                   <CheckCircle2 className="h-5 w-5 text-[#16A34A] shrink-0" />

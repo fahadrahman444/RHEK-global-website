@@ -68,7 +68,7 @@ export const SERVICE_EXTENSIONS: Record<string, ServiceExtensionData> = {
         "Outdated directory lists where office managers never pick up or have no cleaning budget.",
         "Contractors waste 20+ hours a week cold calling instead of inspecting facilities.",
       ],
-      solutionTitle: "The Rate Global Exclusive Walkthrough System",
+      solutionTitle: "The RHEK GLOBAL Exclusive Walkthrough System",
       solutionPoints: [
         "100% exclusive appointments with confirmed facility managers — never shared with rivals.",
         "Every appointment includes verified square footage, cleaning frequency, and current pain point.",

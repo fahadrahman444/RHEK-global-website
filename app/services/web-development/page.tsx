@@ -11,18 +11,18 @@ import { WebDevFaq } from "@/components/services/web-dev/WebDevFaq";
 import { WebDevFinalCta } from "@/components/services/web-dev/WebDevFinalCta";
 
 export const metadata: Metadata = {
-  title: "Web Design & Development Services | Rate Global",
+  title: "Web Design & Development Services | RHEK GLOBAL",
   description:
     "High-performing Next.js web design and development engineered for sub-second speeds, authoritative credibility, and qualified B2B pipeline.",
   alternates: {
     canonical: "https://rhekglobal.com/services/web-development",
   },
   openGraph: {
-    title: "Web Design & Development Services | Rate Global",
+    title: "Web Design & Development Services | RHEK GLOBAL",
     description:
       "High-performing Next.js web design and development engineered for sub-second speeds, authoritative credibility, and qualified B2B pipeline.",
     url: "https://rhekglobal.com/services/web-development",
-    siteName: "Rate Global",
+    siteName: "RHEK GLOBAL",
     type: "website",
   },
 };

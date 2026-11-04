@@ -79,14 +79,14 @@ export function WebDevProblemSolution() {
             </div>
           </div>
 
-          {/* Right: The Rate Global Standard */}
+          {/* Right: The RHEK GLOBAL Standard */}
           <div className="rounded-2xl border border-[#101010] bg-[#101010] p-6 sm:p-8 space-y-6 text-white shadow-xl">
             <div className="flex items-center gap-3 pb-4 border-b border-white/10">
               <div className="h-8 w-8 rounded-lg bg-[#E9204F] flex items-center justify-center text-white">
                 <CheckCircle2 className="h-5 w-5" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white">The Rate Global Standard</h3>
+                <h3 className="text-lg font-bold text-white">The RHEK GLOBAL Standard</h3>
                 <p className="text-[12px] text-[#A3A3A3]">Custom Next.js &amp; Swiss Minimal Engineering</p>
               </div>
             </div>
