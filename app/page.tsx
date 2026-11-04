@@ -17,12 +17,12 @@ export default function HomePage() {
       <Navbar />
 
       {/* 2. Hero & Partner Trust Logos */}
-      <div className="site-container pt-4 sm:pt-6">
+      <div className="site-container pt-3 sm:pt-5">
         <Hero />
         <PartnerLogos />
       </div>
 
-      <div className="space-y-10 sm:space-y-16 mt-8 sm:mt-16">
+      <div className="space-y-7 sm:space-y-11 mt-5 sm:mt-8">
         {/* 3. Janitorial Lead Generation Spotlight & Verified Live Samples */}
         <JanitorialLeadsSection />
 
