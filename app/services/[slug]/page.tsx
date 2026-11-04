@@ -195,38 +195,38 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                   {service.subheadline}
                 </p>
 
-                {/* Dual Action Conversion Group */}
-                <div className="mt-6 flex flex-wrap items-center gap-3">
+                {/* Dual Action Conversion Group — Responsive & Unified Hover */}
+                <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3">
                   <Link
                     href="/book-a-meeting"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#E9204F] hover:bg-[#101010] px-6 py-3 text-[14px] font-bold text-white shadow-sm hover:shadow-md transition-all duration-200 min-h-[46px]"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#E9204F] hover:bg-[#101010] px-6 py-3 text-[14px] font-bold text-white shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 min-h-[44px] group"
                   >
                     <Calendar className="h-4 w-4" />
                     <span>Book a Meeting</span>
-                    <ArrowUpRight className="h-4 w-4" />
+                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </Link>
                   <a
                     href="#pricing"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#E5E5E5] bg-white hover:border-[#101010] px-5 py-3 text-[13.5px] font-semibold text-[#101010] transition-colors min-h-[46px]"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#E5E5E5] bg-white hover:border-[#101010] hover:bg-[#FAFAFA] px-5 py-3 text-[13.5px] font-semibold text-[#101010] hover:shadow-xs hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 min-h-[44px] group"
                   >
                     <span>Explore Packages</span>
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                   </a>
                 </div>
 
-                {/* Micro Trust Indicators */}
-                <div className="mt-6 pt-5 border-t border-[#F0F0F0] flex flex-wrap items-center gap-5 text-[12px] text-[#737373]">
+                {/* Micro Trust Indicators — Brand Palette Coherent */}
+                <div className="mt-6 pt-5 border-t border-[#F0F0F0] flex flex-wrap items-center gap-y-2 gap-x-5 text-[12px] text-[#525252]">
                   <div className="flex items-center gap-1.5">
-                    <ShieldCheck className="h-4 w-4 text-[#16A34A]" />
-                    <span>100% Replacement Guarantee</span>
+                    <ShieldCheck className="h-4 w-4 text-[#E9204F] shrink-0" />
+                    <span className="font-medium text-[#101010]">100% Replacement Guarantee</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <CheckCircle2 className="h-4 w-4 text-[#16A34A]" />
-                    <span>Zero Long-Term Lock-in</span>
+                    <CheckCircle2 className="h-4 w-4 text-[#E9204F] shrink-0" />
+                    <span className="font-medium text-[#101010]">Zero Long-Term Lock-in</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <Sparkles className="h-4 w-4 text-[#E9204F]" />
-                    <span>24-Hour Response SLA</span>
+                    <Sparkles className="h-4 w-4 text-[#E9204F] shrink-0" />
+                    <span className="font-medium text-[#101010]">24-Hour Response SLA</span>
                   </div>
                 </div>
               </div>

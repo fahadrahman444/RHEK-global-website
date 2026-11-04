@@ -111,15 +111,15 @@ export default function ServicesPage() {
                 <div className="mt-5 flex flex-wrap items-center gap-3">
                   <Link
                     href={`/services/${SERVICE_CANONICAL_SLUGS[service.id] || service.id}`}
-                    className="inline-flex items-center gap-1.5 rounded-lg bg-[#101010] hover:bg-[#E9204F] text-white px-4 py-2 text-[12.5px] font-semibold transition-all duration-200 min-h-[38px] shadow-xs hover:shadow-md hover:-translate-y-0.5"
+                    className="inline-flex items-center gap-1.5 rounded-lg bg-[#E9204F] hover:bg-[#101010] text-white px-4 py-2 text-[12.5px] font-semibold transition-all duration-200 min-h-[38px] shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 group"
                   >
                     <span>Deep-Dive Details</span>
-                    <ArrowRight className="h-3.5 w-3.5" />
+                    <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                   </Link>
 
                   <Link
                     href={`/contact?service=${encodeURIComponent(service.title)}`}
-                    className="inline-flex items-center gap-1.5 rounded-lg border border-[#E5E5E5] bg-white hover:border-[#101010] text-[#101010] px-4 py-2 text-[12.5px] font-semibold transition-all duration-200 min-h-[38px] hover:shadow-xs hover:-translate-y-0.5"
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-[#E5E5E5] bg-white hover:border-[#101010] hover:bg-[#FAFAFA] text-[#101010] px-4 py-2 text-[12.5px] font-semibold transition-all duration-200 min-h-[38px] hover:shadow-xs hover:-translate-y-0.5 active:translate-y-0"
                   >
                     <span>Inquire Now</span>
                   </Link>

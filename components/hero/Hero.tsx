@@ -20,7 +20,7 @@ export function Hero() {
         <div className="mt-4 sm:mt-5 grid grid-cols-2 sm:flex sm:flex-row items-center gap-2 sm:gap-3">
           <Link
             href="/#leads"
-            className="inline-flex items-center justify-center gap-1.5 sm:gap-2 rounded-lg bg-[#101010] hover:bg-[#E9204F] text-white px-3 sm:px-6 py-2 sm:py-2.5 text-[12.5px] sm:text-[13.5px] font-semibold tracking-wide transition-all duration-300 min-h-[42px] shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 group whitespace-nowrap"
+            className="inline-flex items-center justify-center gap-1.5 sm:gap-2 rounded-lg bg-[#E9204F] hover:bg-[#101010] text-white px-3 sm:px-6 py-2 sm:py-2.5 text-[12.5px] sm:text-[13.5px] font-semibold tracking-wide transition-all duration-200 min-h-[42px] shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 group whitespace-nowrap"
           >
             <span className="hidden sm:inline">Get Exclusive Leads</span>
             <span className="sm:hidden">Get Leads</span>
@@ -29,7 +29,7 @@ export function Hero() {
 
           <Link
             href="/services"
-            className="inline-flex items-center justify-center rounded-lg border border-[#E5E5E5] bg-white hover:border-[#101010] hover:bg-[#FAFAFA] text-[#101010] px-3 sm:px-5 py-2 sm:py-2.5 text-[12.5px] sm:text-[13.5px] font-semibold transition-all duration-300 min-h-[42px] hover:shadow-2xs hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
+            className="inline-flex items-center justify-center rounded-lg border border-[#E5E5E5] bg-white hover:border-[#101010] hover:bg-[#FAFAFA] text-[#101010] px-3 sm:px-5 py-2 sm:py-2.5 text-[12.5px] sm:text-[13.5px] font-semibold transition-all duration-200 min-h-[42px] hover:shadow-2xs hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
           >
             <span className="hidden sm:inline">Explore Capabilities</span>
             <span className="sm:hidden">Capabilities</span>

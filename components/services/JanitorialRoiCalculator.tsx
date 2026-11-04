@@ -222,10 +222,10 @@ export function JanitorialRoiCalculator() {
             {/* Direct Action Link */}
             <Link
               href={`/contact?service=Janitorial%20Lead%20Generation&leads=${leadsCount}&projectedMRR=${minMonthlyRevenue}`}
-              className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-[#E9204F] hover:bg-white hover:text-[#101010] py-2.5 px-4 text-[12.5px] font-semibold text-white transition-colors min-h-[40px]"
+              className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-[#E9204F] hover:bg-[#101010] py-2.5 px-4 text-[12.5px] font-bold text-white shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 min-h-[40px] group"
             >
               <span>Lock In {leadsCount} Walkthroughs in Your Territory</span>
-              <ArrowRight className="h-3.5 w-3.5" />
+              <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </div>
         </div>

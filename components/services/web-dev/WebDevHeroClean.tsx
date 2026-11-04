@@ -59,16 +59,16 @@ export function WebDevHeroClean() {
               <button
                 type="button"
                 onClick={() => scrollTo("cta")}
-                className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-[#E9204F] hover:bg-[#101010] text-white px-4 sm:px-6 py-2.5 text-[13px] sm:text-[14.5px] font-bold shadow-xs hover:shadow-md transition-all duration-200 min-h-[40px] sm:min-h-[44px]"
+                className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-[#E9204F] hover:bg-[#101010] text-white px-4 sm:px-6 py-2.5 text-[13px] sm:text-[14.5px] font-bold shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 min-h-[40px] sm:min-h-[44px] group"
               >
                 <span>Book a Strategy Call</span>
-                <ArrowUpRight className="h-3.5 w-3.5" />
+                <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </button>
 
               <button
                 type="button"
                 onClick={() => scrollTo("services")}
-                className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-[#E5E5E5] bg-white hover:bg-[#FAFAFA] text-[#101010] px-3.5 sm:px-5 py-2.5 text-[13px] sm:text-[14.5px] font-bold transition-all duration-200 min-h-[40px] sm:min-h-[44px]"
+                className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-[#E5E5E5] bg-white hover:border-[#101010] hover:bg-[#FAFAFA] text-[#101010] px-3.5 sm:px-5 py-2.5 text-[13px] sm:text-[14.5px] font-bold hover:shadow-xs hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 min-h-[40px] sm:min-h-[44px]"
               >
                 <span>Capabilities</span>
               </button>
@@ -91,7 +91,7 @@ export function WebDevHeroClean() {
                     key={tab.id}
                     type="button"
                     onClick={() => scrollTo(tab.id)}
-                    className="px-2.5 py-1 rounded-md bg-[#FAFAFA] hover:bg-[#101010] hover:text-white border border-[#EBEBEB] text-[#525252] text-[11px] sm:text-[11.5px] font-semibold whitespace-nowrap transition-colors"
+                    className="px-2.5 py-1 rounded-md bg-[#FAFAFA] hover:bg-[#101010] hover:text-white border border-[#EBEBEB] hover:border-[#101010] text-[#525252] text-[11px] sm:text-[11.5px] font-semibold whitespace-nowrap hover:-translate-y-0.5 active:translate-y-0 transition-all duration-150"
                   >
                     {tab.label}
                   </button>

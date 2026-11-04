@@ -433,12 +433,12 @@ export function Navbar({ variant = "light" }: NavbarProps = {}) {
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <Link
             href="/book-a-meeting"
-            className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-lg bg-[#E9204F] hover:bg-[#101010] text-white px-2.5 sm:px-4 py-2 text-[12px] sm:text-[13px] font-bold transition-all duration-200 min-h-[38px] sm:min-h-[40px] shadow-sm hover:shadow-md"
+            className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-lg bg-[#E9204F] hover:bg-[#101010] text-white px-2.5 sm:px-4 py-2 text-[12px] sm:text-[13px] font-bold transition-all duration-200 min-h-[38px] sm:min-h-[40px] shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 group"
           >
             <Calendar className="h-3.5 w-3.5 sm:hidden" />
             <span className="hidden sm:inline">Book a Meeting</span>
             <span className="sm:hidden">Book Call</span>
-            <ArrowUpRight className="h-3.5 w-3.5 hidden sm:inline" />
+            <ArrowUpRight className="h-3.5 w-3.5 hidden sm:inline transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
 
           {/* Mobile Menu Button */}
