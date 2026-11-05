@@ -3,6 +3,7 @@
 import { useState, useEffect, type FormEvent } from "react";
 import Link from "next/link";
 import { Mail, Clock, ShieldCheck, CheckCircle, Loader2, ArrowRight, Calendar } from "lucide-react";
+import { SpotlightCard } from "@/components/common/SpotlightCard";
 
 import { RHEK_CONFIG } from "@/data/rhek-config";
 
@@ -224,7 +225,11 @@ export function ContactSection({
             </div>
 
             {/* Direct Meeting Booking Pill Card */}
-            <div className="rounded-xl border border-[#EBEBEB] bg-[#FAFAFA] p-3 sm:p-3.5 flex items-center justify-between gap-3">
+            <SpotlightCard
+              mode="light"
+              className="rounded-xl border border-[#EBEBEB] bg-[#FAFAFA] p-3 sm:p-3.5"
+              contentClassName="relative z-10 flex items-center justify-between gap-3"
+            >
               <div className="flex items-center gap-2.5">
                 <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#101010] text-white shrink-0">
                   <Calendar className="h-4 w-4" />
@@ -245,12 +250,16 @@ export function ContactSection({
                 <span>Book Call</span>
                 <ArrowRight className="h-3 w-3" />
               </Link>
-            </div>
+            </SpotlightCard>
           </div>
 
           {/* Right Column: Compact Interactive Lead Capture Form */}
           <div className="lg:col-span-7">
-            <div className="rounded-xl border border-[#EBEBEB] bg-[#FAFAFA] p-4 sm:p-5 shadow-2xs">
+            <SpotlightCard
+              mode="light"
+              className="rounded-xl border border-[#EBEBEB] bg-[#FAFAFA] p-4 sm:p-5 shadow-2xs"
+              contentClassName="relative z-10"
+            >
               
               {success ? (
                 <div className="text-center py-6" role="status">
@@ -401,7 +410,7 @@ export function ContactSection({
                 </form>
               )}
 
-            </div>
+            </SpotlightCard>
           </div>
 
         </div>

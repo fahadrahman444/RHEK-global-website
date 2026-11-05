@@ -10,6 +10,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { RHEK_CONFIG } from "@/data/rhek-config";
+import { SpotlightCard } from "@/components/common/SpotlightCard";
 
 export const metadata: Metadata = {
   title: "About Us — RHEK GLOBAL",
@@ -74,7 +75,11 @@ export default function AboutPage() {
 
           {/* Mission & Vision Cards */}
           <div className="space-y-3">
-            <div className="rounded-xl bg-[#FAFAFA] border border-[#EBEBEB] p-4 sm:p-5 hover:border-[#101010] hover:bg-white hover:shadow-md transition-all duration-300">
+            <SpotlightCard
+              mode="light"
+              className="rounded-xl border border-[#EBEBEB] p-4 sm:p-5 hover:border-[#101010]"
+              contentClassName="relative z-10"
+            >
               <div className="flex items-center gap-1.5 text-[#E9204F] mb-1 font-semibold text-[10.5px] uppercase tracking-wider">
                 <Target className="h-3.5 w-3.5 text-[#E9204F]" />
                 <span>Our Mission</span>
@@ -85,9 +90,13 @@ export default function AboutPage() {
               <p className="text-[13px] text-[#525252] leading-relaxed">
                 {companyProfile.mission.text}
               </p>
-            </div>
+            </SpotlightCard>
 
-            <div className="rounded-xl bg-[#FAFAFA] border border-[#EBEBEB] p-4 sm:p-5 hover:border-[#101010] hover:bg-white hover:shadow-md transition-all duration-300">
+            <SpotlightCard
+              mode="light"
+              className="rounded-xl border border-[#EBEBEB] p-4 sm:p-5 hover:border-[#101010]"
+              contentClassName="relative z-10"
+            >
               <div className="flex items-center gap-1.5 text-[#101010] mb-1 font-semibold text-[10.5px] uppercase tracking-wider">
                 <TrendingUp className="h-3.5 w-3.5 text-[#101010]" />
                 <span>Our Vision</span>
@@ -98,7 +107,7 @@ export default function AboutPage() {
               <p className="text-[13px] text-[#525252] leading-relaxed">
                 {companyProfile.vision.text}
               </p>
-            </div>
+            </SpotlightCard>
           </div>
         </div>
 
@@ -115,9 +124,11 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-2 lg:grid-cols-5 gap-2.5 sm:gap-3">
             {companyProfile.coreValues.map((val, idx) => (
-              <div
+              <SpotlightCard
                 key={idx}
-                className="group rounded-xl border border-[#EBEBEB] bg-[#FAFAFA] p-3 sm:p-4 hover:bg-white hover:border-[#101010] hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+                mode="light"
+                className="group rounded-xl border border-[#EBEBEB] p-3 sm:p-4 hover:border-[#101010]"
+                contentClassName="relative z-10"
               >
                 <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-white border border-[#EBEBEB] text-[#101010] mb-2 font-mono font-bold text-[11px] group-hover:bg-[#101010] group-hover:text-white transition-colors duration-200">
                   0{idx + 1}
@@ -128,13 +139,17 @@ export default function AboutPage() {
                 <p className="text-[11px] sm:text-[12px] text-[#525252] leading-relaxed line-clamp-3 sm:line-clamp-none">
                   {val.desc}
                 </p>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
         </div>
 
         {/* 4 Working Principles */}
-        <div className="rounded-2xl bg-[#101010] text-white p-4 sm:p-7 lg:p-8">
+        <SpotlightCard
+          mode="dark"
+          className="rounded-2xl bg-[#101010] text-white p-4 sm:p-7 lg:p-8"
+          contentClassName="relative z-10"
+        >
           <div className="max-w-[700px] mb-4">
             <span className="text-[10.5px] font-bold uppercase tracking-wider text-[#E9204F]">
               Operating Discipline
@@ -149,9 +164,11 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3">
             {workProcess.principles.map((pr, idx) => (
-              <div
+              <SpotlightCard
                 key={idx}
-                className="group rounded-xl bg-white/[0.03] border border-white/10 p-3 sm:p-3.5 hover:border-white/30 hover:bg-white/[0.07] hover:-translate-y-0.5 transition-all duration-200"
+                mode="dark"
+                className="group rounded-xl bg-white/[0.03] border border-white/10 p-3 sm:p-3.5 hover:border-white/30"
+                contentClassName="relative z-10"
               >
                 <h4 className="text-[12.5px] sm:text-[13.5px] font-bold text-white mb-0.5 group-hover:text-[#E9204F] transition-colors">
                   {pr.title}
@@ -159,10 +176,10 @@ export default function AboutPage() {
                 <p className="text-[11px] sm:text-[12px] text-[#A3A3A3] leading-relaxed line-clamp-3 sm:line-clamp-none">
                   {pr.description}
                 </p>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
-        </div>
+        </SpotlightCard>
       </div>
 
       {/* 4. Global Footer */}

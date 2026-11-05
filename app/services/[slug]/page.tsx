@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ServiceFaqAccordion } from "@/components/services/ServiceFaqAccordion";
 import { InteractiveLeadShowcase } from "@/components/services/InteractiveLeadShowcase";
+import { SpotlightCard } from "@/components/common/SpotlightCard";
 import { SERVICES_DETAILED_DATA } from "@/data/services-data";
 import { SERVICE_SLUG_ALIASES, SERVICE_EXTENSIONS } from "@/data/service-extensions";
 import { RHEK_CONFIG } from "@/data/rhek-config";
@@ -234,7 +235,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               {/* Right Column: Visual Anchor / Feature Showcase (5 cols) */}
               <div className="lg:col-span-5">
                 {service.leadSamples && service.leadSamples.length > 0 ? (
-                  <div className="rounded-2xl border border-[#EBEBEB] bg-[#FAFAFA] p-5 sm:p-6 shadow-sm">
+                  <SpotlightCard mode="light" className="p-5 sm:p-6 shadow-sm" contentClassName="relative z-10">
                     <div className="flex items-center justify-between pb-3 border-b border-[#EBEBEB] mb-4">
                       <div className="flex items-center gap-2">
                         <span className="h-2.5 w-2.5 rounded-full bg-[#16A34A] animate-pulse" />
@@ -284,9 +285,9 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                         Claim Territory →
                       </Link>
                     </div>
-                  </div>
+                  </SpotlightCard>
                 ) : (
-                  <div className="rounded-2xl border border-[#EBEBEB] bg-[#FAFAFA] p-6 sm:p-7 shadow-sm space-y-5">
+                  <SpotlightCard mode="light" className="p-6 sm:p-7 shadow-sm space-y-5" contentClassName="relative z-10 space-y-5">
                     <div className="flex items-center gap-2 pb-3 border-b border-[#EBEBEB]">
                       <TrendingUp className="h-5 w-5 text-[#E9204F]" />
                       <h3 className="font-heading text-lg font-bold text-[#101010]">
@@ -316,7 +317,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                         Schedule Call →
                       </Link>
                     </div>
-                  </div>
+                  </SpotlightCard>
                 )}
               </div>
             </div>
@@ -343,7 +344,12 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
               {/* The Broken Way */}
-              <div className="rounded-2xl border border-red-200/80 bg-red-50/40 p-6 sm:p-8">
+              <SpotlightCard
+                mode="light"
+                spotlightColor="rgba(239, 68, 68, 0.12)"
+                className="border-red-200/80 bg-red-50/40 p-6 sm:p-8 hover:border-red-400"
+                contentClassName="relative z-10"
+              >
                 <div className="flex items-center gap-2.5 pb-4 border-b border-red-200/60 text-red-900 mb-5">
                   <AlertTriangle className="h-5 w-5 text-red-600 shrink-0" />
                   <h3 className="font-heading text-lg font-bold">
@@ -358,10 +364,15 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </SpotlightCard>
 
               {/* The RHEK GLOBAL Way */}
-              <div className="rounded-2xl border border-[#16A34A]/30 bg-[#16A34A]/5 p-6 sm:p-8">
+              <SpotlightCard
+                mode="light"
+                spotlightColor="rgba(22, 163, 74, 0.12)"
+                className="border-[#16A34A]/30 bg-[#16A34A]/5 p-6 sm:p-8 hover:border-[#16A34A]/60"
+                contentClassName="relative z-10"
+              >
                 <div className="flex items-center gap-2.5 pb-4 border-b border-[#16A34A]/20 text-[#101010] mb-5">
                   <CheckCircle2 className="h-5 w-5 text-[#16A34A] shrink-0" />
                   <h3 className="font-heading text-lg font-bold">
@@ -376,7 +387,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </SpotlightCard>
             </div>
           </div>
         </section>
@@ -404,9 +415,11 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             {/* Target Industries / Capabilities Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {service.targetIndustries.map((ind, iIdx) => (
-                <div
+                <SpotlightCard
                   key={iIdx}
-                  className="rounded-xl border border-[#EBEBEB] bg-white p-5 hover:border-[#101010] transition-all duration-200 shadow-2xs group"
+                  mode="light"
+                  className="rounded-xl border border-[#EBEBEB] bg-white p-5 hover:border-[#101010] shadow-2xs group hover:-translate-y-0.5"
+                  contentClassName="relative z-10"
                 >
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-[11px] font-bold uppercase tracking-wider text-[#737373] group-hover:text-[#E9204F] transition-colors">
@@ -420,7 +433,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                   <p className="text-[13px] text-[#525252] leading-relaxed">
                     {ind.description}
                   </p>
-                </div>
+                </SpotlightCard>
               ))}
             </div>
 
@@ -464,9 +477,10 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {extension.processSteps.map((stepItem, sIdx) => (
-                <div
+                <SpotlightCard
                   key={sIdx}
-                  className="relative rounded-2xl border border-[#EBEBEB] bg-white p-6 shadow-xs flex flex-col justify-between"
+                  mode="light"
+                  className="rounded-2xl border border-[#EBEBEB] bg-white p-6 shadow-xs hover:-translate-y-0.5"
                 >
                   <div>
                     <div className="flex items-center justify-between pb-3 border-b border-[#F0F0F0] mb-4">
@@ -486,7 +500,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                       {stepItem.description}
                     </p>
                   </div>
-                </div>
+                </SpotlightCard>
               ))}
             </div>
           </div>
@@ -513,9 +527,10 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             {/* Why Choose Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {service.whyChooseItems.map((item, wIdx) => (
-                <div
+                <SpotlightCard
                   key={wIdx}
-                  className="rounded-2xl border border-[#EBEBEB] bg-[#FAFAFA] p-6 sm:p-7 shadow-xs flex flex-col justify-between"
+                  mode="light"
+                  className="rounded-2xl border border-[#EBEBEB] bg-[#FAFAFA] p-6 sm:p-7 shadow-xs hover:-translate-y-0.5"
                 >
                   <div>
                     {item.highlight && (
@@ -530,12 +545,17 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                       {item.description}
                     </p>
                   </div>
-                </div>
+                </SpotlightCard>
               ))}
             </div>
 
             {/* Guarantee Box */}
-            <div className="mt-8 rounded-2xl border border-[#16A34A]/30 bg-[#16A34A]/5 p-6 sm:p-8">
+            <SpotlightCard
+              mode="light"
+              spotlightColor="rgba(22, 163, 74, 0.12)"
+              className="mt-8 rounded-2xl border border-[#16A34A]/30 bg-[#16A34A]/5 p-6 sm:p-8 hover:border-[#16A34A]/60"
+              contentClassName="relative z-10"
+            >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#16A34A]/20">
                 <div className="flex items-center gap-2.5">
                   <ShieldCheck className="h-6 w-6 text-[#16A34A]" />
@@ -558,7 +578,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                   </div>
                 ))}
               </div>
-            </div>
+            </SpotlightCard>
           </div>
         </section>
 
@@ -582,7 +602,11 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
             {/* Special Offer Banner if present */}
             {service.specialOfferBanner && (
-              <div className="mb-8 rounded-2xl bg-[#101010] text-white p-6 sm:p-8 shadow-md">
+              <SpotlightCard
+                mode="dark"
+                className="mb-8 rounded-2xl bg-[#101010] text-white p-6 sm:p-8 shadow-md border-white/10"
+                contentClassName="relative z-10"
+              >
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
                   <div>
                     <span className="text-[11px] font-bold uppercase tracking-wider text-[#E9204F] bg-[#E9204F]/10 px-2.5 py-0.5 rounded-full">
@@ -617,7 +641,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                     </Link>
                   </div>
                 </div>
-              </div>
+              </SpotlightCard>
             )}
 
             {/* Pricing Tiers Grid */}
@@ -625,13 +649,14 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               {service.pricingTiers.map((tier, tIdx) => {
                 const isFeatured = tier.highlighted;
                 return (
-                  <div
+                  <SpotlightCard
                     key={tIdx}
-                    className={`rounded-2xl border p-6 sm:p-8 flex flex-col justify-between transition-all duration-200 ${
+                    mode={isFeatured ? "dark" : "light"}
+                    className={
                       isFeatured
-                        ? "border-[#101010] bg-[#101010] text-white shadow-xl ring-2 ring-[#E9204F]"
-                        : "border-[#EBEBEB] bg-white text-[#101010] shadow-xs"
-                    }`}
+                        ? "border-[#101010] bg-[#101010] text-white shadow-xl ring-2 ring-[#E9204F] p-6 sm:p-8 hover:-translate-y-1"
+                        : "border-[#EBEBEB] bg-white text-[#101010] shadow-xs p-6 sm:p-8 hover:-translate-y-1"
+                    }
                   >
                     <div>
                       <div className="flex items-center justify-between pb-3 border-b border-neutral-200/20 mb-4">
@@ -708,7 +733,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                       <span>{tier.ctaText || "Select Package"}</span>
                       <ArrowRight className="h-4 w-4" />
                     </Link>
-                  </div>
+                  </SpotlightCard>
                 );
               })}
             </div>
@@ -733,7 +758,11 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         ========================================================================= */}
         <section id="cta" className="scroll-mt-36">
           <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
-            <div className="rounded-3xl bg-[#101010] text-white p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-2xl">
+            <SpotlightCard
+              mode="dark"
+              className="rounded-3xl bg-[#101010] text-white p-8 sm:p-12 lg:p-16 shadow-2xl border-white/10"
+              contentClassName="relative z-10"
+            >
               <div className="relative z-10 max-w-3xl">
                 <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#E9204F] mb-4">
                   <Calendar className="h-3.5 w-3.5" />
@@ -788,7 +817,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 className="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-[#E9204F]/10 blur-3xl pointer-events-none"
                 aria-hidden="true"
               />
-            </div>
+            </SpotlightCard>
           </div>
         </section>
       </main>

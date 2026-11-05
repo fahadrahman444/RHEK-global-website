@@ -1,6 +1,7 @@
 "use client";
 
 import { Check, ArrowUpRight, Sparkles, Gift } from "lucide-react";
+import { SpotlightCard } from "@/components/common/SpotlightCard";
 
 export function WebDevPricingClean() {
   const scrollToCta = () => {
@@ -86,8 +87,10 @@ export function WebDevPricingClean() {
         {/* 3 Tier Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-12">
           {tiers.map((tier, idx) => (
-            <div
+            <SpotlightCard
               key={idx}
+              mode="light"
+              spotlightColor={tier.popular ? "rgba(233, 32, 79, 0.28)" : undefined}
               className={`rounded-2xl p-8 flex flex-col justify-between transition-all duration-200 relative ${
                 tier.popular
                   ? "border-2 border-[#E9204F] bg-white shadow-xl ring-1 ring-[#E9204F]/20"
@@ -95,7 +98,7 @@ export function WebDevPricingClean() {
               }`}
             >
               {tier.popular && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-[#E9204F] text-white text-[11px] font-extrabold uppercase tracking-wider shadow-sm flex items-center gap-1">
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-[#E9204F] text-white text-[11px] font-extrabold uppercase tracking-wider shadow-sm flex items-center gap-1 z-30">
                   <Sparkles className="h-3 w-3" />
                   <span>Most Popular Choice</span>
                 </div>
@@ -148,12 +151,17 @@ export function WebDevPricingClean() {
                 <span>Select {tier.name}</span>
                 <ArrowUpRight className="h-4 w-4" />
               </button>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
 
         {/* Limited Q4 Promotional Offer Banner */}
-        <div className="rounded-2xl border border-[#E9204F]/30 bg-[#E9204F]/5 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <SpotlightCard
+          mode="light"
+          spotlightColor="rgba(233, 32, 79, 0.22)"
+          className="rounded-2xl border border-[#E9204F]/30 bg-[#E9204F]/5 p-6 sm:p-8"
+          contentClassName="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6"
+        >
           <div className="flex items-center gap-4">
             <div className="h-12 w-12 rounded-xl bg-[#E9204F] text-white flex items-center justify-center shrink-0">
               <Gift className="h-6 w-6" />
@@ -182,7 +190,7 @@ export function WebDevPricingClean() {
             <span>Claim Q4 Promo</span>
             <ArrowUpRight className="h-4 w-4" />
           </button>
-        </div>
+        </SpotlightCard>
       </div>
     </section>
   );

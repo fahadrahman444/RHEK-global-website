@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { CheckCircle2, ShieldCheck, ArrowRight, Building2, MapPin, Calendar, UserCheck } from "lucide-react";
 import { RHEK_CONFIG } from "@/data/rhek-config";
+import { SpotlightCard } from "@/components/common/SpotlightCard";
 
 export function JanitorialLeadsSection() {
   const janitorialService = RHEK_CONFIG.services.find((s) => s.id === "janitorial-leads");
@@ -64,8 +65,9 @@ export function JanitorialLeadsSection() {
         {/* Leads Cards: Structured Data Matrix */}
         <div className="flex md:grid md:grid-cols-2 gap-3 sm:gap-4 overflow-x-auto snap-x snap-mandatory pb-2 md:pb-0 scrollbar-none -mx-1 px-1 sm:mx-0 sm:px-0">
           {RHEK_CONFIG.leadSamples.map((lead) => (
-            <div
+            <SpotlightCard
               key={lead.id}
+              mode="light"
               className="min-w-[84%] sm:min-w-[380px] md:min-w-0 snap-center shrink-0 md:shrink group rounded-xl border border-neutral-200/80 bg-white p-4 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:border-[#101010] hover:shadow-[0_12px_28px_rgba(0,0,0,0.07)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
@@ -143,12 +145,16 @@ export function JanitorialLeadsSection() {
                   <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
                 </Link>
               </div>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
 
         {/* Bottom Action Strip */}
-        <div className="mt-5 sm:mt-7 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 rounded-xl bg-[#101010] p-4 sm:p-6 text-white shadow-md hover:shadow-xl transition-all duration-300">
+        <SpotlightCard
+          mode="dark"
+          className="mt-5 sm:mt-7 rounded-xl bg-[#101010] p-4 sm:p-6 text-white shadow-md hover:shadow-xl transition-all duration-300"
+          contentClassName="relative z-10 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6"
+        >
           <div>
             <div className="inline-flex items-center gap-1.5 rounded bg-white/10 px-2 py-0.5 text-[11px] font-bold uppercase tracking-wider text-[#E9204F] mb-1.5">
               <span>Leads From $110 / Scheduled Walkthrough</span>
@@ -180,7 +186,7 @@ export function JanitorialLeadsSection() {
               <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </div>
-        </div>
+        </SpotlightCard>
       </div>
     </section>
   );

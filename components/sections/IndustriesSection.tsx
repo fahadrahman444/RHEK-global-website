@@ -14,6 +14,7 @@ import {
   Rocket,
   ArrowRight,
 } from "lucide-react";
+import { SpotlightCard } from "@/components/common/SpotlightCard";
 
 const SECTOR_DATA = [
   {
@@ -119,8 +120,9 @@ export function IndustriesSection() {
         {SECTOR_DATA.map((sector, i) => {
           const Icon = sector.icon;
           return (
-            <div
+            <SpotlightCard
               key={i}
+              mode="light"
               className="group rounded-xl border border-neutral-200/80 bg-white p-3 sm:p-3.5 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:border-[#101010] hover:shadow-md hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between"
             >
               <div>
@@ -151,7 +153,7 @@ export function IndustriesSection() {
                 <span>Scope Ready</span>
                 <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1 group-hover:text-[#E9204F]" />
               </div>
-            </div>
+            </SpotlightCard>
           );
         })}
       </div>

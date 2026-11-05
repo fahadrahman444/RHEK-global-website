@@ -15,6 +15,7 @@ import {
   DollarSign,
 } from "lucide-react";
 import { RHEK_CONFIG } from "@/data/rhek-config";
+import { SpotlightCard } from "@/components/common/SpotlightCard";
 
 export const metadata: Metadata = {
   title: "Careers & Opportunities — RHEK GLOBAL",
@@ -150,9 +151,11 @@ export default function CareersPage() {
             {BENEFITS.map((b) => {
               const Icon = b.icon;
               return (
-                <div
+                <SpotlightCard
                   key={b.title}
-                  className="rounded-xl border border-[#EBEBEB] bg-[#FAFAFA] p-3.5 sm:p-4 hover:bg-white hover:border-[#101010] transition-colors"
+                  mode="light"
+                  className="rounded-xl border border-[#EBEBEB] bg-[#FAFAFA] p-3.5 sm:p-4 hover:border-[#101010]"
+                  contentClassName="relative z-10"
                 >
                   <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white border border-[#EBEBEB] text-[#101010] mb-2.5">
                     <Icon className="h-3.5 w-3.5" />
@@ -163,7 +166,7 @@ export default function CareersPage() {
                   <p className="text-[11.5px] sm:text-[12px] text-[#525252] leading-relaxed">
                     {b.description}
                   </p>
-                </div>
+                </SpotlightCard>
               );
             })}
           </div>
@@ -189,9 +192,11 @@ export default function CareersPage() {
 
           <div className="space-y-3.5">
             {OPEN_ROLES.map((role) => (
-              <div
+              <SpotlightCard
                 key={role.id}
-                className="rounded-xl border border-[#EBEBEB] bg-[#FAFAFA] p-4 sm:p-5 hover:bg-white hover:border-[#101010] transition-colors"
+                mode="light"
+                className="rounded-xl border border-[#EBEBEB] bg-[#FAFAFA] p-4 sm:p-5 hover:border-[#101010]"
+                contentClassName="relative z-10"
               >
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 pb-3 border-b border-[#EBEBEB]">
                   <div>
@@ -256,12 +261,16 @@ export default function CareersPage() {
                     </a>
                   </div>
                 </div>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
 
           {/* General Inquiries */}
-          <div className="mt-8 rounded-xl bg-[#101010] border border-white/10 p-5 sm:p-6 text-white flex flex-col md:flex-row items-center justify-between gap-5 shadow-sm">
+          <SpotlightCard
+            mode="dark"
+            className="mt-8 rounded-xl bg-[#101010] border border-white/10 p-5 sm:p-6 text-white shadow-sm"
+            contentClassName="relative z-10 flex flex-col md:flex-row items-center justify-between gap-5"
+          >
             <div className="max-w-[620px]">
               <span className="inline-block text-[10.5px] font-semibold uppercase tracking-wider text-[#E9204F] mb-1">
                 General Inquiries
@@ -281,7 +290,7 @@ export default function CareersPage() {
               <span>Send Open Application</span>
               <ArrowRight className="h-3.5 w-3.5" />
             </a>
-          </div>
+          </SpotlightCard>
         </div>
       </section>
 

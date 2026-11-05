@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { CheckCircle2, Building2, MapPin, Calendar, Clock, DollarSign, UserCheck, ShieldCheck, ArrowRight } from "lucide-react";
 import type { ServiceLeadSample } from "@/data/services-data";
+import { SpotlightCard } from "@/components/common/SpotlightCard";
 
 interface LeadTicketCardProps {
   sample: ServiceLeadSample;
@@ -9,7 +10,11 @@ interface LeadTicketCardProps {
 
 export function LeadTicketCard({ sample, serviceTitle }: LeadTicketCardProps) {
   return (
-    <div className="group relative flex flex-col justify-between rounded-xl border border-[#EBEBEB] bg-white p-4 sm:p-4.5 shadow-2xs hover:border-[#101010] hover:shadow-xs transition-all duration-200">
+    <SpotlightCard
+      mode="light"
+      className="group rounded-xl border border-[#EBEBEB] bg-white p-4 sm:p-4.5 shadow-2xs hover:border-[#101010] hover:shadow-xs transition-all duration-200"
+      contentClassName="relative z-10 flex flex-col justify-between h-full"
+    >
       {/* Top Header Row: Ticket ID + Verified Seal */}
       <div>
         <div className="flex items-center justify-between gap-3 pb-2.5 border-b border-[#F0F0F0]">
@@ -104,6 +109,6 @@ export function LeadTicketCard({ sample, serviceTitle }: LeadTicketCardProps) {
           <ArrowRight className="h-3 w-3" />
         </Link>
       </div>
-    </div>
+    </SpotlightCard>
   );
 }

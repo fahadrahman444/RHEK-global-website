@@ -1,6 +1,7 @@
 "use client";
 
 import { ShieldCheck, CheckCircle2, Award, Zap, Code, Cpu } from "lucide-react";
+import { SpotlightCard } from "@/components/common/SpotlightCard";
 
 export function WebDevTechStack() {
   const technologies = [
@@ -51,9 +52,11 @@ export function WebDevTechStack() {
         {/* Tech Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
           {technologies.map((tech, idx) => (
-            <div
+            <SpotlightCard
               key={idx}
-              className="p-5 rounded-xl border border-[#E5E5E5] bg-white hover:border-[#101010] transition-colors"
+              mode="light"
+              className="p-5 rounded-xl border border-[#E5E5E5] bg-white hover:border-[#101010]"
+              contentClassName="relative z-10"
             >
               <div className="flex items-center justify-between mb-2">
                 <span className="text-[11px] font-mono font-bold uppercase text-[#737373]">
@@ -63,25 +66,34 @@ export function WebDevTechStack() {
               </div>
               <h3 className="text-lg font-bold text-[#101010]">{tech.name}</h3>
               <p className="text-[13px] text-[#525252] mt-1">{tech.desc}</p>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
 
         {/* Benchmarks Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-6 gap-4 mb-16">
           {benchmarks.map((b, idx) => (
-            <div key={idx} className="p-4 rounded-xl bg-white border border-[#EBEBEB] text-center">
+            <SpotlightCard
+              key={idx}
+              mode="light"
+              className="p-4 rounded-xl bg-white border border-[#EBEBEB] text-center"
+              contentClassName="relative z-10"
+            >
               <p className="text-2xl sm:text-3xl font-extrabold text-[#101010] tracking-tight">
                 {b.metric}
               </p>
               <p className="text-[12px] font-bold text-[#E9204F] mt-1">{b.label}</p>
               <p className="text-[11px] text-[#737373] mt-0.5">{b.note}</p>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
 
         {/* 100% Money-Back Guarantee Card */}
-        <div className="rounded-2xl border-2 border-[#101010] bg-[#101010] p-8 sm:p-10 text-white shadow-xl">
+        <SpotlightCard
+          mode="dark"
+          className="rounded-2xl border-2 border-[#101010] bg-[#101010] p-8 sm:p-10 text-white shadow-xl"
+          contentClassName="relative z-10"
+        >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-5 space-y-4">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E9204F] text-white text-[11px] font-bold uppercase tracking-wider">
@@ -105,7 +117,7 @@ export function WebDevTechStack() {
               ))}
             </div>
           </div>
-        </div>
+        </SpotlightCard>
       </div>
     </section>
   );

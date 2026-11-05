@@ -12,6 +12,7 @@ import {
   Mail,
   ArrowUpRight,
 } from "lucide-react";
+import { SpotlightCard } from "@/components/common/SpotlightCard";
 
 export function WebDevFinalCta() {
   const [fullName, setFullName] = useState("");
@@ -86,7 +87,11 @@ export function WebDevFinalCta() {
             </p>
 
             {/* What to Expect Callout */}
-            <div className="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-4">
+            <SpotlightCard
+              mode="dark"
+              className="p-6 rounded-2xl bg-white/5 border border-white/10"
+              contentClassName="relative z-10 space-y-4"
+            >
               <p className="text-[12px] font-bold uppercase tracking-wider text-[#A3A3A3]">
                 What You Get on the Strategy Call:
               </p>
@@ -104,7 +109,7 @@ export function WebDevFinalCta() {
                   <span>Guaranteed milestone timeline and transparent fixed-bid quotation.</span>
                 </div>
               </div>
-            </div>
+            </SpotlightCard>
 
             {/* Direct Contact Details */}
             <div className="pt-2 flex flex-wrap gap-6 text-[13px] text-[#A3A3A3]">
@@ -121,7 +126,11 @@ export function WebDevFinalCta() {
 
           {/* Right Column: 6 Cols Booking Form */}
           <div className="lg:col-span-6">
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-7 sm:p-9 shadow-2xl backdrop-blur-sm">
+            <SpotlightCard
+              mode="dark"
+              className="rounded-2xl border border-white/10 bg-white/5 p-7 sm:p-9 shadow-2xl"
+              contentClassName="relative z-10"
+            >
               <h3 className="text-xl font-bold text-white mb-2">
                 Request a Discovery Call
               </h3>
@@ -236,7 +245,7 @@ export function WebDevFinalCta() {
                   </button>
                 </form>
               )}
-            </div>
+            </SpotlightCard>
           </div>
         </div>
       </div>

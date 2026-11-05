@@ -15,6 +15,7 @@ import {
   Building2,
   Gauge,
 } from "lucide-react";
+import { SpotlightCard } from "@/components/common/SpotlightCard";
 
 export function ServicesPreview() {
   return (
@@ -48,7 +49,10 @@ export function ServicesPreview() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4">
           
           {/* Bento Anchor 1: Commercial Sales & Janitorial Leads */}
-          <div className="lg:col-span-7 rounded-2xl border border-neutral-200/90 bg-[#FAFAFA] p-4 sm:p-6 flex flex-col justify-between hover:border-[#101010] hover:bg-white hover:shadow-lg transition-all duration-300 group">
+          <SpotlightCard
+            mode="light"
+            className="lg:col-span-7 rounded-2xl border border-neutral-200/90 bg-[#FAFAFA] p-4 sm:p-6 flex flex-col justify-between hover:border-[#101010] hover:bg-white hover:shadow-lg transition-all duration-300 group"
+          >
             <div>
               <div className="flex items-center justify-between gap-2 mb-3">
                 <div className="flex items-center gap-2">
@@ -124,10 +128,13 @@ export function ServicesPreview() {
                 <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
-          </div>
+          </SpotlightCard>
 
           {/* Bento Anchor 2: Web Engineering & Systems */}
-          <div className="lg:col-span-5 rounded-2xl border border-neutral-200/90 bg-[#101010] text-white p-4 sm:p-6 flex flex-col justify-between hover:border-white/30 transition-all duration-300 group">
+          <SpotlightCard
+            mode="dark"
+            className="lg:col-span-5 rounded-2xl border border-neutral-200/90 bg-[#101010] text-white p-4 sm:p-6 flex flex-col justify-between hover:border-white/30 transition-all duration-300 group"
+          >
             <div>
               <div className="flex items-center justify-between gap-2 mb-3">
                 <div className="flex items-center gap-2">
@@ -189,117 +196,125 @@ export function ServicesPreview() {
                 <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
-          </div>
+          </SpotlightCard>
         </div>
 
         {/* Bottom Bento Row: 4 Snug Visual Capability Tiles */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3">
           {/* Tile 1: Paid Social Ads */}
-          <Link
-            href="/services/social-media-advertising"
-            className="group rounded-xl border border-neutral-200/90 bg-[#FAFAFA] p-3 sm:p-4 hover:border-[#101010] hover:bg-white hover:shadow-md transition-all flex flex-col justify-between"
-          >
-            <div>
-              <div className="flex items-center justify-between mb-2">
-                <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-white border border-neutral-200 text-[#101010] group-hover:bg-[#101010] group-hover:text-white transition-colors">
-                  <Megaphone className="h-3.5 w-3.5" />
+          <Link href="/services/social-media-advertising" className="block h-full group">
+            <SpotlightCard
+              mode="light"
+              className="h-full rounded-xl border border-neutral-200/90 bg-[#FAFAFA] p-3 sm:p-4 hover:border-[#101010] hover:bg-white hover:shadow-md"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-white border border-neutral-200 text-[#101010] group-hover:bg-[#101010] group-hover:text-white transition-colors">
+                    <Megaphone className="h-3.5 w-3.5" />
+                  </div>
+                  <span className="text-[10.5px] sm:text-[11px] font-bold text-[#16A34A] bg-emerald-50 px-2 py-0.5 rounded">
+                    3.8x Target ROAS
+                  </span>
                 </div>
-                <span className="text-[10.5px] sm:text-[11px] font-bold text-[#16A34A] bg-emerald-50 px-2 py-0.5 rounded">
-                  3.8x Target ROAS
-                </span>
+                <h4 className="text-[14px] font-bold text-[#101010] group-hover:text-[#E9204F] transition-colors">
+                  Paid Social Ads
+                </h4>
+                <p className="text-[12px] text-[#525252] mt-1 leading-snug">
+                  Meta &amp; LinkedIn precision account-based ad funnels.
+                </p>
               </div>
-              <h4 className="text-[14px] font-bold text-[#101010] group-hover:text-[#E9204F] transition-colors">
-                Paid Social Ads
-              </h4>
-              <p className="text-[12px] text-[#525252] mt-1 leading-snug">
-                Meta &amp; LinkedIn precision account-based ad funnels.
-              </p>
-            </div>
-            <div className="mt-3 pt-2 border-t border-neutral-200/60 flex items-center justify-between text-[11.5px] sm:text-[12px] font-semibold text-[#101010]">
-              <span>Specs &amp; Pricing</span>
-              <ArrowUpRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </div>
+              <div className="mt-3 pt-2 border-t border-neutral-200/60 flex items-center justify-between text-[11.5px] sm:text-[12px] font-semibold text-[#101010]">
+                <span>Specs &amp; Pricing</span>
+                <ArrowUpRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </div>
+            </SpotlightCard>
           </Link>
 
           {/* Tile 2: Video Production */}
-          <Link
-            href="/services/video-production"
-            className="group rounded-xl border border-neutral-200/90 bg-[#FAFAFA] p-3 sm:p-4 hover:border-[#101010] hover:bg-white hover:shadow-md transition-all flex flex-col justify-between"
-          >
-            <div>
-              <div className="flex items-center justify-between mb-2">
-                <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-white border border-neutral-200 text-[#101010] group-hover:bg-[#101010] group-hover:text-white transition-colors">
-                  <Video className="h-3.5 w-3.5" />
+          <Link href="/services/video-production" className="block h-full group">
+            <SpotlightCard
+              mode="light"
+              className="h-full rounded-xl border border-neutral-200/90 bg-[#FAFAFA] p-3 sm:p-4 hover:border-[#101010] hover:bg-white hover:shadow-md"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-white border border-neutral-200 text-[#101010] group-hover:bg-[#101010] group-hover:text-white transition-colors">
+                    <Video className="h-3.5 w-3.5" />
+                  </div>
+                  <span className="text-[10.5px] sm:text-[11px] font-bold text-[#101010] bg-neutral-100 px-2 py-0.5 rounded">
+                    4K / Motion
+                  </span>
                 </div>
-                <span className="text-[10.5px] sm:text-[11px] font-bold text-[#101010] bg-neutral-100 px-2 py-0.5 rounded">
-                  4K / Motion
-                </span>
+                <h4 className="text-[14px] font-bold text-[#101010] group-hover:text-[#E9204F] transition-colors">
+                  Video Production
+                </h4>
+                <p className="text-[12px] text-[#525252] mt-1 leading-snug">
+                  High-converting VSLs, product reels &amp; motion graphics.
+                </p>
               </div>
-              <h4 className="text-[14px] font-bold text-[#101010] group-hover:text-[#E9204F] transition-colors">
-                Video Production
-              </h4>
-              <p className="text-[12px] text-[#525252] mt-1 leading-snug">
-                High-converting VSLs, product reels &amp; motion graphics.
-              </p>
-            </div>
-            <div className="mt-3 pt-2 border-t border-neutral-200/60 flex items-center justify-between text-[11.5px] sm:text-[12px] font-semibold text-[#101010]">
-              <span>Specs &amp; Pricing</span>
-              <ArrowUpRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </div>
+              <div className="mt-3 pt-2 border-t border-neutral-200/60 flex items-center justify-between text-[11.5px] sm:text-[12px] font-semibold text-[#101010]">
+                <span>Specs &amp; Pricing</span>
+                <ArrowUpRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </div>
+            </SpotlightCard>
           </Link>
 
           {/* Tile 3: Email Outreach */}
-          <Link
-            href="/services/email-marketing"
-            className="group rounded-xl border border-neutral-200/90 bg-[#FAFAFA] p-3 sm:p-4 hover:border-[#101010] hover:bg-white hover:shadow-md transition-all flex flex-col justify-between"
-          >
-            <div>
-              <div className="flex items-center justify-between mb-2">
-                <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-white border border-neutral-200 text-[#101010] group-hover:bg-[#101010] group-hover:text-white transition-colors">
-                  <Mail className="h-3.5 w-3.5" />
+          <Link href="/services/email-marketing" className="block h-full group">
+            <SpotlightCard
+              mode="light"
+              className="h-full rounded-xl border border-neutral-200/90 bg-[#FAFAFA] p-3 sm:p-4 hover:border-[#101010] hover:bg-white hover:shadow-md"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-white border border-neutral-200 text-[#101010] group-hover:bg-[#101010] group-hover:text-white transition-colors">
+                    <Mail className="h-3.5 w-3.5" />
+                  </div>
+                  <span className="text-[10.5px] sm:text-[11px] font-bold text-[#16A34A] bg-emerald-50 px-2 py-0.5 rounded">
+                    99.2% Inbox
+                  </span>
                 </div>
-                <span className="text-[10.5px] sm:text-[11px] font-bold text-[#16A34A] bg-emerald-50 px-2 py-0.5 rounded">
-                  99.2% Inbox
-                </span>
+                <h4 className="text-[14px] font-bold text-[#101010] group-hover:text-[#E9204F] transition-colors">
+                  Email Outreach
+                </h4>
+                <p className="text-[12px] text-[#525252] mt-1 leading-snug">
+                  Custom domain warmup, inbox rotation &amp; targeted copy.
+                </p>
               </div>
-              <h4 className="text-[14px] font-bold text-[#101010] group-hover:text-[#E9204F] transition-colors">
-                Email Outreach
-              </h4>
-              <p className="text-[12px] text-[#525252] mt-1 leading-snug">
-                Custom domain warmup, inbox rotation &amp; targeted copy.
-              </p>
-            </div>
-            <div className="mt-3 pt-2 border-t border-neutral-200/60 flex items-center justify-between text-[11.5px] sm:text-[12px] font-semibold text-[#101010]">
-              <span>Specs &amp; Pricing</span>
-              <ArrowUpRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </div>
+              <div className="mt-3 pt-2 border-t border-neutral-200/60 flex items-center justify-between text-[11.5px] sm:text-[12px] font-semibold text-[#101010]">
+                <span>Specs &amp; Pricing</span>
+                <ArrowUpRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </div>
+            </SpotlightCard>
           </Link>
 
           {/* Tile 4: Virtual Assistant */}
-          <Link
-            href="/services/virtual-assistant"
-            className="group rounded-xl border border-neutral-200/90 bg-[#FAFAFA] p-3 sm:p-4 hover:border-[#101010] hover:bg-white hover:shadow-md transition-all flex flex-col justify-between"
-          >
-            <div>
-              <div className="flex items-center justify-between mb-2">
-                <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-white border border-neutral-200 text-[#101010] group-hover:bg-[#101010] group-hover:text-white transition-colors">
-                  <Headphones className="h-3.5 w-3.5" />
+          <Link href="/services/virtual-assistant" className="block h-full group">
+            <SpotlightCard
+              mode="light"
+              className="h-full rounded-xl border border-neutral-200/90 bg-[#FAFAFA] p-3 sm:p-4 hover:border-[#101010] hover:bg-white hover:shadow-md"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-white border border-neutral-200 text-[#101010] group-hover:bg-[#101010] group-hover:text-white transition-colors">
+                    <Headphones className="h-3.5 w-3.5" />
+                  </div>
+                  <span className="text-[10.5px] sm:text-[11px] font-bold text-[#101010] bg-neutral-100 px-2 py-0.5 rounded">
+                    Dedicated Ops
+                  </span>
                 </div>
-                <span className="text-[10.5px] sm:text-[11px] font-bold text-[#101010] bg-neutral-100 px-2 py-0.5 rounded">
-                  Dedicated Ops
-                </span>
+                <h4 className="text-[14px] font-bold text-[#101010] group-hover:text-[#E9204F] transition-colors">
+                  Virtual Assistant
+                </h4>
+                <p className="text-[12px] text-[#525252] mt-1 leading-snug">
+                  Executive calendar scheduling, CRM maintenance &amp; ops.
+                </p>
               </div>
-              <h4 className="text-[14px] font-bold text-[#101010] group-hover:text-[#E9204F] transition-colors">
-                Virtual Assistant
-              </h4>
-              <p className="text-[12px] text-[#525252] mt-1 leading-snug">
-                Executive calendar scheduling, CRM maintenance &amp; ops.
-              </p>
-            </div>
-            <div className="mt-3 pt-2 border-t border-neutral-200/60 flex items-center justify-between text-[11.5px] sm:text-[12px] font-semibold text-[#101010]">
-              <span>Specs &amp; Pricing</span>
-              <ArrowUpRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </div>
+              <div className="mt-3 pt-2 border-t border-neutral-200/60 flex items-center justify-between text-[11.5px] sm:text-[12px] font-semibold text-[#101010]">
+                <span>Specs &amp; Pricing</span>
+                <ArrowUpRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </div>
+            </SpotlightCard>
           </Link>
 
         </div>

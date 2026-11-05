@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { portfolioProjects, type ProjectCaseStudy } from "@/data/portfolio";
 import { ArrowUpRight, CheckCircle2, Layers, ArrowRight, Sparkles } from "lucide-react";
+import { SpotlightCard } from "@/components/common/SpotlightCard";
 
 type CategoryFilter = "All" | ProjectCaseStudy["category"];
 
@@ -81,8 +82,9 @@ export function PortfolioSection({
             {/* Inset Showcase Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {displayedProjects.map((project) => (
-                <article
+                <SpotlightCard
                   key={project.id}
+                  mode="dark"
                   className="rounded-xl bg-white/[0.03] border border-white/10 p-6 transition-colors hover:border-white/25 flex flex-col justify-between"
                 >
                   <div>
@@ -129,7 +131,7 @@ export function PortfolioSection({
                       </span>
                     ))}
                   </div>
-                </article>
+                </SpotlightCard>
               ))}
             </div>
 
@@ -187,9 +189,10 @@ export function PortfolioSection({
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {displayedProjects.map((project) => (
-            <article
+            <SpotlightCard
               key={project.id}
-              className="rounded-xl bg-[#FAFAFA] border border-[#EBEBEB] p-6 transition-colors hover:border-[#101010] hover:bg-white flex flex-col justify-between"
+              mode="light"
+              className="rounded-xl border border-[#EBEBEB] p-6 hover:border-[#101010] flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between gap-3 mb-4">
@@ -234,7 +237,7 @@ export function PortfolioSection({
                   </span>
                 ))}
               </div>
-            </article>
+            </SpotlightCard>
           ))}
         </div>
 

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Check, X, ArrowRight, ShieldCheck } from "lucide-react";
+import { SpotlightCard } from "@/components/common/SpotlightCard";
 
 const COMPARISON_ROWS = [
   {
@@ -58,7 +59,11 @@ export function WhyChooseUsSection() {
       </div>
 
       {/* Visual Institutional Comparison Matrix */}
-      <div className="rounded-2xl border border-neutral-200/90 bg-white overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
+      <SpotlightCard
+        mode="light"
+        className="rounded-2xl border border-neutral-200/90 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.03)] p-0 overflow-hidden"
+        contentClassName="relative z-10"
+      >
         {/* Table Header */}
         <div className="grid grid-cols-12 bg-neutral-100/70 border-b border-neutral-200 text-[11.5px] sm:text-[12px] font-bold uppercase tracking-wider text-[#101010] p-3 sm:p-4">
           <div className="col-span-4 sm:col-span-4 text-[#737373]">Core Capability</div>
@@ -112,7 +117,7 @@ export function WhyChooseUsSection() {
             <ArrowRight className="h-3 w-3" />
           </Link>
         </div>
-      </div>
+      </SpotlightCard>
     </section>
   );
 }

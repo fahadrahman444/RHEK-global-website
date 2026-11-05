@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight, Compass, LayoutTemplate, TerminalSquare, Rocket } from "lucide-react";
+import { SpotlightCard } from "@/components/common/SpotlightCard";
 
 export function WebDevProcessRoadmap() {
   const steps = [
@@ -62,9 +63,10 @@ export function WebDevProcessRoadmap() {
           {steps.map((item, index) => {
             const Icon = item.icon;
             return (
-              <div
+              <SpotlightCard
                 key={index}
-                className="relative rounded-2xl border border-[#EBEBEB] bg-[#FAFAFA] p-6 hover:border-[#101010] hover:bg-white transition-all duration-200 flex flex-col justify-between"
+                mode="light"
+                className="p-6 rounded-2xl hover:border-[#101010]"
               >
                 <div>
                   {/* Step & Timeline Badge */}
@@ -102,7 +104,7 @@ export function WebDevProcessRoadmap() {
                     ))}
                   </ul>
                 </div>
-              </div>
+              </SpotlightCard>
             );
           })}
         </div>

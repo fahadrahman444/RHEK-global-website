@@ -1,6 +1,7 @@
 "use client";
 
 import { XCircle, CheckCircle2, ArrowRight } from "lucide-react";
+import { SpotlightCard } from "@/components/common/SpotlightCard";
 
 export function WebDevProblemSolution() {
   const problems = [
@@ -55,7 +56,12 @@ export function WebDevProblemSolution() {
         {/* 2-Column Comparison Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Left: The Outdated Approach */}
-          <div className="rounded-2xl border border-red-200/60 bg-red-50/20 p-6 sm:p-8 space-y-6">
+          <SpotlightCard
+            mode="light"
+            spotlightColor="rgba(239, 68, 68, 0.22)"
+            className="rounded-2xl border border-red-200/60 bg-red-50/20 p-6 sm:p-8 space-y-6"
+            contentClassName="relative z-10 space-y-6"
+          >
             <div className="flex items-center gap-3 pb-4 border-b border-red-200/40">
               <div className="h-8 w-8 rounded-lg bg-red-100 flex items-center justify-center text-red-600">
                 <XCircle className="h-5 w-5" />
@@ -77,10 +83,15 @@ export function WebDevProblemSolution() {
                 </div>
               ))}
             </div>
-          </div>
+          </SpotlightCard>
 
           {/* Right: The RHEK GLOBAL Standard */}
-          <div className="rounded-2xl border border-[#101010] bg-[#101010] p-6 sm:p-8 space-y-6 text-white shadow-xl">
+          <SpotlightCard
+            mode="dark"
+            spotlightColor="rgba(233, 32, 79, 0.35)"
+            className="rounded-2xl border border-[#101010] bg-[#101010] p-6 sm:p-8 space-y-6 text-white shadow-xl"
+            contentClassName="relative z-10 space-y-6"
+          >
             <div className="flex items-center gap-3 pb-4 border-b border-white/10">
               <div className="h-8 w-8 rounded-lg bg-[#E9204F] flex items-center justify-center text-white">
                 <CheckCircle2 className="h-5 w-5" />
@@ -102,7 +113,7 @@ export function WebDevProblemSolution() {
                 </div>
               ))}
             </div>
-          </div>
+          </SpotlightCard>
         </div>
       </div>
     </section>

@@ -9,6 +9,7 @@ import {
   ShieldCheck,
   Check,
 } from "lucide-react";
+import { SpotlightCard } from "@/components/common/SpotlightCard";
 
 export function WebDevServicesGrid() {
   const services = [
@@ -74,8 +75,9 @@ export function WebDevServicesGrid() {
           {services.map((item, index) => {
             const Icon = item.icon;
             return (
-              <div
+              <SpotlightCard
                 key={index}
+                mode="light"
                 className="group rounded-2xl border border-[#E5E5E5] bg-white p-7 transition-all duration-200 hover:border-[#101010] hover:shadow-lg flex flex-col justify-between"
               >
                 <div>
@@ -100,7 +102,7 @@ export function WebDevServicesGrid() {
                     </div>
                   ))}
                 </div>
-              </div>
+              </SpotlightCard>
             );
           })}
         </div>

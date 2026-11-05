@@ -16,6 +16,7 @@ import {
   ShieldCheck,
   Calendar,
 } from "lucide-react";
+import { SpotlightCard } from "@/components/common/SpotlightCard";
 
 export const metadata: Metadata = {
   title: "Meet the Team — RHEK GLOBAL",
@@ -163,9 +164,10 @@ export default function TeamPage() {
             {TEAM_DIVISIONS.map((team) => {
               const Icon = team.icon;
               return (
-                <div
+                <SpotlightCard
                   key={team.name}
-                  className="rounded-xl border border-[#EBEBEB] bg-[#FAFAFA] p-4 sm:p-5 flex flex-col justify-between hover:border-[#101010] hover:bg-white hover:shadow-md transition-all duration-300"
+                  mode="light"
+                  className="rounded-xl border border-[#EBEBEB] p-4 sm:p-5 flex flex-col justify-between hover:border-[#101010]"
                 >
                   <div>
                     <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white border border-[#EBEBEB] text-[#101010] mb-3 shadow-2xs">
@@ -193,7 +195,7 @@ export default function TeamPage() {
                       </li>
                     ))}
                   </ul>
-                </div>
+                </SpotlightCard>
               );
             })}
           </div>
@@ -212,9 +214,11 @@ export default function TeamPage() {
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3">
             {WORKING_VALUES.map((val, idx) => (
-              <div
+              <SpotlightCard
                 key={idx}
-                className="rounded-xl border border-[#EBEBEB] bg-[#FAFAFA] p-3 sm:p-4 hover:border-[#101010] hover:bg-white hover:shadow-xs transition-all duration-200"
+                mode="light"
+                className="rounded-xl border border-[#EBEBEB] p-3 sm:p-4 hover:border-[#101010]"
+                contentClassName="relative z-10"
               >
                 <span className="font-mono text-[11px] font-bold text-[#737373]">
                   0{idx + 1}
@@ -225,13 +229,17 @@ export default function TeamPage() {
                 <p className="text-[11px] sm:text-[12px] text-[#525252] leading-relaxed line-clamp-3 sm:line-clamp-none">
                   {val.description}
                 </p>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
         </div>
 
         {/* Guaranteed Consultation CTA */}
-        <div className="rounded-2xl bg-[#101010] text-white p-5 sm:p-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+        <SpotlightCard
+          mode="dark"
+          className="rounded-2xl bg-[#101010] text-white p-5 sm:p-7"
+          contentClassName="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-5"
+        >
           <div className="max-w-[620px]">
             <div className="inline-flex items-center gap-1.5 rounded bg-white/10 text-[#E9204F] text-[10.5px] font-semibold uppercase tracking-wider px-2.5 py-0.5 mb-1.5">
               <ShieldCheck className="h-3.5 w-3.5" />
@@ -252,7 +260,7 @@ export default function TeamPage() {
             <span>Schedule Consultation</span>
             <ArrowRight className="h-3.5 w-3.5" />
           </Link>
-        </div>
+        </SpotlightCard>
       </div>
 
       {/* 4. Global Footer */}

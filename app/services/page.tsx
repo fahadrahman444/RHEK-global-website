@@ -17,6 +17,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { RHEK_CONFIG } from "@/data/rhek-config";
+import { SpotlightCard } from "@/components/common/SpotlightCard";
 
 export const metadata: Metadata = {
   title: "Services & Capabilities — RHEK GLOBAL",
@@ -127,7 +128,11 @@ export default function ServicesPage() {
               </div>
 
               {/* Service Features & Execution Bento */}
-              <div className="lg:col-span-7 rounded-xl bg-[#FAFAFA] border border-[#EBEBEB] p-4 sm:p-6 hover:border-[#101010] transition-colors">
+              <SpotlightCard
+                mode="light"
+                className="lg:col-span-7 rounded-xl p-4 sm:p-6 hover:border-[#101010]"
+                contentClassName="relative z-10"
+              >
                 <span className="text-[10.5px] font-bold uppercase tracking-wider text-[#737373] mb-3 block">
                   Core Capabilities &amp; Deliverables
                 </span>
@@ -142,13 +147,17 @@ export default function ServicesPage() {
                     </div>
                   ))}
                 </div>
-              </div>
+              </SpotlightCard>
             </div>
           ))}
         </div>
 
         {/* Money-Back Guarantee Strip */}
-        <div className="rounded-2xl bg-[#101010] text-white p-5 sm:p-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+        <SpotlightCard
+          mode="dark"
+          className="rounded-2xl bg-[#101010] text-white p-5 sm:p-7 border-white/10"
+          contentClassName="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-5"
+        >
           <div className="max-w-[680px]">
             <div className="inline-flex items-center gap-1.5 rounded bg-white/10 px-2.5 py-0.5 text-[10.5px] font-semibold uppercase tracking-wider text-[#E9204F] mb-1.5">
               <ShieldCheck className="h-3.5 w-3.5" />
@@ -168,7 +177,7 @@ export default function ServicesPage() {
             <span>Schedule Consultation</span>
             <ArrowRight className="h-3.5 w-3.5" />
           </Link>
-        </div>
+        </SpotlightCard>
       </div>
 
       {/* 4. Global Footer */}

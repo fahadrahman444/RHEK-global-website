@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, ShieldCheck, Zap, Clock, Users } from "lucide-react";
+import { SpotlightCard } from "@/components/common/SpotlightCard";
 
 const PIPELINE_PHASES = [
   {
@@ -90,8 +91,9 @@ export function ProcessSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 relative z-10">
           {PIPELINE_PHASES.map((p) => (
-            <div
+            <SpotlightCard
               key={p.phase}
+              mode="light"
               className="rounded-2xl border border-neutral-200/90 bg-white p-4 sm:p-5 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-[#101010] transition-all flex flex-col justify-between group"
             >
               <div>
@@ -122,7 +124,7 @@ export function ProcessSection() {
                 <CheckCircle2 className="h-3.5 w-3.5 text-[#16A34A]" />
                 <span>Phase Milestone Verified</span>
               </div>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
       </div>
@@ -132,9 +134,11 @@ export function ProcessSection() {
         {EXECUTION_METRICS.map((m, i) => {
           const Icon = m.icon;
           return (
-            <div
+            <SpotlightCard
               key={i}
+              mode="light"
               className="rounded-xl border border-neutral-200/70 bg-[#FAFAFA] p-3 sm:p-3.5 flex items-start gap-2.5 hover:bg-white hover:border-[#101010] transition-colors"
+              contentClassName="relative z-10 flex items-start gap-2.5"
             >
               <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-white border border-neutral-200 text-[#101010] shrink-0 mt-0.5 shadow-2xs">
                 <Icon className="h-3.5 w-3.5 text-[#E9204F]" />
@@ -147,7 +151,7 @@ export function ProcessSection() {
                   {m.detail}
                 </div>
               </div>
-            </div>
+            </SpotlightCard>
           );
         })}
       </div>
