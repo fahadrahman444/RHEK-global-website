@@ -1,4 +1,4 @@
-import { Compass, Palette, Code2, Rocket, ArrowRight } from "lucide-react";
+import { Compass, Palette, Code2, Rocket, ArrowRight } from "@/components/common/icons";
 import Link from "next/link";
 
 interface ProcessStep {

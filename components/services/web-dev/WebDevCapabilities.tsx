@@ -1,4 +1,4 @@
-import { Code2, Layout, Database, CheckCircle2, ArrowRight } from "lucide-react";
+import { Code2, Layout, Database, CheckCircle2, ArrowRight } from "@/components/common/icons";
 import Link from "next/link";
 import { SpotlightCard } from "./SpotlightCard";
 

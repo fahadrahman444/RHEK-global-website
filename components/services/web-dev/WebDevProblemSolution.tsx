@@ -1,6 +1,6 @@
 "use client";
 
-import { XCircle, CheckCircle2, ArrowRight } from "lucide-react";
+import { XCircle, CheckCircle2, ArrowRight } from "@/components/common/icons";
 import { SpotlightCard } from "@/components/common/SpotlightCard";
 
 export function WebDevProblemSolution() {
@@ -45,7 +45,7 @@ export function WebDevProblemSolution() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#E9204F]/10 text-[#E9204F] text-[11px] font-bold uppercase tracking-wider mb-3">
             The Industry Problem vs. Our Solution
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#101010] tracking-tight leading-[1.15]">
+          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#101010] tracking-tight leading-tight sm:leading-tight lg:leading-[1.18]">
             Most B2B Websites Bleed High-Value Inquiries. Here is How We Fix It.
           </h2>
           <p className="text-base sm:text-lg text-[#525252] mt-4 leading-relaxed">

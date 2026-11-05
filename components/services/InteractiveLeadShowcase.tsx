@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { ServiceLeadSample } from "@/data/services-data";
 import { LeadTicketCard } from "./LeadTicketCard";
-import { ShieldCheck, Sparkles, Filter } from "lucide-react";
+import { ShieldCheck, Sparkles, Filter } from "@/components/common/icons";
 
 interface InteractiveLeadShowcaseProps {
   leadSamples: ServiceLeadSample[];

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, CheckCircle2, Sparkles, TrendingUp, Star, Quote } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, Sparkles, TrendingUp, Star, Quote } from "@/components/common/icons";
 import { portfolioProjects } from "@/data/portfolio";
 import { SpotlightCard } from "./SpotlightCard";
 

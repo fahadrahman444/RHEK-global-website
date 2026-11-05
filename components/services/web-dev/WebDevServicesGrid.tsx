@@ -1,111 +1,94 @@
 "use client";
 
-import {
-  Code2,
-  Globe2,
-  Layout,
-  ShoppingCart,
-  Gauge,
-  ShieldCheck,
-  Check,
-} from "lucide-react";
-import { SpotlightCard } from "@/components/common/SpotlightCard";
+import { EditorialRows, type EditorialRowItem } from "@/components/layout/patterns/EditorialRows";
+
+const SERVICES_DATA: EditorialRowItem[] = [
+  {
+    index: "01",
+    subtitle: "Enterprise Applications",
+    title: "Custom Full-Stack Web Applications",
+    description: "Mission-critical Next.js 15 web applications engineered with strict TypeScript typing, sub-second latency, and scalable backend integrations built for enterprise concurrency.",
+    deliverables: ["Next.js App Router & RSC", "Strict TypeScript data contracts", "Secure REST & GraphQL APIs", "Role-based access control (RBAC)"],
+    tags: ["Next.js 15", "TypeScript", "React 19", "Node.js"],
+    href: "/contact?service=web-development",
+  },
+  {
+    index: "02",
+    subtitle: "Digital Headquarters",
+    title: "Corporate & B2B Web Portals",
+    description: "High-authority digital headquarters designed to establish market leadership, communicate technical credibility, and convert qualified commercial prospects.",
+    deliverables: ["Custom Figma token architecture", "12-column Swiss layout system", "Executive narrative positioning", "Interactive case study telemetry"],
+    tags: ["Swiss Design", "Figma Tokens", "Tailwind CSS"],
+    href: "/contact?service=web-development",
+  },
+  {
+    index: "03",
+    subtitle: "Design Architecture",
+    title: "UI/UX & Scalable Design Systems",
+    description: "Production component libraries crafted for frictionless user journeys, high typographic contrast, and guaranteed WCAG 2.2 AA accessibility compliance.",
+    deliverables: ["Atomic component architecture", "Mobile-first touch ergonomics", "WCAG 2.2 AA accessibility audit", "Micro-interaction polish with Framer Motion"],
+    tags: ["Framer Motion", "Design Tokens", "WCAG 2.2 AA"],
+    href: "/contact?service=web-development",
+  },
+  {
+    index: "04",
+    subtitle: "Commercial Commerce",
+    title: "Headless E-Commerce & Checkout Engines",
+    description: "Sub-second product catalogs, custom quotation calculators, and frictionless Stripe checkout funnels engineered with zero page-builder bloat.",
+    deliverables: ["Headless Shopify / Stripe pipelines", "Dynamic quote configurators", "High-velocity cart transitions", "Zero template lock-in"],
+    tags: ["Headless", "Stripe API", "Sub-Second LCP"],
+    href: "/contact?service=web-development",
+  },
+  {
+    index: "05",
+    subtitle: "Performance Engineering",
+    title: "Core Web Vitals & Technical SEO Architecture",
+    description: "Sub-second Largest Contentful Paint (LCP ≤ 0.9s), zero Cumulative Layout Shift, semantic JSON-LD structured data, and rich OpenGraph metadata designed for top search rankings.",
+    deliverables: ["Lighthouse 95–100 benchmark guarantee", "Semantic JSON-LD schema", "Clean metadata & automated XML sitemaps", "Zero render-blocking scripts"],
+    tags: ["Lighthouse 100", "LCP < 0.9s", "Schema.org"],
+    href: "/contact?service=web-development",
+  },
+  {
+    index: "06",
+    subtitle: "Reliability & Uptime",
+    title: "Continuous Maintenance & 99.9% SLA Support",
+    description: "Continuous vulnerability patching, automated dependency upgrades, 24/7 uptime monitoring, and guaranteed response SLAs backed by our senior web engineering division.",
+    deliverables: ["24/7 automated uptime telemetry", "Monthly zero-slop dependency audits", "Dedicated senior developer support", "Guaranteed 4-hour SLA response"],
+    tags: ["99.9% Uptime", "Zero-CVE Patching", "Direct SLA"],
+    href: "/contact?service=web-development",
+  },
+];
 
 export function WebDevServicesGrid() {
-  const services = [
-    {
-      icon: Code2,
-      title: "Custom Web Applications",
-      desc: "Full-stack web applications built with Next.js 15, strict TypeScript, and secure backend APIs engineered for high-concurrency commercial scale.",
-      features: ["Next.js App Router & SSR", "Strict TypeScript typing", "Secure API integrations", "Role-based access control"],
-    },
-    {
-      icon: Globe2,
-      title: "Corporate & B2B Web Portals",
-      desc: "Authoritative digital headquarters designed to establish market leadership, communicate technical credibility, and convert enterprise prospects.",
-      features: ["Custom brand design system", "12-column Swiss layout", "Executive positioning", "Interactive case study showcases"],
-    },
-    {
-      icon: Layout,
-      title: "UI/UX & Design Systems",
-      desc: "Scalable Figma design tokens and component libraries crafted for frictionless user journeys, high contrast, and WCAG AA accessibility.",
-      features: ["Component library architecture", "Mobile-first touch ergonomics", "WCAG 2.2 AA compliant", "Micro-interaction polish"],
-    },
-    {
-      icon: ShoppingCart,
-      title: "Headless E-Commerce & Checkout",
-      desc: "Sub-second product catalogs, custom quotation workflows, and frictionless Stripe checkout funnels with zero template lock-in.",
-      features: ["Headless architecture", "Stripe & billing integrations", "Dynamic product configurators", "Optimized checkout funnel"],
-    },
-    {
-      icon: Gauge,
-      title: "Core Web Vitals & SEO Engineering",
-      desc: "Engineered from the ground up for 95-100 Google Lighthouse benchmarks, sub-second LCP, dynamic OpenGraph, and rich schema markup.",
-      features: ["Sub-second LCP / INP / CLS", "Semantic structured data", "Clean metadata & sitemaps", "Zero render-blocking scripts"],
-    },
-    {
-      icon: ShieldCheck,
-      title: "Maintenance & 99.9% SLA Support",
-      desc: "Continuous dependency updates, zero-vulnerability security patching, automated uptime monitoring, and dedicated developer support.",
-      features: ["24/7 uptime monitoring", "Monthly security patches", "Scheduled performance audits", "Guaranteed SLA response times"],
-    },
-  ];
-
   return (
     <section
       id="services"
-      className="py-20 md:py-28 border-b border-[#EBEBEB] bg-[#FAFAFA]"
+      className="py-16 md:py-24 border-b border-[#EBEBEB] bg-white"
     >
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
-        {/* Header */}
-        <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#101010]/5 text-[#101010] text-[11px] font-bold uppercase tracking-wider mb-3">
-            Core Capabilities
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 lg:mb-16">
+          <div className="max-w-2xl">
+            <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#E9204F] bg-[#E9204F]/10 px-2.5 py-1 rounded inline-block mb-3">
+              Section 02 · Full-Lifecycle Engineering
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#101010] tracking-tight leading-tight sm:leading-tight lg:leading-[1.18]">
+              Core Capabilities: Built on Clean Code, Not Templates
+            </h2>
+            <p className="text-base sm:text-lg text-[#525252] mt-3 leading-relaxed">
+              Every system is engineered from clean foundations. We handle every stage with senior precision, strict TypeScript typing, and architectural craftsmanship.
+            </p>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#101010] tracking-tight leading-[1.15]">
-            What We Offer: Full-Lifecycle Web Engineering
-          </h2>
-          <p className="text-base sm:text-lg text-[#525252] mt-4 leading-relaxed">
-            From initial system architecture and bespoke UI/UX design to production deployment and long-term maintenance, we handle every stage with senior engineering precision.
-          </p>
+
+          <div className="text-[12.5px] font-mono text-[#737373] hidden md:block text-right">
+            <span>6 CAPABILITIES AVAILABLE</span>
+            <br />
+            <span className="text-[#101010] font-bold">SWISS EDITORIAL DIRECTORY</span>
+          </div>
         </div>
 
-        {/* 3-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <SpotlightCard
-                key={index}
-                mode="light"
-                className="group rounded-2xl border border-[#E5E5E5] bg-white p-7 transition-all duration-200 hover:border-[#101010] hover:shadow-lg flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#FAFAFA] border border-[#EBEBEB] text-[#101010] group-hover:bg-[#E9204F] group-hover:text-white group-hover:border-[#E9204F] transition-colors duration-200">
-                    <Icon className="h-6 w-6" />
-                  </div>
-
-                  <h3 className="text-xl font-bold text-[#101010] mt-5 mb-2 group-hover:text-[#E9204F] transition-colors">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-[14px] text-[#525252] leading-relaxed mb-6">
-                    {item.desc}
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-[#F0F0F0] space-y-2">
-                  {item.features.map((feat, fIdx) => (
-                    <div key={fIdx} className="flex items-center gap-2 text-[12.5px] font-medium text-[#737373]">
-                      <Check className="h-3.5 w-3.5 text-[#E9204F] shrink-0" />
-                      <span>{feat}</span>
-                    </div>
-                  ))}
-                </div>
-              </SpotlightCard>
-            );
-          })}
-        </div>
+        {/* Pattern A: Full-Width Editorial Rows */}
+        <EditorialRows items={SERVICES_DATA} />
       </div>
     </section>
   );

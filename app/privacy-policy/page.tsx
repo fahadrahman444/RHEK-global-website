@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SubpageHeader } from "@/components/layout/SubpageHeader";
-import { ArrowLeft, Lock } from "lucide-react";
+import { ArrowLeft, Lock } from "@/components/common/icons";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — RHEK GLOBAL",

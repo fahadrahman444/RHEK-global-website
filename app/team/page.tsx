@@ -15,7 +15,7 @@ import {
   ArrowRight,
   ShieldCheck,
   Calendar,
-} from "lucide-react";
+} from "@/components/common/icons";
 import { SpotlightCard } from "@/components/common/SpotlightCard";
 
 export const metadata: Metadata = {

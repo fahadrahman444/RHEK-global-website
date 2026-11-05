@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Calculator, ArrowRight, TrendingUp, CheckCircle2, ShieldCheck } from "lucide-react";
+import { Calculator, ArrowRight, TrendingUp, CheckCircle2, ShieldCheck } from "@/components/common/icons";
 
 export function JanitorialRoiCalculator() {
   const [leadsCount, setLeadsCount] = useState<number>(10);

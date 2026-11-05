@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CheckCircle2, Building2, MapPin, Calendar, Clock, DollarSign, UserCheck, ShieldCheck, ArrowRight } from "lucide-react";
+import { CheckCircle2, Building2, MapPin, Calendar, Clock, DollarSign, UserCheck, ShieldCheck, ArrowRight } from "@/components/common/icons";
 import type { ServiceLeadSample } from "@/data/services-data";
 import { SpotlightCard } from "@/components/common/SpotlightCard";
 

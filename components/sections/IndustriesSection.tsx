@@ -13,7 +13,7 @@ import {
   Truck,
   Rocket,
   ArrowRight,
-} from "lucide-react";
+} from "@/components/common/icons";
 import { SpotlightCard } from "@/components/common/SpotlightCard";
 
 const SECTOR_DATA = [

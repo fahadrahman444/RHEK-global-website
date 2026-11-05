@@ -10,7 +10,7 @@ import {
   Shirt,
   Rocket,
   CheckCircle2,
-} from "lucide-react";
+} from "@/components/common/icons";
 import { SpotlightCard } from "./SpotlightCard";
 
 const INDUSTRIES = [

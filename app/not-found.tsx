@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { FileQuestion, Home, Compass } from "lucide-react";
+import { FileQuestion, Home, Compass } from "@/components/common/icons";
 
 export default function NotFound() {
   return (

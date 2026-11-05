@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ChevronDown, HelpCircle } from "lucide-react";
+import { ChevronDown, HelpCircle } from "@/components/common/icons";
 
 interface FAQItem {
   question: string;

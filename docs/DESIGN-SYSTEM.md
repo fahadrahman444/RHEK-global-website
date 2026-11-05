@@ -117,3 +117,33 @@ Dedicated section architecture for `/services/web-development`:
 8. **Direct Consultation (2-Column Layout):**
    - Left 5 Columns: Technical guarantees, direct email, 24-hr response SLA.
    - Right 7 Columns: Direct RFP Form with button mutation locks and validation.
+
+---
+
+## 10. The 6 Swiss Architectural Layout Archetypes
+
+Avoid repetitive card-grid fatigue by assigning each section a dedicated layout archetype based on content type:
+
+### Pattern A: Full-Width Editorial Rows
+- **Usage:** Detailed service capabilities, offerings, executive features.
+- **Structure:** 12-column full-width container with thin hairline dividers (`border-[#EBEBEB]`). Numbered monospace index (`col-span-1`), bold title (`col-span-4`), descriptive narrative & tags (`col-span-6`), and directional hover action (`col-span-1`).
+
+### Pattern B: Asymmetric 8/4 Feature Layout
+- **Usage:** "Why Choose Us", flagship case studies, core strategic value propositions.
+- **Structure:** 8-column dominant narrative anchor paired with a 4-column secondary SLA/evidence panel.
+
+### Pattern C: Swiss Vertical Timeline
+- **Usage:** Delivery methodology, 4-stage sprint roadmaps, step-by-step onboarding.
+- **Structure:** Connected vertical hairline axis (`border-l-2`) with numbered milestone nodes (`01`, `02`), timeline badges, deliverable lists, and duration indicators.
+
+### Pattern D: Horizontal Monoline Capability Strip
+- **Usage:** Technology stack, operational standards, Core Web Vitals benchmark criteria.
+- **Structure:** Continuous horizontal tray with vertical hairline dividers (`divide-x divide-[#EBEBEB]`) and compact metric blocks.
+
+### Pattern E: Full-Width Visual Showcase
+- **Usage:** Portfolio case studies, client outcome showcases.
+- **Structure:** High-density visual panel with adjacent or structured editorial telemetry dock.
+
+### Pattern F: Asymmetric Comparison Matrix
+- **Usage:** Traditional vs. Modern, Outdated Agencies vs. RHEK Standard.
+- **Structure:** 2 structured columns with subtle contrasts, hairline separators, and typography-first proof points.

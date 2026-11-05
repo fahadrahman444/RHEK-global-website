@@ -1,4 +1,4 @@
-import { Shield, Sparkles, Award, Users, TrendingUp, Target, Eye } from "lucide-react";
+import { Shield, Sparkles, Award, Users, TrendingUp, Target, Eye } from "@/components/common/icons";
 import { SpotlightCard } from "./SpotlightCard";
 
 const CORE_VALUES = [

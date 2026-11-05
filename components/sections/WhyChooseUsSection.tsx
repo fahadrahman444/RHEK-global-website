@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Check, X, ArrowRight, ShieldCheck } from "lucide-react";
+import { Check, X, ArrowRight, ShieldCheck } from "@/components/common/icons";
 import { SpotlightCard } from "@/components/common/SpotlightCard";
 
 const COMPARISON_ROWS = [

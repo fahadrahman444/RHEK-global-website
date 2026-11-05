@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { CheckCircle2, ShieldCheck, ArrowRight, Building2, MapPin, Calendar, UserCheck } from "lucide-react";
+import { CheckCircle2, ShieldCheck, ArrowRight, Building2, MapPin, Calendar, UserCheck } from "@/components/common/icons";
 import { RHEK_CONFIG } from "@/data/rhek-config";
 import { SpotlightCard } from "@/components/common/SpotlightCard";
 

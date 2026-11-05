@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { portfolioProjects, type ProjectCaseStudy } from "@/data/portfolio";
-import { ArrowUpRight, CheckCircle2, Layers, ArrowRight, Sparkles } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, Layers, ArrowRight, Sparkles } from "@/components/common/icons";
 import { SpotlightCard } from "@/components/common/SpotlightCard";
 
 type CategoryFilter = "All" | ProjectCaseStudy["category"];

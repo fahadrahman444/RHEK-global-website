@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Phone, ArrowRight } from "lucide-react";
+import { Phone, ArrowRight } from "@/components/common/icons";
 
 interface MobileServiceStickyBarProps {
   primaryCtaText: string;

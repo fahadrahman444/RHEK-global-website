@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronUp, ChevronDown, ListFilter, X, ArrowUp } from "lucide-react";
+import { ChevronUp, ChevronDown, ListFilter, X, ArrowUp } from "@/components/common/icons";
 
 export interface SectionItem {
   id: string;

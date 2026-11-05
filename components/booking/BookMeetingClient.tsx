@@ -14,7 +14,7 @@ import {
   Loader2,
   Mail,
   UserCheck,
-} from "lucide-react";
+} from "@/components/common/icons";
 import { RHEK_CONFIG } from "@/data/rhek-config";
 
 const MEETING_SERVICES = [
@@ -93,7 +93,7 @@ export function BookMeetingClient() {
             <Calendar className="h-3.5 w-3.5" />
             <span>Dedicated Consultation</span>
           </div>
-          <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#101010] leading-[1.12]">
+          <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#101010] leading-tight sm:leading-tight lg:leading-[1.18]">
             Book a Strategy &amp; Discovery Session
           </h1>
           <p className="mt-3 text-base sm:text-lg text-[#525252] leading-relaxed">

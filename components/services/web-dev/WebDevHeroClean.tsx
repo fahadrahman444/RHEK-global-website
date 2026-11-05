@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, CheckCircle2, Sparkles, Terminal, ShieldCheck, Zap } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, Terminal, ShieldCheck, Zap } from "@/components/common/icons";
 
 export function WebDevHeroClean() {
   const scrollTo = (id: string) => {
@@ -22,15 +22,9 @@ export function WebDevHeroClean() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
           {/* Left Column: 7 Cols */}
           <div className="lg:col-span-7 space-y-4 sm:space-y-5 lg:space-y-6">
-            {/* Category Eyebrow */}
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#101010]/5 border border-[#101010]/10 text-[#101010] text-[11px] sm:text-[12px] font-bold uppercase tracking-wider">
-              <Sparkles className="h-3.5 w-3.5 text-[#E9204F]" />
-              <span>Enterprise Web Design & Development</span>
-            </div>
-
             {/* Display Headline */}
-            <h1 className="text-[26px] sm:text-4xl lg:text-[54px] font-extrabold text-[#101010] tracking-[-0.03em] leading-[1.14]">
-              We Build High-Performing Websites That Drive <span className="text-[#E9204F]">Real Pipeline.</span>
+            <h1 className="text-[26px] sm:text-4xl lg:text-[50px] font-extrabold text-[#101010] tracking-[-0.03em] leading-tight sm:leading-tight lg:leading-[1.18]">
+              We Build High-Performing Websites That Drive <span className="text-[#E9204F] inline-block">Real Pipeline.</span>
             </h1>
 
             {/* Subheading */}

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Briefcase, Sparkles, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Briefcase, Sparkles, CheckCircle2 } from "@/components/common/icons";
 import { SpotlightCard } from "./SpotlightCard";
 
 export function WebDevCareers() {

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CheckCircle2, ArrowRight, ShieldCheck, Sparkles, Clock } from "lucide-react";
+import { CheckCircle2, ArrowRight, ShieldCheck, Sparkles, Clock } from "@/components/common/icons";
 import { SERVICES_DETAILED_DATA } from "@/data/services-data";
 import { SpotlightCard } from "./SpotlightCard";
 

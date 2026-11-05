@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { BrandLogo } from "./BrandLogo";
 import { RHEK_CONFIG } from "@/data/rhek-config";
-import { ArrowRight, CheckCircle2, Mail, ArrowUpRight } from "lucide-react";
+import { ArrowRight, CheckCircle2, Mail, ArrowUpRight } from "@/components/common/icons";
 
 export function Footer() {
   const [email, setEmail] = useState("");

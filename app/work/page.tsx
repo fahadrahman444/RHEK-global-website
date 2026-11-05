@@ -3,7 +3,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SubpageHeader } from "@/components/layout/SubpageHeader";
 import { PortfolioSection } from "@/components/sections/PortfolioSection";
-import { Briefcase } from "lucide-react";
+import { Briefcase } from "@/components/common/icons";
 
 export const metadata: Metadata = {
   title: "Our Work & Case Studies — RHEK GLOBAL",

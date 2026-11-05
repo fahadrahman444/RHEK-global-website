@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ShieldCheck, Lock, ArrowRight } from "lucide-react";
+import { ShieldCheck, Lock, ArrowRight } from "@/components/common/icons";
 import { RHEK_CONFIG } from "@/data/rhek-config";
 import { SpotlightCard } from "@/components/common/SpotlightCard";
 

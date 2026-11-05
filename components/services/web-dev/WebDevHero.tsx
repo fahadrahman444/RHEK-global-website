@@ -15,7 +15,7 @@ import {
   Sparkles,
   Terminal,
   Activity,
-} from "lucide-react";
+} from "@/components/common/icons";
 
 export function WebDevHero() {
   const [activeTab, setActiveTab] = useState<"vitals" | "stack" | "lighthouse">("vitals");

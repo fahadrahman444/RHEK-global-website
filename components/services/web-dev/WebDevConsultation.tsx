@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, ShieldCheck, Clock, CheckCircle2, ArrowRight, Loader2, AlertCircle } from "lucide-react";
+import { Mail, ShieldCheck, Clock, CheckCircle2, ArrowRight, Loader2, AlertCircle } from "@/components/common/icons";
 
 export function WebDevConsultation() {
   const [formData, setFormData] = useState({

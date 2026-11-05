@@ -1,4 +1,4 @@
-import { CheckCircle2, ShieldCheck, Zap, Code, Lock, Cpu } from "lucide-react";
+import { CheckCircle2, ShieldCheck, Zap, Code, Lock, Cpu } from "@/components/common/icons";
 
 export function WebDevArchitecture() {
   const standards = [

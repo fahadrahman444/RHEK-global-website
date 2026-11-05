@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { SubpageHeader } from "@/components/layout/SubpageHeader";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { FAQSection } from "@/components/sections/FAQSection";
-import { Mail, ShieldCheck, MessageSquare, Calendar } from "lucide-react";
+import { Mail, ShieldCheck, MessageSquare, Calendar } from "@/components/common/icons";
 import { RHEK_CONFIG } from "@/data/rhek-config";
 
 export const metadata: Metadata = {

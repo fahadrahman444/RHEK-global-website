@@ -15,7 +15,7 @@ import {
   CheckCircle2,
   ArrowRight,
   ShieldCheck,
-} from "lucide-react";
+} from "@/components/common/icons";
 import { RHEK_CONFIG } from "@/data/rhek-config";
 import { SpotlightCard } from "@/components/common/SpotlightCard";
 

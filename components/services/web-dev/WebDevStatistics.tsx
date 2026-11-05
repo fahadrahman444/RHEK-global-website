@@ -1,4 +1,4 @@
-import { TrendingUp, Award, Zap, Smartphone, ShieldCheck, Code } from "lucide-react";
+import { TrendingUp, Award, Zap, Smartphone, ShieldCheck, Code } from "@/components/common/icons";
 import { SpotlightCard } from "./SpotlightCard";
 
 const STATS = [

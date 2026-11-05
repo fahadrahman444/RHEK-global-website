@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ShieldCheck, CheckCircle2, Sparkles } from "lucide-react";
+import { ArrowRight, ShieldCheck, CheckCircle2, Sparkles } from "@/components/common/icons";
 import { RHEK_CONFIG } from "@/data/rhek-config";
 
 export function Hero() {

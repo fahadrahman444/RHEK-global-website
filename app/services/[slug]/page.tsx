@@ -23,7 +23,7 @@ import {
   AlertTriangle,
   Lightbulb,
   Building2,
-} from "lucide-react";
+} from "@/components/common/icons";
 
 interface ServicePageProps {
   params: Promise<{
@@ -187,7 +187,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 </div>
 
                 {/* Display Headline */}
-                <h1 className="font-heading text-3xl sm:text-4xl lg:text-[46px] font-bold tracking-[-0.035em] text-[#101010] leading-[1.12]">
+                <h1 className="font-heading text-3xl sm:text-4xl lg:text-[46px] font-bold tracking-[-0.035em] text-[#101010] leading-tight sm:leading-tight lg:leading-[1.18]">
                   {service.headline}
                 </h1>
 
@@ -769,7 +769,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                   <span>Ready To Scale?</span>
                 </div>
 
-                <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.12]">
+                <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight sm:leading-tight lg:leading-[1.18]">
                   Book a Strategy Call with Our {service.title} Team
                 </h2>
 

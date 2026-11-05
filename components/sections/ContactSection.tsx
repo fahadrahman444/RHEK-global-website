@@ -2,7 +2,7 @@
 
 import { useState, useEffect, type FormEvent } from "react";
 import Link from "next/link";
-import { Mail, Clock, ShieldCheck, CheckCircle, Loader2, ArrowRight, Calendar } from "lucide-react";
+import { Mail, Clock, ShieldCheck, CheckCircle, Loader2, ArrowRight, Calendar } from "@/components/common/icons";
 import { SpotlightCard } from "@/components/common/SpotlightCard";
 
 import { RHEK_CONFIG } from "@/data/rhek-config";

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, HelpCircle } from "lucide-react";
+import { ChevronDown, HelpCircle } from "@/components/common/icons";
 
 export function WebDevFaq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);

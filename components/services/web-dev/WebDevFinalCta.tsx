@@ -11,7 +11,7 @@ import {
   Phone,
   Mail,
   ArrowUpRight,
-} from "lucide-react";
+} from "@/components/common/icons";
 import { SpotlightCard } from "@/components/common/SpotlightCard";
 
 export function WebDevFinalCta() {
@@ -78,7 +78,7 @@ export function WebDevFinalCta() {
               <span>Step 8 · Direct Consultation</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold tracking-tight leading-[1.12]">
+            <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold tracking-tight leading-tight sm:leading-tight lg:leading-[1.18]">
               Ready to Upgrade Your Web Infrastructure? <span className="text-[#E9204F]">Book a Meeting.</span>
             </h2>
 

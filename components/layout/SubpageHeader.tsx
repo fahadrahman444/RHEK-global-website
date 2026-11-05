@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ChevronRight, Home, type LucideIcon } from "lucide-react";
+import { ChevronRight, Home, type LucideIcon } from "@/components/common/icons";
 
 interface SubpageHeaderProps {
   badge: string;
@@ -46,7 +46,7 @@ export function SubpageHeader({
           <span>{badge}</span>
         </div>
 
-        <h1 className="font-heading text-2xl sm:text-3xl lg:text-[36px] font-bold tracking-[-0.035em] text-[#101010] leading-[1.14]">
+        <h1 className="font-heading text-2xl sm:text-3xl lg:text-[36px] font-bold tracking-[-0.035em] text-[#101010] leading-tight sm:leading-tight lg:leading-[1.18]">
           {title}
         </h1>
 

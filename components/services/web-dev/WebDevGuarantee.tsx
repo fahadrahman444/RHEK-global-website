@@ -1,4 +1,4 @@
-import { ShieldCheck, CheckCircle2, ArrowRight } from "lucide-react";
+import { ShieldCheck, CheckCircle2, ArrowRight } from "@/components/common/icons";
 import Link from "next/link";
 import { SpotlightCard } from "./SpotlightCard";
 

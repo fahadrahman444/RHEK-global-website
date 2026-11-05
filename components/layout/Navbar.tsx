@@ -19,7 +19,7 @@ import {
   Mail,
   Headphones,
   ArrowRight,
-} from "lucide-react";
+} from "@/components/common/icons";
 import { BrandLogo } from "./BrandLogo";
 
 export interface NavServiceItem {

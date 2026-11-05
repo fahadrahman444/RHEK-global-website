@@ -14,7 +14,7 @@ import {
   MapPin,
   Building2,
   Gauge,
-} from "lucide-react";
+} from "@/components/common/icons";
 import { SpotlightCard } from "@/components/common/SpotlightCard";
 
 export function ServicesPreview() {

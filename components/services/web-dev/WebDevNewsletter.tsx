@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, CheckCircle2, ArrowRight, Loader2 } from "lucide-react";
+import { Mail, CheckCircle2, ArrowRight, Loader2 } from "@/components/common/icons";
 import { SpotlightCard } from "./SpotlightCard";
 
 export function WebDevNewsletter() {
