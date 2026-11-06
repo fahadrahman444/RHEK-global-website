@@ -270,7 +270,7 @@ export function BookMeetingClient() {
                     <select
                       value={formData.service}
                       onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                      className="w-full rounded-lg border border-[#E5E5E5] bg-white px-3.5 py-2.5 text-[13.5px] text-[#101010] focus:border-[#101010] focus:ring-1 focus:ring-[#101010] outline-none transition"
+                      className="w-full rounded-lg border border-[#E5E5E5] bg-white px-3.5 py-2.5 min-h-[44px] text-[13.5px] text-[#101010] focus:border-[#101010] focus:ring-1 focus:ring-[#101010] outline-none transition"
                       required
                     >
                       {MEETING_SERVICES.map((srv) => (
@@ -286,7 +286,7 @@ export function BookMeetingClient() {
                     <label className="block text-[12.5px] font-bold text-[#101010] mb-1.5">
                       Preferred Meeting Platform *
                     </label>
-                    <div className="grid grid-cols-3 gap-2.5">
+                    <div className="grid grid-cols-3 gap-2 sm:gap-2.5">
                       {MEETING_PLATFORMS.map((plat) => {
                         const Icon = plat.icon;
                         const isSelected = formData.platform === plat.id;
@@ -295,14 +295,14 @@ export function BookMeetingClient() {
                             type="button"
                             key={plat.id}
                             onClick={() => setFormData({ ...formData, platform: plat.id })}
-                            className={`flex items-center justify-center gap-2 p-2.5 rounded-lg border text-[12.5px] font-semibold transition ${
+                            className={`flex items-center justify-center gap-1.5 sm:gap-2 p-2 sm:p-2.5 rounded-lg border text-[11.5px] sm:text-[12.5px] font-semibold transition min-h-[44px] ${
                               isSelected
                                 ? "bg-[#101010] border-[#101010] text-white shadow-xs"
                                 : "bg-white border-[#E5E5E5] text-[#525252] hover:border-[#101010] hover:text-[#101010]"
                             }`}
                           >
-                            <Icon className="h-3.5 w-3.5" />
-                            <span>{plat.label}</span>
+                            <Icon className="h-3.5 w-3.5 shrink-0" />
+                            <span className="truncate">{plat.label}</span>
                           </button>
                         );
                       })}
@@ -321,7 +321,7 @@ export function BookMeetingClient() {
                         placeholder="e.g. Alex Morgan"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full rounded-lg border border-[#E5E5E5] bg-white px-3.5 py-2.5 text-[13.5px] text-[#101010] focus:border-[#101010] focus:ring-1 focus:ring-[#101010] outline-none transition"
+                        className="w-full rounded-lg border border-[#E5E5E5] bg-white px-3.5 py-2.5 min-h-[44px] text-[13.5px] text-[#101010] focus:border-[#101010] focus:ring-1 focus:ring-[#101010] outline-none transition"
                       />
                     </div>
 
@@ -335,7 +335,7 @@ export function BookMeetingClient() {
                         placeholder="alex@company.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full rounded-lg border border-[#E5E5E5] bg-white px-3.5 py-2.5 text-[13.5px] text-[#101010] focus:border-[#101010] focus:ring-1 focus:ring-[#101010] outline-none transition"
+                        className="w-full rounded-lg border border-[#E5E5E5] bg-white px-3.5 py-2.5 min-h-[44px] text-[13.5px] text-[#101010] focus:border-[#101010] focus:ring-1 focus:ring-[#101010] outline-none transition"
                       />
                     </div>
                   </div>
@@ -350,7 +350,7 @@ export function BookMeetingClient() {
                         placeholder="e.g. Acme Cleaning Services"
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                        className="w-full rounded-lg border border-[#E5E5E5] bg-white px-3.5 py-2.5 text-[13.5px] text-[#101010] focus:border-[#101010] focus:ring-1 focus:ring-[#101010] outline-none transition"
+                        className="w-full rounded-lg border border-[#E5E5E5] bg-white px-3.5 py-2.5 min-h-[44px] text-[13.5px] text-[#101010] focus:border-[#101010] focus:ring-1 focus:ring-[#101010] outline-none transition"
                       />
                     </div>
 
@@ -361,7 +361,7 @@ export function BookMeetingClient() {
                       <select
                         value={formData.preferredTime}
                         onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
-                        className="w-full rounded-lg border border-[#E5E5E5] bg-white px-3.5 py-2.5 text-[13.5px] text-[#101010] focus:border-[#101010] focus:ring-1 focus:ring-[#101010] outline-none transition"
+                        className="w-full rounded-lg border border-[#E5E5E5] bg-white px-3.5 py-2.5 min-h-[44px] text-[13.5px] text-[#101010] focus:border-[#101010] focus:ring-1 focus:ring-[#101010] outline-none transition"
                       >
                         <option value="Morning (9am - 12pm EST)">Morning (9am - 12pm EST)</option>
                         <option value="Afternoon (12pm - 4pm EST)">Afternoon (12pm - 4pm EST)</option>

@@ -150,7 +150,7 @@ export function WebDevLeftNav() {
       </aside>
 
       {/* Mobile & Tablet Floating Bottom Indicator Pill */}
-      <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-40 2xl:hidden">
+      <div className="fixed bottom-[max(1.25rem,calc(env(safe-area-inset-bottom,0px)+0.75rem))] left-1/2 -translate-x-1/2 z-40 2xl:hidden">
         <button
           type="button"
           onClick={() => setMobileDrawerOpen(!mobileDrawerOpen)}
@@ -173,56 +173,67 @@ export function WebDevLeftNav() {
         </button>
       </div>
 
-      {/* Mobile Slide-Up Quick Jump Sheet */}
+      {/* Mobile Slide-Up Quick Jump Sheet & Overlay */}
       <AnimatePresence>
         {mobileDrawerOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 16 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-x-4 bottom-20 z-50 rounded-2xl bg-[#141416] border border-white/15 p-5 shadow-2xl 2xl:hidden max-h-[70vh] overflow-y-auto"
-          >
-            <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
-              <div className="flex items-center gap-2">
-                <ListFilter className="h-4 w-4 text-[#E9204F]" />
-                <span className="font-heading text-sm font-bold text-white">
-                  All 13 Sections Directory
-                </span>
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.15 }}
+              onClick={() => setMobileDrawerOpen(false)}
+              className="fixed inset-0 bg-black/40 backdrop-blur-xs z-50 2xl:hidden"
+              aria-hidden="true"
+            />
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 16 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-x-4 bottom-[max(5rem,calc(env(safe-area-inset-bottom,0px)+4.5rem))] z-50 rounded-2xl bg-[#141416] border border-white/15 p-5 shadow-2xl 2xl:hidden max-h-[70vh] overflow-y-auto"
+            >
+              <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
+                <div className="flex items-center gap-2">
+                  <ListFilter className="h-4 w-4 text-[#E9204F]" />
+                  <span className="font-heading text-sm font-bold text-white">
+                    All 13 Sections Directory
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setMobileDrawerOpen(false)}
+                  className="p-1 rounded-md text-[#A3A3A3] hover:text-white min-h-[44px] min-w-[44px] flex items-center justify-center"
+                  aria-label="Close section menu"
+                >
+                  <X className="h-4 w-4" />
+                </button>
               </div>
-              <button
-                type="button"
-                onClick={() => setMobileDrawerOpen(false)}
-                className="p-1 rounded-md text-[#A3A3A3] hover:text-white"
-                aria-label="Close section menu"
-              >
-                <X className="h-4 w-4" />
-              </button>
-            </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
-              {SECTIONS_13.map((sec) => {
-                const isActive = sec.id === activeId;
-                return (
-                  <button
-                    key={sec.id}
-                    type="button"
-                    onClick={() => scrollToSection(sec.id)}
-                    className={`flex items-center justify-between p-2.5 rounded-xl text-[12.5px] transition-colors text-left min-h-[44px] ${
-                      isActive
-                        ? "bg-[#E9204F] text-white font-semibold"
-                        : "bg-white/5 text-[#A3A3A3] hover:text-white hover:bg-white/10"
-                    }`}
-                  >
-                    <div className="flex items-center gap-2.5 truncate">
-                      <span className="font-mono text-[11px] opacity-80">{sec.num}</span>
-                      <span className="truncate">{sec.title}</span>
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
-          </motion.div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                {SECTIONS_13.map((sec) => {
+                  const isActive = sec.id === activeId;
+                  return (
+                    <button
+                      key={sec.id}
+                      type="button"
+                      onClick={() => scrollToSection(sec.id)}
+                      className={`flex items-center justify-between p-2.5 rounded-xl text-[12.5px] transition-colors text-left min-h-[44px] ${
+                        isActive
+                          ? "bg-[#E9204F] text-white font-semibold"
+                          : "bg-white/5 text-[#A3A3A3] hover:text-white hover:bg-white/10"
+                      }`}
+                    >
+                      <div className="flex items-center gap-2.5 truncate">
+                        <span className="font-mono text-[11px] opacity-80">{sec.num}</span>
+                        <span className="truncate">{sec.title}</span>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>
