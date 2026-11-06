@@ -42,6 +42,12 @@
 }
 
 /* Site Layout System */
+html {
+  overflow-x: clip;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
 .site-container {
   width: min(
     var(--container-width),
@@ -63,7 +69,9 @@ body {
   line-height: 1.6;
   font-weight: 400;
   letter-spacing: -0.01em;
-  overflow-x: hidden;
+  overflow-x: clip;
+  width: 100%;
+  min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -111,4 +119,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 .work-box-agency:hover img {
   transform: scale(0.95);
+}
+
+/* Mobile Form Ergonomics & iOS Safari Zoom Prevention */
+@media (max-width: 639px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="password"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Mobile Safe Area Inset Support */
+.safe-pb {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom, 0px));
 }

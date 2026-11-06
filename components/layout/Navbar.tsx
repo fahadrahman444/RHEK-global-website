@@ -102,7 +102,7 @@ export function Navbar({ variant = "light" }: NavbarProps = {}) {
 
   const isDark = variant === "dark";
 
-  // Close desktop dropdown on click outside or escape key
+  // Close desktop dropdown and mobile menu on escape key
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -112,6 +112,7 @@ export function Navbar({ variant = "light" }: NavbarProps = {}) {
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
         setServicesDropdownOpen(false);
+        setMobileMenuOpen(false);
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
@@ -121,6 +122,17 @@ export function Navbar({ variant = "light" }: NavbarProps = {}) {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
+
+  // Lock body scroll when mobile menu is open to prevent background scrolling
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [mobileMenuOpen]);
 
   // Close menus on route change
   useEffect(() => {
@@ -441,11 +453,11 @@ export function Navbar({ variant = "light" }: NavbarProps = {}) {
             <ArrowUpRight className="h-3.5 w-3.5 hidden sm:inline transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button — 44x44px touch target */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-lg border lg:hidden transition min-h-[36px] min-w-[36px] sm:min-h-[40px] sm:min-w-[40px] ${
+            className={`flex h-11 w-11 items-center justify-center rounded-lg border lg:hidden transition min-h-[44px] min-w-[44px] ${
               isDark
                 ? "border-white/15 bg-white/5 text-white hover:border-white"
                 : "border-[#E5E5E5] bg-white text-[#101010] hover:border-[#101010]"
@@ -453,11 +465,26 @@ export function Navbar({ variant = "light" }: NavbarProps = {}) {
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
           >
-            {mobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
       </nav>
       </div>
+
+      {/* Mobile Backdrop Overlay */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15 }}
+            onClick={() => setMobileMenuOpen(false)}
+            className="fixed inset-0 top-[58px] sm:top-[68px] lg:hidden bg-black/20 z-40"
+            aria-hidden="true"
+          />
+        )}
+      </AnimatePresence>
 
       {/* Mobile Menu Dropdown */}
       <AnimatePresence>
@@ -493,7 +520,7 @@ export function Navbar({ variant = "light" }: NavbarProps = {}) {
                         key={sec.id}
                         type="button"
                         onClick={() => scrollToSection(sec.id)}
-                        className="flex items-center justify-between py-2 px-2.5 rounded-lg bg-white border border-[#EFEFEF] hover:border-[#101010] text-[#101010] font-semibold text-left transition-colors min-h-[38px]"
+                        className="flex items-center justify-between py-2 px-2.5 rounded-lg bg-white border border-[#EFEFEF] hover:border-[#101010] text-[#101010] font-semibold text-left transition-colors min-h-[44px]"
                       >
                         <span className="truncate">{sec.label}</span>
                         <ArrowRight className="h-3 w-3 text-[#A3A3A3] shrink-0 ml-1" />
