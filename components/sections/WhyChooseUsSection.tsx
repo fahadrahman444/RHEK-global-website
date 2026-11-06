@@ -59,41 +59,77 @@ export function WhyChooseUsSection() {
 
       {/* Visual Institutional Comparison Matrix — Clean Light Container */}
       <div className="rounded-2xl border border-zinc-200/80 bg-white shadow-2xs overflow-hidden">
-        {/* Table Header */}
-        <div className="grid grid-cols-12 bg-[#FAFAFA] border-b border-zinc-200/80 text-[11.5px] sm:text-[12px] font-bold uppercase tracking-wider text-[#101010] p-3 sm:p-4">
-          <div className="col-span-4 text-slate-400">Core Capability</div>
-          <div className="col-span-4 text-slate-400">Traditional Lead Brokers</div>
-          <div className="col-span-4 flex items-center gap-1.5 font-extrabold text-[#E9204F]">
-            <ShieldCheck className="h-3.5 w-3.5" />
-            <span>RHEK GLOBAL</span>
-          </div>
-        </div>
-
-        {/* Table Rows */}
-        <div className="divide-y divide-zinc-100 text-[12.5px] sm:text-[13px]">
+        {/* Mobile View: Dedicated Institutional Cards (< md) */}
+        <div className="divide-y divide-zinc-200/80 md:hidden">
           {COMPARISON_ROWS.map((row, i) => (
-            <div
-              key={i}
-              className="grid grid-cols-12 items-center p-3 sm:p-4 hover:bg-[#FAFAFA]/70 transition-colors"
-            >
-              {/* Feature Title */}
-              <div className="col-span-4 font-bold text-[#101010] pr-2 text-[13px] sm:text-[13.5px]">
+            <div key={i} className="p-3.5 space-y-2">
+              <span className="text-[13px] font-bold text-[#101010] block">
                 {row.feature}
-              </div>
+              </span>
 
-              {/* Traditional (Negative) */}
-              <div className="col-span-4 flex items-start gap-1.5 sm:gap-2 text-zinc-500 pr-2 leading-snug">
-                <X className="h-4 w-4 text-neutral-400 shrink-0 mt-0.5" />
-                <span className="text-[12px] sm:text-[12.5px]">{row.traditional}</span>
-              </div>
-
-              {/* RHEK GLOBAL (Positive / Highlighted) */}
-              <div className="col-span-4 flex items-start gap-1.5 sm:gap-2 text-[#101010] font-semibold leading-snug bg-emerald-50/40 sm:bg-transparent -my-1 py-1 sm:my-0 sm:py-0 rounded">
+              {/* RHEK Advantage */}
+              <div className="flex items-start gap-2 p-2.5 rounded-lg bg-emerald-50/60 border border-emerald-200/60 text-[#101010] text-[12px] leading-snug">
                 <Check className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
-                <span className="text-[12px] sm:text-[13px] text-[#101010]">{row.rhek}</span>
+                <div>
+                  <span className="font-bold text-emerald-900 block text-[10.5px] uppercase tracking-wider mb-0.5">
+                    RHEK Global Standard
+                  </span>
+                  <span className="font-medium text-emerald-950">{row.rhek}</span>
+                </div>
+              </div>
+
+              {/* Traditional Broker */}
+              <div className="flex items-start gap-2 p-2.5 rounded-lg bg-zinc-50 border border-zinc-200/60 text-zinc-600 text-[12px] leading-snug">
+                <X className="h-4 w-4 text-neutral-400 shrink-0 mt-0.5" />
+                <div>
+                  <span className="font-semibold text-zinc-500 block text-[10.5px] uppercase tracking-wider mb-0.5">
+                    Traditional Brokers
+                  </span>
+                  <span>{row.traditional}</span>
+                </div>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Desktop View: Multi-Column Comparison Grid (>= md) */}
+        <div className="hidden md:block">
+          {/* Table Header */}
+          <div className="grid grid-cols-12 bg-[#FAFAFA] border-b border-zinc-200/80 text-[11.5px] sm:text-[12px] font-bold uppercase tracking-wider text-[#101010] p-3 sm:p-4">
+            <div className="col-span-4 text-slate-400">Core Capability</div>
+            <div className="col-span-4 text-slate-400">Traditional Lead Brokers</div>
+            <div className="col-span-4 flex items-center gap-1.5 font-extrabold text-[#E9204F]">
+              <ShieldCheck className="h-3.5 w-3.5" />
+              <span>RHEK GLOBAL</span>
+            </div>
+          </div>
+
+          {/* Table Rows */}
+          <div className="divide-y divide-zinc-100 text-[12.5px] sm:text-[13px]">
+            {COMPARISON_ROWS.map((row, i) => (
+              <div
+                key={i}
+                className="grid grid-cols-12 items-center p-3 sm:p-4 hover:bg-[#FAFAFA]/70 transition-colors"
+              >
+                {/* Feature Title */}
+                <div className="col-span-4 font-bold text-[#101010] pr-2 text-[13px] sm:text-[13.5px]">
+                  {row.feature}
+                </div>
+
+                {/* Traditional (Negative) */}
+                <div className="col-span-4 flex items-start gap-1.5 sm:gap-2 text-zinc-500 pr-2 leading-snug">
+                  <X className="h-4 w-4 text-neutral-400 shrink-0 mt-0.5" />
+                  <span className="text-[12px] sm:text-[12.5px]">{row.traditional}</span>
+                </div>
+
+                {/* RHEK GLOBAL (Positive / Highlighted) */}
+                <div className="col-span-4 flex items-start gap-1.5 sm:gap-2 text-[#101010] font-semibold leading-snug bg-emerald-50/40 sm:bg-transparent -my-1 py-1 sm:my-0 sm:py-0 rounded">
+                  <Check className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
+                  <span className="text-[12px] sm:text-[13px] text-[#101010]">{row.rhek}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Bottom Matrix Footer Banner — Clean Light Background */}

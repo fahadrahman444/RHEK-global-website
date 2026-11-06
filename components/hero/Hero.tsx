@@ -121,43 +121,46 @@ export function Hero() {
             </div>
 
             {/* Center: Executive View Switcher */}
-            <nav aria-label="Showcase Views" className="flex items-center p-0.5 rounded-lg bg-[#F4F5F7] border border-zinc-200/70">
+            <nav
+              aria-label="Showcase Views"
+              className="flex items-center p-0.5 rounded-lg bg-[#F4F5F7] border border-zinc-200/70 w-full sm:w-auto overflow-x-auto scrollbar-none"
+            >
               <button
                 type="button"
                 onClick={() => setActiveTab("leads")}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-[12px] font-medium transition-all ${
+                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-[12px] font-medium transition-all shrink-0 min-h-[36px] ${
                   activeTab === "leads"
                     ? "bg-white text-[#101010] font-semibold shadow-xs"
                     : "text-zinc-500 hover:text-[#101010]"
                 }`}
               >
-                <Activity className="h-3.5 w-3.5" />
+                <Activity className="h-3.5 w-3.5 shrink-0" />
                 <span>Commercial Pipeline</span>
               </button>
 
               <button
                 type="button"
                 onClick={() => setActiveTab("engine")}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-[12px] font-medium transition-all ${
+                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-[12px] font-medium transition-all shrink-0 min-h-[36px] ${
                   activeTab === "engine"
                     ? "bg-white text-[#101010] font-semibold shadow-xs"
                     : "text-zinc-500 hover:text-[#101010]"
                 }`}
               >
-                <Layers className="h-3.5 w-3.5" />
+                <Layers className="h-3.5 w-3.5 shrink-0" />
                 <span>Outreach Engine</span>
               </button>
 
               <button
                 type="button"
                 onClick={() => setActiveTab("reach")}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-[12px] font-medium transition-all ${
+                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-[12px] font-medium transition-all shrink-0 min-h-[36px] ${
                   activeTab === "reach"
                     ? "bg-white text-[#101010] font-semibold shadow-xs"
                     : "text-zinc-500 hover:text-[#101010]"
                 }`}
               >
-                <Building2 className="h-3.5 w-3.5" />
+                <Building2 className="h-3.5 w-3.5 shrink-0" />
                 <span>Nationwide Verticals</span>
               </button>
             </nav>

@@ -180,7 +180,7 @@ export function ContactSection({
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. Alex Morgan"
-                        className="w-full rounded-lg border border-zinc-200 bg-white px-3 py-2 text-[13px] text-[#101010] placeholder:text-zinc-400 focus:border-[#101010] focus:outline-none transition-colors"
+                        className="w-full rounded-lg border border-zinc-200 bg-white px-3.5 py-2.5 min-h-[44px] text-[13px] text-[#101010] placeholder:text-zinc-400 focus:border-[#101010] focus:outline-none transition-colors"
                       />
                     </div>
 
@@ -195,7 +195,7 @@ export function ContactSection({
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="alex@cleaningcompany.com"
-                        className="w-full rounded-lg border border-zinc-200 bg-white px-3 py-2 text-[13px] text-[#101010] placeholder:text-zinc-400 focus:border-[#101010] focus:outline-none transition-colors"
+                        className="w-full rounded-lg border border-zinc-200 bg-white px-3.5 py-2.5 min-h-[44px] text-[13px] text-[#101010] placeholder:text-zinc-400 focus:border-[#101010] focus:outline-none transition-colors"
                       />
                     </div>
                   </div>
@@ -212,7 +212,7 @@ export function ContactSection({
                       value={formData.territory}
                       onChange={(e) => setFormData({ ...formData, territory: e.target.value })}
                       placeholder="e.g. Dallas & Tarrant County, TX (or list target zip codes)"
-                      className="w-full rounded-lg border border-zinc-200 bg-white px-3 py-2 text-[13px] text-[#101010] placeholder:text-zinc-400 focus:border-[#101010] focus:outline-none transition-colors"
+                      className="w-full rounded-lg border border-zinc-200 bg-white px-3.5 py-2.5 min-h-[44px] text-[13px] text-[#101010] placeholder:text-zinc-400 focus:border-[#101010] focus:outline-none transition-colors"
                     />
                   </div>
 
@@ -226,7 +226,7 @@ export function ContactSection({
                         id="volume"
                         value={formData.volume}
                         onChange={(e) => setFormData({ ...formData, volume: e.target.value })}
-                        className="w-full rounded-lg border border-zinc-200 bg-white px-3 py-2 text-[13px] text-[#101010] focus:border-[#101010] focus:outline-none transition-colors"
+                        className="w-full rounded-lg border border-zinc-200 bg-white px-3.5 py-2.5 min-h-[44px] text-[13px] text-[#101010] focus:border-[#101010] focus:outline-none transition-colors"
                       >
                         <option value="5–10 Walkthroughs / mo ($800 – $1,500)">5–10 Walkthroughs / mo ($800 – $1,500)</option>
                         <option value="10–20 Walkthroughs / mo ($1,500 – $3,000)">10–20 Walkthroughs / mo ($1,500 – $3,000)</option>
@@ -243,7 +243,7 @@ export function ContactSection({
                         id="facilityFocus"
                         value={formData.facilityFocus}
                         onChange={(e) => setFormData({ ...formData, facilityFocus: e.target.value })}
-                        className="w-full rounded-lg border border-zinc-200 bg-white px-3 py-2 text-[13px] text-[#101010] focus:border-[#101010] focus:outline-none transition-colors"
+                        className="w-full rounded-lg border border-zinc-200 bg-white px-3.5 py-2.5 min-h-[44px] text-[13px] text-[#101010] focus:border-[#101010] focus:outline-none transition-colors"
                       >
                         <option value="All Commercial Facilities">All Commercial Facilities</option>
                         <option value="Medical & Healthcare Centers">Medical &amp; Healthcare Centers</option>
