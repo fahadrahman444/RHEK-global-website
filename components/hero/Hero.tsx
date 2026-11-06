@@ -42,7 +42,7 @@ export function Hero() {
       <div className="site-container">
         <div className="max-w-[960px] mx-auto text-center flex flex-col items-center">
           {/* Main Editorial Headline */}
-          <h1 className="font-heading text-[32px] sm:text-[46px] lg:text-[56px] font-bold leading-[1.08] tracking-tight text-[#101010]">
+          <h1 className="font-heading text-[26px] xs:text-[28px] sm:text-[44px] lg:text-[56px] font-bold leading-[1.18] sm:leading-[1.1] tracking-tight text-[#101010] [text-wrap:balance]">
             Exclusive commercial walkthroughs and high-conversion client acquisition.
           </h1>
 
@@ -69,21 +69,21 @@ export function Hero() {
             </Link>
           </div>
 
-          {/* Micro Trust Proof Bar */}
-          <div className="mt-6 pt-4 border-t border-[#EBEBEB] w-full flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[12.5px] text-[#525252]">
-            <div className="flex items-center gap-1.5">
+          {/* Micro Trust Proof Bar — Centered Container with Clean Left-Aligned Axis on Mobile */}
+          <div className="mt-6 pt-4 border-t border-[#EBEBEB] w-full flex flex-col sm:flex-row flex-wrap items-start sm:items-center justify-center gap-x-6 gap-y-2.5 text-[12.5px] text-[#525252] max-w-xs sm:max-w-none mx-auto px-1 sm:px-0">
+            <div className="flex items-center gap-2">
               <CheckCircle2 className="h-4 w-4 text-[#E9204F] shrink-0" />
               <span className="font-medium text-[#101010]">100% Exclusive Walkthroughs</span>
             </div>
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-2">
               <ShieldCheck className="h-4 w-4 text-[#E9204F] shrink-0" />
               <span className="font-medium text-[#101010]">Pay-Nothing-Upfront Option</span>
             </div>
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-2">
               <Sparkles className="h-4 w-4 text-[#E9204F] shrink-0" />
               <span className="font-medium text-[#101010]">Direct Facility Decision-Makers</span>
             </div>
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-2">
               <Award className="h-4 w-4 text-[#E9204F] shrink-0" />
               <span className="font-medium text-[#101010]">100% Money-Back Guarantee</span>
             </div>
@@ -111,57 +111,60 @@ export function Hero() {
           />
 
           {/* Panoramic Console Top Chrome Bar — Clean Light Header */}
-          <div className="relative z-20 flex flex-col sm:flex-row items-center justify-between gap-2.5 px-4 sm:px-6 py-2.5 border-b border-zinc-200/80 bg-white">
-            {/* Left: Section Indicator */}
-            <div className="flex items-center gap-2 w-full sm:w-auto justify-between sm:justify-start">
-              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+          <div className="relative z-20 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 px-3 sm:px-6 py-2.5 border-b border-zinc-200/80 bg-white">
+            {/* Left: Section Indicator (Dot and Text Anchored Together) */}
+            <div className="flex items-center gap-2 w-full sm:w-auto justify-start">
+              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
               <span className="text-[12px] font-semibold text-[#101010] tracking-tight">
                 Live Commercial Pipeline
               </span>
             </div>
 
-            {/* Center: Executive View Switcher */}
+            {/* Center: Executive View Switcher (Single Line Fit on Mobile) */}
             <nav
               aria-label="Showcase Views"
-              className="flex items-center p-0.5 rounded-lg bg-[#F4F5F7] border border-zinc-200/70 w-full sm:w-auto overflow-x-auto scrollbar-none"
+              className="grid grid-cols-3 sm:flex items-center p-0.5 rounded-lg bg-[#F4F5F7] border border-zinc-200/70 w-full sm:w-auto"
             >
               <button
                 type="button"
                 onClick={() => setActiveTab("leads")}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-[12px] font-medium transition-all shrink-0 min-h-[36px] ${
+                className={`inline-flex items-center justify-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-md text-[11.5px] sm:text-[12px] font-medium transition-all whitespace-nowrap min-h-[36px] ${
                   activeTab === "leads"
                     ? "bg-white text-[#101010] font-semibold shadow-xs"
                     : "text-zinc-500 hover:text-[#101010]"
                 }`}
               >
                 <Activity className="h-3.5 w-3.5 shrink-0" />
-                <span>Commercial Pipeline</span>
+                <span className="sm:hidden">Pipeline</span>
+                <span className="hidden sm:inline">Commercial Pipeline</span>
               </button>
 
               <button
                 type="button"
                 onClick={() => setActiveTab("engine")}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-[12px] font-medium transition-all shrink-0 min-h-[36px] ${
+                className={`inline-flex items-center justify-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-md text-[11.5px] sm:text-[12px] font-medium transition-all whitespace-nowrap min-h-[36px] ${
                   activeTab === "engine"
                     ? "bg-white text-[#101010] font-semibold shadow-xs"
                     : "text-zinc-500 hover:text-[#101010]"
                 }`}
               >
                 <Layers className="h-3.5 w-3.5 shrink-0" />
-                <span>Outreach Engine</span>
+                <span className="sm:hidden">Engine</span>
+                <span className="hidden sm:inline">Outreach Engine</span>
               </button>
 
               <button
                 type="button"
                 onClick={() => setActiveTab("reach")}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-[12px] font-medium transition-all shrink-0 min-h-[36px] ${
+                className={`inline-flex items-center justify-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-md text-[11.5px] sm:text-[12px] font-medium transition-all whitespace-nowrap min-h-[36px] ${
                   activeTab === "reach"
                     ? "bg-white text-[#101010] font-semibold shadow-xs"
                     : "text-zinc-500 hover:text-[#101010]"
                 }`}
               >
                 <Building2 className="h-3.5 w-3.5 shrink-0" />
-                <span>Nationwide Verticals</span>
+                <span className="sm:hidden">Verticals</span>
+                <span className="hidden sm:inline">Nationwide Verticals</span>
               </button>
             </nav>
 
@@ -200,9 +203,9 @@ export function Hero() {
                     {/* Card 1 */}
                     <div className="p-3.5 rounded-xl bg-white border border-zinc-200/80 hover:border-zinc-400 hover:shadow-2xs transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                       <div className="space-y-1">
-                        <div className="flex items-center gap-2.5">
+                        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
                           <span className="text-[13.5px] font-bold text-[#101010]">St. Jude Medical Care Plaza</span>
-                          <span className="text-[11px] bg-emerald-50 text-emerald-700 border border-emerald-200/60 font-medium px-2 py-0.5 rounded-md">
+                          <span className="text-[10.5px] sm:text-[11px] bg-emerald-50 text-emerald-700 border border-emerald-200/60 font-semibold px-2 py-0.5 rounded-md whitespace-nowrap">
                             Confirmed Walkthrough
                           </span>
                         </div>
@@ -221,9 +224,9 @@ export function Hero() {
                     {/* Card 2 */}
                     <div className="p-3.5 rounded-xl bg-white border border-zinc-200/80 hover:border-zinc-400 hover:shadow-2xs transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                       <div className="space-y-1">
-                        <div className="flex items-center gap-2.5">
+                        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
                           <span className="text-[13.5px] font-bold text-[#101010]">Metro Logistics & Distribution Center</span>
-                          <span className="text-[11px] bg-emerald-50 text-emerald-700 border border-emerald-200/60 font-medium px-2 py-0.5 rounded-md">
+                          <span className="text-[10.5px] sm:text-[11px] bg-emerald-50 text-emerald-700 border border-emerald-200/60 font-semibold px-2 py-0.5 rounded-md whitespace-nowrap">
                             Confirmed Walkthrough
                           </span>
                         </div>
@@ -242,9 +245,9 @@ export function Hero() {
                     {/* Card 3 */}
                     <div className="p-3.5 rounded-xl bg-white border border-zinc-200/80 hover:border-zinc-400 hover:shadow-2xs transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                       <div className="space-y-1">
-                        <div className="flex items-center gap-2.5">
+                        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
                           <span className="text-[13.5px] font-bold text-[#101010]">Horizon Corporate Financial Tower</span>
-                          <span className="text-[11px] bg-sky-50 text-sky-700 border border-sky-200/60 font-medium px-2 py-0.5 rounded-md">
+                          <span className="text-[10.5px] sm:text-[11px] bg-sky-50 text-sky-700 border border-sky-200/60 font-semibold px-2 py-0.5 rounded-md whitespace-nowrap">
                             Decision-Maker Ready
                           </span>
                         </div>
