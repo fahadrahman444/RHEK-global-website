@@ -16,9 +16,9 @@ export default function HomePage() {
       {/* 1. Global Navbar */}
       <Navbar />
 
-      {/* 2. Hero & Partner Trust Logos */}
-      <div className="site-container pt-3 sm:pt-5">
-        <Hero />
+      {/* 2. Full-Bleed Panoramic Hero & Partner Trust Logos */}
+      <Hero />
+      <div className="site-container">
         <PartnerLogos />
       </div>
 

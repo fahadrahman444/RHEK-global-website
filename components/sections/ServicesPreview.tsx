@@ -2,322 +2,185 @@
 
 import Link from "next/link";
 import {
-  Sparkles,
-  Code2,
-  Megaphone,
-  Video,
-  Mail,
-  Headphones,
   ArrowRight,
   ArrowUpRight,
   Calendar,
   MapPin,
   Building2,
-  Gauge,
+  PhoneCall,
+  Activity,
 } from "@/components/common/icons";
-import { SpotlightCard } from "@/components/common/SpotlightCard";
 
 export function ServicesPreview() {
   return (
     <section id="services" className="site-container scroll-mt-24">
       {/* Section Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-4 mb-5 sm:mb-6">
-        <div className="max-w-[620px]">
-          <span className="inline-block text-[11px] font-bold uppercase tracking-widest text-[#737373] mb-1">
-            Integrated Solutions
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-4 mb-6 sm:mb-8">
+        <div className="max-w-[680px]">
+          <span className="block mb-1 text-xs font-semibold uppercase tracking-widest text-[#E9204F]">
+            Operating Infrastructure
           </span>
-          <h2 className="font-heading text-[22px] sm:text-[28px] lg:text-[32px] font-bold text-[#101010] tracking-[-0.035em] leading-tight">
-            Specialized Engines Engineered for Predictable B2B Scale
+          <h2 className="font-heading text-[24px] sm:text-[30px] lg:text-[34px] font-bold text-[#101010] tracking-tight leading-tight">
+            How Our Commercial Client Acquisition System Operates
           </h2>
-          <p className="mt-1.5 text-[14px] sm:text-[15px] leading-relaxed text-[#525252]">
-            Move beyond generic agencies. We deploy dedicated outbound sales cadences, custom web architecture, and back-office pipelines.
+          <p className="mt-2 text-[15px] sm:text-[16px] leading-relaxed text-zinc-600">
+            We deploy dedicated outbound prospecting teams, local territory intelligence, and verified facility handovers to keep your commercial pipeline predictable.
           </p>
         </div>
 
         <Link
           href="/services"
-          className="inline-flex items-center gap-1.5 rounded-lg bg-[#101010] hover:bg-[#E9204F] text-white px-4 py-2 text-[12.5px] font-semibold transition-all duration-300 min-h-[38px] shrink-0 self-start md:self-auto shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
+          className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 hover:border-[#101010] bg-white hover:bg-[#FAFAFA] text-[#101010] px-4 py-2 text-[13px] font-semibold transition-all duration-200 min-h-[42px] shrink-0 self-start md:self-auto shadow-2xs hover:-translate-y-0.5"
         >
-          <span>All Capabilities</span>
+          <span>All Services &amp; Capabilities</span>
           <ArrowUpRight className="h-3.5 w-3.5" />
         </Link>
       </div>
 
-      {/* Modern Visual Bento Showcase */}
-      <div className="space-y-3 sm:space-y-4">
-        {/* Top Bento Duo: Outbound Demand Engine + Full-Stack Web Architecture */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4">
-          
-          {/* Bento Anchor 1: Commercial Sales & Janitorial Leads */}
-          <SpotlightCard
-            mode="light"
-            className="lg:col-span-7 rounded-2xl border border-neutral-200/90 bg-[#FAFAFA] p-4 sm:p-6 flex flex-col justify-between hover:border-[#101010] hover:bg-white hover:shadow-lg transition-all duration-300 group"
-          >
-            <div>
-              <div className="flex items-center justify-between gap-2 mb-3">
-                <div className="flex items-center gap-2">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#101010] text-white">
-                    <Sparkles className="h-4 w-4 text-[#E9204F]" />
-                  </div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#101010]">
-                    Demand Generation &amp; SDR Cadences
-                  </span>
+      {/* Modern Light Bento Grid — Continuous Canvas */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
+        {/* Bento Card 1: Dedicated Outbound SDR Cadences */}
+        <div className="lg:col-span-7 rounded-2xl border border-zinc-200/80 bg-white p-6 sm:p-7 flex flex-col justify-between hover:border-zinc-400 transition-all duration-200 shadow-2xs group">
+          <div>
+            <div className="flex items-center justify-between gap-2 mb-3">
+              <div className="flex items-center gap-2">
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-rose-50 text-[#E9204F]">
+                  <PhoneCall className="h-4 w-4" />
                 </div>
-                <span className="text-[11px] font-semibold uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-2.5 py-0.5 rounded-full">
-                  Live Intake Active
+                <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+                  Outbound Sales Development
                 </span>
               </div>
+              <span className="text-[11px] font-medium text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-2.5 py-0.5 rounded-full">
+                Live Intake Active
+              </span>
+            </div>
 
-              <h3 className="font-heading text-[17px] sm:text-[19px] font-bold text-[#101010] leading-snug">
-                Exclusive Commercial Appointments With Zero Shared Prospects
-              </h3>
-              <p className="text-[13px] sm:text-[13.5px] text-[#525252] mt-1.5 leading-relaxed">
-                Dedicated outbound SDRs qualify facility square footage, current cleaning vendor terms, and book confirmed on-site walkthroughs.
-              </p>
+            <h3 className="font-heading text-[18px] sm:text-[20px] font-bold text-[#101010] leading-snug">
+              Exclusive Commercial Appointments With Zero Shared Prospects
+            </h3>
+            <p className="text-[13.5px] text-zinc-600 mt-2 leading-relaxed">
+              Dedicated outbound SDRs call property managers, qualify facility square footage, verify dissatisfaction with incumbent cleaners, and schedule confirmed on-site walkthroughs.
+            </p>
 
-              {/* Visual Simulated Lead Docket UI */}
-              <div className="mt-4 rounded-xl bg-white border border-neutral-200/80 p-3.5 shadow-2xs">
-                <div className="flex items-center justify-between pb-2.5 mb-2.5 border-b border-neutral-100 text-[11.5px]">
-                  <span className="font-bold text-[#101010] flex items-center gap-1.5">
-                    <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                    <span>Confirmed Walkthrough Handover</span>
-                  </span>
-                  <span className="text-[#737373] font-mono">ID: #JK-8940</span>
+            {/* Clean Structured Handover Preview */}
+            <div className="mt-5 rounded-xl bg-[#FAFAFA] border border-zinc-200/70 p-4">
+              <div className="flex items-center justify-between pb-2.5 mb-3 border-b border-zinc-200/60 text-[12px]">
+                <span className="font-semibold text-[#101010] flex items-center gap-1.5">
+                  <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span>Verified Walkthrough Handover</span>
+                </span>
+                <span className="text-slate-400 text-[11px]">Direct Calendar Dispatch</span>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-[12px]">
+                <div>
+                  <div className="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Facility Type</div>
+                  <div className="font-semibold text-slate-800 text-[13px] mt-0.5">Surgical Plaza</div>
+                  <div className="text-[11.5px] text-zinc-500">42,000 sq ft</div>
                 </div>
-                
-                <div className="grid grid-cols-3 gap-2 text-[12px]">
-                  <div className="rounded-lg bg-neutral-50 p-2 sm:p-2.5 border border-neutral-200/50">
-                    <div className="flex items-center gap-1 text-[10px] font-bold text-[#64748B] uppercase">
-                      <Building2 className="h-3 w-3 text-[#101010]" />
-                      <span>Facility</span>
-                    </div>
-                    <div className="font-bold text-[#101010] mt-0.5 truncate text-[12.5px]">Surgery Center</div>
-                    <div className="text-[11px] text-[#737373]">42,000 sq ft</div>
-                  </div>
 
-                  <div className="rounded-lg bg-neutral-50 p-2 sm:p-2.5 border border-neutral-200/50">
-                    <div className="flex items-center gap-1 text-[10px] font-bold text-[#64748B] uppercase">
-                      <MapPin className="h-3 w-3 text-[#101010]" />
-                      <span>Territory</span>
-                    </div>
-                    <div className="font-bold text-[#101010] mt-0.5 truncate text-[12.5px]">Dallas Metro</div>
-                    <div className="text-[11px] text-[#737373]">Exclusive Lock</div>
-                  </div>
+                <div>
+                  <div className="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Target Territory</div>
+                  <div className="font-semibold text-slate-800 text-[13px] mt-0.5">Dallas Metro</div>
+                  <div className="text-[11.5px] text-emerald-600 font-medium">100% Exclusive Lock</div>
+                </div>
 
-                  <div className="rounded-lg bg-neutral-50 p-2 sm:p-2.5 border border-neutral-200/50">
-                    <div className="flex items-center gap-1 text-[10px] font-bold text-[#64748B] uppercase">
-                      <Calendar className="h-3 w-3 text-[#101010]" />
-                      <span>Scheduled</span>
-                    </div>
-                    <div className="font-bold text-[#101010] mt-0.5 truncate text-[12.5px]">Thu 10:30 AM</div>
-                    <div className="text-[11px] text-emerald-600 font-semibold">Walkthrough Set</div>
-                  </div>
+                <div>
+                  <div className="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Appointment Time</div>
+                  <div className="font-semibold text-slate-800 text-[13px] mt-0.5">Thursday 10:30 AM</div>
+                  <div className="text-[11.5px] text-emerald-600 font-medium">Walkthrough Set</div>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div className="mt-4 pt-3 border-t border-neutral-200/70 flex items-center justify-between">
-              <span className="text-[12px] text-[#525252] font-medium">
-                Pay-Nothing-Upfront Option Available
-              </span>
-              <Link
-                href="/services/janitorial-lead-generation"
-                className="inline-flex items-center gap-1 text-[12.5px] font-semibold text-[#101010] group-hover:text-[#E9204F] transition-colors"
-              >
-                <span>Lead Gen Specs</span>
-                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
-          </SpotlightCard>
+          <div className="mt-5 pt-3.5 border-t border-zinc-100 flex items-center justify-between text-[12.5px]">
+            <span className="text-zinc-600 font-medium">
+              Pay-Nothing-Upfront Option Available
+            </span>
+            <Link
+              href="/services/janitorial-leads"
+              className="inline-flex items-center gap-1 font-semibold text-[#101010] hover:text-[#E9204F] transition-colors"
+            >
+              <span>Lead Specifications</span>
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </div>
+        </div>
 
-          {/* Bento Anchor 2: Web Engineering & Systems */}
-          <SpotlightCard
-            mode="dark"
-            className="lg:col-span-5 rounded-2xl border border-neutral-200/90 bg-[#101010] text-white p-4 sm:p-6 flex flex-col justify-between hover:border-white/30 transition-all duration-300 group"
-          >
-            <div>
-              <div className="flex items-center justify-between gap-2 mb-3">
-                <div className="flex items-center gap-2">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 text-white">
-                    <Code2 className="h-4 w-4 text-[#E9204F]" />
-                  </div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-white">
-                    Digital Systems Architecture
-                  </span>
+        {/* Bento Card 2: Proprietary Facility Intelligence */}
+        <div className="lg:col-span-5 rounded-2xl border border-zinc-200/80 bg-white p-6 sm:p-7 flex flex-col justify-between hover:border-zinc-400 transition-all duration-200 shadow-2xs group">
+          <div>
+            <div className="flex items-center justify-between gap-2 mb-3">
+              <div className="flex items-center gap-2">
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-rose-50 text-[#E9204F]">
+                  <Activity className="h-4 w-4" />
                 </div>
-                <span className="text-[11px] font-semibold uppercase tracking-wider text-[#16A34A] bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full">
-                  99.8 CWV Score
+                <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+                  Data &amp; Targeting Engine
                 </span>
               </div>
-
-              <h3 className="font-heading text-[17px] sm:text-[19px] font-bold text-white leading-snug">
-                Production-Grade Next.js Platforms Engineered for Conversion
-              </h3>
-              <p className="text-[13px] text-[#A3A3A3] mt-1.5 leading-relaxed">
-                Sub-second load speeds, strict TypeScript types, declarative Framer Motion interactions, and seamless CRM integrations.
-              </p>
-
-              {/* Visual Performance Gauge UI */}
-              <div className="mt-4 rounded-xl bg-white/[0.04] border border-white/10 p-3 text-[11.5px]">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-[#A3A3A3] font-mono text-[11px]">Lighthouse Audit Score</span>
-                  <span className="font-bold text-[#16A34A] flex items-center gap-1">
-                    <Gauge className="h-3.5 w-3.5" />
-                    <span>100 / 100</span>
-                  </span>
-                </div>
-
-                <div className="grid grid-cols-3 gap-2 pt-2 border-t border-white/10 text-center font-mono">
-                  <div className="bg-white/[0.03] rounded-lg p-2 border border-white/5">
-                    <div className="text-[10px] text-[#737373] uppercase">LCP Speed</div>
-                    <div className="font-bold text-white text-[12.5px] mt-0.5">0.8s</div>
-                  </div>
-                  <div className="bg-white/[0.03] rounded-lg p-2 border border-white/5">
-                    <div className="text-[10px] text-[#737373] uppercase">CLS Shift</div>
-                    <div className="font-bold text-white text-[12.5px] mt-0.5">0.00</div>
-                  </div>
-                  <div className="bg-white/[0.03] rounded-lg p-2 border border-white/5">
-                    <div className="text-[10px] text-[#737373] uppercase">Type Safety</div>
-                    <div className="font-bold text-emerald-400 text-[12.5px] mt-0.5">100%</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between">
-              <span className="text-[12px] text-[#A3A3A3]">
-                Zero WordPress Bloat. Pure Next.js.
+              <span className="text-[11px] font-medium text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-2.5 py-0.5 rounded-full">
+                Proprietary DB
               </span>
-              <Link
-                href="/services/web-design-development"
-                className="inline-flex items-center gap-1 text-[12.5px] font-semibold text-white group-hover:text-[#E9204F] transition-colors"
-              >
-                <span>Engineering Stack</span>
-                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-              </Link>
             </div>
-          </SpotlightCard>
+
+            <h3 className="font-heading text-[18px] sm:text-[20px] font-bold text-[#101010] leading-snug">
+              Commercial Facility Intelligence &amp; Renewal Mapping
+            </h3>
+            <p className="text-[13.5px] text-zinc-600 mt-2 leading-relaxed">
+              We track commercial facility square footage, tenant density, and expiring cleaning contracts across your territory to contact facilities at the ideal time.
+            </p>
+
+            <div className="mt-5 space-y-2.5 pt-3 border-t border-zinc-100">
+              <div className="flex items-center justify-between text-[13px] py-1 border-b border-zinc-100">
+                <span className="text-zinc-600">Decision-Maker Verification</span>
+                <span className="font-semibold text-slate-800">Direct Operations Head</span>
+              </div>
+              <div className="flex items-center justify-between text-[13px] py-1 border-b border-zinc-100">
+                <span className="text-zinc-600">Territory Overlap Protection</span>
+                <span className="font-semibold text-emerald-600">Zero Competitor Sharing</span>
+              </div>
+              <div className="flex items-center justify-between text-[13px] py-1">
+                <span className="text-zinc-600">Average Contract Size</span>
+                <span className="font-semibold text-slate-800">$4,500 – $14,000 / mo</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-5 pt-3.5 border-t border-zinc-100 flex items-center justify-between text-[12.5px]">
+            <span className="text-zinc-500">
+              Verified County Coverage
+            </span>
+            <Link
+              href="/#contact"
+              className="inline-flex items-center gap-1 font-semibold text-[#101010] hover:text-[#E9204F] transition-colors"
+            >
+              <span>Check County Lock</span>
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </div>
         </div>
+      </div>
 
-        {/* Bottom Bento Row: 4 Snug Visual Capability Tiles */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3">
-          {/* Tile 1: Paid Social Ads */}
-          <Link href="/services/social-media-advertising" className="block h-full group">
-            <SpotlightCard
-              mode="light"
-              className="h-full rounded-xl border border-neutral-200/90 bg-[#FAFAFA] p-3 sm:p-4 hover:border-[#101010] hover:bg-white hover:shadow-md"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-white border border-neutral-200 text-[#101010] group-hover:bg-[#101010] group-hover:text-white transition-colors">
-                    <Megaphone className="h-3.5 w-3.5" />
-                  </div>
-                  <span className="text-[10.5px] sm:text-[11px] font-bold text-[#16A34A] bg-emerald-50 px-2 py-0.5 rounded">
-                    3.8x Target ROAS
-                  </span>
-                </div>
-                <h4 className="text-[14px] font-bold text-[#101010] group-hover:text-[#E9204F] transition-colors">
-                  Paid Social Ads
-                </h4>
-                <p className="text-[12px] text-[#525252] mt-1 leading-snug">
-                  Meta &amp; LinkedIn precision account-based ad funnels.
-                </p>
-              </div>
-              <div className="mt-3 pt-2 border-t border-neutral-200/60 flex items-center justify-between text-[11.5px] sm:text-[12px] font-semibold text-[#101010]">
-                <span>Specs &amp; Pricing</span>
-                <ArrowUpRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </div>
-            </SpotlightCard>
-          </Link>
-
-          {/* Tile 2: Video Production */}
-          <Link href="/services/video-production" className="block h-full group">
-            <SpotlightCard
-              mode="light"
-              className="h-full rounded-xl border border-neutral-200/90 bg-[#FAFAFA] p-3 sm:p-4 hover:border-[#101010] hover:bg-white hover:shadow-md"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-white border border-neutral-200 text-[#101010] group-hover:bg-[#101010] group-hover:text-white transition-colors">
-                    <Video className="h-3.5 w-3.5" />
-                  </div>
-                  <span className="text-[10.5px] sm:text-[11px] font-bold text-[#101010] bg-neutral-100 px-2 py-0.5 rounded">
-                    4K / Motion
-                  </span>
-                </div>
-                <h4 className="text-[14px] font-bold text-[#101010] group-hover:text-[#E9204F] transition-colors">
-                  Video Production
-                </h4>
-                <p className="text-[12px] text-[#525252] mt-1 leading-snug">
-                  High-converting VSLs, product reels &amp; motion graphics.
-                </p>
-              </div>
-              <div className="mt-3 pt-2 border-t border-neutral-200/60 flex items-center justify-between text-[11.5px] sm:text-[12px] font-semibold text-[#101010]">
-                <span>Specs &amp; Pricing</span>
-                <ArrowUpRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </div>
-            </SpotlightCard>
-          </Link>
-
-          {/* Tile 3: Email Outreach */}
-          <Link href="/services/email-marketing" className="block h-full group">
-            <SpotlightCard
-              mode="light"
-              className="h-full rounded-xl border border-neutral-200/90 bg-[#FAFAFA] p-3 sm:p-4 hover:border-[#101010] hover:bg-white hover:shadow-md"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-white border border-neutral-200 text-[#101010] group-hover:bg-[#101010] group-hover:text-white transition-colors">
-                    <Mail className="h-3.5 w-3.5" />
-                  </div>
-                  <span className="text-[10.5px] sm:text-[11px] font-bold text-[#16A34A] bg-emerald-50 px-2 py-0.5 rounded">
-                    99.2% Inbox
-                  </span>
-                </div>
-                <h4 className="text-[14px] font-bold text-[#101010] group-hover:text-[#E9204F] transition-colors">
-                  Email Outreach
-                </h4>
-                <p className="text-[12px] text-[#525252] mt-1 leading-snug">
-                  Custom domain warmup, inbox rotation &amp; targeted copy.
-                </p>
-              </div>
-              <div className="mt-3 pt-2 border-t border-neutral-200/60 flex items-center justify-between text-[11.5px] sm:text-[12px] font-semibold text-[#101010]">
-                <span>Specs &amp; Pricing</span>
-                <ArrowUpRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </div>
-            </SpotlightCard>
-          </Link>
-
-          {/* Tile 4: Virtual Assistant */}
-          <Link href="/services/virtual-assistant" className="block h-full group">
-            <SpotlightCard
-              mode="light"
-              className="h-full rounded-xl border border-neutral-200/90 bg-[#FAFAFA] p-3 sm:p-4 hover:border-[#101010] hover:bg-white hover:shadow-md"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-white border border-neutral-200 text-[#101010] group-hover:bg-[#101010] group-hover:text-white transition-colors">
-                    <Headphones className="h-3.5 w-3.5" />
-                  </div>
-                  <span className="text-[10.5px] sm:text-[11px] font-bold text-[#101010] bg-neutral-100 px-2 py-0.5 rounded">
-                    Dedicated Ops
-                  </span>
-                </div>
-                <h4 className="text-[14px] font-bold text-[#101010] group-hover:text-[#E9204F] transition-colors">
-                  Virtual Assistant
-                </h4>
-                <p className="text-[12px] text-[#525252] mt-1 leading-snug">
-                  Executive calendar scheduling, CRM maintenance &amp; ops.
-                </p>
-              </div>
-              <div className="mt-3 pt-2 border-t border-neutral-200/60 flex items-center justify-between text-[11.5px] sm:text-[12px] font-semibold text-[#101010]">
-                <span>Specs &amp; Pricing</span>
-                <ArrowUpRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </div>
-            </SpotlightCard>
-          </Link>
-
+      {/* Seamless Transition Strip to Full Capabilities */}
+      <div className="mt-4 rounded-xl bg-[#FAFAFA] border border-zinc-200/80 p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+        <div>
+          <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+            Enterprise Solutions
+          </span>
+          <p className="text-[13.5px] font-semibold text-[#101010] mt-0.5">
+            Looking for dedicated digital architecture, custom web platforms, or back-office operational teams?
+          </p>
         </div>
+        <Link
+          href="/services"
+          className="inline-flex items-center gap-1.5 rounded-lg bg-white border border-slate-200 hover:border-slate-900 px-4 py-2 text-[12.5px] font-semibold text-slate-800 hover:text-black whitespace-nowrap transition-all shadow-2xs shrink-0"
+        >
+          <span>Explore All 8 Services</span>
+          <ArrowRight className="h-3.5 w-3.5" />
+        </Link>
       </div>
     </section>
   );

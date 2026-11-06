@@ -95,61 +95,61 @@ export function IndustriesSection() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-4 mb-5 sm:mb-6">
         <div className="max-w-[620px]">
-          <span className="inline-block text-[11px] font-bold uppercase tracking-widest text-[#737373] mb-1">
+          <span className="block mb-1 text-xs font-semibold uppercase tracking-widest text-[#E9204F]">
             Sector Coverage
           </span>
-          <h2 className="font-heading text-[22px] sm:text-[28px] lg:text-[32px] font-bold text-[#101010] tracking-[-0.035em] leading-tight">
+          <h2 className="font-heading text-[24px] sm:text-[30px] lg:text-[34px] font-bold text-[#101010] tracking-tight leading-tight">
             Tailored Lead Criteria Across 10 Commercial Verticals
           </h2>
-          <p className="mt-1.5 text-[14px] sm:text-[15px] leading-relaxed text-[#525252]">
+          <p className="mt-1.5 text-[14px] sm:text-[15px] leading-relaxed text-zinc-600">
             Every industry has unique cleaning schedules, compliance gates, and decision-maker profiles. We filter specifically for your ideal account profile.
           </p>
         </div>
 
         <Link
           href="/#contact"
-          className="inline-flex items-center gap-1.5 rounded-lg bg-[#101010] hover:bg-[#E9204F] text-white px-4 py-2 text-[12.5px] font-semibold transition-all duration-300 min-h-[38px] shrink-0 self-start md:self-auto shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
+          className="inline-flex items-center gap-1.5 rounded-lg bg-[#E9204F] hover:bg-[#101010] text-white px-4 py-2 text-[12.5px] font-semibold transition-all duration-200 min-h-[38px] shrink-0 self-start md:self-auto shadow-xs hover:-translate-y-0.5"
         >
           <span>Target My Sector</span>
           <ArrowRight className="h-3.5 w-3.5" />
         </Link>
       </div>
 
-      {/* Visual Sector Matrix */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-3">
+      {/* Visual Sector Matrix — Clean 1-Border Cards with No Nested Box Fatigue */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
         {SECTOR_DATA.map((sector, i) => {
           const Icon = sector.icon;
           return (
             <SpotlightCard
               key={i}
               mode="light"
-              className="group rounded-xl border border-neutral-200/80 bg-white p-3 sm:p-3.5 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:border-[#101010] hover:shadow-md hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between"
+              className="group rounded-xl border border-zinc-200/80 bg-white p-4 shadow-2xs hover:border-zinc-400 hover:shadow-xs transition-all duration-200 flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-neutral-100 text-[#101010] group-hover:bg-[#101010] group-hover:text-white transition-colors">
-                    <Icon className="h-3.5 w-3.5" />
+                <div className="flex items-center justify-between mb-2.5">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#FAFAFA] border border-zinc-200/80 text-[#101010] group-hover:bg-[#101010] group-hover:text-white transition-colors">
+                    <Icon className="h-4 w-4" />
                   </div>
-                  <span className="text-[11px] font-mono font-semibold text-[#737373] bg-neutral-50 px-1.5 py-0.5 rounded border border-neutral-200/50">
+                  <span className="text-xs font-mono font-medium text-slate-400">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
 
-                <h3 className="text-[13.5px] sm:text-[14.5px] font-bold text-[#101010] leading-snug group-hover:text-[#E9204F] transition-colors">
+                <h3 className="text-[14px] sm:text-[15px] font-bold text-[#101010] leading-snug group-hover:text-[#E9204F] transition-colors">
                   {sector.name}
                 </h3>
 
-                <div className="mt-2.5 space-y-1">
-                  <div className="text-[11px] sm:text-[11.5px] font-semibold text-[#101010] bg-neutral-50 rounded px-1.5 py-0.5 border border-neutral-100 truncate">
+                <div className="mt-2.5 space-y-0.5">
+                  <div className="text-[12px] font-semibold text-slate-800 truncate">
                     {sector.typicalScope}
                   </div>
-                  <div className="text-[11px] text-[#525252] truncate">
+                  <div className="text-[11.5px] text-zinc-500 truncate">
                     {sector.cadence}
                   </div>
                 </div>
               </div>
 
-              <div className="mt-3 pt-2 border-t border-neutral-100 flex items-center justify-between text-[11.5px] font-semibold text-[#737373] group-hover:text-[#101010]">
+              <div className="mt-3.5 pt-2 border-t border-zinc-100 flex items-center justify-between text-[11.5px] font-medium text-slate-400 group-hover:text-[#101010]">
                 <span>Scope Ready</span>
                 <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1 group-hover:text-[#E9204F]" />
               </div>
@@ -159,18 +159,18 @@ export function IndustriesSection() {
       </div>
 
       {/* Customized Scope Callout Banner */}
-      <div className="mt-4 sm:mt-5 rounded-xl border border-neutral-200/90 bg-[#FAFAFA] p-3.5 sm:p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-2xs">
+      <div className="mt-4 sm:mt-5 rounded-xl border border-zinc-200/80 bg-[#FAFAFA] p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-2xs">
         <div>
           <div className="text-[13.5px] sm:text-[14.5px] font-bold text-[#101010]">
             Operating in a specialized regional niche?
           </div>
-          <p className="text-[12px] sm:text-[13px] text-[#525252] mt-0.5">
+          <p className="text-[12px] sm:text-[13px] text-zinc-600 mt-0.5">
             We configure custom square footage thresholds, emergency cleaning filters, and local zip codes for your exact capability profile.
           </p>
         </div>
         <Link
           href="/#contact"
-          className="inline-flex items-center gap-1.5 rounded-lg bg-white border border-neutral-200 hover:border-[#101010] px-3.5 py-1.5 text-[12px] font-semibold text-[#101010] whitespace-nowrap transition-colors min-h-[36px] shrink-0 shadow-2xs"
+          className="inline-flex items-center gap-1.5 rounded-lg bg-white border border-zinc-200/80 hover:border-[#101010] px-3.5 py-1.5 text-[12px] font-semibold text-[#101010] whitespace-nowrap transition-colors min-h-[36px] shrink-0 shadow-2xs"
         >
           <span>Request Custom Scoping</span>
           <ArrowRight className="h-3.5 w-3.5" />

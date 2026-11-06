@@ -12,10 +12,7 @@ import {
   Users,
   ChevronRight,
   Target,
-  Calendar,
-  Sparkles,
 } from "@/components/common/icons";
-import { SpotlightCard } from "@/components/common/SpotlightCard";
 
 interface PipelinePhase {
   phase: string;
@@ -98,22 +95,22 @@ const PIPELINE_PHASES: PipelinePhase[] = [
     description:
       "Appointments are synced directly to your calendar with full facility briefing notes and immediate territory protection.",
     detailedScope:
-      "Walkthrough appointments are synchronized into your Google, Outlook, or CRM calendar with full facility briefing notes, square footage estimates, and automated prospect SMS/email reminder cadences to eliminate no-shows.",
+      "Confirmed appointments are dispatched directly to your calendar with full facility notes, contact direct dial, and pre-walkthrough briefing. Any unverified meeting is replaced immediately at zero cost.",
     deliverables: [
-      "Direct two-way calendar sync (Google, Outlook, or CRM)",
-      "Facility dossier briefing sheet with decision-maker insights",
-      "Automated prospect SMS and email reminders to eliminate no-shows",
-      "Post-walkthrough quote follow-up cadences and pipeline reporting",
+      "Direct Google / Outlook calendar invite synchronization",
+      "Complete facility briefing with verified square footage & scope",
+      "Property manager direct dial phone and verified business email",
+      "Automatic replacement guarantee for any unqualified meeting",
     ],
-    milestoneOutput: "On-Calendar Walkthrough with Complete Facility Dossier",
+    milestoneOutput: "Confirmed Walkthrough Dispatched with Full Opportunity Dossier",
   },
 ];
 
 const EXECUTION_METRICS = [
   {
     icon: Clock,
-    label: "48-Hour Delivery SLA",
-    detail: "Fastest initial appointment turnaround in commercial janitorial.",
+    label: "24-Hour SLA Delivery",
+    detail: "Rapid lead handover and real-time appointment notifications.",
   },
   {
     icon: ShieldCheck,
@@ -141,20 +138,20 @@ export function ProcessSection() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-4 mb-6 sm:mb-8">
         <div className="max-w-[620px]">
-          <span className="inline-block text-[11px] font-bold uppercase tracking-widest text-[#737373] mb-1">
-            Execution Framework
+          <span className="block mb-1 text-xs font-semibold uppercase tracking-widest text-[#E9204F]">
+            Execution Cadence
           </span>
-          <h2 className="font-heading text-[22px] sm:text-[28px] lg:text-[32px] font-bold text-[#101010] tracking-[-0.035em] leading-tight">
+          <h2 className="font-heading text-[24px] sm:text-[30px] lg:text-[34px] font-bold text-[#101010] tracking-tight leading-tight">
             4-Stage Pipeline from Scoping to Confirmed Handover
           </h2>
-          <p className="mt-1.5 text-[14px] sm:text-[15px] leading-relaxed text-[#525252]">
+          <p className="mt-1.5 text-[14px] sm:text-[15px] leading-relaxed text-zinc-600">
             A systematic, repeatable operating cadence designed to eliminate dry pipeline spells and protect your margins.
           </p>
         </div>
 
         <Link
           href="/#contact"
-          className="inline-flex items-center gap-1.5 rounded-lg bg-[#101010] hover:bg-[#E9204F] text-white px-4 py-2 text-[12.5px] font-semibold transition-all duration-300 min-h-[44px] shrink-0 self-start md:self-auto shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
+          className="inline-flex items-center gap-1.5 rounded-lg bg-[#E9204F] hover:bg-[#101010] text-white px-4 py-2 text-[12.5px] font-semibold transition-all duration-200 min-h-[42px] shrink-0 self-start md:self-auto shadow-xs hover:-translate-y-0.5"
         >
           <span>Initiate Cadence</span>
           <ArrowRight className="h-3.5 w-3.5" />
@@ -163,15 +160,12 @@ export function ProcessSection() {
 
       {/* Two-Column Interactive Stepper Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-start">
-        {/* Left Column: Vertical Progress Rail / Timeline Stepper */}
+        {/* Left Column: Progress Rail */}
         <div className="lg:col-span-5 relative">
-          {/* Continuous Vertical Timeline Spine */}
-          <div className="absolute left-[23px] sm:left-[27px] top-6 bottom-6 w-[2px] bg-neutral-200 z-0" />
-
           <div
             role="tablist"
             aria-label="Process Stages"
-            className="flex flex-col gap-3 relative z-10"
+            className="flex flex-col gap-2.5 relative z-10"
           >
             {PIPELINE_PHASES.map((p, idx) => {
               const isActive = activePhaseIndex === idx;
@@ -185,61 +179,47 @@ export function ProcessSection() {
                   aria-controls={`stage-panel-${p.phase}`}
                   id={`stage-tab-${p.phase}`}
                   onClick={() => setActivePhaseIndex(idx)}
-                  onMouseEnter={() => setActivePhaseIndex(idx)}
-                  className={`group w-full text-left p-3.5 sm:p-4 rounded-2xl border transition-all duration-200 flex items-start gap-3.5 sm:gap-4 min-h-[52px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#101010] cursor-pointer ${
+                  className={`group w-full text-left p-4 rounded-xl border transition-all duration-200 flex items-start gap-3.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#101010] cursor-pointer ${
                     isActive
-                      ? "bg-white border-[#101010] shadow-[0_4px_16px_rgba(0,0,0,0.06)] ring-1 ring-[#101010]"
-                      : "bg-[#FAFAFA]/80 border-neutral-200/80 hover:bg-white hover:border-neutral-300"
+                      ? "bg-white border-[#101010] shadow-sm ring-1 ring-[#101010]"
+                      : "bg-[#FAFAFA] border-zinc-200/80 hover:bg-white hover:border-zinc-300"
                   }`}
                 >
-                  {/* Numbered Milestone Node (Directly anchored to the spine) */}
                   <div
-                    className={`flex h-8 w-8 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-xl font-mono text-[12.5px] sm:text-[13px] font-bold transition-all duration-200 shadow-2xs ${
+                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg font-mono text-[12px] font-bold transition-all duration-200 ${
                       isActive
-                        ? "bg-[#101010] text-white ring-4 ring-[#101010]/10"
-                        : "bg-white text-neutral-600 border border-neutral-300 group-hover:border-[#101010] group-hover:text-[#101010]"
+                        ? "bg-[#101010] text-white"
+                        : "bg-white text-zinc-500 border border-zinc-200"
                     }`}
                   >
                     {p.phase}
                   </div>
 
-                  {/* Stage Summary Block */}
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between gap-2 mb-1">
-                      <span className="text-[10.5px] sm:text-[11px] font-bold font-mono tracking-wider uppercase text-[#737373]">
+                    <div className="flex items-center justify-between gap-2 mb-0.5">
+                      <span className="text-[11px] font-medium tracking-wider uppercase text-slate-400">
                         {p.subtitle}
                       </span>
-                      <span
-                        className={`text-[10.5px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border transition-colors ${
-                          isActive
-                            ? "text-emerald-700 bg-emerald-50 border-emerald-200"
-                            : "text-neutral-500 bg-neutral-100 border-neutral-200"
-                        }`}
-                      >
-                        {p.badge}
-                      </span>
+                      {isActive && (
+                        <span className="text-[10.5px] font-medium text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
+                          {p.badge}
+                        </span>
+                      )}
                     </div>
 
-                    <h3
-                      className={`font-heading text-[14px] sm:text-[15.5px] font-bold leading-snug transition-colors ${
-                        isActive ? "text-[#101010]" : "text-neutral-700 group-hover:text-[#101010]"
-                      }`}
-                    >
+                    <h3 className="font-heading text-[14.5px] font-bold text-[#101010] leading-snug">
                       {p.title}
                     </h3>
 
-                    <p className="mt-1 text-[12px] sm:text-[12.5px] text-[#737373] line-clamp-2 leading-relaxed">
+                    <p className="mt-1 text-[12px] text-zinc-600 line-clamp-2 leading-relaxed">
                       {p.description}
                     </p>
                   </div>
 
-                  {/* Indicator Arrow */}
                   <div className="shrink-0 self-center hidden sm:flex items-center justify-center">
                     <ChevronRight
                       className={`h-4 w-4 transition-all duration-200 ${
-                        isActive
-                          ? "text-[#E9204F] translate-x-0.5 opacity-100"
-                          : "text-neutral-300 opacity-40 group-hover:opacity-80"
+                        isActive ? "text-[#E9204F] opacity-100" : "text-zinc-300 opacity-40"
                       }`}
                     />
                   </div>
@@ -249,99 +229,88 @@ export function ProcessSection() {
           </div>
         </div>
 
-        {/* Right Column: Live Stage Detail Spotlight */}
+        {/* Right Column: Live Stage Detail View — Clean 1-Border Card Without Nested Boxes */}
         <div className="lg:col-span-7">
-          <SpotlightCard
-            mode="light"
-            className="rounded-2xl border border-neutral-200/90 bg-white p-5 sm:p-7 shadow-[0_4px_20px_rgba(0,0,0,0.04)]"
-            contentClassName="relative z-10"
-          >
+          <div className="rounded-2xl border border-zinc-200/80 bg-white p-6 sm:p-7 shadow-xs">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activePhase.phase}
                 id={`stage-panel-${activePhase.phase}`}
                 role="tabpanel"
                 aria-labelledby={`stage-tab-${activePhase.phase}`}
-                initial={{ opacity: 0, y: 8 }}
+                initial={{ opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
+                exit={{ opacity: 0, y: -6 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
                 className="space-y-5"
               >
-                {/* Stage Header Strip */}
-                <div className="flex flex-wrap items-center justify-between gap-2.5 pb-4 border-b border-neutral-100">
+                {/* Header */}
+                <div className="flex flex-wrap items-center justify-between gap-2.5 pb-3 border-b border-zinc-100">
                   <div className="flex items-center gap-2">
-                    <span className="inline-flex items-center text-[11px] font-bold uppercase tracking-wider text-[#E9204F] bg-[#E9204F]/10 px-2.5 py-1 rounded-md">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-[#E9204F]">
                       {activePhase.stepNumber}
                     </span>
-                    <span className="text-[12px] font-semibold text-[#737373]">
+                    <span className="text-xs text-slate-400">
                       · Step {activePhaseIndex + 1} of {PIPELINE_PHASES.length}
                     </span>
                   </div>
 
-                  <div className="inline-flex items-center gap-1.5 text-[11.5px] sm:text-[12px] font-medium text-[#525252] bg-neutral-100 px-2.5 py-1 rounded-md">
-                    <Clock className="h-3.5 w-3.5 text-[#737373]" />
-                    <span>{activePhase.timeframe}</span>
-                  </div>
+                  <span className="text-xs text-zinc-600">
+                    {activePhase.timeframe}
+                  </span>
                 </div>
 
-                {/* Title & Detailed Scope */}
-                <div className="space-y-2">
-                  <h3 className="font-heading text-[20px] sm:text-[23px] font-bold text-[#101010] leading-snug">
+                {/* Scope */}
+                <div>
+                  <h3 className="font-heading text-[20px] font-bold text-[#101010] leading-snug">
                     {activePhase.title}
                   </h3>
-                  <p className="text-[13.5px] sm:text-[14px] text-[#525252] leading-relaxed">
+                  <p className="mt-2 text-[14px] text-zinc-600 leading-relaxed">
                     {activePhase.detailedScope}
                   </p>
                 </div>
 
-                {/* Verified Milestone Deliverables */}
-                <div className="pt-2 space-y-3">
-                  <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-[#737373]">
-                    <Sparkles className="h-3.5 w-3.5 text-[#E9204F]" />
-                    <span>Verified Stage Deliverables:</span>
-                  </span>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                {/* Deliverables List: Clean Typographic Rows with No Clunky Nested Boxes */}
+                <div className="pt-2">
+                  <div className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+                    Stage Deliverables
+                  </div>
+                  <div className="space-y-2">
                     {activePhase.deliverables.map((deliv, dIdx) => (
                       <div
                         key={dIdx}
-                        className="flex items-start gap-2.5 rounded-xl border border-neutral-100 bg-[#FAFAFA] p-2.5 sm:p-3 text-[12.5px] sm:text-[13px] text-[#262626]"
+                        className="flex items-start gap-2.5 text-[13px] text-zinc-700 py-1"
                       >
-                        <CheckCircle2 className="h-4 w-4 text-[#16A34A] shrink-0 mt-0.5" />
+                        <CheckCircle2 className="h-4 w-4 text-[#E9204F] shrink-0 mt-0.5" />
                         <span className="leading-snug">{deliv}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                {/* Handover Milestone Artifact Banner */}
-                <div className="pt-1">
-                  <div className="rounded-xl border border-emerald-200/80 bg-emerald-50/50 p-3 sm:p-3.5 flex items-start gap-3">
-                    <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-600 text-white shrink-0 mt-0.5 shadow-2xs">
-                      <Target className="h-3.5 w-3.5" />
+                {/* Outcome */}
+                <div className="p-3.5 rounded-xl bg-[#FAFAFA] border border-zinc-200/70 flex items-start gap-3">
+                  <Target className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
+                  <div>
+                    <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-400">
+                      Primary Outcome
                     </div>
-                    <div>
-                      <div className="text-[11px] font-bold uppercase tracking-wider text-emerald-800">
-                        Primary Stage Outcome
-                      </div>
-                      <div className="text-[12.5px] sm:text-[13px] font-semibold text-emerald-950 mt-0.5">
-                        {activePhase.milestoneOutput}
-                      </div>
+                    <div className="text-[13px] font-semibold text-slate-800 mt-0.5">
+                      {activePhase.milestoneOutput}
                     </div>
                   </div>
                 </div>
 
-                {/* Stage Action Strip */}
-                <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 border-t border-neutral-100">
-                  <div className="flex items-center gap-2 text-[12px] text-[#737373]">
-                    <ShieldCheck className="h-4 w-4 text-[#16A34A] shrink-0" />
-                    <span>Guaranteed by RHEK GLOBAL commercial SLA</span>
+                {/* Footer Action */}
+                <div className="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 border-t border-zinc-100">
+                  <div className="flex items-center gap-1.5 text-xs text-zinc-500">
+                    <ShieldCheck className="h-4 w-4 text-emerald-600 shrink-0" />
+                    <span>Protected under RHEK GLOBAL commercial SLA</span>
                   </div>
 
                   <Link
                     href="/#contact"
-                    className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-[#101010] hover:bg-[#E9204F] text-white px-3.5 py-2 text-[12px] font-semibold transition-all duration-200 min-h-[44px]"
+                    className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-[#101010] hover:bg-[#E9204F] text-white px-4 py-2 text-[12.5px] font-semibold transition-colors duration-200 min-h-[40px]"
                   >
                     <span>Schedule Initial Scoping</span>
                     <ArrowRight className="h-3.5 w-3.5" />
@@ -349,33 +318,31 @@ export function ProcessSection() {
                 </div>
               </motion.div>
             </AnimatePresence>
-          </SpotlightCard>
+          </div>
         </div>
       </div>
 
-      {/* 4 SLA Commitments Strip */}
-      <div className="mt-6 sm:mt-8 grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3">
+      {/* 4 SLA Commitments Strip — Clean 1-Border Metric Cards */}
+      <div className="mt-7 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
         {EXECUTION_METRICS.map((m, i) => {
           const Icon = m.icon;
           return (
-            <SpotlightCard
+            <div
               key={i}
-              mode="light"
-              className="rounded-xl border border-neutral-200/70 bg-[#FAFAFA] p-3 sm:p-3.5 flex items-start gap-2.5 hover:bg-white hover:border-[#101010] transition-colors"
-              contentClassName="relative z-10 flex items-start gap-2.5"
+              className="rounded-xl border border-zinc-200/80 bg-[#FAFAFA] p-3.5 flex items-start gap-2.5 transition-colors hover:bg-white hover:border-zinc-300"
             >
-              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-white border border-neutral-200 text-[#101010] shrink-0 mt-0.5 shadow-2xs">
+              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-white border border-zinc-200 text-[#101010] shrink-0 mt-0.5">
                 <Icon className="h-3.5 w-3.5 text-[#E9204F]" />
               </div>
               <div>
-                <div className="text-[12.5px] sm:text-[13px] font-bold text-[#101010] leading-tight">
+                <div className="text-[13px] font-bold text-[#101010] leading-tight">
                   {m.label}
                 </div>
-                <div className="text-[11px] sm:text-[11.5px] text-[#525252] mt-0.5 leading-snug">
+                <div className="text-[11.5px] text-zinc-500 mt-0.5 leading-snug">
                   {m.detail}
                 </div>
               </div>
-            </SpotlightCard>
+            </div>
           );
         })}
       </div>

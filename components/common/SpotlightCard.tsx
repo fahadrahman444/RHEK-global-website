@@ -42,15 +42,15 @@ export function SpotlightCard({
   const defaultSpotlight =
     spotlightColor ??
     (mode === "light"
-      ? "rgba(233, 32, 79, 0.22)"
-      : "rgba(233, 32, 79, 0.35)");
+      ? "rgba(0, 0, 0, 0.025)"
+      : "rgba(233, 32, 79, 0.12)");
 
-  const radius = spotlightRadius ?? (mode === "light" ? 320 : 380);
+  const radius = spotlightRadius ?? (mode === "light" ? 300 : 380);
 
   const baseThemeClasses =
     mode === "light"
-      ? "border border-[#EBEBEB] bg-[#FAFAFA] hover:border-[#101010] hover:shadow-lg hover:shadow-black/5"
-      : "border border-white/10 bg-[#121214] hover:border-white/25 hover:shadow-2xl hover:shadow-[#E9204F]/10";
+      ? "border border-zinc-200/80 bg-white hover:border-zinc-400 hover:bg-[#FAFAFA] hover:shadow-md hover:shadow-zinc-900/5 hover:-translate-y-0.5"
+      : "border border-white/10 bg-[#0E1015] hover:border-white/20 hover:shadow-xl hover:-translate-y-0.5";
 
   return (
     <div
@@ -59,15 +59,15 @@ export function SpotlightCard({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className={cn(
-        "relative overflow-hidden rounded-2xl transition-all duration-300",
+        "relative overflow-hidden rounded-2xl transition-all duration-200",
         baseThemeClasses,
         className
       )}
       {...props}
     >
-      {/* Dynamic Cursor Spotlight Radial Glow */}
+      {/* Dynamic Cursor Spotlight — Placed beneath content to prevent contrast wash */}
       <div
-        className="pointer-events-none absolute -inset-px z-20 transition-opacity duration-300 ease-out"
+        className="pointer-events-none absolute -inset-px z-0 transition-opacity duration-300 ease-out"
         style={{
           opacity,
           background: `radial-gradient(${radius}px circle at ${position.x}px ${position.y}px, ${defaultSpotlight}, transparent 70%)`,
