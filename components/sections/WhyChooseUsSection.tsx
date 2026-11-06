@@ -62,30 +62,30 @@ export function WhyChooseUsSection() {
         {/* Mobile View: Dedicated Institutional Cards (< md) */}
         <div className="divide-y divide-zinc-200/80 md:hidden">
           {COMPARISON_ROWS.map((row, i) => (
-            <div key={i} className="p-3.5 space-y-2">
+            <div key={i} className="p-3 space-y-1.5">
               <span className="text-[13px] font-bold text-[#101010] block">
                 {row.feature}
               </span>
 
               {/* RHEK Advantage */}
-              <div className="flex items-start gap-2 p-2.5 rounded-lg bg-emerald-50/60 border border-emerald-200/60 text-[#101010] text-[12px] leading-snug">
+              <div className="flex items-start gap-2 p-2 rounded-lg bg-emerald-50/70 border border-emerald-200/60 text-[#101010] text-[12px] leading-snug">
                 <Check className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
                 <div>
-                  <span className="font-bold text-emerald-900 block text-[10.5px] uppercase tracking-wider mb-0.5">
+                  <span className="font-bold text-emerald-900 block text-[10px] uppercase tracking-wider">
                     RHEK Global Standard
                   </span>
-                  <span className="font-medium text-emerald-950">{row.rhek}</span>
+                  <span className="font-medium text-emerald-950 mt-0.5 block">{row.rhek}</span>
                 </div>
               </div>
 
               {/* Traditional Broker */}
-              <div className="flex items-start gap-2 p-2.5 rounded-lg bg-zinc-50 border border-zinc-200/60 text-zinc-600 text-[12px] leading-snug">
-                <X className="h-4 w-4 text-neutral-400 shrink-0 mt-0.5" />
+              <div className="flex items-start gap-2 px-2 py-1 rounded text-zinc-500 text-[11.5px] leading-snug">
+                <X className="h-3.5 w-3.5 text-neutral-400 shrink-0 mt-0.5" />
                 <div>
-                  <span className="font-semibold text-zinc-500 block text-[10.5px] uppercase tracking-wider mb-0.5">
+                  <span className="text-[10px] text-zinc-400 uppercase tracking-wider block font-semibold">
                     Traditional Brokers
                   </span>
-                  <span>{row.traditional}</span>
+                  <span className="text-zinc-600">{row.traditional}</span>
                 </div>
               </div>
             </div>

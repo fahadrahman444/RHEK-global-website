@@ -38,39 +38,39 @@ export function ServicesPreview() {
       </div>
 
       {/* Modern Light Bento Grid — Continuous Canvas */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-3.5 sm:gap-4">
         {/* Bento Card 1: Dedicated Outbound SDR Cadences */}
-        <div className="lg:col-span-7 rounded-2xl border border-zinc-200/80 bg-white p-6 sm:p-7 flex flex-col justify-between hover:border-zinc-400 transition-all duration-200 shadow-2xs group">
+        <div className="lg:col-span-7 rounded-2xl border border-zinc-200/80 bg-white p-4 sm:p-7 flex flex-col justify-between hover:border-zinc-400 transition-all duration-200 shadow-2xs group">
           <div>
-            <div className="flex items-center justify-between gap-2 mb-3">
+            <div className="flex items-center justify-between gap-2 mb-2.5 sm:mb-3">
               <div className="flex items-center gap-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-rose-50 text-[#E9204F]">
-                  <PhoneCall className="h-4 w-4" />
+                <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-lg bg-rose-50 text-[#E9204F]">
+                  <PhoneCall className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 </div>
-                <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+                <span className="text-[10.5px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-500">
                   Outbound Sales Development
                 </span>
               </div>
-              <span className="text-[11px] font-medium text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-2.5 py-0.5 rounded-full">
+              <span className="text-[10.5px] sm:text-[11px] font-medium text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-2 py-0.5 rounded-full">
                 Live Intake Active
               </span>
             </div>
 
-            <h3 className="font-heading text-[18px] sm:text-[20px] font-bold text-[#101010] leading-snug">
+            <h3 className="font-heading text-[17px] sm:text-[20px] font-bold text-[#101010] leading-snug">
               Exclusive Commercial Appointments With Zero Shared Prospects
             </h3>
-            <p className="text-[13.5px] text-zinc-600 mt-2 leading-relaxed">
+            <p className="text-[13px] sm:text-[13.5px] text-zinc-600 mt-1.5 sm:mt-2 leading-relaxed">
               Dedicated outbound SDRs call property managers, qualify facility square footage, verify dissatisfaction with incumbent cleaners, and schedule confirmed on-site walkthroughs.
             </p>
 
             {/* Clean Structured Handover Preview */}
-            <div className="mt-5 rounded-xl bg-[#FAFAFA] border border-zinc-200/70 p-4">
-              <div className="flex items-center justify-between pb-2.5 mb-3 border-b border-zinc-200/60 text-[12px]">
+            <div className="mt-4 sm:mt-5 rounded-xl bg-[#FAFAFA] border border-zinc-200/70 p-3 sm:p-4">
+              <div className="flex items-center justify-between pb-2 mb-2.5 border-b border-zinc-200/60 text-[11.5px] sm:text-[12px]">
                 <span className="font-semibold text-[#101010] flex items-center gap-1.5">
                   <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
                   <span>Verified Walkthrough Handover</span>
                 </span>
-                <span className="text-slate-400 text-[11px]">Direct Calendar Dispatch</span>
+                <span className="text-slate-400 text-[10.5px] sm:text-[11px]">Direct Calendar Dispatch</span>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-[12px]">
@@ -110,26 +110,26 @@ export function ServicesPreview() {
         </div>
 
         {/* Bento Card 2: Proprietary Facility Intelligence */}
-        <div className="lg:col-span-5 rounded-2xl border border-zinc-200/80 bg-white p-6 sm:p-7 flex flex-col justify-between hover:border-zinc-400 transition-all duration-200 shadow-2xs group">
+        <div className="lg:col-span-5 rounded-2xl border border-zinc-200/80 bg-white p-4 sm:p-7 flex flex-col justify-between hover:border-zinc-400 transition-all duration-200 shadow-2xs group">
           <div>
-            <div className="flex items-center justify-between gap-2 mb-3">
+            <div className="flex items-center justify-between gap-2 mb-2.5 sm:mb-3">
               <div className="flex items-center gap-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-rose-50 text-[#E9204F]">
-                  <Activity className="h-4 w-4" />
+                <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-lg bg-rose-50 text-[#E9204F]">
+                  <Activity className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 </div>
-                <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+                <span className="text-[10.5px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-500">
                   Data &amp; Targeting Engine
                 </span>
               </div>
-              <span className="text-[11px] font-medium text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-2.5 py-0.5 rounded-full">
+              <span className="text-[10.5px] sm:text-[11px] font-medium text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-2 py-0.5 rounded-full">
                 Proprietary DB
               </span>
             </div>
 
-            <h3 className="font-heading text-[18px] sm:text-[20px] font-bold text-[#101010] leading-snug">
+            <h3 className="font-heading text-[17px] sm:text-[20px] font-bold text-[#101010] leading-snug">
               Commercial Facility Intelligence &amp; Renewal Mapping
             </h3>
-            <p className="text-[13.5px] text-zinc-600 mt-2 leading-relaxed">
+            <p className="text-[13px] sm:text-[13.5px] text-zinc-600 mt-1.5 sm:mt-2 leading-relaxed">
               We track commercial facility square footage, tenant density, and expiring cleaning contracts across your territory to contact facilities at the ideal time.
             </p>
 

@@ -41,34 +41,34 @@ export function JanitorialLeadsSection() {
         </div>
       </div>
 
-      {/* 2. 3 Clear Value Pillars (Replaces Heavy Boxed Grid of Pills) */}
-      <div className="mt-7 sm:mt-8 grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-4">
-        <div className="p-4 sm:p-5 rounded-xl bg-[#FAFAFA] border border-[#EBEBEB] transition-all hover:border-slate-300 hover:bg-white hover:shadow-2xs">
-          <div className="flex items-center gap-2 text-[#101010] font-bold text-[14.5px]">
+      {/* 2. 3 Clear Value Pillars — Compact on mobile */}
+      <div className="mt-4 sm:mt-8 grid grid-cols-1 md:grid-cols-3 gap-2.5 sm:gap-4">
+        <div className="p-3 sm:p-5 rounded-xl bg-[#FAFAFA] border border-[#EBEBEB] transition-all hover:border-slate-300 hover:bg-white hover:shadow-2xs">
+          <div className="flex items-center gap-2 text-[#101010] font-bold text-[13.5px] sm:text-[14.5px]">
             <CheckCircle2 className="h-4 w-4 text-[#E9204F] shrink-0" />
             <span>Zero Shared Bids</span>
           </div>
-          <p className="mt-1.5 text-[13px] text-zinc-600 leading-relaxed">
+          <p className="mt-1 sm:mt-1.5 text-[12px] sm:text-[13px] text-zinc-600 leading-snug sm:leading-relaxed">
             Every lead is locked exclusively to your cleaning business in your local territory. Never resold or shared with competitors.
           </p>
         </div>
 
-        <div className="p-4 sm:p-5 rounded-xl bg-[#FAFAFA] border border-[#EBEBEB] transition-all hover:border-slate-300 hover:bg-white hover:shadow-2xs">
-          <div className="flex items-center gap-2 text-[#101010] font-bold text-[14.5px]">
+        <div className="p-3 sm:p-5 rounded-xl bg-[#FAFAFA] border border-[#EBEBEB] transition-all hover:border-slate-300 hover:bg-white hover:shadow-2xs">
+          <div className="flex items-center gap-2 text-[#101010] font-bold text-[13.5px] sm:text-[14.5px]">
             <CheckCircle2 className="h-4 w-4 text-[#E9204F] shrink-0" />
             <span>Pre-Vetted Decision Makers</span>
           </div>
-          <p className="mt-1.5 text-[13px] text-zinc-600 leading-relaxed">
+          <p className="mt-1 sm:mt-1.5 text-[12px] sm:text-[13px] text-zinc-600 leading-snug sm:leading-relaxed">
             Walkthroughs are booked directly with verified property managers, facility heads, and operational directors with budget authority.
           </p>
         </div>
 
-        <div className="p-4 sm:p-5 rounded-xl bg-[#FAFAFA] border border-[#EBEBEB] transition-all hover:border-slate-300 hover:bg-white hover:shadow-2xs">
-          <div className="flex items-center gap-2 text-[#101010] font-bold text-[14.5px]">
+        <div className="p-3 sm:p-5 rounded-xl bg-[#FAFAFA] border border-[#EBEBEB] transition-all hover:border-slate-300 hover:bg-white hover:shadow-2xs">
+          <div className="flex items-center gap-2 text-[#101010] font-bold text-[13.5px] sm:text-[14.5px]">
             <CheckCircle2 className="h-4 w-4 text-[#E9204F] shrink-0" />
             <span>Confirmed Walkthroughs</span>
           </div>
-          <p className="mt-1.5 text-[13px] text-zinc-600 leading-relaxed">
+          <p className="mt-1 sm:mt-1.5 text-[12px] sm:text-[13px] text-zinc-600 leading-snug sm:leading-relaxed">
             Every scheduled walkthrough includes verified facility square footage, cleaning frequency, and exact appointment time.
           </p>
         </div>

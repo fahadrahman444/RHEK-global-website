@@ -81,8 +81,8 @@ export function ContactSection({
 
   return (
     <section id="contact" className={embedded ? "py-4 px-3 sm:px-4" : "site-container"}>
-      <div className="rounded-2xl bg-[#FAFAFA] border border-zinc-200/80 p-6 sm:p-8 lg:p-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
+      <div className="rounded-2xl bg-[#FAFAFA] border border-zinc-200/80 p-4 sm:p-8 lg:p-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-10 items-start">
           
           {/* Left Column: Direct Value & Trust Commitments */}
           <div className="lg:col-span-5 space-y-4">
@@ -126,7 +126,7 @@ export function ContactSection({
 
           {/* Right Column: 3-Input High-Conversion Form */}
           <div className="lg:col-span-7">
-            <div className="rounded-xl border border-zinc-200/80 bg-white p-6 sm:p-7 shadow-xs">
+            <div className="rounded-xl border border-zinc-200/80 bg-white p-4 sm:p-7 shadow-xs">
               {success ? (
                 <div className="py-6 text-center space-y-4" role="status">
                   <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">

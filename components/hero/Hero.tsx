@@ -200,7 +200,7 @@ export function Hero() {
                       <span className="text-[11.5px] text-zinc-400 font-medium">Direct Decision-Makers</span>
                     </div>
 
-                    {/* Card 1 */}
+                    {/* Card 1 — Always visible on all viewports */}
                     <div className="p-3.5 rounded-xl bg-white border border-zinc-200/80 hover:border-zinc-400 hover:shadow-2xs transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                       <div className="space-y-1">
                         <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
@@ -221,8 +221,8 @@ export function Hero() {
                       </div>
                     </div>
 
-                    {/* Card 2 */}
-                    <div className="p-3.5 rounded-xl bg-white border border-zinc-200/80 hover:border-zinc-400 hover:shadow-2xs transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    {/* Card 2 — Visible on tablets and up */}
+                    <div className="hidden sm:flex p-3.5 rounded-xl bg-white border border-zinc-200/80 hover:border-zinc-400 hover:shadow-2xs transition-all flex-col sm:flex-row sm:items-center justify-between gap-3">
                       <div className="space-y-1">
                         <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
                           <span className="text-[13.5px] font-bold text-[#101010]">Metro Logistics & Distribution Center</span>
@@ -242,8 +242,8 @@ export function Hero() {
                       </div>
                     </div>
 
-                    {/* Card 3 */}
-                    <div className="p-3.5 rounded-xl bg-white border border-zinc-200/80 hover:border-zinc-400 hover:shadow-2xs transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    {/* Card 3 — Visible on desktops */}
+                    <div className="hidden lg:flex p-3.5 rounded-xl bg-white border border-zinc-200/80 hover:border-zinc-400 hover:shadow-2xs transition-all flex-col sm:flex-row sm:items-center justify-between gap-3">
                       <div className="space-y-1">
                         <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
                           <span className="text-[13.5px] font-bold text-[#101010]">Horizon Corporate Financial Tower</span>
@@ -261,6 +261,12 @@ export function Hero() {
                           $9,200 <span className="text-[12px] font-normal text-zinc-500">/ mo</span>
                         </div>
                       </div>
+                    </div>
+
+                    {/* Mobile Pipeline Count Strip (< sm) */}
+                    <div className="flex sm:hidden items-center justify-between px-2 pt-1 text-[11px] text-zinc-500 font-medium">
+                      <span>+2 More Verified Appointments Active</span>
+                      <span className="text-emerald-600 font-semibold">100% Protected</span>
                     </div>
                   </div>
 

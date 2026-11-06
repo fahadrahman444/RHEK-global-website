@@ -115,41 +115,41 @@ export function IndustriesSection() {
         </Link>
       </div>
 
-      {/* Visual Sector Matrix — Clean 1-Border Cards with No Nested Box Fatigue */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+      {/* Visual Sector Matrix — Clean 1-Border Cards with Compact Mobile Spacing */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-3">
         {SECTOR_DATA.map((sector, i) => {
           const Icon = sector.icon;
           return (
             <SpotlightCard
               key={i}
               mode="light"
-              className="group rounded-xl border border-zinc-200/80 bg-white p-4 shadow-2xs hover:border-zinc-400 hover:shadow-xs transition-all duration-200 flex flex-col justify-between"
+              className="group rounded-xl border border-zinc-200/80 bg-white p-3 sm:p-4 shadow-2xs hover:border-zinc-400 hover:shadow-xs transition-all duration-200 flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between mb-2.5">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#FAFAFA] border border-zinc-200/80 text-[#101010] group-hover:bg-[#101010] group-hover:text-white transition-colors">
-                    <Icon className="h-4 w-4" />
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-lg bg-[#FAFAFA] border border-zinc-200/80 text-[#101010] group-hover:bg-[#101010] group-hover:text-white transition-colors">
+                    <Icon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   </div>
-                  <span className="text-xs font-mono font-medium text-slate-400">
+                  <span className="text-[11px] sm:text-xs font-mono font-medium text-slate-400">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
 
-                <h3 className="text-[14px] sm:text-[15px] font-bold text-[#101010] leading-snug group-hover:text-[#E9204F] transition-colors">
+                <h3 className="text-[13px] sm:text-[15px] font-bold text-[#101010] leading-snug group-hover:text-[#E9204F] transition-colors">
                   {sector.name}
                 </h3>
 
-                <div className="mt-2.5 space-y-0.5">
-                  <div className="text-[12px] font-semibold text-slate-800 truncate">
+                <div className="mt-1.5 sm:mt-2.5 space-y-0.5">
+                  <div className="text-[11.5px] sm:text-[12px] font-semibold text-slate-800 truncate">
                     {sector.typicalScope}
                   </div>
-                  <div className="text-[11.5px] text-zinc-500 truncate">
+                  <div className="text-[11px] sm:text-[11.5px] text-zinc-500 truncate">
                     {sector.cadence}
                   </div>
                 </div>
               </div>
 
-              <div className="mt-3.5 pt-2 border-t border-zinc-100 flex items-center justify-between text-[11.5px] font-medium text-slate-400 group-hover:text-[#101010]">
+              <div className="hidden sm:flex mt-3.5 pt-2 border-t border-zinc-100 items-center justify-between text-[11.5px] font-medium text-slate-400 group-hover:text-[#101010]">
                 <span>Scope Ready</span>
                 <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1 group-hover:text-[#E9204F]" />
               </div>
