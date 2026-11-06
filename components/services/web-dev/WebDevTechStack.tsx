@@ -90,11 +90,11 @@ export function WebDevTechStack() {
           </p>
         </div>
 
-        {/* Pattern D: Continuous Technology Capability Strip */}
+        {/* Technology Capability Strip */}
         <div className="space-y-4">
-          <div className="flex items-center justify-between text-[12px] font-mono font-bold text-[#737373]">
+          <div className="flex items-center justify-between text-[11px] sm:text-[12px] font-mono font-bold text-[#737373]">
             <span>ENGINEERING STACK FOUNDATION</span>
-            <span className="text-[#E9204F]">PATTERN D · CAPABILITY STRIP</span>
+            <span className="text-[#E9204F]">PRODUCTION TECH SPEC</span>
           </div>
           <CapabilityStrip items={TECH_STRIP_ITEMS} />
         </div>

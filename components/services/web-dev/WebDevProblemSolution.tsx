@@ -37,15 +37,15 @@ export function WebDevProblemSolution() {
   return (
     <section
       id="problem-solution"
-      className="py-20 md:py-28 border-b border-[#EBEBEB] bg-white"
+      className="py-12 sm:py-16 md:py-24 border-b border-[#EBEBEB] bg-white"
     >
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-10 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#E9204F]/10 text-[#E9204F] text-[11px] font-bold uppercase tracking-wider mb-3">
             The Industry Problem vs. Our Solution
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#101010] tracking-tight leading-tight sm:leading-tight lg:leading-[1.18]">
+          <h2 className="text-2xl sm:text-4xl lg:text-[44px] font-extrabold text-[#101010] tracking-tight leading-tight sm:leading-tight lg:leading-[1.18] [text-wrap:balance]">
             Most B2B Websites Bleed High-Value Inquiries. Here is How We Fix It.
           </h2>
           <p className="text-base sm:text-lg text-[#525252] mt-4 leading-relaxed">

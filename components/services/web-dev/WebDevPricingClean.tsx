@@ -68,15 +68,15 @@ export function WebDevPricingClean() {
   return (
     <section
       id="pricing"
-      className="py-20 md:py-28 border-b border-[#EBEBEB] bg-white"
+      className="py-12 sm:py-16 md:py-24 border-b border-[#EBEBEB] bg-white"
     >
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-10 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#E9204F]/10 text-[#E9204F] text-[11px] font-bold uppercase tracking-wider mb-3">
             Investment &amp; Packages
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#101010] tracking-tight leading-tight sm:leading-tight lg:leading-[1.18]">
+          <h2 className="text-2xl sm:text-4xl lg:text-[44px] font-extrabold text-[#101010] tracking-tight leading-tight sm:leading-tight lg:leading-[1.18] [text-wrap:balance]">
             Transparent, Fixed-Bid Pricing. No Hidden Surprises.
           </h2>
           <p className="text-base sm:text-lg text-[#525252] mt-4 leading-relaxed">
@@ -85,13 +85,13 @@ export function WebDevPricingClean() {
         </div>
 
         {/* 3 Tier Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch mb-12">
           {tiers.map((tier, idx) => (
             <SpotlightCard
               key={idx}
               mode="light"
               spotlightColor={tier.popular ? "rgba(233, 32, 79, 0.28)" : undefined}
-              className={`rounded-2xl p-8 flex flex-col justify-between transition-all duration-200 relative ${
+              className={`rounded-2xl p-5 sm:p-8 flex flex-col justify-between transition-all duration-200 relative ${
                 tier.popular
                   ? "border-2 border-[#E9204F] bg-white shadow-xl ring-1 ring-[#E9204F]/20"
                   : "border border-[#E5E5E5] bg-[#FAFAFA] hover:border-[#101010]"

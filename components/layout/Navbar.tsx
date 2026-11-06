@@ -157,8 +157,8 @@ export function Navbar({ variant = "light" }: NavbarProps = {}) {
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-200 ${
         isDark
-          ? "bg-[#0A0A0B]/95 backdrop-blur-md border-b border-white/10"
-          : "bg-white/95 backdrop-blur-md border-b border-[#F0F0F0]"
+          ? "bg-[#0A0A0B]/98 backdrop-blur-md border-b border-white/10"
+          : "bg-white/98 backdrop-blur-md border-b border-[#F0F0F0]"
       }`}
     >
       <div className="max-w-[1280px] mx-auto px-3 sm:px-6">

@@ -67,7 +67,7 @@ export function WebDevFinalCta() {
   return (
     <section
       id="cta"
-      className="py-20 md:py-28 bg-[#101010] text-white relative overflow-hidden"
+      className="py-14 sm:py-20 md:py-28 bg-[#101010] text-white relative overflow-hidden"
     >
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -78,7 +78,7 @@ export function WebDevFinalCta() {
               <span>Step 8 · Direct Consultation</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold tracking-tight leading-tight sm:leading-tight lg:leading-[1.18]">
+            <h2 className="text-2xl sm:text-4xl lg:text-[46px] font-extrabold text-white tracking-tight leading-tight sm:leading-tight lg:leading-[1.18]">
               Ready to Upgrade Your Web Infrastructure? <span className="text-[#E9204F]">Book a Meeting.</span>
             </h2>
 

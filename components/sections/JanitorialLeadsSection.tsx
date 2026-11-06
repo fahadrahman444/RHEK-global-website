@@ -97,12 +97,12 @@ export function JanitorialLeadsSection() {
         </div>
 
         {/* Leads Cards: Clean, Borderless Metadata Grid */}
-        <div className="flex md:grid md:grid-cols-2 gap-4 overflow-x-auto snap-x snap-mandatory pb-2 md:pb-0 scrollbar-none -mx-1 px-1 sm:mx-0 sm:px-0">
+        <div className="flex md:grid md:grid-cols-2 gap-3.5 sm:gap-4 overflow-x-auto snap-x snap-mandatory pb-3 md:pb-0 scrollbar-none -mx-3 sm:mx-0 px-3 sm:px-0 scroll-pl-3">
           {RHEK_CONFIG.leadSamples.map((lead) => (
             <SpotlightCard
               key={lead.id}
               mode="light"
-              className="min-w-[84%] sm:min-w-[380px] md:min-w-0 snap-center shrink-0 md:shrink group rounded-xl border border-slate-200/80 bg-white p-6 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:border-slate-400 hover:shadow-[0_12px_28px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between"
+              className="w-[86%] xs:w-[82%] sm:min-w-[380px] md:min-w-0 snap-start shrink-0 md:shrink group rounded-xl border border-slate-200/80 bg-white p-5 sm:p-6 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:border-slate-400 hover:shadow-[0_12px_28px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 {/* Clean Category Overline & Subtle Verified Pill */}
@@ -198,7 +198,7 @@ export function JanitorialLeadsSection() {
           <div className="grid grid-cols-2 sm:flex sm:flex-row items-center gap-2 sm:gap-3 w-full md:w-auto shrink-0">
             <Link
               href="/services/janitorial-leads"
-              className="inline-flex items-center justify-center gap-1 rounded-lg bg-white hover:bg-[#FAFAFA] hover:border-zinc-400 border border-zinc-200/80 px-3 sm:px-5 py-2 sm:py-2.5 text-[12.5px] sm:text-[13px] font-semibold text-[#101010] transition-all min-h-[40px] whitespace-nowrap"
+              className="inline-flex items-center justify-center gap-1 rounded-lg bg-white hover:bg-[#FAFAFA] hover:border-zinc-400 border border-zinc-200/80 px-3 sm:px-5 py-2.5 text-[12.5px] sm:text-[13px] font-semibold text-[#101010] transition-all min-h-[44px] whitespace-nowrap"
             >
               <span className="hidden sm:inline">Pricing &amp; Details</span>
               <span className="sm:hidden">Pricing</span>
@@ -206,7 +206,7 @@ export function JanitorialLeadsSection() {
             </Link>
             <Link
               href="/contact?service=Janitorial%20Lead%20Generation"
-              className="inline-flex items-center justify-center gap-1 rounded-lg bg-[#E9204F] hover:bg-[#101010] px-3 sm:px-6 py-2 sm:py-2.5 text-[12.5px] sm:text-[13px] font-semibold text-white transition-all min-h-[40px] whitespace-nowrap shadow-xs"
+              className="inline-flex items-center justify-center gap-1 rounded-lg bg-[#E9204F] hover:bg-[#101010] px-3 sm:px-6 py-2.5 text-[12.5px] sm:text-[13px] font-semibold text-white transition-all min-h-[44px] whitespace-nowrap shadow-xs"
             >
               <span>Claim Territory</span>
               <ArrowRight className="h-3.5 w-3.5" />

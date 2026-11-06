@@ -40,15 +40,15 @@ export function WebDevFaq() {
   return (
     <section
       id="faqs"
-      className="py-20 md:py-28 border-b border-[#EBEBEB] bg-[#FAFAFA]"
+      className="py-12 sm:py-16 md:py-24 border-b border-[#EBEBEB] bg-[#FAFAFA]"
     >
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-10 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#101010]/5 text-[#101010] text-[11px] font-bold uppercase tracking-wider mb-3">
             Got Questions?
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#101010] tracking-tight leading-[1.15]">
+          <h2 className="text-2xl sm:text-4xl lg:text-[44px] font-extrabold text-[#101010] tracking-tight leading-[1.15] [text-wrap:balance]">
             Frequently Asked Questions
           </h2>
           <p className="text-base sm:text-lg text-[#525252] mt-4 leading-relaxed">
@@ -57,7 +57,7 @@ export function WebDevFaq() {
         </div>
 
         {/* Accordion List */}
-        <div className="max-w-4xl space-y-4">
+        <div className="max-w-4xl space-y-3.5 sm:space-y-4">
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
@@ -68,7 +68,7 @@ export function WebDevFaq() {
                 <button
                   type="button"
                   onClick={() => toggle(idx)}
-                  className="w-full flex items-center justify-between p-6 text-left focus:outline-none hover:bg-[#FAFAFA] transition-colors"
+                  className="w-full flex items-center justify-between p-4 sm:p-6 text-left focus:outline-none hover:bg-[#FAFAFA] transition-colors min-h-[44px]"
                   aria-expanded={isOpen}
                 >
                   <span className="text-base sm:text-lg font-bold text-[#101010] pr-4">
