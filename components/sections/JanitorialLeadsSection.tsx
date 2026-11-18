@@ -4,42 +4,39 @@ import Link from "next/link";
 import { CheckCircle2, ShieldCheck, ArrowRight } from "@/components/common/icons";
 import { RHEK_CONFIG } from "@/data/rhek-config";
 import { SpotlightCard } from "@/components/common/SpotlightCard";
+import { Button } from "@/components/common/Button";
+import { SectionHeader } from "@/components/common/SectionHeader";
 
 export function JanitorialLeadsSection() {
   return (
     <section id="leads" className="site-container scroll-mt-24">
-      {/* 1. Section Header & Value Positioning */}
-      <div className="max-w-[820px]">
-        <div className="inline-flex items-center gap-1.5 rounded-full bg-rose-50 border border-rose-200/60 px-3 py-1 text-[11px] font-semibold text-[#E9204F] uppercase tracking-wider mb-3">
-          <ShieldCheck className="h-3.5 w-3.5 text-[#E9204F]" />
-          <span>Pay Nothing Upfront Available</span>
-        </div>
-
-        <h2 className="font-heading text-[24px] sm:text-[32px] lg:text-[36px] font-bold text-[#101010] tracking-tight leading-[1.15]">
-          Exclusive Commercial Cleaning Leads &amp; Walkthroughs
-        </h2>
-
-        <p className="mt-2.5 text-[15px] sm:text-[17px] leading-relaxed text-zinc-600 max-w-[720px]">
-          We connect commercial cleaning contractors directly with verified facility managers actively seeking daily, weekly, or specialized janitorial contracts.
-        </p>
-
-        {/* Primary In-Flow Conversion CTA */}
-        <div className="mt-4 sm:mt-5 flex flex-wrap items-center gap-3">
-          <Link
-            href="/contact?service=Janitorial%20Lead%20Generation"
-            className="inline-flex items-center gap-2 rounded-lg bg-[#E9204F] hover:bg-[#101010] text-white px-5 py-2.5 text-[13.5px] font-semibold transition-all duration-200 shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 group"
-          >
-            <span>Claim Your Territory</span>
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
-          <Link
-            href="/services/janitorial-leads"
-            className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 hover:border-slate-400 bg-white hover:bg-slate-50 text-slate-800 px-4 py-2.5 text-[13.5px] font-medium transition-all duration-200 hover:-translate-y-0.5"
-          >
-            <span>Check Territory Availability</span>
-          </Link>
-        </div>
-      </div>
+      {/* 1. Standardized Section Header */}
+      <SectionHeader
+        badge="Pay Nothing Upfront Available"
+        badgeIcon={<ShieldCheck className="h-3.5 w-3.5" />}
+        title="Exclusive Commercial Cleaning Leads & Walkthroughs"
+        description="We connect commercial cleaning contractors directly with verified facility managers actively seeking daily, weekly, or specialized janitorial contracts."
+        maxWidth="max-w-[820px]"
+        cta={
+          <div className="flex flex-wrap items-center gap-3">
+            <Button
+              href="/contact?service=Janitorial%20Lead%20Generation"
+              variant="primary"
+              size="md"
+              rightIcon={<ArrowRight className="h-4 w-4" />}
+            >
+              Claim Your Territory
+            </Button>
+            <Button
+              href="/services/janitorial-leads"
+              variant="secondary"
+              size="md"
+            >
+              Check Territory Availability
+            </Button>
+          </div>
+        }
+      />
 
       {/* 2. 3 Clear Value Pillars — Compact on mobile */}
       <div className="mt-4 sm:mt-8 grid grid-cols-1 md:grid-cols-3 gap-2.5 sm:gap-4">

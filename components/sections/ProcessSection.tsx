@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/common/Button";
+import { SectionHeader } from "@/components/common/SectionHeader";
 import {
   ArrowRight,
   CheckCircle2,
@@ -135,28 +137,23 @@ export function ProcessSection() {
 
   return (
     <section id="process" className="site-container scroll-mt-24">
-      {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-4 mb-6 sm:mb-8">
-        <div className="max-w-[620px]">
-          <span className="block mb-1 text-xs font-semibold uppercase tracking-widest text-[#E9204F]">
-            Execution Cadence
-          </span>
-          <h2 className="font-heading text-[24px] sm:text-[30px] lg:text-[34px] font-bold text-[#101010] tracking-tight leading-tight">
-            4-Stage Pipeline from Scoping to Confirmed Handover
-          </h2>
-          <p className="mt-1.5 text-[14px] sm:text-[15px] leading-relaxed text-zinc-600">
-            A systematic, repeatable operating cadence designed to eliminate dry pipeline spells and protect your margins.
-          </p>
-        </div>
-
-        <Link
-          href="/#contact"
-          className="inline-flex items-center gap-1.5 rounded-lg bg-[#E9204F] hover:bg-[#101010] text-white px-4 py-2 text-[12.5px] font-semibold transition-all duration-200 min-h-[42px] shrink-0 self-start md:self-auto shadow-xs hover:-translate-y-0.5"
-        >
-          <span>Initiate Cadence</span>
-          <ArrowRight className="h-3.5 w-3.5" />
-        </Link>
-      </div>
+      {/* Standardized Section Header */}
+      <SectionHeader
+        badge="Execution Cadence"
+        title="4-Stage Pipeline from Scoping to Confirmed Handover"
+        description="A systematic, repeatable operating cadence designed to eliminate dry pipeline spells and protect your margins."
+        maxWidth="max-w-[620px]"
+        cta={
+          <Button
+            href="/#contact"
+            variant="primary"
+            size="sm"
+            rightIcon={<ArrowRight className="h-3.5 w-3.5" />}
+          >
+            Initiate Cadence
+          </Button>
+        }
+      />
 
       {/* Two-Column Interactive Stepper Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-start">

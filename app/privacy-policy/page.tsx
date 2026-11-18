@@ -15,12 +15,15 @@ export default function PrivacyPolicyPage() {
   const lastUpdated = "October 28, 2026";
 
   return (
-    <main className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       {/* 1. Global Navigation */}
-      <Navbar />
+      <header>
+        <Navbar />
+      </header>
 
-      {/* 2. Subpage Header */}
-      <div className="site-container pt-4 sm:pt-6">
+      <main>
+        {/* 2. Subpage Header */}
+        <div className="site-container pt-4 sm:pt-6">
         <SubpageHeader
           currentLabel="Privacy Policy"
           badge="Legal & Data Protection"
@@ -131,9 +134,10 @@ export default function PrivacyPolicyPage() {
           </div>
         </div>
       </section>
+      </main>
 
       {/* 4. Edge-to-edge Footer */}
       <Footer />
-    </main>
+    </div>
   );
 }

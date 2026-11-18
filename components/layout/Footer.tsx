@@ -18,7 +18,7 @@ export function Footer() {
 
   return (
     <footer className="w-full bg-[#0a0a0a] text-white border-t border-white/10 mt-6 sm:mt-10">
-      <div className="site-container py-5 sm:py-7 px-4 sm:px-6 lg:px-8">
+      <div className="site-container py-5 sm:py-7">
         {/* Main Content Grid: Brand/Newsletter (left) + Dense 4-column Links (right) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 pb-5 border-b border-white/10">
           
@@ -58,7 +58,8 @@ export function Footer() {
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="business@company.com"
                       required
-                      className="w-full rounded-lg border border-white/15 bg-white/5 pl-8 pr-2.5 py-1.5 text-[12px] text-white placeholder:text-[#666] focus:outline-none focus:border-white transition-all min-h-[34px]"
+                      aria-label="Work Email Address for Newsletter"
+                      className="w-full rounded-lg border border-white/15 bg-white/5 pl-8 pr-2.5 py-1.5 text-[12px] text-white placeholder:text-[#666] focus:outline-none focus:border-white focus-visible:ring-2 focus-visible:ring-white transition-all min-h-[34px]"
                     />
                   </div>
                   <button

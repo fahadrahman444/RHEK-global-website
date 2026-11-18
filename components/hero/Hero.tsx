@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/common/Button";
 import {
   ArrowRight,
   ShieldCheck,
@@ -51,22 +52,26 @@ export function Hero() {
             We connect commercial cleaning contractors and enterprise facility service providers directly with verified property managers actively seeking recurring maintenance contracts.
           </p>
 
-          {/* Action CTAs */}
+          {/* Action CTAs — Standardized Button Primitives */}
           <div className="mt-5 sm:mt-6 flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
-            <Link
+            <Button
               href="/#leads"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-lg bg-[#E9204F] hover:bg-[#101010] text-white px-6 py-3 text-[13.5px] font-semibold tracking-wide transition-all duration-200 min-h-[46px] shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 group whitespace-nowrap"
+              variant="primary"
+              size="md"
+              className="w-full sm:w-auto"
+              rightIcon={<ArrowRight className="h-4 w-4" />}
             >
-              <span>Claim Your Territory</span>
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
+              Claim Your Territory
+            </Button>
 
-            <Link
+            <Button
               href="/services/janitorial-leads"
-              className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg border border-zinc-200 bg-white hover:border-[#101010] hover:bg-[#FAFAFA] text-[#101010] px-6 py-3 text-[13.5px] font-semibold transition-all duration-200 min-h-[46px] hover:shadow-2xs hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
+              variant="secondary"
+              size="md"
+              className="w-full sm:w-auto"
             >
-              <span>Check Territory Availability</span>
-            </Link>
+              Check Territory Availability
+            </Button>
           </div>
 
           {/* Micro Trust Proof Bar — Centered Container with Clean Left-Aligned Axis on Mobile */}
@@ -91,8 +96,8 @@ export function Hero() {
         </div>
       </div>
 
-      {/* 3. Executive Panoramic Dashboard Frame — Light Editorial Architecture */}
-      <div className="w-full max-w-[1360px] mx-auto px-3 sm:px-6 lg:px-8 mt-7 sm:mt-10">
+      {/* 3. Executive Panoramic Dashboard Frame — Standardized Container */}
+      <div className="site-container mt-7 sm:mt-10">
         <div
           ref={deckRef}
           onMouseMove={handleMouseMove}

@@ -3,6 +3,8 @@
 import { useState, type FormEvent } from "react";
 import Link from "next/link";
 import { ShieldCheck, CheckCircle, Loader2, ArrowRight, Calendar, Clock, MapPin } from "@/components/common/icons";
+import { Button } from "@/components/common/Button";
+import { TextInput, Select } from "@/components/common/FormControls";
 
 interface ContactSectionProps {
   embedded?: boolean;
@@ -81,7 +83,7 @@ export function ContactSection({
 
   return (
     <section id="contact" className={embedded ? "py-4 px-3 sm:px-4" : "site-container"}>
-      <div className="rounded-2xl bg-[#FAFAFA] border border-zinc-200/80 p-4 sm:p-8 lg:p-10">
+      <div className="rounded-xl bg-[#FAFAFA] border border-[#EBEBEB] p-5 sm:p-8 lg:p-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-10 items-start">
           
           {/* Left Column: Direct Value & Trust Commitments */}
@@ -169,109 +171,70 @@ export function ContactSection({
 
                   {/* Input 1: Contact Details */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div>
-                      <label htmlFor="name" className="block text-[12px] font-semibold text-[#101010] mb-1">
-                        Your Name <span className="text-[#E9204F]">*</span>
-                      </label>
-                      <input
-                        id="name"
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        placeholder="e.g. Alex Morgan"
-                        className="w-full rounded-lg border border-zinc-200 bg-white px-3.5 py-2.5 min-h-[44px] text-[13px] text-[#101010] placeholder:text-zinc-400 focus:border-[#101010] focus:outline-none transition-colors"
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="email" className="block text-[12px] font-semibold text-[#101010] mb-1">
-                        Work Email <span className="text-[#E9204F]">*</span>
-                      </label>
-                      <input
-                        id="email"
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="alex@cleaningcompany.com"
-                        className="w-full rounded-lg border border-zinc-200 bg-white px-3.5 py-2.5 min-h-[44px] text-[13px] text-[#101010] placeholder:text-zinc-400 focus:border-[#101010] focus:outline-none transition-colors"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Input 2: Target Territory / County Location */}
-                  <div>
-                    <label htmlFor="territory" className="block text-[12px] font-semibold text-[#101010] mb-1">
-                      Target Territory / County or City <span className="text-[#E9204F]">*</span>
-                    </label>
-                    <input
-                      id="territory"
-                      type="text"
+                    <TextInput
+                      label="Your Name"
                       required
-                      value={formData.territory}
-                      onChange={(e) => setFormData({ ...formData, territory: e.target.value })}
-                      placeholder="e.g. Dallas & Tarrant County, TX (or list target zip codes)"
-                      className="w-full rounded-lg border border-zinc-200 bg-white px-3.5 py-2.5 min-h-[44px] text-[13px] text-[#101010] placeholder:text-zinc-400 focus:border-[#101010] focus:outline-none transition-colors"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      placeholder="e.g. Alex Morgan"
+                    />
+
+                    <TextInput
+                      label="Work Email"
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      placeholder="alex@cleaningcompany.com"
                     />
                   </div>
 
+                  {/* Input 2: Target Territory / County Location */}
+                  <TextInput
+                    label="Target Territory / County or City"
+                    required
+                    value={formData.territory}
+                    onChange={(e) => setFormData({ ...formData, territory: e.target.value })}
+                    placeholder="e.g. Dallas & Tarrant County, TX (or list target zip codes)"
+                  />
+
                   {/* Input 3: Desired Monthly Volume / Budget */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div>
-                      <label htmlFor="volume" className="block text-[12px] font-semibold text-[#101010] mb-1">
-                        Desired Monthly Walkthroughs
-                      </label>
-                      <select
-                        id="volume"
-                        value={formData.volume}
-                        onChange={(e) => setFormData({ ...formData, volume: e.target.value })}
-                        className="w-full rounded-lg border border-zinc-200 bg-white px-3.5 py-2.5 min-h-[44px] text-[13px] text-[#101010] focus:border-[#101010] focus:outline-none transition-colors"
-                      >
-                        <option value="5–10 Walkthroughs / mo ($800 – $1,500)">5–10 Walkthroughs / mo ($800 – $1,500)</option>
-                        <option value="10–20 Walkthroughs / mo ($1,500 – $3,000)">10–20 Walkthroughs / mo ($1,500 – $3,000)</option>
-                        <option value="20–40 Walkthroughs / mo ($3,000 – $5,000)">20–40 Walkthroughs / mo ($3,000 – $5,000)</option>
-                        <option value="40+ Walkthroughs / mo (Enterprise Scale)">40+ Walkthroughs / mo (Enterprise Scale)</option>
-                      </select>
-                    </div>
+                    <Select
+                      label="Desired Monthly Walkthroughs"
+                      value={formData.volume}
+                      onChange={(e) => setFormData({ ...formData, volume: e.target.value })}
+                    >
+                      <option value="5–10 Walkthroughs / mo ($800 – $1,500)">5–10 Walkthroughs / mo ($800 – $1,500)</option>
+                      <option value="10–20 Walkthroughs / mo ($1,500 – $3,000)">10–20 Walkthroughs / mo ($1,500 – $3,000)</option>
+                      <option value="20–40 Walkthroughs / mo ($3,000 – $5,000)">20–40 Walkthroughs / mo ($3,000 – $5,000)</option>
+                      <option value="40+ Walkthroughs / mo (Enterprise Scale)">40+ Walkthroughs / mo (Enterprise Scale)</option>
+                    </Select>
 
-                    <div>
-                      <label htmlFor="facilityFocus" className="block text-[12px] font-semibold text-[#101010] mb-1">
-                        Facility Focus
-                      </label>
-                      <select
-                        id="facilityFocus"
-                        value={formData.facilityFocus}
-                        onChange={(e) => setFormData({ ...formData, facilityFocus: e.target.value })}
-                        className="w-full rounded-lg border border-zinc-200 bg-white px-3.5 py-2.5 min-h-[44px] text-[13px] text-[#101010] focus:border-[#101010] focus:outline-none transition-colors"
-                      >
-                        <option value="All Commercial Facilities">All Commercial Facilities</option>
-                        <option value="Medical & Healthcare Centers">Medical &amp; Healthcare Centers</option>
-                        <option value="Corporate Office Towers">Corporate Office Towers</option>
-                        <option value="Industrial & Warehousing">Industrial &amp; Warehousing</option>
-                        <option value="Educational & Campuses">Educational &amp; Campuses</option>
-                      </select>
-                    </div>
+                    <Select
+                      label="Facility Focus"
+                      value={formData.facilityFocus}
+                      onChange={(e) => setFormData({ ...formData, facilityFocus: e.target.value })}
+                    >
+                      <option value="All Commercial Facilities">All Commercial Facilities</option>
+                      <option value="Medical & Healthcare Centers">Medical &amp; Healthcare Centers</option>
+                      <option value="Corporate Office Towers">Corporate Office Towers</option>
+                      <option value="Industrial & Warehousing">Industrial &amp; Warehousing</option>
+                      <option value="Educational & Campuses">Educational &amp; Campuses</option>
+                    </Select>
                   </div>
 
                   {/* Submit Button */}
-                  <button
+                  <Button
                     type="submit"
-                    disabled={loading}
-                    className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-[#E9204F] hover:bg-[#101010] disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-200 py-3 px-4 text-[13.5px] font-semibold text-white shadow-xs min-h-[46px] mt-2 group"
+                    variant="primary"
+                    size="md"
+                    loading={loading}
+                    className="w-full mt-2"
+                    rightIcon={<ArrowRight className="h-4 w-4" />}
                   >
-                    {loading ? (
-                      <>
-                        <Loader2 className="h-4 w-4 animate-spin text-white" />
-                        <span>Checking Territory Availability...</span>
-                      </>
-                    ) : (
-                      <>
-                        <span>Check Territory Availability &amp; Get Scoping Report</span>
-                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                      </>
-                    )}
-                  </button>
+                    Check Territory Availability &amp; Get Scoping Report
+                  </Button>
 
                   {/* Consolidated SLA Guarantee Note */}
                   <div className="pt-2 text-center text-[11.5px] text-zinc-500 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">

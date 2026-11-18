@@ -15,12 +15,15 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       {/* 1. Global Navigation */}
-      <Navbar />
+      <header>
+        <Navbar />
+      </header>
 
-      {/* 2. Subpage Header */}
-      <div className="site-container pt-4 sm:pt-6">
+      <main>
+        {/* 2. Subpage Header */}
+        <div className="site-container pt-4 sm:pt-6">
         <SubpageHeader
           currentLabel="Contact"
           badge="Direct Consultation & Scoping"
@@ -92,9 +95,10 @@ export default function ContactPage() {
       <div className="site-container pb-12 sm:pb-16">
         <FAQSection />
       </div>
+      </main>
 
       {/* 6. Global Footer */}
       <Footer />
-    </main>
+    </div>
   );
 }

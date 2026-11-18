@@ -12,41 +12,46 @@ import { Footer } from "@/components/layout/Footer";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-white">
-      {/* 1. Global Navbar */}
-      <Navbar />
+    <div className="min-h-screen bg-white">
+      {/* 1. Global Navigation Header Landmark */}
+      <header>
+        <Navbar />
+      </header>
 
-      {/* 2. Full-Bleed Panoramic Hero & Partner Trust Logos */}
-      <Hero />
-      <div className="site-container">
-        <PartnerLogos />
-      </div>
+      {/* 2. Primary Page Landmark */}
+      <main>
+        {/* Full-Bleed Panoramic Hero & Partner Trust Logos */}
+        <Hero />
+        <div className="site-container">
+          <PartnerLogos />
+        </div>
 
-      <div className="space-y-7 sm:space-y-11 mt-5 sm:mt-8">
-        {/* 3. Janitorial Lead Generation Spotlight & Verified Live Samples */}
-        <JanitorialLeadsSection />
+        <div className="space-y-12 sm:space-y-16 mt-8 sm:mt-12">
+          {/* 3. Janitorial Lead Generation Spotlight & Verified Live Samples */}
+          <JanitorialLeadsSection />
 
-        {/* 4. Core 8-Service Catalog Bento */}
-        <ServicesPreview />
+          {/* 4. Core 8-Service Catalog Bento */}
+          <ServicesPreview />
 
-        {/* 5. 7-Step Smarter Work Process & 4 Execution Principles */}
-        <ProcessSection />
+          {/* 5. 7-Step Smarter Work Process & 4 Execution Principles */}
+          <ProcessSection />
 
-        {/* 6. 10 Industries We Service */}
-        <IndustriesSection />
+          {/* 6. 10 Industries We Service */}
+          <IndustriesSection />
 
-        {/* 7. 100% Money-Back Guarantee Trust Section */}
-        <GuaranteeSection />
+          {/* 7. 100% Money-Back Guarantee Trust Section */}
+          <GuaranteeSection />
 
-        {/* 8. Why Choose RHEK GLOBAL, Mission & Vision */}
-        <WhyChooseUsSection />
+          {/* 8. Why Choose RHEK GLOBAL, Mission & Vision */}
+          <WhyChooseUsSection />
 
-        {/* 9. Lead Inquiry & Direct Scoping Form */}
-        <ContactSection />
-      </div>
+          {/* 9. Lead Inquiry & Direct Scoping Form */}
+          <ContactSection />
+        </div>
+      </main>
 
-      {/* 10. Comprehensive Company Footer */}
+      {/* 10. Comprehensive Company Footer Landmark */}
       <Footer />
-    </main>
+    </div>
   );
 }

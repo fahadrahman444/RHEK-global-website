@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ShieldCheck, Lock, ArrowRight } from "@/components/common/icons";
 import { RHEK_CONFIG } from "@/data/rhek-config";
+import { Button } from "@/components/common/Button";
 
 export function GuaranteeSection() {
   const { headline, subtitle, description, commitments } = RHEK_CONFIG.moneyBackGuarantee;
@@ -8,7 +9,7 @@ export function GuaranteeSection() {
   return (
     <section id="guarantee" className="site-container scroll-mt-24">
       {/* Light Architectural Section Container */}
-      <div className="rounded-2xl bg-[#FAFAFA] border border-zinc-200/80 p-4 sm:p-8 lg:p-10 text-[#101010]">
+      <div className="rounded-xl bg-[#FAFAFA] border border-[#EBEBEB] p-5 sm:p-8 lg:p-10 text-[#101010]">
         <div className="max-w-[820px]">
           {/* Subtle Dynamic Status Badge */}
           <div className="inline-flex items-center gap-1.5 rounded-full bg-rose-50 border border-rose-200/60 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-[#E9204F] mb-3">
@@ -99,13 +100,15 @@ export function GuaranteeSection() {
                 Every commercial inquiry campaign operates under explicit delivery timelines and replacement criteria.
               </p>
             </div>
-            <Link
+            <Button
               href="/#contact"
-              className="mt-4 inline-flex items-center gap-1.5 rounded-lg bg-[#E9204F] hover:bg-[#101010] px-4 py-2 text-[12px] sm:text-[13px] font-semibold text-white transition-all duration-200 w-fit min-h-[36px] shadow-xs"
+              variant="primary"
+              size="sm"
+              className="mt-4 w-fit"
+              rightIcon={<ArrowRight className="h-3.5 w-3.5" />}
             >
-              <span>Review SLA Scope</span>
-              <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
+              Review SLA Scope
+            </Button>
           </div>
         </div>
       </div>

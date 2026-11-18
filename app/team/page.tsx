@@ -130,12 +130,15 @@ const WORKING_VALUES = [
 
 export default function TeamPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       {/* 1. Global Navigation */}
-      <Navbar />
+      <header>
+        <Navbar />
+      </header>
 
-      {/* 2. Subpage Header */}
-      <div className="site-container pt-4 sm:pt-6">
+      <main>
+        {/* 2. Subpage Header */}
+        <div className="site-container pt-4 sm:pt-6">
         <SubpageHeader
           currentLabel="Team"
           badge="Domain Divisions"
@@ -262,9 +265,10 @@ export default function TeamPage() {
           </Link>
         </SpotlightCard>
       </div>
+      </main>
 
       {/* 4. Global Footer */}
       <Footer />
-    </main>
+    </div>
   );
 }

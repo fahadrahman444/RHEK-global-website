@@ -22,23 +22,26 @@ export default function AboutPage() {
   const { company, companyProfile, workProcess } = RHEK_CONFIG;
 
   return (
-    <main className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       {/* 1. Global Navigation */}
-      <Navbar />
+      <header>
+        <Navbar />
+      </header>
 
-      {/* 2. Subpage Header */}
-      <div className="site-container pt-4 sm:pt-6">
-        <SubpageHeader
-          currentLabel="About Us"
-          badge="Institutional Profile"
-          icon={Building2}
-          title="RHEK GLOBAL – Your Dedicated Partner in Business Growth."
-          description={company.headline}
-        />
-      </div>
+      <main>
+        {/* 2. Subpage Header */}
+        <div className="site-container pt-4 sm:pt-6">
+          <SubpageHeader
+            currentLabel="About Us"
+            badge="Institutional Profile"
+            icon={Building2}
+            title="RHEK GLOBAL – Your Dedicated Partner in Business Growth."
+            description={company.headline}
+          />
+        </div>
 
-      {/* 3. Narrative & Mission Flow */}
-      <div className="site-container py-8 sm:py-12 space-y-8 sm:space-y-12">
+        {/* 3. Narrative & Mission Flow */}
+        <div className="site-container py-8 sm:py-12 space-y-8 sm:space-y-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-start">
           <div>
             <span className="inline-block text-[10.5px] font-bold uppercase tracking-wider text-[#737373] mb-1">
@@ -181,9 +184,10 @@ export default function AboutPage() {
           </div>
         </SpotlightCard>
       </div>
+      </main>
 
       {/* 4. Global Footer */}
       <Footer />
-    </main>
+    </div>
   );
 }

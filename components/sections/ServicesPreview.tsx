@@ -10,37 +10,33 @@ import {
   PhoneCall,
   Activity,
 } from "@/components/common/icons";
+import { Button } from "@/components/common/Button";
+import { SectionHeader } from "@/components/common/SectionHeader";
 
 export function ServicesPreview() {
   return (
     <section id="services" className="site-container scroll-mt-24">
-      {/* Section Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-4 mb-6 sm:mb-8">
-        <div className="max-w-[680px]">
-          <span className="block mb-1 text-xs font-semibold uppercase tracking-widest text-[#E9204F]">
-            Operating Infrastructure
-          </span>
-          <h2 className="font-heading text-[24px] sm:text-[30px] lg:text-[34px] font-bold text-[#101010] tracking-tight leading-tight">
-            How Our Commercial Client Acquisition System Operates
-          </h2>
-          <p className="mt-2 text-[15px] sm:text-[16px] leading-relaxed text-zinc-600">
-            We deploy dedicated outbound prospecting teams, local territory intelligence, and verified facility handovers to keep your commercial pipeline predictable.
-          </p>
-        </div>
-
-        <Link
-          href="/services"
-          className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 hover:border-[#101010] bg-white hover:bg-[#FAFAFA] text-[#101010] px-4 py-2 text-[13px] font-semibold transition-all duration-200 min-h-[42px] shrink-0 self-start md:self-auto shadow-2xs hover:-translate-y-0.5"
-        >
-          <span>All Services &amp; Capabilities</span>
-          <ArrowUpRight className="h-3.5 w-3.5" />
-        </Link>
-      </div>
+      {/* Standardized Section Header */}
+      <SectionHeader
+        badge="Operating Infrastructure"
+        title="How Our Commercial Client Acquisition System Operates"
+        description="We deploy dedicated outbound prospecting teams, local territory intelligence, and verified facility handovers to keep your commercial pipeline predictable."
+        cta={
+          <Button
+            href="/services"
+            variant="secondary"
+            size="sm"
+            rightIcon={<ArrowUpRight className="h-3.5 w-3.5" />}
+          >
+            All Services &amp; Capabilities
+          </Button>
+        }
+      />
 
       {/* Modern Light Bento Grid — Continuous Canvas */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-3.5 sm:gap-4">
         {/* Bento Card 1: Dedicated Outbound SDR Cadences */}
-        <div className="lg:col-span-7 rounded-2xl border border-zinc-200/80 bg-white p-4 sm:p-7 flex flex-col justify-between hover:border-zinc-400 transition-all duration-200 shadow-2xs group">
+        <div className="lg:col-span-7 rounded-xl border border-[#EBEBEB] bg-white p-5 sm:p-7 flex flex-col justify-between hover:border-[#101010] transition-all duration-200 shadow-2xs group">
           <div>
             <div className="flex items-center justify-between gap-2 mb-2.5 sm:mb-3">
               <div className="flex items-center gap-2">

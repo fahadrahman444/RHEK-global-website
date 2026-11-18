@@ -15,6 +15,8 @@ import {
   ArrowRight,
 } from "@/components/common/icons";
 import { SpotlightCard } from "@/components/common/SpotlightCard";
+import { Button } from "@/components/common/Button";
+import { SectionHeader } from "@/components/common/SectionHeader";
 
 const SECTOR_DATA = [
   {
@@ -92,28 +94,23 @@ const SECTOR_DATA = [
 export function IndustriesSection() {
   return (
     <section id="industries" className="site-container scroll-mt-24">
-      {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-4 mb-5 sm:mb-6">
-        <div className="max-w-[620px]">
-          <span className="block mb-1 text-xs font-semibold uppercase tracking-widest text-[#E9204F]">
-            Sector Coverage
-          </span>
-          <h2 className="font-heading text-[24px] sm:text-[30px] lg:text-[34px] font-bold text-[#101010] tracking-tight leading-tight">
-            Tailored Lead Criteria Across 10 Commercial Verticals
-          </h2>
-          <p className="mt-1.5 text-[14px] sm:text-[15px] leading-relaxed text-zinc-600">
-            Every industry has unique cleaning schedules, compliance gates, and decision-maker profiles. We filter specifically for your ideal account profile.
-          </p>
-        </div>
-
-        <Link
-          href="/#contact"
-          className="inline-flex items-center gap-1.5 rounded-lg bg-[#E9204F] hover:bg-[#101010] text-white px-4 py-2 text-[12.5px] font-semibold transition-all duration-200 min-h-[38px] shrink-0 self-start md:self-auto shadow-xs hover:-translate-y-0.5"
-        >
-          <span>Target My Sector</span>
-          <ArrowRight className="h-3.5 w-3.5" />
-        </Link>
-      </div>
+      {/* Standardized Section Header */}
+      <SectionHeader
+        badge="Sector Coverage"
+        title="Tailored Lead Criteria Across 10 Commercial Verticals"
+        description="Every industry has unique cleaning schedules, compliance gates, and decision-maker profiles. We filter specifically for your ideal account profile."
+        maxWidth="max-w-[620px]"
+        cta={
+          <Button
+            href="/#contact"
+            variant="primary"
+            size="sm"
+            rightIcon={<ArrowRight className="h-3.5 w-3.5" />}
+          >
+            Target My Sector
+          </Button>
+        }
+      />
 
       {/* Visual Sector Matrix — Clean 1-Border Cards with Compact Mobile Spacing */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-3">

@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { Check, X, ArrowRight, ShieldCheck } from "@/components/common/icons";
+import { Button } from "@/components/common/Button";
+import { SectionHeader } from "@/components/common/SectionHeader";
 
 const COMPARISON_ROWS = [
   {
@@ -34,31 +36,26 @@ const COMPARISON_ROWS = [
 export function WhyChooseUsSection() {
   return (
     <section className="site-container">
-      {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-4 mb-5 sm:mb-6">
-        <div className="max-w-[620px]">
-          <span className="block mb-1 text-xs font-semibold uppercase tracking-widest text-[#E9204F]">
-            Institutional Advantages
-          </span>
-          <h2 className="font-heading text-[24px] sm:text-[30px] lg:text-[34px] font-bold tracking-tight leading-[1.15] text-[#101010]">
-            The RHEK Advantage: High Conviction vs. Traditional Models
-          </h2>
-          <p className="mt-1.5 text-[14px] sm:text-[15px] leading-relaxed text-zinc-600">
-            See why leading commercial contractors partner with RHEK Global over conventional lead brokers and generic directory listings.
-          </p>
-        </div>
-
-        <Link
-          href="/#contact"
-          className="inline-flex items-center gap-1.5 rounded-lg bg-[#E9204F] hover:bg-[#101010] text-white px-4 py-2 text-[12.5px] font-semibold transition-all duration-200 min-h-[38px] shrink-0 self-start md:self-auto shadow-xs hover:-translate-y-0.5"
-        >
-          <span>Claim Protected Territory</span>
-          <ArrowRight className="h-3.5 w-3.5" />
-        </Link>
-      </div>
+      {/* Standardized Section Header */}
+      <SectionHeader
+        badge="Institutional Advantages"
+        title="The RHEK Advantage: High Conviction vs. Traditional Models"
+        description="See why leading commercial contractors partner with RHEK Global over conventional lead brokers and generic directory listings."
+        maxWidth="max-w-[620px]"
+        cta={
+          <Button
+            href="/#contact"
+            variant="primary"
+            size="sm"
+            rightIcon={<ArrowRight className="h-3.5 w-3.5" />}
+          >
+            Claim Protected Territory
+          </Button>
+        }
+      />
 
       {/* Visual Institutional Comparison Matrix — Clean Light Container */}
-      <div className="rounded-2xl border border-zinc-200/80 bg-white shadow-2xs overflow-hidden">
+      <div className="rounded-xl border border-zinc-200/80 bg-white shadow-2xs overflow-hidden">
         {/* Mobile View: Dedicated Institutional Cards (< md) */}
         <div className="divide-y divide-zinc-200/80 md:hidden">
           {COMPARISON_ROWS.map((row, i) => (

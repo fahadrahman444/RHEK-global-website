@@ -117,12 +117,15 @@ export default function CareersPage() {
   const { company } = RHEK_CONFIG;
 
   return (
-    <main className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       {/* 1. Global Navigation */}
-      <Navbar />
+      <header>
+        <Navbar />
+      </header>
 
-      {/* 2. Subpage Header */}
-      <div className="site-container pt-4 sm:pt-6">
+      <main>
+        {/* 2. Subpage Header */}
+        <div className="site-container pt-4 sm:pt-6">
         <SubpageHeader
           currentLabel="Careers"
           badge="Talent Network"
@@ -293,9 +296,10 @@ export default function CareersPage() {
           </SpotlightCard>
         </div>
       </section>
+      </main>
 
       {/* 5. Edge-to-edge Footer */}
       <Footer />
-    </main>
+    </div>
   );
 }

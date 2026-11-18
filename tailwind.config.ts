@@ -28,7 +28,11 @@ const config: Config = {
           slate: "#747474",           // Body gray copy
           muted: "#ACACAC",           // Body text on dark backgrounds
           subtle: "#FAFAFA",          // Hero wrapper & subtle borders
+          surface: "#FAFAFA",         // Card surface background
           light: "#F3F3F3",           // Service box background
+          border: "#EBEBEB",          // Standard architectural hairline border
+          "border-subtle": "#F3F3F3", // Subtle card border
+          dark: "#141416",            // Dark container surface
           // Backward-compatible mappings:
           blue: "#E9204F",
           teal: "#101010",
