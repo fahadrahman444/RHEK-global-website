@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ServiceFaqAccordion } from "@/components/services/ServiceFaqAccordion";
 import { InteractiveLeadShowcase } from "@/components/services/InteractiveLeadShowcase";
 import { SpotlightCard } from "@/components/common/SpotlightCard";
+import { Button } from "@/components/common/Button";
 import { SERVICES_DETAILED_DATA } from "@/data/services-data";
 import { SERVICE_SLUG_ALIASES, SERVICE_EXTENSIONS } from "@/data/service-extensions";
 import { RHEK_CONFIG } from "@/data/rhek-config";
@@ -14,6 +15,7 @@ import {
   CheckCircle2,
   PhoneCall,
   Calendar,
+  Clock,
   ArrowRight,
   ArrowUpRight,
   Sparkles,
@@ -135,7 +137,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
   const benefitsAnchorId = "benefits";
 
   return (
-    <div className="relative min-h-screen bg-white text-[#525252] selection:bg-[#E9204F] selection:text-white">
+    <div className="relative min-h-screen bg-white text-[#525252] selection:bg-brand-red selection:text-white">
       {/* 1. Global Master Navigation (Sticky on every page) */}
       <Navbar variant="light" />
 
@@ -144,7 +146,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             SECTION 1: HERO SECTION (#overview)
         ========================================================================= */}
         <section id="overview" className="scroll-mt-36">
-          <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
+          <div className="site-container">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column: Pitch & Conversion (7 cols) */}
               <div className="lg:col-span-7">
@@ -154,7 +156,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                     <li>
                       <Link
                         href="/"
-                        className="inline-flex items-center gap-1 hover:text-[#101010] transition-colors"
+                        className="inline-flex items-center gap-1 hover:text-brand-black transition-colors"
                       >
                         <Home className="h-3 w-3" />
                         <span>Home</span>
@@ -166,7 +168,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                     <li>
                       <Link
                         href="/services"
-                        className="hover:text-[#101010] transition-colors"
+                        className="hover:text-brand-black transition-colors"
                       >
                         Services
                       </Link>
@@ -174,20 +176,20 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                     <li aria-hidden="true">
                       <ChevronRight className="h-3 w-3 text-neutral-300" />
                     </li>
-                    <li className="text-[#101010] font-semibold" aria-current="page">
+                    <li className="text-brand-black font-semibold" aria-current="page">
                       {service.title}
                     </li>
                   </ol>
                 </nav>
 
                 {/* Eyebrow Micro-Badge */}
-                <div className="inline-flex items-center gap-2 rounded-full border border-[#E9204F]/20 bg-[#E9204F]/5 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#E9204F] mb-3">
+                <div className="inline-flex items-center gap-2 rounded-full border border-brand-red/20 bg-brand-red/5 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-red mb-3">
                   <Sparkles className="h-3.5 w-3.5" />
                   <span>Service {service.number} • {service.badge}</span>
                 </div>
 
                 {/* Display Headline */}
-                <h1 className="font-heading text-3xl sm:text-4xl lg:text-[46px] font-bold tracking-[-0.035em] text-[#101010] leading-tight sm:leading-tight lg:leading-[1.18]">
+                <h1 className="font-heading text-3xl sm:text-4xl lg:text-[46px] font-bold tracking-[-0.035em] text-brand-black leading-tight sm:leading-tight lg:leading-[1.18]">
                   {service.headline}
                 </h1>
 
@@ -198,36 +200,38 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
                 {/* Dual Action Conversion Group — Responsive & Unified Hover */}
                 <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3">
-                  <Link
+                  <Button
                     href="/book-a-meeting"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#E9204F] hover:bg-[#101010] px-6 py-3 text-[14px] font-bold text-white shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 min-h-[44px] group"
+                    variant="primary"
+                    size="md"
+                    icon={<Calendar className="h-4 w-4" />}
+                    rightIcon={<ArrowUpRight className="h-4 w-4" />}
                   >
-                    <Calendar className="h-4 w-4" />
-                    <span>Book a Meeting</span>
-                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </Link>
-                  <a
+                    Book a Meeting
+                  </Button>
+                  <Button
                     href="#pricing"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#E5E5E5] bg-white hover:border-[#101010] hover:bg-[#FAFAFA] px-5 py-3 text-[13.5px] font-semibold text-[#101010] hover:shadow-xs hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 min-h-[44px] group"
+                    variant="secondary"
+                    size="md"
+                    rightIcon={<ArrowRight className="h-4 w-4" />}
                   >
-                    <span>Explore Packages</span>
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                  </a>
+                    Explore Packages
+                  </Button>
                 </div>
 
                 {/* Micro Trust Indicators — Brand Palette Coherent */}
                 <div className="mt-6 pt-5 border-t border-[#F0F0F0] flex flex-wrap items-center gap-y-2 gap-x-5 text-[12px] text-[#525252]">
                   <div className="flex items-center gap-1.5">
-                    <ShieldCheck className="h-4 w-4 text-[#E9204F] shrink-0" />
-                    <span className="font-medium text-[#101010]">100% Replacement Guarantee</span>
+                    <ShieldCheck className="h-4 w-4 text-brand-red shrink-0" />
+                    <span className="font-medium text-brand-black">100% Replacement Guarantee</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <CheckCircle2 className="h-4 w-4 text-[#E9204F] shrink-0" />
-                    <span className="font-medium text-[#101010]">Zero Long-Term Lock-in</span>
+                    <CheckCircle2 className="h-4 w-4 text-brand-red shrink-0" />
+                    <span className="font-medium text-brand-black">Zero Long-Term Lock-in</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <Sparkles className="h-4 w-4 text-[#E9204F] shrink-0" />
-                    <span className="font-medium text-[#101010]">24-Hour Response SLA</span>
+                    <Sparkles className="h-4 w-4 text-brand-red shrink-0" />
+                    <span className="font-medium text-brand-black">24-Hour Response SLA</span>
                   </div>
                 </div>
               </div>
@@ -236,10 +240,10 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               <div className="lg:col-span-5">
                 {service.leadSamples && service.leadSamples.length > 0 ? (
                   <SpotlightCard mode="light" className="p-5 sm:p-6 shadow-sm" contentClassName="relative z-10">
-                    <div className="flex items-center justify-between pb-3 border-b border-[#EBEBEB] mb-4">
+                    <div className="flex items-center justify-between pb-3 border-b border-brand-border mb-4">
                       <div className="flex items-center gap-2">
-                        <span className="h-2.5 w-2.5 rounded-full bg-[#16A34A] animate-pulse" />
-                        <span className="text-[12px] font-bold text-[#101010] uppercase tracking-wider">
+                        <span className="h-2.5 w-2.5 rounded-full bg-emerald-600 shrink-0" />
+                        <span className="text-[12px] font-bold text-brand-black uppercase tracking-wider">
                           Live Verified Sample
                         </span>
                       </div>
@@ -248,10 +252,10 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                       </span>
                     </div>
 
-                    <div className="bg-white rounded-xl border border-[#EBEBEB] p-4.5 space-y-3">
+                    <div className="bg-white rounded-xl border border-brand-border p-4.5 space-y-3">
                       <div>
                         <div className="text-[11px] text-[#737373] uppercase tracking-wider">Facility Type</div>
-                        <div className="text-[15px] font-bold text-[#101010]">
+                        <div className="text-[15px] font-bold text-brand-black">
                           {service.leadSamples[0].facility}
                         </div>
                       </div>
@@ -259,11 +263,11 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                       <div className="grid grid-cols-2 gap-3 text-[12px] pt-2 border-t border-[#F0F0F0]">
                         <div>
                           <div className="text-[#737373]">Location</div>
-                          <div className="font-semibold text-[#101010]">{service.leadSamples[0].location}</div>
+                          <div className="font-semibold text-brand-black">{service.leadSamples[0].location}</div>
                         </div>
                         <div>
                           <div className="text-[#737373]">Square Footage</div>
-                          <div className="font-semibold text-[#101010]">{service.leadSamples[0].sqft}</div>
+                          <div className="font-semibold text-brand-black">{service.leadSamples[0].sqft}</div>
                         </div>
                         <div>
                           <div className="text-[#737373]">Monthly Budget</div>
@@ -271,7 +275,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                         </div>
                         <div>
                           <div className="text-[#737373]">Decision Maker</div>
-                          <div className="font-semibold text-[#101010]">{service.leadSamples[0].contact}</div>
+                          <div className="font-semibold text-brand-black">{service.leadSamples[0].contact}</div>
                         </div>
                       </div>
                     </div>
@@ -280,7 +284,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                       <span>Want appointments like this in your metro?</span>
                       <Link
                         href="/book-a-meeting"
-                        className="font-bold text-[#E9204F] hover:underline"
+                        className="font-bold text-brand-red hover:underline"
                       >
                         Claim Territory →
                       </Link>
@@ -288,20 +292,20 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                   </SpotlightCard>
                 ) : (
                   <SpotlightCard mode="light" className="p-6 sm:p-7 shadow-sm space-y-5" contentClassName="relative z-10 space-y-5">
-                    <div className="flex items-center gap-2 pb-3 border-b border-[#EBEBEB]">
-                      <TrendingUp className="h-5 w-5 text-[#E9204F]" />
-                      <h3 className="font-heading text-lg font-bold text-[#101010]">
+                    <div className="flex items-center gap-2 pb-3 border-b border-brand-border">
+                      <TrendingUp className="h-5 w-5 text-brand-red" />
+                      <h3 className="font-heading text-lg font-bold text-brand-black">
                         Performance Benchmark
                       </h3>
                     </div>
 
                     <div className="grid grid-cols-2 gap-4">
                       {service.statistics.slice(0, 4).map((stat, sIdx) => (
-                        <div key={sIdx} className="bg-white rounded-xl border border-[#EBEBEB] p-4">
-                          <div className="font-heading text-2xl sm:text-3xl font-bold text-[#101010]">
+                        <div key={sIdx} className="bg-white rounded-xl border border-brand-border p-4">
+                          <div className="font-heading text-2xl sm:text-3xl font-bold text-brand-black">
                             {stat.value}
                           </div>
-                          <div className="text-[12px] font-bold text-[#101010] mt-1">
+                          <div className="text-[12px] font-bold text-brand-black mt-1">
                             {stat.label}
                           </div>
                           <div className="text-[11px] text-[#737373] mt-0.5">
@@ -311,9 +315,9 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                       ))}
                     </div>
 
-                    <div className="p-3.5 rounded-xl bg-white border border-[#EBEBEB] text-[12.5px] text-[#525252] flex items-center justify-between">
+                    <div className="p-3.5 rounded-xl bg-white border border-brand-border text-[12.5px] text-[#525252] flex items-center justify-between">
                       <span>Direct executive consultation with zero commitment.</span>
-                      <Link href="/book-a-meeting" className="font-bold text-[#E9204F] hover:underline">
+                      <Link href="/book-a-meeting" className="font-bold text-brand-red hover:underline">
                         Schedule Call →
                       </Link>
                     </div>
@@ -328,13 +332,13 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             SECTION 2: PROBLEM AND SOLUTION
         ========================================================================= */}
         <section id={processAnchorId === "strategy" ? "strategy-problem" : "problem-solution"} className="scroll-mt-36">
-          <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
+          <div className="site-container">
             <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-              <div className="inline-flex items-center gap-1.5 rounded-full border border-[#EBEBEB] bg-[#FAFAFA] px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#101010] mb-3">
-                <Lightbulb className="h-3.5 w-3.5 text-[#E9204F]" />
+              <div className="inline-flex items-center gap-1.5 rounded-full border border-brand-border bg-brand-surface px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-black mb-3">
+                <Lightbulb className="h-3.5 w-3.5 text-brand-red" />
                 <span>The Industry Reality</span>
               </div>
-              <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#101010]">
+              <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-brand-black">
                 Why Traditional Solutions Break Down
               </h2>
               <p className="mt-2 text-[14.5px] text-[#525252] leading-relaxed">
@@ -373,7 +377,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 className="border-[#16A34A]/30 bg-[#16A34A]/5 p-6 sm:p-8 hover:border-[#16A34A]/60"
                 contentClassName="relative z-10"
               >
-                <div className="flex items-center gap-2.5 pb-4 border-b border-[#16A34A]/20 text-[#101010] mb-5">
+                <div className="flex items-center gap-2.5 pb-4 border-b border-[#16A34A]/20 text-brand-black mb-5">
                   <CheckCircle2 className="h-5 w-5 text-[#16A34A] shrink-0" />
                   <h3 className="font-heading text-lg font-bold">
                     {extension.problemSolution.solutionTitle}
@@ -381,7 +385,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 </div>
                 <ul className="space-y-3.5">
                   {extension.problemSolution.solutionPoints.map((pt, pIdx) => (
-                    <li key={pIdx} className="flex items-start gap-3 text-[13.5px] sm:text-[14px] text-[#101010] leading-relaxed font-medium">
+                    <li key={pIdx} className="flex items-start gap-3 text-[13.5px] sm:text-[14px] text-brand-black leading-relaxed font-medium">
                       <span className="text-[#16A34A] font-bold mt-0.5 shrink-0">✓</span>
                       <span>{pt}</span>
                     </li>
@@ -396,14 +400,14 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             SECTION 3: WHAT WE OFFER (#platforms / #portfolio / #campaigns / #tasks / #offerings)
         ========================================================================= */}
         <section id={offeringsAnchorId} className="scroll-mt-36">
-          <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
+          <div className="site-container">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 sm:mb-10">
               <div>
-                <div className="inline-flex items-center gap-1.5 rounded-full border border-[#EBEBEB] bg-[#FAFAFA] px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#101010] mb-2.5">
-                  <Building2 className="h-3.5 w-3.5 text-[#E9204F]" />
+                <div className="inline-flex items-center gap-1.5 rounded-full border border-brand-border bg-brand-surface px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-black mb-2.5">
+                  <Building2 className="h-3.5 w-3.5 text-brand-red" />
                   <span>Scope &amp; Coverage</span>
                 </div>
-                <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#101010]">
+                <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-brand-black">
                   {extension.offeringsTitle}
                 </h2>
               </div>
@@ -418,16 +422,16 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 <SpotlightCard
                   key={iIdx}
                   mode="light"
-                  className="rounded-xl border border-[#EBEBEB] bg-white p-5 hover:border-[#101010] shadow-2xs group hover:-translate-y-0.5"
+                  className="rounded-xl border border-brand-border bg-white p-5 hover:border-brand-black shadow-2xs group hover:-translate-y-0.5"
                   contentClassName="relative z-10"
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#737373] group-hover:text-[#E9204F] transition-colors">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#737373] group-hover:text-brand-red transition-colors">
                       Vertical {String(iIdx + 1).padStart(2, "0")}
                     </span>
                     <CheckCircle2 className="h-4 w-4 text-[#16A34A]" />
                   </div>
-                  <h3 className="font-heading text-[16px] font-bold text-[#101010] mb-1.5">
+                  <h3 className="font-heading text-[16px] font-bold text-brand-black mb-1.5">
                     {ind.name}
                   </h3>
                   <p className="text-[13px] text-[#525252] leading-relaxed">
@@ -441,10 +445,10 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             {service.leadSamples && service.leadSamples.length > 0 && (
               <div className="mt-12">
                 <div className="mb-4">
-                  <div className="text-[11px] font-bold uppercase tracking-wider text-[#E9204F]">
+                  <div className="text-[11px] font-bold uppercase tracking-wider text-brand-red">
                     Live Verification Feed
                   </div>
-                  <h3 className="font-heading text-xl font-bold text-[#101010]">
+                  <h3 className="font-heading text-xl font-bold text-brand-black">
                     Recent Facility Walkthrough Opportunities
                   </h3>
                 </div>
@@ -461,13 +465,13 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             SECTION 4: OUR PROCESS (#process / #strategy / #workflow)
         ========================================================================= */}
         <section id={processAnchorId} className="scroll-mt-36">
-          <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
+          <div className="site-container">
             <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
-              <div className="inline-flex items-center gap-1.5 rounded-full border border-[#EBEBEB] bg-[#FAFAFA] px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#101010] mb-3">
-                <Sparkles className="h-3.5 w-3.5 text-[#E9204F]" />
+              <div className="inline-flex items-center gap-1.5 rounded-full border border-brand-border bg-brand-surface px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-black mb-3">
+                <Sparkles className="h-3.5 w-3.5 text-brand-red" />
                 <span>Predictable Delivery</span>
               </div>
-              <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#101010]">
+              <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-brand-black">
                 {extension.processTitle}
               </h2>
               <p className="mt-2 text-[14.5px] text-[#525252] leading-relaxed">
@@ -480,20 +484,20 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 <SpotlightCard
                   key={sIdx}
                   mode="light"
-                  className="rounded-2xl border border-[#EBEBEB] bg-white p-6 shadow-xs hover:-translate-y-0.5"
+                  className="rounded-2xl border border-brand-border bg-white p-6 shadow-xs hover:-translate-y-0.5"
                 >
                   <div>
                     <div className="flex items-center justify-between pb-3 border-b border-[#F0F0F0] mb-4">
-                      <span className="font-heading text-2xl font-bold text-[#E9204F]">
+                      <span className="font-heading text-2xl font-bold text-brand-red">
                         {stepItem.step}
                       </span>
                       {stepItem.timeline && (
-                        <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#FAFAFA] border border-[#EBEBEB] text-[#737373]">
+                        <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-brand-surface border border-brand-border text-[#737373]">
                           {stepItem.timeline}
                         </span>
                       )}
                     </div>
-                    <h3 className="font-heading text-[16px] font-bold text-[#101010] mb-2">
+                    <h3 className="font-heading text-[16px] font-bold text-brand-black mb-2">
                       {stepItem.title}
                     </h3>
                     <p className="text-[13px] text-[#525252] leading-relaxed">
@@ -510,13 +514,13 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             SECTION 5: WHY CHOOSE US / BENEFITS (#benefits)
         ========================================================================= */}
         <section id={benefitsAnchorId} className="scroll-mt-36">
-          <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
+          <div className="site-container">
             <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-              <div className="inline-flex items-center gap-1.5 rounded-full border border-[#EBEBEB] bg-[#FAFAFA] px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#101010] mb-3">
+              <div className="inline-flex items-center gap-1.5 rounded-full border border-brand-border bg-brand-surface px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-black mb-3">
                 <ShieldCheck className="h-3.5 w-3.5 text-[#16A34A]" />
                 <span>Competitive Advantages</span>
               </div>
-              <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#101010]">
+              <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-brand-black">
                 {service.whyChooseHeadline}
               </h2>
               <p className="mt-2 text-[14.5px] text-[#525252] leading-relaxed">
@@ -530,15 +534,15 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 <SpotlightCard
                   key={wIdx}
                   mode="light"
-                  className="rounded-2xl border border-[#EBEBEB] bg-[#FAFAFA] p-6 sm:p-7 shadow-xs hover:-translate-y-0.5"
+                  className="rounded-2xl border border-brand-border bg-brand-surface p-6 sm:p-7 shadow-xs hover:-translate-y-0.5"
                 >
                   <div>
                     {item.highlight && (
-                      <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-[#E9204F] bg-[#E9204F]/10 px-2.5 py-0.5 rounded-full mb-3">
+                      <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-brand-red bg-brand-red/10 px-2.5 py-0.5 rounded-full mb-3">
                         {item.highlight}
                       </span>
                     )}
-                    <h3 className="font-heading text-lg font-bold text-[#101010] mb-2.5">
+                    <h3 className="font-heading text-lg font-bold text-brand-black mb-2.5">
                       {item.title}
                     </h3>
                     <p className="text-[13.5px] text-[#525252] leading-relaxed">
@@ -559,7 +563,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#16A34A]/20">
                 <div className="flex items-center gap-2.5">
                   <ShieldCheck className="h-6 w-6 text-[#16A34A]" />
-                  <h3 className="font-heading text-xl font-bold text-[#101010]">
+                  <h3 className="font-heading text-xl font-bold text-brand-black">
                     {service.guarantee.headline}
                   </h3>
                 </div>
@@ -572,7 +576,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               </p>
               <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {service.guarantee.points.map((pt, pIdx) => (
-                  <div key={pIdx} className="flex items-center gap-2 text-[12.5px] font-semibold text-[#101010]">
+                  <div key={pIdx} className="flex items-center gap-2 text-[12.5px] font-semibold text-brand-black">
                     <CheckCircle2 className="h-4 w-4 text-[#16A34A] shrink-0" />
                     <span>{pt}</span>
                   </div>
@@ -586,13 +590,13 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             SECTION 6: PRICING / PACKAGES (#pricing)
         ========================================================================= */}
         <section id="pricing" className="scroll-mt-36">
-          <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
+          <div className="site-container">
             <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-              <div className="inline-flex items-center gap-1.5 rounded-full border border-[#EBEBEB] bg-[#FAFAFA] px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#101010] mb-3">
-                <Sparkles className="h-3.5 w-3.5 text-[#E9204F]" />
+              <div className="inline-flex items-center gap-1.5 rounded-full border border-brand-border bg-brand-surface px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-black mb-3">
+                <Sparkles className="h-3.5 w-3.5 text-brand-red" />
                 <span>Transparent Commercial Terms</span>
               </div>
-              <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#101010]">
+              <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-brand-black">
                 Simple, Predictable Packages
               </h2>
               <p className="mt-2 text-[14.5px] text-[#525252] leading-relaxed">
@@ -604,12 +608,12 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             {service.specialOfferBanner && (
               <SpotlightCard
                 mode="dark"
-                className="mb-8 rounded-2xl bg-[#101010] text-white p-6 sm:p-8 shadow-md border-white/10"
+                className="mb-8 rounded-2xl bg-brand-black text-white p-6 sm:p-8 shadow-md border-white/10"
                 contentClassName="relative z-10"
               >
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#E9204F] bg-[#E9204F]/10 px-2.5 py-0.5 rounded-full">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-brand-red bg-brand-red/10 px-2.5 py-0.5 rounded-full">
                       {service.specialOfferBanner.badge}
                     </span>
                     <h3 className="font-heading text-2xl sm:text-3xl font-bold mt-2">
@@ -634,7 +638,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                     </div>
                     <Link
                       href="/book-a-meeting"
-                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#E9204F] hover:bg-white hover:text-[#101010] text-white px-6 py-3 font-bold text-[13.5px] transition-all min-h-[44px]"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-red hover:bg-white hover:text-brand-black text-white px-6 py-3 font-bold text-[13.5px] transition-all min-h-[44px]"
                     >
                       <Calendar className="h-4 w-4" />
                       <span>Claim Special Offer</span>
@@ -654,8 +658,8 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                     mode={isFeatured ? "dark" : "light"}
                     className={
                       isFeatured
-                        ? "border-[#101010] bg-[#101010] text-white shadow-xl ring-2 ring-[#E9204F] p-6 sm:p-8 hover:-translate-y-1"
-                        : "border-[#EBEBEB] bg-white text-[#101010] shadow-xs p-6 sm:p-8 hover:-translate-y-1"
+                        ? "border-brand-black bg-brand-black text-white shadow-xl ring-2 ring-[#E9204F] p-6 sm:p-8 hover:-translate-y-1"
+                        : "border-brand-border bg-white text-brand-black shadow-xs p-6 sm:p-8 hover:-translate-y-1"
                     }
                   >
                     <div>
@@ -667,8 +671,8 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                           <span
                             className={`text-[10.5px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${
                               isFeatured
-                                ? "bg-[#E9204F] text-white"
-                                : "bg-[#FAFAFA] border border-[#EBEBEB] text-[#737373]"
+                                ? "bg-brand-red text-white"
+                                : "bg-brand-surface border border-brand-border text-[#737373]"
                             }`}
                           >
                             {tier.badge}
@@ -714,7 +718,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                                 isFeatured ? "text-[#27C93F]" : "text-[#16A34A]"
                               }`}
                             />
-                            <span className={isFeatured ? "text-neutral-200" : "text-[#101010]"}>
+                            <span className={isFeatured ? "text-neutral-200" : "text-brand-black"}>
                               {feat}
                             </span>
                           </div>
@@ -722,17 +726,15 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                       </div>
                     </div>
 
-                    <Link
+                    <Button
                       href="/book-a-meeting"
-                      className={`w-full inline-flex items-center justify-center gap-2 rounded-xl py-3 px-5 text-[13.5px] font-bold transition-all min-h-[44px] ${
-                        isFeatured
-                          ? "bg-[#E9204F] hover:bg-white hover:text-[#101010] text-white shadow-md"
-                          : "bg-[#101010] hover:bg-[#E9204F] text-white"
-                      }`}
+                      variant={isFeatured ? "primary" : "dark"}
+                      size="md"
+                      rightIcon={<ArrowRight className="h-4 w-4" />}
+                      className="w-full"
                     >
-                      <span>{tier.ctaText || "Select Package"}</span>
-                      <ArrowRight className="h-4 w-4" />
-                    </Link>
+                      {tier.ctaText || "Select Package"}
+                    </Button>
                   </SpotlightCard>
                 );
               })}
@@ -744,7 +746,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             SECTION 7: FREQUENTLY ASKED QUESTIONS (#faqs)
         ========================================================================= */}
         <section id="faqs" className="scroll-mt-36">
-          <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
+          <div className="site-container">
             <ServiceFaqAccordion
               faqs={extension.faqs}
               title={`Frequently Asked Questions`}
@@ -757,14 +759,14 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             SECTION 8: FINAL CTA — BOOK A MEETING (#cta)
         ========================================================================= */}
         <section id="cta" className="scroll-mt-36">
-          <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
+          <div className="site-container">
             <SpotlightCard
               mode="dark"
-              className="rounded-3xl bg-[#101010] text-white p-8 sm:p-12 lg:p-16 shadow-2xl border-white/10"
+              className="rounded-xl bg-brand-black text-white p-8 sm:p-12 lg:p-16 shadow-2xl border-white/10"
               contentClassName="relative z-10"
             >
               <div className="relative z-10 max-w-3xl">
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#E9204F] mb-4">
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-red mb-4">
                   <Calendar className="h-3.5 w-3.5" />
                   <span>Ready To Scale?</span>
                 </div>
@@ -778,20 +780,21 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 </p>
 
                 <div className="mt-8 flex flex-wrap items-center gap-4">
-                  <Link
+                  <Button
                     href="/book-a-meeting"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#E9204F] hover:bg-white hover:text-[#101010] text-white px-7 py-3.5 text-[14px] font-bold shadow-md hover:shadow-lg transition-all min-h-[48px]"
+                    variant="primary"
+                    size="lg"
+                    icon={<Calendar className="h-4 w-4" />}
+                    rightIcon={<ArrowUpRight className="h-4 w-4" />}
                   >
-                    <Calendar className="h-4 w-4" />
-                    <span>Book a Meeting Now</span>
-                    <ArrowUpRight className="h-4 w-4" />
-                  </Link>
+                    Book a Meeting Now
+                  </Button>
 
                   <a
                     href={`tel:${RHEK_CONFIG.company.contactPhone}`}
-                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 hover:border-white bg-white/5 px-6 py-3.5 text-[13.5px] font-semibold text-white transition-colors min-h-[48px]"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 hover:border-white bg-white/5 px-6 py-3.5 text-[13.5px] font-semibold text-white transition-colors min-h-[48px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red"
                   >
-                    <PhoneCall className="h-4 w-4 text-[#E9204F]" />
+                    <PhoneCall className="h-4 w-4 text-brand-red" />
                     <span>Call {RHEK_CONFIG.company.displayPhone}</span>
                   </a>
                 </div>
@@ -806,17 +809,11 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                     <span>Direct 1-on-1 Consultation</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <Sparkles className="h-4 w-4 text-[#E9204F]" />
+                    <Clock className="h-4 w-4 text-brand-red" />
                     <span>24-Hour Confirmation SLA</span>
                   </div>
                 </div>
               </div>
-
-              {/* Decorative Background Accent */}
-              <div
-                className="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-[#E9204F]/10 blur-3xl pointer-events-none"
-                aria-hidden="true"
-              />
             </SpotlightCard>
           </div>
         </section>

@@ -69,15 +69,15 @@ export function WebDevProcessRoadmap() {
   return (
     <section
       id="process"
-      className="py-16 md:py-24 border-b border-[#EBEBEB] bg-[#FAFAFA]"
+      className="py-16 md:py-24 border-b border-brand-border bg-brand-surface"
     >
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
+      <div className="site-container">
         {/* Section Header */}
         <div className="max-w-3xl mb-12 lg:mb-16">
-          <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#E9204F] bg-[#E9204F]/10 px-2.5 py-1 rounded inline-block mb-3">
+          <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-brand-red bg-brand-red/10 px-2.5 py-1 rounded inline-block mb-3">
             Section 03 · Systematic Delivery
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#101010] tracking-tight leading-tight sm:leading-tight lg:leading-[1.18]">
+          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-brand-black tracking-tight leading-tight sm:leading-tight lg:leading-[1.18]">
             Our Process: From Concept to Production in 4 Sprints
           </h2>
           <p className="text-base sm:text-lg text-[#525252] mt-3 leading-relaxed">

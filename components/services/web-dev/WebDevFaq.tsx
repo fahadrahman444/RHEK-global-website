@@ -33,7 +33,7 @@ export function WebDevFaq() {
   return (
     <section
       id="faqs"
-      className="py-12 sm:py-16 md:py-24 border-b border-[#EBEBEB] bg-[#FAFAFA]"
+      className="py-12 sm:py-16 md:py-24 border-b border-brand-border bg-brand-surface"
     >
       <div className="site-container">
         <FaqAccordion

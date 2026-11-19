@@ -11,10 +11,11 @@ import {
   ShieldCheck,
   Sparkles,
   ArrowRight,
-  Loader2,
   Mail,
   UserCheck,
 } from "@/components/common/icons";
+import { Button } from "@/components/common/Button";
+import { TextInput, Select, Textarea } from "@/components/common/FormControls";
 import { RHEK_CONFIG } from "@/data/rhek-config";
 
 const MEETING_SERVICES = [
@@ -86,17 +87,17 @@ export function BookMeetingClient() {
 
   return (
     <section className="py-10 sm:py-16">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
+      <div className="site-container">
         {/* Header Breadcrumb & Eyebrow */}
         <div className="max-w-3xl mb-10">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#E9204F]/20 bg-[#E9204F]/5 px-3 py-1 text-[11px] font-bold text-[#E9204F] uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-2 rounded-full border border-brand-red/20 bg-brand-red/5 px-3 py-1 text-[11px] font-bold text-brand-red uppercase tracking-wider mb-3">
             <Calendar className="h-3.5 w-3.5" />
             <span>Dedicated Consultation</span>
           </div>
-          <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#101010] leading-tight sm:leading-tight lg:leading-[1.18]">
+          <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-brand-black leading-tight sm:leading-tight lg:leading-[1.18]">
             Book a Strategy &amp; Discovery Session
           </h1>
-          <p className="mt-3 text-base sm:text-lg text-[#525252] leading-relaxed">
+          <p className="mt-3 text-base sm:text-lg text-brand-slate leading-relaxed">
             Schedule a 25-minute direct consultation with our growth directors and technical engineers.
             Review territory exclusivity, technical scopes, and receive an upfront action plan with zero obligation.
           </p>
@@ -106,50 +107,50 @@ export function BookMeetingClient() {
           {/* Left Column: Agenda, Guarantees & Direct Channels (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
             {/* Call Agenda Card */}
-            <div className="rounded-2xl border border-[#EBEBEB] bg-[#FAFAFA] p-6 sm:p-7 shadow-xs">
-              <div className="flex items-center gap-2.5 pb-4 border-b border-[#EBEBEB] text-[#101010]">
-                <Clock className="h-5 w-5 text-[#E9204F]" />
+            <div className="rounded-xl border border-brand-border bg-brand-surface p-6 sm:p-7 shadow-xs">
+              <div className="flex items-center gap-2.5 pb-4 border-b border-brand-border text-brand-black">
+                <Clock className="h-5 w-5 text-brand-red" />
                 <h2 className="font-heading text-lg font-bold">25-Minute Call Agenda</h2>
               </div>
 
               <div className="mt-5 space-y-4">
                 <div className="flex items-start gap-3.5">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#101010] text-[11px] font-bold text-white">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-black text-[11px] font-bold text-white">
                     1
                   </span>
                   <div>
-                    <h3 className="text-[13.5px] font-bold text-[#101010]">
+                    <h3 className="text-[13.5px] font-bold text-brand-black">
                       Current Pipeline &amp; Scope Audit
                     </h3>
-                    <p className="text-[12.5px] text-[#525252] leading-snug mt-0.5">
+                    <p className="text-[12.5px] text-brand-slate leading-snug mt-0.5">
                       We analyze your target market, geographical territory, or web development technical bottlenecks.
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3.5">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#101010] text-[11px] font-bold text-white">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-black text-[11px] font-bold text-white">
                     2
                   </span>
                   <div>
-                    <h3 className="text-[13.5px] font-bold text-[#101010]">
+                    <h3 className="text-[13.5px] font-bold text-brand-black">
                       Live Feasibility &amp; Proof Walkthrough
                     </h3>
-                    <p className="text-[12.5px] text-[#525252] leading-snug mt-0.5">
+                    <p className="text-[12.5px] text-brand-slate leading-snug mt-0.5">
                       Review verified facility walkthrough samples, past ROI case studies, or live code architectures.
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3.5">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#101010] text-[11px] font-bold text-white">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-black text-[11px] font-bold text-white">
                     3
                   </span>
                   <div>
-                    <h3 className="text-[13.5px] font-bold text-[#101010]">
+                    <h3 className="text-[13.5px] font-bold text-brand-black">
                       Fixed-Scope Proposal &amp; SLA
                     </h3>
-                    <p className="text-[12.5px] text-[#525252] leading-snug mt-0.5">
+                    <p className="text-[12.5px] text-brand-slate leading-snug mt-0.5">
                       Get a transparent commercial proposal with verified delivery timelines and replacement guarantees.
                     </p>
                   </div>
@@ -157,52 +158,52 @@ export function BookMeetingClient() {
               </div>
 
               {/* Guarantees List */}
-              <div className="mt-6 pt-5 border-t border-[#EBEBEB] space-y-2 text-[12px] text-[#525252]">
+              <div className="mt-6 pt-5 border-t border-brand-border space-y-2 text-[12px] text-brand-slate">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-[#16A34A] shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
                   <span>No high-pressure sales tactics — pure technical &amp; operational review</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="h-4 w-4 text-[#16A34A] shrink-0" />
+                  <ShieldCheck className="h-4 w-4 text-emerald-600 shrink-0" />
                   <span>100% Confidentiality &amp; mutual NDA protection</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Sparkles className="h-4 w-4 text-[#E9204F] shrink-0" />
+                  <Sparkles className="h-4 w-4 text-brand-red shrink-0" />
                   <span>Calendar invite sent immediately to your email</span>
                 </div>
               </div>
             </div>
 
             {/* Direct Contact Alternatives Card */}
-            <div className="rounded-2xl border border-[#EBEBEB] bg-white p-6 shadow-xs space-y-4">
-              <div className="text-[11px] font-bold uppercase tracking-wider text-[#737373]">
+            <div className="rounded-xl border border-brand-border bg-white p-6 shadow-xs space-y-4">
+              <div className="text-[11px] font-bold uppercase tracking-wider text-brand-slate">
                 Prefer Direct Communication?
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#FAFAFA] border border-[#EBEBEB] text-[#101010]">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-surface border border-brand-border text-brand-black">
                   <Phone className="h-4 w-4" />
                 </div>
                 <div>
-                  <div className="text-[11px] text-[#737373]">Direct Client Line</div>
+                  <div className="text-[11px] text-brand-slate">Direct Client Line</div>
                   <a
                     href={`tel:${RHEK_CONFIG.company.contactPhone}`}
-                    className="text-[14px] font-bold text-[#101010] hover:text-[#E9204F] transition-colors"
+                    className="text-[14px] font-bold text-brand-black hover:text-brand-red transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red rounded"
                   >
                     {RHEK_CONFIG.company.displayPhone}
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 pt-3 border-t border-[#F0F0F0]">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#FAFAFA] border border-[#EBEBEB] text-[#101010]">
+              <div className="flex items-center gap-3 pt-3 border-t border-brand-border-subtle">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-surface border border-brand-border text-brand-black">
                   <Mail className="h-4 w-4" />
                 </div>
                 <div>
-                  <div className="text-[11px] text-[#737373]">Direct Executive Email</div>
+                  <div className="text-[11px] text-brand-slate">Direct Executive Email</div>
                   <a
                     href={`mailto:${RHEK_CONFIG.company.contactEmail}`}
-                    className="text-[14px] font-bold text-[#101010] hover:text-[#E9204F] transition-colors"
+                    className="text-[14px] font-bold text-brand-black hover:text-brand-red transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red rounded"
                   >
                     {RHEK_CONFIG.company.contactEmail}
                   </a>
@@ -213,45 +214,46 @@ export function BookMeetingClient() {
 
           {/* Right Column: Interactive Scheduling Form (7 cols) */}
           <div className="lg:col-span-7">
-            <div className="rounded-2xl border border-[#EBEBEB] bg-white p-6 sm:p-9 shadow-sm">
+            <div className="rounded-xl border border-brand-border bg-white p-6 sm:p-9 shadow-sm">
               {success ? (
                 <div className="py-12 text-center space-y-5">
-                  <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-[#16A34A]/10 text-[#16A34A]">
+                  <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-600">
                     <CheckCircle2 className="h-8 w-8" />
                   </div>
                   <div>
-                    <h3 className="font-heading text-2xl font-bold text-[#101010]">
+                    <h3 className="font-heading text-2xl font-bold text-brand-black">
                       Meeting Request Confirmed!
                     </h3>
-                    <p className="mt-2 text-[14px] text-[#525252] max-w-md mx-auto">
-                      Thank you, <strong className="text-[#101010]">{formData.name}</strong>. Our team has received your request for{" "}
-                      <strong className="text-[#101010]">{formData.service}</strong>. A calendar invite and meeting link will be delivered to{" "}
-                      <strong className="text-[#101010]">{formData.email}</strong> within 2 hours.
+                    <p className="mt-2 text-[14px] text-brand-slate max-w-md mx-auto">
+                      Thank you, <strong className="text-brand-black">{formData.name}</strong>. Our team has received your request for{" "}
+                      <strong className="text-brand-black">{formData.service}</strong>. A calendar invite and meeting link will be delivered to{" "}
+                      <strong className="text-brand-black">{formData.email}</strong> within 2 hours.
                     </p>
                   </div>
-                  <div className="pt-4 flex justify-center gap-3">
-                    <button
-                      type="button"
+                  <div className="pt-4 flex flex-wrap justify-center gap-3">
+                    <Button
+                      variant="dark"
+                      size="sm"
                       onClick={() => setSuccess(false)}
-                      className="rounded-lg bg-[#101010] text-white px-5 py-2.5 text-[13px] font-bold hover:bg-[#E9204F] transition-colors"
                     >
                       Book Another Session
-                    </button>
-                    <Link
+                    </Button>
+                    <Button
+                      variant="secondary"
+                      size="sm"
                       href="/"
-                      className="rounded-lg border border-[#E5E5E5] px-5 py-2.5 text-[13px] font-bold text-[#101010] hover:bg-[#FAFAFA] transition-colors"
                     >
                       Return Home
-                    </Link>
+                    </Button>
                   </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div>
-                    <h3 className="font-heading text-xl font-bold text-[#101010]">
+                    <h3 className="font-heading text-xl font-bold text-brand-black">
                       Select Meeting Details
                     </h3>
-                    <p className="text-[13px] text-[#737373] mt-0.5">
+                    <p className="text-[13px] text-brand-slate mt-0.5">
                       Fill out the form below and we will confirm your preferred time slot immediately.
                     </p>
                   </div>
@@ -263,28 +265,23 @@ export function BookMeetingClient() {
                   )}
 
                   {/* 1. Service of interest */}
-                  <div>
-                    <label className="block text-[12.5px] font-bold text-[#101010] mb-1.5">
-                      Service Discussion Focus *
-                    </label>
-                    <select
-                      value={formData.service}
-                      onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                      className="w-full rounded-lg border border-[#E5E5E5] bg-white px-3.5 py-2.5 min-h-[44px] text-[13.5px] text-[#101010] focus:border-[#101010] focus:ring-1 focus:ring-[#101010] outline-none transition"
-                      required
-                    >
-                      {MEETING_SERVICES.map((srv) => (
-                        <option key={srv} value={srv}>
-                          {srv}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
+                  <Select
+                    label="Service Discussion Focus"
+                    required
+                    value={formData.service}
+                    onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                  >
+                    {MEETING_SERVICES.map((srv) => (
+                      <option key={srv} value={srv}>
+                        {srv}
+                      </option>
+                    ))}
+                  </Select>
 
                   {/* 2. Platform Selection */}
                   <div>
-                    <label className="block text-[12.5px] font-bold text-[#101010] mb-1.5">
-                      Preferred Meeting Platform *
+                    <label className="block text-[12.5px] font-semibold text-brand-black mb-1.5">
+                      Preferred Meeting Platform <span className="text-brand-red">*</span>
                     </label>
                     <div className="grid grid-cols-3 gap-2 sm:gap-2.5">
                       {MEETING_PLATFORMS.map((plat) => {
@@ -295,10 +292,10 @@ export function BookMeetingClient() {
                             type="button"
                             key={plat.id}
                             onClick={() => setFormData({ ...formData, platform: plat.id })}
-                            className={`flex items-center justify-center gap-1.5 sm:gap-2 p-2 sm:p-2.5 rounded-lg border text-[11.5px] sm:text-[12.5px] font-semibold transition min-h-[44px] ${
+                            className={`flex items-center justify-center gap-1.5 sm:gap-2 p-2 sm:p-2.5 rounded-lg border text-[11.5px] sm:text-[12.5px] font-semibold transition min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red ${
                               isSelected
-                                ? "bg-[#101010] border-[#101010] text-white shadow-xs"
-                                : "bg-white border-[#E5E5E5] text-[#525252] hover:border-[#101010] hover:text-[#101010]"
+                                ? "bg-brand-black border-brand-black text-white shadow-xs"
+                                : "bg-white border-zinc-200 text-brand-slate hover:border-brand-black hover:text-brand-black"
                             }`}
                           >
                             <Icon className="h-3.5 w-3.5 shrink-0" />
@@ -311,101 +308,70 @@ export function BookMeetingClient() {
 
                   {/* 3. Contact details grid */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-[12.5px] font-bold text-[#101010] mb-1.5">
-                        Your Full Name *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        placeholder="e.g. Alex Morgan"
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full rounded-lg border border-[#E5E5E5] bg-white px-3.5 py-2.5 min-h-[44px] text-[13.5px] text-[#101010] focus:border-[#101010] focus:ring-1 focus:ring-[#101010] outline-none transition"
-                      />
-                    </div>
+                    <TextInput
+                      label="Your Full Name"
+                      type="text"
+                      required
+                      placeholder="e.g. Alex Morgan"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    />
 
-                    <div>
-                      <label className="block text-[12.5px] font-bold text-[#101010] mb-1.5">
-                        Business Email *
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        placeholder="alex@company.com"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full rounded-lg border border-[#E5E5E5] bg-white px-3.5 py-2.5 min-h-[44px] text-[13.5px] text-[#101010] focus:border-[#101010] focus:ring-1 focus:ring-[#101010] outline-none transition"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-[12.5px] font-bold text-[#101010] mb-1.5">
-                        Company Name or Website
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="e.g. Acme Cleaning Services"
-                        value={formData.company}
-                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                        className="w-full rounded-lg border border-[#E5E5E5] bg-white px-3.5 py-2.5 min-h-[44px] text-[13.5px] text-[#101010] focus:border-[#101010] focus:ring-1 focus:ring-[#101010] outline-none transition"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-[12.5px] font-bold text-[#101010] mb-1.5">
-                        Preferred Time of Day
-                      </label>
-                      <select
-                        value={formData.preferredTime}
-                        onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
-                        className="w-full rounded-lg border border-[#E5E5E5] bg-white px-3.5 py-2.5 min-h-[44px] text-[13.5px] text-[#101010] focus:border-[#101010] focus:ring-1 focus:ring-[#101010] outline-none transition"
-                      >
-                        <option value="Morning (9am - 12pm EST)">Morning (9am - 12pm EST)</option>
-                        <option value="Afternoon (12pm - 4pm EST)">Afternoon (12pm - 4pm EST)</option>
-                        <option value="Evening (4pm - 7pm EST)">Evening (4pm - 7pm EST)</option>
-                        <option value="Flexible / As soon as possible">Flexible / As soon as possible</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  {/* 4. Notes / Goals */}
-                  <div>
-                    <label className="block text-[12.5px] font-bold text-[#101010] mb-1.5">
-                      Specific Questions or Project Scope (Optional)
-                    </label>
-                    <textarea
-                      rows={3}
-                      placeholder="Tell us about your target market, required volume, or current bottlenecks..."
-                      value={formData.notes}
-                      onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                      className="w-full rounded-lg border border-[#E5E5E5] bg-white px-3.5 py-2.5 text-[13.5px] text-[#101010] focus:border-[#101010] focus:ring-1 focus:ring-[#101010] outline-none transition resize-none"
+                    <TextInput
+                      label="Business Email"
+                      type="email"
+                      required
+                      placeholder="alex@company.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     />
                   </div>
 
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <TextInput
+                      label="Company Name or Website"
+                      type="text"
+                      placeholder="e.g. Acme Cleaning Services"
+                      value={formData.company}
+                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                    />
+
+                    <Select
+                      label="Preferred Time of Day"
+                      value={formData.preferredTime}
+                      onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
+                    >
+                      <option value="Morning (9am - 12pm EST)">Morning (9am - 12pm EST)</option>
+                      <option value="Afternoon (12pm - 4pm EST)">Afternoon (12pm - 4pm EST)</option>
+                      <option value="Evening (4pm - 7pm EST)">Evening (4pm - 7pm EST)</option>
+                      <option value="Flexible / As soon as possible">Flexible / As soon as possible</option>
+                    </Select>
+                  </div>
+
+                  {/* 4. Notes / Goals */}
+                  <Textarea
+                    label="Specific Questions or Project Scope (Optional)"
+                    rows={3}
+                    placeholder="Tell us about your target market, required volume, or current bottlenecks..."
+                    value={formData.notes}
+                    onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+                    className="min-h-[90px]"
+                  />
+
                   {/* Submit Button */}
                   <div className="pt-2">
-                    <button
+                    <Button
                       type="submit"
-                      disabled={loading}
-                      className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#E9204F] hover:bg-[#101010] text-white py-3.5 px-6 font-bold text-[14px] transition-all duration-200 shadow-sm hover:shadow-md disabled:opacity-50 min-h-[48px]"
+                      variant="primary"
+                      size="lg"
+                      loading={loading}
+                      rightIcon={<ArrowRight className="h-4 w-4" />}
+                      className="w-full"
                     >
-                      {loading ? (
-                        <>
-                          <Loader2 className="h-4 w-4 animate-spin" />
-                          <span>Scheduling Meeting...</span>
-                        </>
-                      ) : (
-                        <>
-                          <span>Confirm Meeting Reservation</span>
-                          <ArrowRight className="h-4 w-4" />
-                        </>
-                      )}
-                    </button>
-                    <p className="text-center text-[11px] text-[#737373] mt-2.5 flex items-center justify-center gap-1.5">
-                      <UserCheck className="h-3.5 w-3.5 text-[#16A34A]" />
+                      Confirm Meeting Reservation
+                    </Button>
+                    <p className="text-center text-[11px] text-brand-slate mt-2.5 flex items-center justify-center gap-1.5">
+                      <UserCheck className="h-3.5 w-3.5 text-emerald-600" />
                       <span>Direct 1-on-1 access to decision-maker engineers &amp; directors.</span>
                     </p>
                   </div>

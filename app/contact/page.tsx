@@ -35,18 +35,18 @@ export default function ContactPage() {
 
       {/* 3. Direct Contact Channels Strip */}
       <div className="site-container pt-6 sm:pt-8">
-        <div className="rounded-xl border border-[#EBEBEB] bg-[#FAFAFA] p-4 sm:p-6 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 text-center sm:text-left">
+        <div className="rounded-xl border border-brand-border bg-brand-surface p-4 sm:p-6 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 text-center sm:text-left">
           <div className="flex items-center justify-center sm:justify-start gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white border border-[#EBEBEB] text-[#101010] shadow-2xs">
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white border border-brand-border text-brand-black shadow-2xs">
               <Mail className="h-4 w-4" />
             </div>
             <div>
-              <div className="text-[10.5px] font-semibold uppercase tracking-wider text-[#737373]">
+              <div className="text-[10.5px] font-semibold uppercase tracking-wider text-brand-slate">
                 Direct Channel
               </div>
               <a
                 href={`mailto:${RHEK_CONFIG.company.contactEmail}`}
-                className="text-[13.5px] sm:text-[14px] font-semibold text-[#101010] hover:text-[#E9204F] transition-colors"
+                className="text-[13.5px] sm:text-[14px] font-semibold text-brand-black hover:text-brand-red transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red rounded"
               >
                 {RHEK_CONFIG.company.contactEmail}
               </a>
@@ -54,16 +54,16 @@ export default function ContactPage() {
           </div>
 
           <div className="flex items-center justify-center sm:justify-start gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white border border-[#EBEBEB] text-[#101010] shadow-2xs">
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white border border-brand-border text-brand-black shadow-2xs">
               <Calendar className="h-4 w-4" />
             </div>
             <div>
-              <div className="text-[10.5px] font-semibold uppercase tracking-wider text-[#737373]">
+              <div className="text-[10.5px] font-semibold uppercase tracking-wider text-brand-slate">
                 Booking
               </div>
               <a
                 href="#contact"
-                className="text-[13.5px] sm:text-[14px] font-semibold text-[#101010] hover:text-[#E9204F] transition-colors"
+                className="text-[13.5px] sm:text-[14px] font-semibold text-brand-black hover:text-brand-red transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red rounded"
               >
                 Direct Scoping Form &darr;
               </a>
@@ -71,14 +71,14 @@ export default function ContactPage() {
           </div>
 
           <div className="flex items-center justify-center sm:justify-start gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white border border-[#EBEBEB] text-[#101010] shadow-2xs">
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white border border-brand-border text-brand-black shadow-2xs">
               <ShieldCheck className="h-4 w-4" />
             </div>
             <div>
-              <div className="text-[10.5px] font-semibold uppercase tracking-wider text-[#737373]">
+              <div className="text-[10.5px] font-semibold uppercase tracking-wider text-brand-slate">
                 Client Guarantee
               </div>
-              <div className="text-[13.5px] sm:text-[14px] font-semibold text-[#101010]">
+              <div className="text-[13.5px] sm:text-[14px] font-semibold text-brand-black">
                 100% Satisfaction SLA
               </div>
             </div>

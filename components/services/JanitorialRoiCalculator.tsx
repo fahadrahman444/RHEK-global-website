@@ -25,12 +25,12 @@ export function JanitorialRoiCalculator() {
   const firstMonthRoiRatio = (minMonthlyRevenue / estLeadInvestment).toFixed(1);
 
   return (
-    <div className="rounded-2xl bg-[#101010] text-white p-5 sm:p-6 lg:p-8 border border-white/10 shadow-lg relative overflow-hidden">
+    <div className="rounded-2xl bg-brand-black text-white p-5 sm:p-6 lg:p-8 border border-white/10 shadow-lg relative overflow-hidden">
       <div className="relative z-10 w-full">
         {/* Section Header */}
         <div className="max-w-2xl mb-5">
-          <div className="inline-flex items-center gap-1.5 rounded bg-white/10 border border-white/15 px-2.5 py-0.5 text-[10.5px] font-semibold uppercase tracking-wider text-[#E9204F] mb-1.5">
-            <Calculator className="h-3 w-3 text-[#E9204F]" />
+          <div className="inline-flex items-center gap-1.5 rounded bg-white/10 border border-white/15 px-2.5 py-0.5 text-[10.5px] font-semibold uppercase tracking-wider text-brand-red mb-1.5">
+            <Calculator className="h-3 w-3 text-brand-red" />
             <span>Commercial Revenue Modeler</span>
           </div>
           <h2 className="text-xl sm:text-2xl lg:text-[28px] font-bold font-heading text-white tracking-[-0.03em] leading-snug">
@@ -84,7 +84,7 @@ export function JanitorialRoiCalculator() {
                       onClick={() => setLeadsCount(preset)}
                       className={`py-1.5 px-2.5 rounded-lg text-[11.5px] font-semibold transition-colors min-h-[34px] ${
                         leadsCount === preset
-                          ? "bg-white text-[#101010]"
+                          ? "bg-white text-brand-black"
                           : "bg-white/5 text-[#A3A3A3] border border-white/10 hover:border-white/20 hover:text-white"
                       }`}
                     >
@@ -115,7 +115,7 @@ export function JanitorialRoiCalculator() {
                           : "border-white/10 bg-white/[0.02] text-[#A3A3A3] hover:border-white/20 hover:text-white"
                       }`}
                     >
-                      <p className="text-[10px] font-semibold uppercase tracking-wider text-[#E9204F]">
+                      <p className="text-[10px] font-semibold uppercase tracking-wider text-brand-red">
                         {tier.label}
                       </p>
                       <p className="text-[14px] font-bold text-white mt-0.5">
@@ -173,7 +173,7 @@ export function JanitorialRoiCalculator() {
                   <p className="text-[10px] font-semibold uppercase tracking-wider text-[#A3A3A3]">
                     New Monthly MRR
                   </p>
-                  <p className="text-xl sm:text-2xl font-bold text-[#E9204F] mt-0.5">
+                  <p className="text-xl sm:text-2xl font-bold text-brand-red mt-0.5">
                     ${minMonthlyRevenue.toLocaleString()}–${maxMonthlyRevenue.toLocaleString()}
                   </p>
                   <p className="text-[10px] text-[#A3A3A3] mt-0.5">
@@ -222,7 +222,7 @@ export function JanitorialRoiCalculator() {
             {/* Direct Action Link */}
             <Link
               href={`/contact?service=Janitorial%20Lead%20Generation&leads=${leadsCount}&projectedMRR=${minMonthlyRevenue}`}
-              className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-[#E9204F] hover:bg-[#101010] py-2.5 px-4 text-[12.5px] font-bold text-white shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 min-h-[40px] group"
+              className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-brand-red hover:bg-brand-black py-2.5 px-4 text-[12.5px] font-bold text-white shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 min-h-[40px] group"
             >
               <span>Lock In {leadsCount} Walkthroughs in Your Territory</span>
               <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />

@@ -24,7 +24,7 @@ export function SubpageHeader({
           <li>
             <Link
               href="/"
-              className="inline-flex items-center gap-1 hover:text-[#101010] transition-colors"
+              className="inline-flex items-center gap-1 hover:text-brand-black transition-colors"
             >
               <Home className="h-3 w-3" />
               <span>Home</span>
@@ -33,7 +33,7 @@ export function SubpageHeader({
           <li aria-hidden="true">
             <ChevronRight className="h-3 w-3 text-neutral-300" />
           </li>
-          <li className="text-[#101010] font-semibold" aria-current="page">
+          <li className="text-brand-black font-semibold" aria-current="page">
             {currentLabel}
           </li>
         </ol>
@@ -41,12 +41,12 @@ export function SubpageHeader({
 
       {/* Header Content */}
       <div className="max-w-3xl">
-        <div className="inline-flex items-center gap-1.5 rounded-md border border-[#EBEBEB] bg-[#FAFAFA] px-2.5 py-0.5 text-[10.5px] font-semibold uppercase tracking-wider text-[#101010] mb-2 shadow-2xs">
-          {Icon && <Icon className="h-3.5 w-3.5 text-[#E9204F]" />}
+        <div className="inline-flex items-center gap-1.5 rounded-md border border-brand-border bg-brand-surface px-2.5 py-0.5 text-[10.5px] font-semibold uppercase tracking-wider text-brand-black mb-2 shadow-2xs">
+          {Icon && <Icon className="h-3.5 w-3.5 text-brand-red" />}
           <span>{badge}</span>
         </div>
 
-        <h1 className="font-heading text-2xl sm:text-3xl lg:text-[36px] font-bold tracking-[-0.035em] text-[#101010] leading-tight sm:leading-tight lg:leading-[1.18]">
+        <h1 className="font-heading text-2xl sm:text-3xl lg:text-[36px] font-bold tracking-[-0.035em] text-brand-black leading-tight sm:leading-tight lg:leading-[1.18]">
           {title}
         </h1>
 

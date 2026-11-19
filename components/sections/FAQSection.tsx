@@ -38,7 +38,7 @@ const faqs = [
 
 export function FAQSection() {
   return (
-    <section id="faq" className="py-10 lg:py-14 bg-white border-t border-[#EBEBEB]">
+    <section id="faq" className="py-10 lg:py-14 bg-white border-t border-brand-border">
       <FaqAccordion
         faqs={faqs}
         title="Common Questions About RHEK GLOBAL"
@@ -51,7 +51,7 @@ export function FAQSection() {
           Have a question not listed here?{" "}
           <Link
             href="/contact"
-            className="font-bold text-[#101010] hover:text-[#E9204F] underline underline-offset-4 transition-colors"
+            className="font-bold text-brand-black hover:text-brand-red underline underline-offset-4 transition-colors"
           >
             Contact our engineering team directly
           </Link>

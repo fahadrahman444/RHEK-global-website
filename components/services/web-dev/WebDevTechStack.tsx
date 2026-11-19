@@ -74,15 +74,15 @@ export function WebDevTechStack() {
   return (
     <section
       id="technologies"
-      className="py-16 md:py-24 border-b border-[#EBEBEB] bg-white"
+      className="py-16 md:py-24 border-b border-brand-border bg-white"
     >
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 space-y-14 sm:space-y-16">
+      <div className="site-container space-y-14 sm:space-y-16">
         {/* Section Header */}
         <div className="max-w-3xl">
-          <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#E9204F] bg-[#E9204F]/10 px-2.5 py-1 rounded inline-block mb-3">
+          <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-brand-red bg-brand-red/10 px-2.5 py-1 rounded inline-block mb-3">
             Section 04 · Infrastructure Standards
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#101010] tracking-tight leading-tight sm:leading-tight lg:leading-[1.18]">
+          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-brand-black tracking-tight leading-tight sm:leading-tight lg:leading-[1.18]">
             Engineering Stack &amp; Verified Performance Standards
           </h2>
           <p className="text-base sm:text-lg text-[#525252] mt-3 leading-relaxed">
@@ -94,7 +94,7 @@ export function WebDevTechStack() {
         <div className="space-y-4">
           <div className="flex items-center justify-between text-[11px] sm:text-[12px] font-mono font-bold text-[#737373]">
             <span>ENGINEERING STACK FOUNDATION</span>
-            <span className="text-[#E9204F]">PRODUCTION TECH SPEC</span>
+            <span className="text-brand-red">PRODUCTION TECH SPEC</span>
           </div>
           <CapabilityStrip items={TECH_STRIP_ITEMS} />
         </div>
@@ -103,7 +103,7 @@ export function WebDevTechStack() {
         <div className="space-y-4">
           <div className="flex items-center justify-between text-[12px] font-mono font-bold text-[#737373]">
             <span>AUDITED SERVICE LEVEL BENCHMARKS</span>
-            <span className="text-[#101010]">VERIFIED TELEMETRY</span>
+            <span className="text-brand-black">VERIFIED TELEMETRY</span>
           </div>
           <CapabilityStrip items={BENCHMARKS_STRIP} />
         </div>
@@ -111,16 +111,16 @@ export function WebDevTechStack() {
         {/* Asymmetric 5/7 Risk Reversal Card */}
         <SpotlightCard
           mode="dark"
-          className="rounded-2xl border-2 border-[#101010] bg-[#101010] p-7 sm:p-10 text-white shadow-xl"
+          className="rounded-2xl border-2 border-brand-black bg-brand-black p-7 sm:p-10 text-white shadow-xl"
           contentClassName="relative z-10"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-5 space-y-3.5">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E9204F] text-white text-[11px] font-bold uppercase tracking-wider">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red text-white text-[11px] font-bold uppercase tracking-wider">
                 <ShieldCheck className="h-4 w-4" />
                 <span>100% Risk Reversal</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-extrabold leading-tight text-white">
+              <h3 className="text-2xl sm:text-3xl font-bold leading-tight text-white">
                 Our 14-Day Money-Back Guarantee
               </h3>
               <p className="text-[13.5px] text-[#A3A3A3] leading-relaxed">
@@ -131,7 +131,7 @@ export function WebDevTechStack() {
             <div className="lg:col-span-7 space-y-2.5">
               {GUARANTEE_POINTS.map((point, pIdx) => (
                 <div key={pIdx} className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 text-[13px] text-[#E0E0E0]">
-                  <CheckCircle2 className="h-4 w-4 text-[#E9204F] shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-brand-red shrink-0" />
                   <span>{point}</span>
                 </div>
               ))}

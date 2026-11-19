@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function WebDevelopmentPage() {
   return (
-    <div className="relative min-h-screen bg-white text-[#525252] selection:bg-[#E9204F] selection:text-white">
+    <div className="relative min-h-screen bg-white text-[#525252] selection:bg-brand-red selection:text-white">
       {/* 1. Global Master Navigation (Single clean navbar) */}
       <Navbar variant="light" />
 

@@ -63,16 +63,16 @@ export function WebDevServicesGrid() {
   return (
     <section
       id="services"
-      className="py-16 md:py-24 border-b border-[#EBEBEB] bg-white"
+      className="py-16 md:py-24 border-b border-brand-border bg-white"
     >
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
+      <div className="site-container">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 lg:mb-16">
           <div className="max-w-2xl">
-            <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#E9204F] bg-[#E9204F]/10 px-2.5 py-1 rounded inline-block mb-3">
+            <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-brand-red bg-brand-red/10 px-2.5 py-1 rounded inline-block mb-3">
               Section 02 · Full-Lifecycle Engineering
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#101010] tracking-tight leading-tight sm:leading-tight lg:leading-[1.18]">
+            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-brand-black tracking-tight leading-tight sm:leading-tight lg:leading-[1.18]">
               Core Capabilities: Built on Clean Code, Not Templates
             </h2>
             <p className="text-base sm:text-lg text-[#525252] mt-3 leading-relaxed">
@@ -83,7 +83,7 @@ export function WebDevServicesGrid() {
           <div className="text-[12.5px] font-mono text-[#737373] hidden md:block text-right">
             <span>6 CAPABILITIES AVAILABLE</span>
             <br />
-            <span className="text-[#101010] font-bold">SWISS EDITORIAL DIRECTORY</span>
+            <span className="text-brand-black font-bold">SWISS EDITORIAL DIRECTORY</span>
           </div>
         </div>
 

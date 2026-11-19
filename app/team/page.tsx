@@ -17,6 +17,7 @@ import {
   Calendar,
 } from "@/components/common/icons";
 import { SpotlightCard } from "@/components/common/SpotlightCard";
+import { Button } from "@/components/common/Button";
 
 export const metadata: Metadata = {
   title: "Meet the Team — RHEK GLOBAL",
@@ -155,7 +156,7 @@ export default function TeamPage() {
             <span className="inline-block text-[10.5px] font-bold uppercase tracking-wider text-[#737373] mb-1">
               Dedicated Domain Experts
             </span>
-            <h2 className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-[#101010] tracking-[-0.03em] leading-snug">
+            <h2 className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-brand-black tracking-[-0.03em] leading-snug">
               Specialized Teams for Every Stage of Your Pipeline
             </h2>
             <p className="text-[13.5px] text-[#525252] leading-relaxed mt-1.5">
@@ -170,16 +171,16 @@ export default function TeamPage() {
                 <SpotlightCard
                   key={team.name}
                   mode="light"
-                  className="rounded-xl border border-[#EBEBEB] p-4 sm:p-5 flex flex-col justify-between hover:border-[#101010]"
+                  className="rounded-xl border border-brand-border p-4 sm:p-5 flex flex-col justify-between hover:border-brand-black"
                 >
                   <div>
-                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white border border-[#EBEBEB] text-[#101010] mb-3 shadow-2xs">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white border border-brand-border text-brand-black mb-3 shadow-2xs">
                       <Icon className="h-4.5 w-4.5" />
                     </div>
                     <span className="text-[10.5px] font-semibold uppercase tracking-wider text-[#737373]">
                       {team.focus}
                     </span>
-                    <h3 className="font-heading text-lg font-bold text-[#101010] mt-0.5 mb-2 leading-snug">
+                    <h3 className="font-heading text-lg font-bold text-brand-black mt-0.5 mb-2 leading-snug">
                       {team.name}
                     </h3>
                     <p className="text-[13px] text-[#525252] leading-relaxed mb-4">
@@ -187,13 +188,13 @@ export default function TeamPage() {
                     </p>
                   </div>
 
-                  <ul className="space-y-1.5 border-t border-[#EBEBEB] pt-3.5">
+                  <ul className="space-y-1.5 border-t border-brand-border pt-3.5">
                     {team.capabilities.map((cap, cIdx) => (
                       <li
                         key={cIdx}
                         className="flex items-center gap-2 text-[12px] text-[#525252]"
                       >
-                        <CheckCircle2 className="h-3.5 w-3.5 text-[#E9204F] shrink-0" />
+                        <CheckCircle2 className="h-3.5 w-3.5 text-brand-red shrink-0" />
                         <span>{cap}</span>
                       </li>
                     ))}
@@ -205,12 +206,12 @@ export default function TeamPage() {
         </div>
 
         {/* Operating Standards Strip */}
-        <div className="border-t border-[#EBEBEB] pt-8">
+        <div className="border-t border-brand-border pt-8">
           <div className="max-w-xl mb-5">
             <span className="text-[10.5px] font-bold uppercase tracking-wider text-[#737373]">
               Operating Values
             </span>
-            <h3 className="text-xl font-bold font-heading text-[#101010] mt-0.5">
+            <h3 className="text-xl font-bold font-heading text-brand-black mt-0.5">
               How Our Specialist Divisions Deliver
             </h3>
           </div>
@@ -220,13 +221,13 @@ export default function TeamPage() {
               <SpotlightCard
                 key={idx}
                 mode="light"
-                className="rounded-xl border border-[#EBEBEB] p-3 sm:p-4 hover:border-[#101010]"
+                className="rounded-xl border border-brand-border p-3 sm:p-4 hover:border-brand-black"
                 contentClassName="relative z-10"
               >
                 <span className="font-mono text-[11px] font-bold text-[#737373]">
                   0{idx + 1}
                 </span>
-                <h4 className="text-[13px] sm:text-[13.5px] font-bold text-[#101010] mt-0.5 mb-1 leading-snug">
+                <h4 className="text-[13px] sm:text-[13.5px] font-bold text-brand-black mt-0.5 mb-1 leading-snug">
                   {val.title}
                 </h4>
                 <p className="text-[11px] sm:text-[12px] text-[#525252] leading-relaxed line-clamp-3 sm:line-clamp-none">
@@ -240,11 +241,11 @@ export default function TeamPage() {
         {/* Guaranteed Consultation CTA */}
         <SpotlightCard
           mode="dark"
-          className="rounded-2xl bg-[#101010] text-white p-5 sm:p-7"
+          className="rounded-xl bg-brand-black text-white p-5 sm:p-7"
           contentClassName="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-5"
         >
           <div className="max-w-[620px]">
-            <div className="inline-flex items-center gap-1.5 rounded bg-white/10 text-[#E9204F] text-[10.5px] font-semibold uppercase tracking-wider px-2.5 py-0.5 mb-1.5">
+            <div className="inline-flex items-center gap-1.5 rounded bg-white/10 text-brand-red text-[10.5px] font-semibold uppercase tracking-wider px-2.5 py-0.5 mb-1.5">
               <ShieldCheck className="h-3.5 w-3.5" />
               <span>Direct Team Access</span>
             </div>
@@ -255,14 +256,16 @@ export default function TeamPage() {
               Schedule an initial consultation to review your requirements, market territory, or production scope with our specialists.
             </p>
           </div>
-          <Link
+          <Button
             href="/contact"
-            className="inline-flex items-center gap-1.5 rounded-lg bg-[#E9204F] hover:bg-white hover:text-[#101010] px-4 py-2 text-[12.5px] font-semibold text-white whitespace-nowrap transition-all duration-200 min-h-[38px] shrink-0 hover:shadow-md hover:-translate-y-0.5"
+            variant="primary"
+            size="md"
+            icon={<Calendar className="h-3.5 w-3.5" />}
+            rightIcon={<ArrowRight className="h-3.5 w-3.5" />}
+            className="shrink-0"
           >
-            <Calendar className="h-3.5 w-3.5" />
-            <span>Schedule Consultation</span>
-            <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
+            Schedule Consultation
+          </Button>
         </SpotlightCard>
       </div>
       </main>

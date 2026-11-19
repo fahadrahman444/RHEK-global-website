@@ -36,14 +36,14 @@ export function ServicesPreview() {
       {/* Modern Light Bento Grid — Continuous Canvas */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-3.5 sm:gap-4">
         {/* Bento Card 1: Dedicated Outbound SDR Cadences */}
-        <div className="lg:col-span-7 rounded-xl border border-[#EBEBEB] bg-white p-5 sm:p-7 flex flex-col justify-between hover:border-[#101010] transition-all duration-200 shadow-2xs group">
+        <div className="lg:col-span-7 rounded-xl border border-brand-border bg-white p-5 sm:p-7 flex flex-col justify-between hover:border-brand-black transition-all duration-200 shadow-2xs group">
           <div>
             <div className="flex items-center justify-between gap-2 mb-2.5 sm:mb-3">
               <div className="flex items-center gap-2">
-                <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-lg bg-rose-50 text-[#E9204F]">
+                <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-lg bg-rose-50 text-brand-red">
                   <PhoneCall className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 </div>
-                <span className="text-[10.5px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+                <span className="text-[10.5px] sm:text-[11px] font-semibold uppercase tracking-wider text-brand-slate">
                   Outbound Sales Development
                 </span>
               </div>
@@ -52,7 +52,7 @@ export function ServicesPreview() {
               </span>
             </div>
 
-            <h3 className="font-heading text-[17px] sm:text-[20px] font-bold text-[#101010] leading-snug">
+            <h3 className="font-heading text-[17px] sm:text-[20px] font-bold text-brand-black leading-snug">
               Exclusive Commercial Appointments With Zero Shared Prospects
             </h3>
             <p className="text-[13px] sm:text-[13.5px] text-zinc-600 mt-1.5 sm:mt-2 leading-relaxed">
@@ -60,10 +60,10 @@ export function ServicesPreview() {
             </p>
 
             {/* Clean Structured Handover Preview */}
-            <div className="mt-4 sm:mt-5 rounded-xl bg-[#FAFAFA] border border-zinc-200/70 p-3 sm:p-4">
+            <div className="mt-4 sm:mt-5 rounded-xl bg-brand-surface border border-zinc-200/70 p-3 sm:p-4">
               <div className="flex items-center justify-between pb-2 mb-2.5 border-b border-zinc-200/60 text-[11.5px] sm:text-[12px]">
-                <span className="font-semibold text-[#101010] flex items-center gap-1.5">
-                  <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="font-semibold text-brand-black flex items-center gap-1.5">
+                  <span className="h-2 w-2 rounded-full bg-emerald-500" />
                   <span>Verified Walkthrough Handover</span>
                 </span>
                 <span className="text-slate-400 text-[10.5px] sm:text-[11px]">Direct Calendar Dispatch</span>
@@ -97,7 +97,7 @@ export function ServicesPreview() {
             </span>
             <Link
               href="/services/janitorial-leads"
-              className="inline-flex items-center gap-1 font-semibold text-[#101010] hover:text-[#E9204F] transition-colors"
+              className="inline-flex items-center gap-1 font-semibold text-brand-black hover:text-brand-red transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red rounded"
             >
               <span>Lead Specifications</span>
               <ArrowRight className="h-3.5 w-3.5" />
@@ -106,14 +106,14 @@ export function ServicesPreview() {
         </div>
 
         {/* Bento Card 2: Proprietary Facility Intelligence */}
-        <div className="lg:col-span-5 rounded-2xl border border-zinc-200/80 bg-white p-4 sm:p-7 flex flex-col justify-between hover:border-zinc-400 transition-all duration-200 shadow-2xs group">
+        <div className="lg:col-span-5 rounded-xl border border-zinc-200/80 bg-white p-4 sm:p-7 flex flex-col justify-between hover:border-zinc-400 transition-all duration-200 shadow-2xs group">
           <div>
             <div className="flex items-center justify-between gap-2 mb-2.5 sm:mb-3">
               <div className="flex items-center gap-2">
-                <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-lg bg-rose-50 text-[#E9204F]">
+                <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-lg bg-rose-50 text-brand-red">
                   <Activity className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 </div>
-                <span className="text-[10.5px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+                <span className="text-[10.5px] sm:text-[11px] font-semibold uppercase tracking-wider text-brand-slate">
                   Data &amp; Targeting Engine
                 </span>
               </div>
@@ -122,7 +122,7 @@ export function ServicesPreview() {
               </span>
             </div>
 
-            <h3 className="font-heading text-[17px] sm:text-[20px] font-bold text-[#101010] leading-snug">
+            <h3 className="font-heading text-[17px] sm:text-[20px] font-bold text-brand-black leading-snug">
               Commercial Facility Intelligence &amp; Renewal Mapping
             </h3>
             <p className="text-[13px] sm:text-[13.5px] text-zinc-600 mt-1.5 sm:mt-2 leading-relaxed">
@@ -151,7 +151,7 @@ export function ServicesPreview() {
             </span>
             <Link
               href="/#contact"
-              className="inline-flex items-center gap-1 font-semibold text-[#101010] hover:text-[#E9204F] transition-colors"
+              className="inline-flex items-center gap-1 font-semibold text-brand-black hover:text-brand-red transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red rounded"
             >
               <span>Check County Lock</span>
               <ArrowRight className="h-3.5 w-3.5" />
@@ -161,22 +161,24 @@ export function ServicesPreview() {
       </div>
 
       {/* Seamless Transition Strip to Full Capabilities */}
-      <div className="mt-4 rounded-xl bg-[#FAFAFA] border border-zinc-200/80 p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+      <div className="mt-4 rounded-xl bg-brand-surface border border-zinc-200/80 p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
         <div>
           <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
             Enterprise Solutions
           </span>
-          <p className="text-[13.5px] font-semibold text-[#101010] mt-0.5">
+          <p className="text-[13.5px] font-semibold text-brand-black mt-0.5">
             Looking for dedicated digital architecture, custom web platforms, or back-office operational teams?
           </p>
         </div>
-        <Link
+        <Button
           href="/services"
-          className="inline-flex items-center gap-1.5 rounded-lg bg-white border border-slate-200 hover:border-slate-900 px-4 py-2 text-[12.5px] font-semibold text-slate-800 hover:text-black whitespace-nowrap transition-all shadow-2xs shrink-0"
+          variant="secondary"
+          size="sm"
+          rightIcon={<ArrowRight className="h-3.5 w-3.5" />}
+          className="shrink-0"
         >
-          <span>Explore All 8 Services</span>
-          <ArrowRight className="h-3.5 w-3.5" />
-        </Link>
+          Explore All 8 Services
+        </Button>
       </div>
     </section>
   );

@@ -49,7 +49,7 @@ export function SpotlightCard({
 
   const baseThemeClasses =
     mode === "light"
-      ? "border border-zinc-200/80 bg-white hover:border-zinc-400 hover:bg-[#FAFAFA] hover:shadow-md hover:shadow-zinc-900/5 hover:-translate-y-0.5"
+      ? "border border-zinc-200/80 bg-white hover:border-zinc-400 hover:bg-brand-surface hover:shadow-md hover:shadow-zinc-900/5 hover:-translate-y-0.5"
       : "border border-white/10 bg-[#0E1015] hover:border-white/20 hover:shadow-xl hover:-translate-y-0.5";
 
   return (

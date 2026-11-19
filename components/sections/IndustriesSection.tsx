@@ -17,79 +17,20 @@ import {
 import { SpotlightCard } from "@/components/common/SpotlightCard";
 import { Button } from "@/components/common/Button";
 import { SectionHeader } from "@/components/common/SectionHeader";
+import { SECTOR_DATA } from "@/data/services-data";
 
-const SECTOR_DATA = [
-  {
-    name: "Medical & Healthcare",
-    icon: Activity,
-    typicalScope: "35,000 sq ft avg",
-    cadence: "7-Day Night Shift",
-    compliance: "Terminal Clean Protocol",
-  },
-  {
-    name: "Corporate Tech Campuses",
-    icon: Laptop,
-    typicalScope: "45,000–80,000 sq ft",
-    cadence: "Day Porter + Evening",
-    compliance: "High-Security Access",
-  },
-  {
-    name: "Commercial Real Estate",
-    icon: Building2,
-    typicalScope: "Class-A Atriums",
-    cadence: "Daily Scheduled Cadence",
-    compliance: "Multi-Tenant Management",
-  },
-  {
-    name: "Education & Academies",
-    icon: GraduationCap,
-    typicalScope: "Campus Classrooms & Gyms",
-    cadence: "Daily Porter Service",
-    compliance: "Child Safety Clearance",
-  },
-  {
-    name: "Logistics & Warehouses",
-    icon: Truck,
-    typicalScope: "100,000+ sq ft",
-    cadence: "Floor Scrub & Dust Control",
-    compliance: "OSHA & Heavy Machine",
-  },
-  {
-    name: "Retail & Dealerships",
-    icon: ShoppingBag,
-    typicalScope: "High-Traffic Showrooms",
-    cadence: "Glass & Floor Buffing",
-    compliance: "Public Presentation",
-  },
-  {
-    name: "Financial Institutions",
-    icon: ShieldCheck,
-    typicalScope: "Multi-Branch Bank Retail",
-    cadence: "Nightly Sanitization",
-    compliance: "Vault & Teller Security",
-  },
-  {
-    name: "Hospitality & Venues",
-    icon: Compass,
-    typicalScope: "Event & Banquet Halls",
-    cadence: "Turnover Between Events",
-    compliance: "Rapid Incident Response",
-  },
-  {
-    name: "Industrial Facilities",
-    icon: Rocket,
-    typicalScope: "Cleanrooms & Assembly",
-    cadence: "HEPA Filtration & Sanitizing",
-    compliance: "ISO Standard Cleans",
-  },
-  {
-    name: "Professional Offices",
-    icon: Sparkles,
-    typicalScope: "Law & CPA Suites",
-    cadence: "5-Day Weekly Janitorial",
-    compliance: "Document Confidentiality",
-  },
-];
+const SECTOR_ICONS = {
+  Activity,
+  Laptop,
+  Building2,
+  GraduationCap,
+  Truck,
+  ShoppingBag,
+  ShieldCheck,
+  Compass,
+  Rocket,
+  Sparkles,
+};
 
 export function IndustriesSection() {
   return (
@@ -115,7 +56,7 @@ export function IndustriesSection() {
       {/* Visual Sector Matrix — Clean 1-Border Cards with Compact Mobile Spacing */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-3">
         {SECTOR_DATA.map((sector, i) => {
-          const Icon = sector.icon;
+          const Icon = SECTOR_ICONS[sector.iconName];
           return (
             <SpotlightCard
               key={i}
@@ -124,7 +65,7 @@ export function IndustriesSection() {
             >
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-lg bg-[#FAFAFA] border border-zinc-200/80 text-[#101010] group-hover:bg-[#101010] group-hover:text-white transition-colors">
+                  <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-lg bg-brand-surface border border-zinc-200/80 text-brand-black group-hover:bg-brand-black group-hover:text-white transition-colors">
                     <Icon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   </div>
                   <span className="text-[11px] sm:text-xs font-mono font-medium text-slate-400">
@@ -132,7 +73,7 @@ export function IndustriesSection() {
                   </span>
                 </div>
 
-                <h3 className="text-[13px] sm:text-[15px] font-bold text-[#101010] leading-snug group-hover:text-[#E9204F] transition-colors">
+                <h3 className="text-[13px] sm:text-[15px] font-bold text-brand-black leading-snug group-hover:text-brand-red transition-colors">
                   {sector.name}
                 </h3>
 
@@ -146,9 +87,9 @@ export function IndustriesSection() {
                 </div>
               </div>
 
-              <div className="hidden sm:flex mt-3.5 pt-2 border-t border-zinc-100 items-center justify-between text-[11.5px] font-medium text-slate-400 group-hover:text-[#101010]">
+              <div className="hidden sm:flex mt-3.5 pt-2 border-t border-zinc-100 items-center justify-between text-[11.5px] font-medium text-slate-400 group-hover:text-brand-black">
                 <span>Scope Ready</span>
-                <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1 group-hover:text-[#E9204F]" />
+                <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1 group-hover:text-brand-red" />
               </div>
             </SpotlightCard>
           );
@@ -156,9 +97,9 @@ export function IndustriesSection() {
       </div>
 
       {/* Customized Scope Callout Banner */}
-      <div className="mt-4 sm:mt-5 rounded-xl border border-zinc-200/80 bg-[#FAFAFA] p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-2xs">
+      <div className="mt-4 sm:mt-5 rounded-xl border border-zinc-200/80 bg-brand-surface p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-2xs">
         <div>
-          <div className="text-[13.5px] sm:text-[14.5px] font-bold text-[#101010]">
+          <div className="text-[13.5px] sm:text-[14.5px] font-bold text-brand-black">
             Operating in a specialized regional niche?
           </div>
           <p className="text-[12px] sm:text-[13px] text-zinc-600 mt-0.5">
@@ -167,7 +108,7 @@ export function IndustriesSection() {
         </div>
         <Link
           href="/#contact"
-          className="inline-flex items-center gap-1.5 rounded-lg bg-white border border-zinc-200/80 hover:border-[#101010] px-3.5 py-1.5 text-[12px] font-semibold text-[#101010] whitespace-nowrap transition-colors min-h-[36px] shrink-0 shadow-2xs"
+          className="inline-flex items-center gap-1.5 rounded-lg bg-white border border-zinc-200/80 hover:border-brand-black px-3.5 py-1.5 text-[12px] font-semibold text-brand-black whitespace-nowrap transition-colors min-h-[36px] shrink-0 shadow-2xs"
         >
           <span>Request Custom Scoping</span>
           <ArrowRight className="h-3.5 w-3.5" />

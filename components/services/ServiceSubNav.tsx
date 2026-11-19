@@ -76,19 +76,19 @@ export function ServiceSubNav({
       className={`hidden md:block sticky top-[74px] lg:top-[82px] z-40 w-full transition-all duration-200 border-b ${
         isScrolled
           ? "bg-white/95 backdrop-blur-md border-[#E5E5E5] shadow-xs"
-          : "bg-white/90 backdrop-blur-sm border-[#EBEBEB]"
+          : "bg-white/90 backdrop-blur-sm border-brand-border"
       }`}
     >
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
+      <div className="site-container">
         <div className="flex h-[52px] sm:h-[56px] items-center justify-between gap-4">
           {/* Left Contextual Badge & Title */}
           <div className="flex items-center gap-2.5 shrink-0">
-            <div className="hidden sm:flex h-6 items-center px-2 rounded-md bg-[#101010] text-white text-[10px] font-bold uppercase tracking-wider">
+            <div className="hidden sm:flex h-6 items-center px-2 rounded-md bg-brand-black text-white text-[10px] font-bold uppercase tracking-wider">
               {serviceCategory}
             </div>
             <div className="flex items-center gap-1.5">
-              <span className="h-2 w-2 rounded-full bg-[#E9204F] animate-pulse" />
-              <span className="text-[13px] sm:text-[14px] font-extrabold text-[#101010] tracking-tight truncate max-w-[180px] sm:max-w-none">
+              <span className="h-2 w-2 rounded-full bg-brand-red" />
+              <span className="text-[13px] sm:text-[14px] font-bold text-brand-black tracking-tight truncate max-w-[180px] sm:max-w-none">
                 {serviceName}
               </span>
             </div>
@@ -105,8 +105,8 @@ export function ServiceSubNav({
                   onClick={() => scrollTo(item.id)}
                   className={`px-3 py-1.5 rounded-lg text-[12px] sm:text-[13px] font-semibold whitespace-nowrap transition-all duration-150 min-h-[36px] ${
                     isActive
-                      ? "bg-[#101010] text-white shadow-xs"
-                      : "text-[#525252] hover:text-[#101010] hover:bg-[#F3F3F3]"
+                      ? "bg-brand-black text-white shadow-xs"
+                      : "text-[#525252] hover:text-brand-black hover:bg-brand-light"
                   }`}
                 >
                   {item.label}
@@ -120,7 +120,7 @@ export function ServiceSubNav({
             <button
               type="button"
               onClick={() => scrollTo(ctaTargetId)}
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#E9204F]/10 hover:bg-[#E9204F] text-[#E9204F] hover:text-white text-[12px] font-bold transition-all duration-150 min-h-[36px]"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-brand-red/10 hover:bg-brand-red text-brand-red hover:text-white text-[12px] font-bold transition-all duration-150 min-h-[36px]"
             >
               <span>{ctaLabel}</span>
               <ArrowUpRight className="h-3.5 w-3.5" />

@@ -33,17 +33,11 @@ export function Hero() {
 
   return (
     <section className="relative w-full pt-4 pb-8 sm:pt-6 sm:pb-12 lg:pt-8 lg:pb-16 overflow-hidden bg-white">
-      {/* 1. Ambient Background Atmosphere */}
-      <div
-        aria-hidden="true"
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] lg:w-[1100px] h-[450px] bg-gradient-to-b from-[#E9204F]/[0.04] via-transparent to-transparent blur-3xl pointer-events-none -z-10"
-      />
-
-      {/* 2. Top Editorial Narrative */}
+      {/* 1. Top Editorial Narrative */}
       <div className="site-container">
         <div className="max-w-[960px] mx-auto text-center flex flex-col items-center">
           {/* Main Editorial Headline */}
-          <h1 className="font-heading text-[26px] xs:text-[28px] sm:text-[44px] lg:text-[56px] font-bold leading-[1.18] sm:leading-[1.1] tracking-tight text-[#101010] [text-wrap:balance]">
+          <h1 className="font-heading text-[26px] xs:text-[28px] sm:text-[44px] lg:text-[56px] font-bold leading-[1.18] sm:leading-[1.1] tracking-tight text-brand-black [text-wrap:balance]">
             Exclusive commercial walkthroughs and high-conversion client acquisition.
           </h1>
 
@@ -75,22 +69,22 @@ export function Hero() {
           </div>
 
           {/* Micro Trust Proof Bar — Centered Container with Clean Left-Aligned Axis on Mobile */}
-          <div className="mt-6 pt-4 border-t border-[#EBEBEB] w-full flex flex-col sm:flex-row flex-wrap items-start sm:items-center justify-center gap-x-6 gap-y-2.5 text-[12.5px] text-[#525252] max-w-xs sm:max-w-none mx-auto px-1 sm:px-0">
+          <div className="mt-6 pt-4 border-t border-brand-border w-full flex flex-col sm:flex-row flex-wrap items-start sm:items-center justify-center gap-x-6 gap-y-2.5 text-[12.5px] text-[#525252] max-w-xs sm:max-w-none mx-auto px-1 sm:px-0">
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4 text-[#E9204F] shrink-0" />
-              <span className="font-medium text-[#101010]">100% Exclusive Walkthroughs</span>
+              <CheckCircle2 className="h-4 w-4 text-brand-red shrink-0" />
+              <span className="font-medium text-brand-black">100% Exclusive Walkthroughs</span>
             </div>
             <div className="flex items-center gap-2">
-              <ShieldCheck className="h-4 w-4 text-[#E9204F] shrink-0" />
-              <span className="font-medium text-[#101010]">Pay-Nothing-Upfront Option</span>
+              <ShieldCheck className="h-4 w-4 text-brand-red shrink-0" />
+              <span className="font-medium text-brand-black">Pay-Nothing-Upfront Option</span>
             </div>
             <div className="flex items-center gap-2">
-              <Sparkles className="h-4 w-4 text-[#E9204F] shrink-0" />
-              <span className="font-medium text-[#101010]">Direct Facility Decision-Makers</span>
+              <Building2 className="h-4 w-4 text-brand-red shrink-0" />
+              <span className="font-medium text-brand-black">Direct Facility Decision-Makers</span>
             </div>
             <div className="flex items-center gap-2">
-              <Award className="h-4 w-4 text-[#E9204F] shrink-0" />
-              <span className="font-medium text-[#101010]">100% Money-Back Guarantee</span>
+              <Award className="h-4 w-4 text-brand-red shrink-0" />
+              <span className="font-medium text-brand-black">100% Money-Back Guarantee</span>
             </div>
           </div>
         </div>
@@ -103,7 +97,7 @@ export function Hero() {
           onMouseMove={handleMouseMove}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          className="relative rounded-2xl sm:rounded-3xl border border-zinc-200/90 bg-[#FAFAFA] shadow-[0_16px_40px_rgba(0,0,0,0.04)] overflow-hidden text-[#101010] transition-colors duration-300 group"
+          className="relative rounded-2xl sm:rounded-3xl border border-zinc-200/90 bg-brand-surface shadow-[0_16px_40px_rgba(0,0,0,0.04)] overflow-hidden text-brand-black transition-colors duration-300 group"
         >
           {/* Dynamic Cursor Spotlight Radial Glow — Soft Neutral Sheen */}
           <div
@@ -119,8 +113,8 @@ export function Hero() {
           <div className="relative z-20 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 px-3 sm:px-6 py-2.5 border-b border-zinc-200/80 bg-white">
             {/* Left: Section Indicator (Dot and Text Anchored Together) */}
             <div className="flex items-center gap-2 w-full sm:w-auto justify-start">
-              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
-              <span className="text-[12px] font-semibold text-[#101010] tracking-tight">
+              <span className="h-2 w-2 rounded-full bg-emerald-500 shrink-0" />
+              <span className="text-[12px] font-semibold text-brand-black tracking-tight">
                 Live Commercial Pipeline
               </span>
             </div>
@@ -135,8 +129,8 @@ export function Hero() {
                 onClick={() => setActiveTab("leads")}
                 className={`inline-flex items-center justify-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-md text-[11.5px] sm:text-[12px] font-medium transition-all whitespace-nowrap min-h-[36px] ${
                   activeTab === "leads"
-                    ? "bg-white text-[#101010] font-semibold shadow-xs"
-                    : "text-zinc-500 hover:text-[#101010]"
+                    ? "bg-white text-brand-black font-semibold shadow-xs"
+                    : "text-zinc-500 hover:text-brand-black"
                 }`}
               >
                 <Activity className="h-3.5 w-3.5 shrink-0" />
@@ -149,8 +143,8 @@ export function Hero() {
                 onClick={() => setActiveTab("engine")}
                 className={`inline-flex items-center justify-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-md text-[11.5px] sm:text-[12px] font-medium transition-all whitespace-nowrap min-h-[36px] ${
                   activeTab === "engine"
-                    ? "bg-white text-[#101010] font-semibold shadow-xs"
-                    : "text-zinc-500 hover:text-[#101010]"
+                    ? "bg-white text-brand-black font-semibold shadow-xs"
+                    : "text-zinc-500 hover:text-brand-black"
                 }`}
               >
                 <Layers className="h-3.5 w-3.5 shrink-0" />
@@ -163,8 +157,8 @@ export function Hero() {
                 onClick={() => setActiveTab("reach")}
                 className={`inline-flex items-center justify-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-md text-[11.5px] sm:text-[12px] font-medium transition-all whitespace-nowrap min-h-[36px] ${
                   activeTab === "reach"
-                    ? "bg-white text-[#101010] font-semibold shadow-xs"
-                    : "text-zinc-500 hover:text-[#101010]"
+                    ? "bg-white text-brand-black font-semibold shadow-xs"
+                    : "text-zinc-500 hover:text-brand-black"
                 }`}
               >
                 <Building2 className="h-3.5 w-3.5 shrink-0" />
@@ -199,7 +193,7 @@ export function Hero() {
                   <div className="lg:col-span-7 flex flex-col gap-2.5">
                     <div className="flex items-center justify-between pb-2 border-b border-zinc-200/80">
                       <div className="flex items-center gap-2">
-                        <span className="text-[12.5px] font-semibold text-[#101010]">Verified Appointments</span>
+                        <span className="text-[12.5px] font-semibold text-brand-black">Verified Appointments</span>
                         <span className="text-[10.5px] bg-zinc-100 text-zinc-600 px-2 py-0.5 rounded-md font-medium">Live</span>
                       </div>
                       <span className="text-[11.5px] text-zinc-400 font-medium">Direct Decision-Makers</span>
@@ -209,7 +203,7 @@ export function Hero() {
                     <div className="p-3.5 rounded-xl bg-white border border-zinc-200/80 hover:border-zinc-400 hover:shadow-2xs transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                       <div className="space-y-1">
                         <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
-                          <span className="text-[13.5px] font-bold text-[#101010]">St. Jude Medical Care Plaza</span>
+                          <span className="text-[13.5px] font-bold text-brand-black">St. Jude Medical Care Plaza</span>
                           <span className="text-[10.5px] sm:text-[11px] bg-emerald-50 text-emerald-700 border border-emerald-200/60 font-semibold px-2 py-0.5 rounded-md whitespace-nowrap">
                             Confirmed Walkthrough
                           </span>
@@ -220,7 +214,7 @@ export function Hero() {
                       </div>
                       <div className="sm:text-right shrink-0">
                         <div className="text-[11px] text-zinc-400">Est. Contract</div>
-                        <div className="text-[15px] font-bold text-[#101010]">
+                        <div className="text-[15px] font-bold text-brand-black">
                           $6,800 <span className="text-[12px] font-normal text-zinc-500">/ mo</span>
                         </div>
                       </div>
@@ -230,7 +224,7 @@ export function Hero() {
                     <div className="hidden sm:flex p-3.5 rounded-xl bg-white border border-zinc-200/80 hover:border-zinc-400 hover:shadow-2xs transition-all flex-col sm:flex-row sm:items-center justify-between gap-3">
                       <div className="space-y-1">
                         <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
-                          <span className="text-[13.5px] font-bold text-[#101010]">Metro Logistics & Distribution Center</span>
+                          <span className="text-[13.5px] font-bold text-brand-black">Metro Logistics & Distribution Center</span>
                           <span className="text-[10.5px] sm:text-[11px] bg-emerald-50 text-emerald-700 border border-emerald-200/60 font-semibold px-2 py-0.5 rounded-md whitespace-nowrap">
                             Confirmed Walkthrough
                           </span>
@@ -241,7 +235,7 @@ export function Hero() {
                       </div>
                       <div className="sm:text-right shrink-0">
                         <div className="text-[11px] text-zinc-400">Est. Contract</div>
-                        <div className="text-[15px] font-bold text-[#101010]">
+                        <div className="text-[15px] font-bold text-brand-black">
                           $11,500 <span className="text-[12px] font-normal text-zinc-500">/ mo</span>
                         </div>
                       </div>
@@ -251,7 +245,7 @@ export function Hero() {
                     <div className="hidden lg:flex p-3.5 rounded-xl bg-white border border-zinc-200/80 hover:border-zinc-400 hover:shadow-2xs transition-all flex-col sm:flex-row sm:items-center justify-between gap-3">
                       <div className="space-y-1">
                         <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
-                          <span className="text-[13.5px] font-bold text-[#101010]">Horizon Corporate Financial Tower</span>
+                          <span className="text-[13.5px] font-bold text-brand-black">Horizon Corporate Financial Tower</span>
                           <span className="text-[10.5px] sm:text-[11px] bg-sky-50 text-sky-700 border border-sky-200/60 font-semibold px-2 py-0.5 rounded-md whitespace-nowrap">
                             Decision-Maker Ready
                           </span>
@@ -262,7 +256,7 @@ export function Hero() {
                       </div>
                       <div className="sm:text-right shrink-0">
                         <div className="text-[11px] text-zinc-400">Est. Contract</div>
-                        <div className="text-[15px] font-bold text-[#101010]">
+                        <div className="text-[15px] font-bold text-brand-black">
                           $9,200 <span className="text-[12px] font-normal text-zinc-500">/ mo</span>
                         </div>
                       </div>
@@ -278,10 +272,10 @@ export function Hero() {
                   {/* Right Column: Commercial Performance Telemetry */}
                   <div className="lg:col-span-5 flex flex-col justify-between gap-4 p-5 sm:p-6 rounded-xl bg-white border border-zinc-200/80 shadow-2xs">
                     <div>
-                      <div className="text-[10.5px] font-semibold tracking-wider text-[#E9204F] uppercase">
+                      <div className="text-[10.5px] font-semibold tracking-wider text-brand-red uppercase">
                         Lead Qualification Guarantee
                       </div>
-                      <h2 className="text-[19px] sm:text-[20px] font-bold font-heading text-[#101010] mt-1 [text-wrap:balance]">
+                      <h2 className="text-[19px] sm:text-[20px] font-bold font-heading text-brand-black mt-1 [text-wrap:balance]">
                         Zero shared prospects. Direct property decision-makers only.
                       </h2>
                       <p className="text-[13px] text-zinc-600 mt-2 leading-relaxed">
@@ -290,21 +284,21 @@ export function Hero() {
                     </div>
 
                     <div className="grid grid-cols-2 gap-3 pt-3 border-t border-zinc-100">
-                      <div className="p-3 rounded-lg bg-[#FAFAFA] border border-zinc-200/80">
+                      <div className="p-3 rounded-lg bg-brand-surface border border-zinc-200/80">
                         <div className="text-[11px] text-zinc-500">Walkthrough Exclusivity</div>
-                        <div className="text-[20px] font-bold text-[#101010] mt-0.5">100%</div>
+                        <div className="text-[20px] font-bold text-brand-black mt-0.5">100%</div>
                         <div className="text-[11px] text-emerald-600 font-medium">Zero shared bids</div>
                       </div>
-                      <div className="p-3 rounded-lg bg-[#FAFAFA] border border-zinc-200/80">
+                      <div className="p-3 rounded-lg bg-brand-surface border border-zinc-200/80">
                         <div className="text-[11px] text-zinc-500">Upfront Financial Risk</div>
-                        <div className="text-[20px] font-bold text-[#101010] mt-0.5">$0.00</div>
+                        <div className="text-[20px] font-bold text-brand-black mt-0.5">$0.00</div>
                         <div className="text-[11px] text-zinc-500">Pay-nothing-upfront option</div>
                       </div>
                     </div>
 
                     <Link
                       href="/#leads"
-                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#E9204F] hover:bg-[#101010] text-white py-2.5 px-4 text-[12.5px] font-semibold transition-all shadow-xs"
+                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-red hover:bg-brand-black text-white py-2.5 px-4 text-[12.5px] font-semibold transition-all shadow-xs"
                     >
                       <span>Claim Your Exclusive Territory</span>
                       <ArrowRight className="h-3.5 w-3.5" />
@@ -327,10 +321,10 @@ export function Hero() {
                   <div className="lg:col-span-6 flex flex-col justify-between p-5 sm:p-6 rounded-xl bg-white border border-zinc-200/80 shadow-2xs">
                     <div>
                       <div className="flex items-center justify-between pb-2 border-b border-zinc-100">
-                        <span className="text-[12.5px] font-semibold text-[#101010]">Proprietary Outreach Engine</span>
+                        <span className="text-[12.5px] font-semibold text-brand-black">Proprietary Outreach Engine</span>
                         <span className="text-[11px] font-medium text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">Multi-Touch Pipeline</span>
                       </div>
-                      <h2 className="text-[19px] sm:text-[20px] font-bold font-heading text-[#101010] mt-3 [text-wrap:balance]">
+                      <h2 className="text-[19px] sm:text-[20px] font-bold font-heading text-brand-black mt-3 [text-wrap:balance]">
                         Dedicated multi-channel outreach to facility executives.
                       </h2>
                       <p className="text-[13px] text-zinc-600 mt-2 leading-relaxed">
@@ -340,16 +334,16 @@ export function Hero() {
 
                     {/* 3 Outreach Telemetry Gauges */}
                     <div className="grid grid-cols-3 gap-2.5 my-4">
-                      <div className="p-3 rounded-lg bg-[#FAFAFA] border border-zinc-200/80 text-center">
-                        <div className="text-[20px] font-bold text-[#101010]">98.4%</div>
+                      <div className="p-3 rounded-lg bg-brand-surface border border-zinc-200/80 text-center">
+                        <div className="text-[20px] font-bold text-brand-black">98.4%</div>
                         <div className="text-[11px] text-zinc-500 mt-1 font-medium">Verified Contacts</div>
                       </div>
-                      <div className="p-3 rounded-lg bg-[#FAFAFA] border border-zinc-200/80 text-center">
+                      <div className="p-3 rounded-lg bg-brand-surface border border-zinc-200/80 text-center">
                         <div className="text-[20px] font-bold text-emerald-600">100%</div>
                         <div className="text-[11px] text-zinc-500 mt-1 font-medium">Territory Lock</div>
                       </div>
-                      <div className="p-3 rounded-lg bg-[#FAFAFA] border border-zinc-200/80 text-center">
-                        <div className="text-[20px] font-bold text-[#101010]">40-50%</div>
+                      <div className="p-3 rounded-lg bg-brand-surface border border-zinc-200/80 text-center">
+                        <div className="text-[20px] font-bold text-brand-black">40-50%</div>
                         <div className="text-[11px] text-zinc-500 mt-1 font-medium">Close Average</div>
                       </div>
                     </div>
@@ -364,35 +358,35 @@ export function Hero() {
                   <div className="lg:col-span-6 flex flex-col justify-between p-5 sm:p-6 rounded-xl bg-white border border-zinc-200/80 shadow-2xs">
                     <div>
                       <div className="flex items-center justify-between pb-2 border-b border-zinc-100">
-                        <span className="text-[12.5px] font-semibold text-[#101010]">Handover &amp; Qualification</span>
+                        <span className="text-[12.5px] font-semibold text-brand-black">Handover &amp; Qualification</span>
                         <span className="text-[11px] text-zinc-500">Turnkey Handover</span>
                       </div>
-                      <h2 className="text-[18px] font-bold font-heading text-[#101010] mt-3">
+                      <h2 className="text-[18px] font-bold font-heading text-brand-black mt-3">
                         What You Receive With Every Appointment
                       </h2>
                     </div>
 
                     <div className="space-y-2.5 my-3">
-                      <div className="flex items-center justify-between p-2.5 rounded-lg bg-[#FAFAFA] border border-zinc-200/80 text-[12.5px]">
+                      <div className="flex items-center justify-between p-2.5 rounded-lg bg-brand-surface border border-zinc-200/80 text-[12.5px]">
                         <div className="flex items-center gap-2">
-                          <Calendar className="h-4 w-4 text-[#E9204F]" />
-                          <span className="font-semibold text-[#101010]">Confirmed Calendar Invite</span>
+                          <Calendar className="h-4 w-4 text-brand-red" />
+                          <span className="font-semibold text-brand-black">Confirmed Calendar Invite</span>
                         </div>
                         <span className="text-zinc-500 text-[11px]">Synced to Google / Outlook</span>
                       </div>
 
-                      <div className="flex items-center justify-between p-2.5 rounded-lg bg-[#FAFAFA] border border-zinc-200/80 text-[12.5px]">
+                      <div className="flex items-center justify-between p-2.5 rounded-lg bg-brand-surface border border-zinc-200/80 text-[12.5px]">
                         <div className="flex items-center gap-2">
-                          <Building2 className="h-4 w-4 text-[#E9204F]" />
-                          <span className="font-semibold text-[#101010]">Facility Scope &amp; Sq Ft Audit</span>
+                          <Building2 className="h-4 w-4 text-brand-red" />
+                          <span className="font-semibold text-brand-black">Facility Scope &amp; Sq Ft Audit</span>
                         </div>
                         <span className="text-zinc-500 text-[11px]">Pre-Walkthrough Brief</span>
                       </div>
 
-                      <div className="flex items-center justify-between p-2.5 rounded-lg bg-[#FAFAFA] border border-zinc-200/80 text-[12.5px]">
+                      <div className="flex items-center justify-between p-2.5 rounded-lg bg-brand-surface border border-zinc-200/80 text-[12.5px]">
                         <div className="flex items-center gap-2">
-                          <PhoneCall className="h-4 w-4 text-[#E9204F]" />
-                          <span className="font-semibold text-[#101010]">Decision-Maker Direct Line</span>
+                          <PhoneCall className="h-4 w-4 text-brand-red" />
+                          <span className="font-semibold text-brand-black">Decision-Maker Direct Line</span>
                         </div>
                         <span className="text-zinc-500 text-[11px]">Operations &amp; Property Head</span>
                       </div>
@@ -400,7 +394,7 @@ export function Hero() {
 
                     <Link
                       href="/contact?service=Janitorial%20Lead%20Generation"
-                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#E9204F] hover:bg-[#101010] text-white py-2.5 px-4 text-[12.5px] font-semibold transition-all shadow-xs"
+                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-red hover:bg-brand-black text-white py-2.5 px-4 text-[12.5px] font-semibold transition-all shadow-xs"
                     >
                       <span>Check Territory Availability In Your State</span>
                       <ArrowRight className="h-3.5 w-3.5" />
@@ -423,10 +417,10 @@ export function Hero() {
                   <div className="lg:col-span-7 flex flex-col justify-between p-5 sm:p-6 rounded-xl bg-white border border-zinc-200/80 shadow-2xs">
                     <div>
                       <div className="flex items-center justify-between pb-2 border-b border-zinc-100">
-                        <span className="text-[12.5px] font-semibold text-[#101010]">Commercial Sectors</span>
+                        <span className="text-[12.5px] font-semibold text-brand-black">Commercial Sectors</span>
                         <span className="text-[11px] font-medium text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">10+ Specialized Verticals</span>
                       </div>
-                      <h2 className="text-[19px] sm:text-[20px] font-bold font-heading text-[#101010] mt-3 [text-wrap:balance]">
+                      <h2 className="text-[19px] sm:text-[20px] font-bold font-heading text-brand-black mt-3 [text-wrap:balance]">
                         Commercial facilities and enterprises nationwide.
                       </h2>
                     </div>
@@ -442,9 +436,9 @@ export function Hero() {
                       ].map((ind) => (
                         <div
                           key={ind}
-                          className="p-2.5 rounded-lg bg-[#FAFAFA] border border-zinc-200/80 text-[12px] font-semibold text-slate-800 flex items-center gap-2"
+                          className="p-2.5 rounded-lg bg-brand-surface border border-zinc-200/80 text-[12px] font-semibold text-slate-800 flex items-center gap-2"
                         >
-                          <CheckCircle2 className="h-3.5 w-3.5 text-[#E9204F] shrink-0" />
+                          <CheckCircle2 className="h-3.5 w-3.5 text-brand-red shrink-0" />
                           <span className="truncate">{ind}</span>
                         </div>
                       ))}
@@ -458,10 +452,10 @@ export function Hero() {
                   {/* Right Column: 7-Step Delivery QA Protocol */}
                   <div className="lg:col-span-5 flex flex-col justify-between p-5 sm:p-6 rounded-xl bg-white border border-zinc-200/80 shadow-2xs">
                     <div>
-                      <div className="text-[10.5px] font-semibold tracking-wider text-[#E9204F] uppercase">
+                      <div className="text-[10.5px] font-semibold tracking-wider text-brand-red uppercase">
                         Execution Governance
                       </div>
-                      <h2 className="text-[18px] font-bold font-heading text-[#101010] mt-1">
+                      <h2 className="text-[18px] font-bold font-heading text-brand-black mt-1">
                         7-Step Smarter Work Methodology
                       </h2>
                       <p className="text-[12.5px] text-zinc-600 mt-2 leading-relaxed">
@@ -469,9 +463,9 @@ export function Hero() {
                       </p>
                     </div>
 
-                    <div className="p-4 rounded-xl bg-[#FAFAFA] border border-zinc-200/80 space-y-2">
-                      <div className="flex items-center gap-2 text-[#101010] font-bold text-[13px]">
-                        <ShieldCheck className="h-4 w-4 text-[#E9204F]" />
+                    <div className="p-4 rounded-xl bg-brand-surface border border-zinc-200/80 space-y-2">
+                      <div className="flex items-center gap-2 text-brand-black font-bold text-[13px]">
+                        <ShieldCheck className="h-4 w-4 text-brand-red" />
                         <span>100% Risk Reversal Guarantee</span>
                       </div>
                       <p className="text-[12px] text-zinc-600 leading-relaxed">
@@ -481,7 +475,7 @@ export function Hero() {
 
                     <Link
                       href="/book-a-meeting"
-                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#E9204F] hover:bg-[#101010] text-white py-2.5 px-4 text-[12.5px] font-semibold transition-all shadow-xs"
+                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-red hover:bg-brand-black text-white py-2.5 px-4 text-[12.5px] font-semibold transition-all shadow-xs"
                     >
                       <span>Book a Strategy Consultation</span>
                       <ArrowRight className="h-3.5 w-3.5" />

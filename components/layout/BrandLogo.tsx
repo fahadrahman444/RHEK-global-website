@@ -34,10 +34,10 @@ export function BrandLogo({
 
       {showText && (
         <span className="font-heading text-[17px] sm:text-[20px] font-bold tracking-tight flex items-center select-none whitespace-nowrap">
-          <span className={variant === "dark" ? "text-white" : "text-[#101010]"}>
+          <span className={variant === "dark" ? "text-white" : "text-brand-black"}>
             RHEK
           </span>
-          <span className="text-[#E9204F] ml-1 font-bold tracking-normal text-[16px] sm:text-[19px]">
+          <span className="text-brand-red ml-1 font-bold tracking-normal text-[16px] sm:text-[19px]">
             GLOBAL
           </span>
         </span>

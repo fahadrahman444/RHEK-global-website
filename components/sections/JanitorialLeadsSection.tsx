@@ -40,9 +40,9 @@ export function JanitorialLeadsSection() {
 
       {/* 2. 3 Clear Value Pillars — Compact on mobile */}
       <div className="mt-4 sm:mt-8 grid grid-cols-1 md:grid-cols-3 gap-2.5 sm:gap-4">
-        <div className="p-3 sm:p-5 rounded-xl bg-[#FAFAFA] border border-[#EBEBEB] transition-all hover:border-slate-300 hover:bg-white hover:shadow-2xs">
-          <div className="flex items-center gap-2 text-[#101010] font-bold text-[13.5px] sm:text-[14.5px]">
-            <CheckCircle2 className="h-4 w-4 text-[#E9204F] shrink-0" />
+        <div className="p-3 sm:p-5 rounded-xl bg-brand-surface border border-brand-border transition-all hover:border-slate-300 hover:bg-white hover:shadow-2xs">
+          <div className="flex items-center gap-2 text-brand-black font-bold text-[13.5px] sm:text-[14.5px]">
+            <CheckCircle2 className="h-4 w-4 text-brand-red shrink-0" />
             <span>Zero Shared Bids</span>
           </div>
           <p className="mt-1 sm:mt-1.5 text-[12px] sm:text-[13px] text-zinc-600 leading-snug sm:leading-relaxed">
@@ -50,9 +50,9 @@ export function JanitorialLeadsSection() {
           </p>
         </div>
 
-        <div className="p-3 sm:p-5 rounded-xl bg-[#FAFAFA] border border-[#EBEBEB] transition-all hover:border-slate-300 hover:bg-white hover:shadow-2xs">
-          <div className="flex items-center gap-2 text-[#101010] font-bold text-[13.5px] sm:text-[14.5px]">
-            <CheckCircle2 className="h-4 w-4 text-[#E9204F] shrink-0" />
+        <div className="p-3 sm:p-5 rounded-xl bg-brand-surface border border-brand-border transition-all hover:border-slate-300 hover:bg-white hover:shadow-2xs">
+          <div className="flex items-center gap-2 text-brand-black font-bold text-[13.5px] sm:text-[14.5px]">
+            <CheckCircle2 className="h-4 w-4 text-brand-red shrink-0" />
             <span>Pre-Vetted Decision Makers</span>
           </div>
           <p className="mt-1 sm:mt-1.5 text-[12px] sm:text-[13px] text-zinc-600 leading-snug sm:leading-relaxed">
@@ -60,9 +60,9 @@ export function JanitorialLeadsSection() {
           </p>
         </div>
 
-        <div className="p-3 sm:p-5 rounded-xl bg-[#FAFAFA] border border-[#EBEBEB] transition-all hover:border-slate-300 hover:bg-white hover:shadow-2xs">
-          <div className="flex items-center gap-2 text-[#101010] font-bold text-[13.5px] sm:text-[14.5px]">
-            <CheckCircle2 className="h-4 w-4 text-[#E9204F] shrink-0" />
+        <div className="p-3 sm:p-5 rounded-xl bg-brand-surface border border-brand-border transition-all hover:border-slate-300 hover:bg-white hover:shadow-2xs">
+          <div className="flex items-center gap-2 text-brand-black font-bold text-[13.5px] sm:text-[14.5px]">
+            <CheckCircle2 className="h-4 w-4 text-brand-red shrink-0" />
             <span>Confirmed Walkthroughs</span>
           </div>
           <p className="mt-1 sm:mt-1.5 text-[12px] sm:text-[13px] text-zinc-600 leading-snug sm:leading-relaxed">
@@ -72,13 +72,13 @@ export function JanitorialLeadsSection() {
       </div>
 
       {/* 3. Live Leads Sample Showcase */}
-      <div className="mt-8 sm:mt-10 pt-6 sm:pt-7 border-t border-[#EBEBEB]">
+      <div className="mt-8 sm:mt-10 pt-6 sm:pt-7 border-t border-brand-border">
         <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-4 sm:mb-6">
           <div>
-            <span className="block mb-1 text-xs font-semibold uppercase tracking-widest text-[#E9204F]">
+            <span className="block mb-1 text-xs font-semibold uppercase tracking-widest text-brand-red">
               Recent Sample Inquiries
             </span>
-            <h3 className="text-[20px] sm:text-[24px] font-bold text-[#101010] tracking-tight">
+            <h3 className="text-[20px] sm:text-[24px] font-bold text-brand-black tracking-tight">
               Verified Decision-Maker Appointments
             </h3>
           </div>
@@ -90,7 +90,7 @@ export function JanitorialLeadsSection() {
         {/* Mobile Swipe Hint */}
         <div className="md:hidden flex items-center justify-between text-[11px] text-[#737373] mb-2.5 px-0.5">
           <span>Swipe to browse verified appointments</span>
-          <span className="font-semibold text-[#101010]">4 Samples →</span>
+          <span className="font-semibold text-brand-black">4 Samples →</span>
         </div>
 
         {/* Leads Cards: Clean, Borderless Metadata Grid */}
@@ -108,13 +108,13 @@ export function JanitorialLeadsSection() {
                     {lead.companyType}
                   </span>
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-200/50 px-2 py-0.5 text-[11px] font-medium text-emerald-700">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
                     <span>Verified</span>
                   </span>
                 </div>
 
                 {/* Facility Title */}
-                <h4 className="text-base sm:text-[17px] font-bold text-[#101010] leading-snug tracking-tight group-hover:text-[#E9204F] transition-colors">
+                <h4 className="text-base sm:text-[17px] font-bold text-brand-black leading-snug tracking-tight group-hover:text-brand-red transition-colors">
                   {lead.facility}
                 </h4>
 
@@ -177,17 +177,17 @@ export function JanitorialLeadsSection() {
         </div>
 
         {/* Bottom Action Strip — Clean Light Architecture */}
-        <div className="mt-6 sm:mt-7 rounded-xl bg-[#FAFAFA] p-5 sm:p-6 text-[#101010] border border-zinc-200/80 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 shadow-2xs">
+        <div className="mt-6 sm:mt-7 rounded-xl bg-brand-surface p-5 sm:p-6 text-brand-black border border-zinc-200/80 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 shadow-2xs">
           <div>
-            <div className="inline-flex items-center gap-1.5 rounded bg-rose-50 border border-rose-200/50 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-[#E9204F] mb-1.5">
+            <div className="inline-flex items-center gap-1.5 rounded bg-rose-50 border border-rose-200/50 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-brand-red mb-1.5">
               <span>Leads From $110 / Scheduled Walkthrough</span>
             </div>
-            <p className="font-heading text-[17px] sm:text-[20px] font-bold text-[#101010] leading-snug">
+            <p className="font-heading text-[17px] sm:text-[20px] font-bold text-brand-black leading-snug">
               Reserve exclusive janitorial appointments in your county.
             </p>
             <p className="text-[12.5px] sm:text-[13px] text-zinc-600 mt-1 font-sans">
               Direct Inquiries:{" "}
-              <a href="tel:+16466948464" className="text-[#101010] hover:text-[#E9204F] font-semibold underline">
+              <a href="tel:+16466948464" className="text-brand-black hover:text-brand-red font-semibold underline">
                 +1 (646) 694-8464
               </a>
             </p>
@@ -195,7 +195,7 @@ export function JanitorialLeadsSection() {
           <div className="grid grid-cols-2 sm:flex sm:flex-row items-center gap-2 sm:gap-3 w-full md:w-auto shrink-0">
             <Link
               href="/services/janitorial-leads"
-              className="inline-flex items-center justify-center gap-1 rounded-lg bg-white hover:bg-[#FAFAFA] hover:border-zinc-400 border border-zinc-200/80 px-3 sm:px-5 py-2.5 text-[12.5px] sm:text-[13px] font-semibold text-[#101010] transition-all min-h-[44px] whitespace-nowrap"
+              className="inline-flex items-center justify-center gap-1 rounded-lg bg-white hover:bg-brand-surface hover:border-zinc-400 border border-zinc-200/80 px-3 sm:px-5 py-2.5 text-[12.5px] sm:text-[13px] font-semibold text-brand-black transition-all min-h-[44px] whitespace-nowrap"
             >
               <span className="hidden sm:inline">Pricing &amp; Details</span>
               <span className="sm:hidden">Pricing</span>
@@ -203,7 +203,7 @@ export function JanitorialLeadsSection() {
             </Link>
             <Link
               href="/contact?service=Janitorial%20Lead%20Generation"
-              className="inline-flex items-center justify-center gap-1 rounded-lg bg-[#E9204F] hover:bg-[#101010] px-3 sm:px-6 py-2.5 text-[12.5px] sm:text-[13px] font-semibold text-white transition-all min-h-[44px] whitespace-nowrap shadow-xs"
+              className="inline-flex items-center justify-center gap-1 rounded-lg bg-brand-red hover:bg-brand-black px-3 sm:px-6 py-2.5 text-[12.5px] sm:text-[13px] font-semibold text-white transition-all min-h-[44px] whitespace-nowrap shadow-xs"
             >
               <span>Claim Territory</span>
               <ArrowRight className="h-3.5 w-3.5" />

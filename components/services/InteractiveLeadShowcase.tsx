@@ -22,13 +22,13 @@ export function InteractiveLeadShowcase({ leadSamples, serviceTitle }: Interacti
   return (
     <div>
       {/* Section Header with Category Tabs */}
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-4 pb-4 border-b border-[#EBEBEB]">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-4 pb-4 border-b border-brand-border">
         <div className="max-w-[680px]">
-          <div className="inline-flex items-center gap-1.5 rounded-md bg-white border border-[#EBEBEB] px-2.5 py-0.5 text-[10.5px] font-semibold uppercase tracking-wider text-[#101010] mb-1.5 shadow-2xs">
-            <Sparkles className="h-3 w-3 text-[#E9204F]" />
+          <div className="inline-flex items-center gap-1.5 rounded-md bg-white border border-brand-border px-2.5 py-0.5 text-[10.5px] font-semibold uppercase tracking-wider text-brand-black mb-1.5 shadow-2xs">
+            <Sparkles className="h-3 w-3 text-brand-red" />
             <span>Dispatched Walkthrough Registry</span>
           </div>
-          <h2 className="text-xl sm:text-2xl lg:text-[26px] font-bold text-[#101010] font-heading tracking-[-0.03em] leading-snug">
+          <h2 className="text-xl sm:text-2xl lg:text-[26px] font-bold text-brand-black font-heading tracking-[-0.03em] leading-snug">
             Live Verified Facility Appointments
           </h2>
           <p className="mt-1 text-[13.5px] text-[#525252] leading-relaxed max-w-xl">
@@ -37,12 +37,12 @@ export function InteractiveLeadShowcase({ leadSamples, serviceTitle }: Interacti
         </div>
 
         {/* Exclusivity Trust Seal */}
-        <div className="flex items-center gap-2.5 bg-white border border-[#EBEBEB] rounded-lg p-3 shrink-0 shadow-2xs self-start lg:self-center">
-          <div className="h-8 w-8 rounded bg-[#FAFAFA] border border-[#EBEBEB] text-[#16A34A] flex items-center justify-center shrink-0">
+        <div className="flex items-center gap-2.5 bg-white border border-brand-border rounded-lg p-3 shrink-0 shadow-2xs self-start lg:self-center">
+          <div className="h-8 w-8 rounded bg-brand-surface border border-brand-border text-[#16A34A] flex items-center justify-center shrink-0">
             <ShieldCheck className="h-4 w-4" />
           </div>
           <div>
-            <p className="text-[11.5px] font-bold text-[#101010]">
+            <p className="text-[11.5px] font-bold text-brand-black">
               100% Territory Exclusivity
             </p>
             <p className="text-[10.5px] text-[#737373]">
@@ -56,7 +56,7 @@ export function InteractiveLeadShowcase({ leadSamples, serviceTitle }: Interacti
       {categories.length > 1 && (
         <div className="flex flex-wrap items-center gap-2 mb-4">
           <span className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider text-[#737373] mr-1">
-            <Filter className="h-3 w-3 text-[#101010]" />
+            <Filter className="h-3 w-3 text-brand-black" />
             <span>Filter Sector:</span>
           </span>
           {categories.map((cat) => {
@@ -69,8 +69,8 @@ export function InteractiveLeadShowcase({ leadSamples, serviceTitle }: Interacti
                 onClick={() => setActiveCategory(cat)}
                 className={`inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-[11.5px] font-semibold transition-colors min-h-[32px] ${
                   isActive
-                    ? "bg-[#101010] text-white shadow-xs"
-                    : "bg-white text-[#525252] border border-[#E5E5E5] hover:border-[#101010] hover:text-[#101010]"
+                    ? "bg-brand-black text-white shadow-xs"
+                    : "bg-white text-[#525252] border border-[#E5E5E5] hover:border-brand-black hover:text-brand-black"
                 }`}
               >
                 <span>{cat}</span>

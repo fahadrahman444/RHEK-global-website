@@ -13,6 +13,7 @@ import {
   ArrowUpRight,
 } from "@/components/common/icons";
 import { SpotlightCard } from "@/components/common/SpotlightCard";
+import { Button } from "@/components/common/Button";
 
 export function WebDevFinalCta() {
   const [fullName, setFullName] = useState("");
@@ -67,19 +68,19 @@ export function WebDevFinalCta() {
   return (
     <section
       id="cta"
-      className="py-14 sm:py-20 md:py-28 bg-[#101010] text-white relative overflow-hidden"
+      className="py-14 sm:py-20 md:py-28 bg-brand-black text-white relative overflow-hidden"
     >
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 relative z-10">
+      <div className="site-container relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: 6 Cols */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-[#E9204F] text-[11px] font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-brand-red text-[11px] font-bold uppercase tracking-wider">
               <Calendar className="h-3.5 w-3.5" />
               <span>Step 8 · Direct Consultation</span>
             </div>
 
-            <h2 className="text-2xl sm:text-4xl lg:text-[46px] font-extrabold text-white tracking-tight leading-tight sm:leading-tight lg:leading-[1.18]">
-              Ready to Upgrade Your Web Infrastructure? <span className="text-[#E9204F]">Book a Meeting.</span>
+            <h2 className="text-2xl sm:text-4xl lg:text-[46px] font-bold text-white tracking-tight leading-tight sm:leading-tight lg:leading-[1.18]">
+              Ready to Upgrade Your Web Infrastructure? <span className="text-brand-red">Book a Meeting.</span>
             </h2>
 
             <p className="text-base sm:text-lg text-[#A3A3A3] leading-relaxed">
@@ -97,15 +98,15 @@ export function WebDevFinalCta() {
               </p>
               <div className="space-y-2.5 text-[13.5px] text-[#E0E0E0]">
                 <div className="flex items-center gap-2.5">
-                  <CheckCircle2 className="h-4 w-4 text-[#E9204F] shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-brand-red shrink-0" />
                   <span>Free architectural and Core Web Vitals diagnostic of your current site.</span>
                 </div>
                 <div className="flex items-center gap-2.5">
-                  <CheckCircle2 className="h-4 w-4 text-[#E9204F] shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-brand-red shrink-0" />
                   <span>Recommended tech stack, database model, and sitemap blueprint.</span>
                 </div>
                 <div className="flex items-center gap-2.5">
-                  <CheckCircle2 className="h-4 w-4 text-[#E9204F] shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-brand-red shrink-0" />
                   <span>Guaranteed milestone timeline and transparent fixed-bid quotation.</span>
                 </div>
               </div>
@@ -114,11 +115,11 @@ export function WebDevFinalCta() {
             {/* Direct Contact Details */}
             <div className="pt-2 flex flex-wrap gap-6 text-[13px] text-[#A3A3A3]">
               <div className="flex items-center gap-2">
-                <Clock className="h-4 w-4 text-[#E9204F]" />
+                <Clock className="h-4 w-4 text-brand-red" />
                 <span>30-Min Discovery Call</span>
               </div>
               <div className="flex items-center gap-2">
-                <ShieldCheck className="h-4 w-4 text-[#E9204F]" />
+                <ShieldCheck className="h-4 w-4 text-brand-red" />
                 <span>100% Confidential (NDA)</span>
               </div>
             </div>
@@ -164,7 +165,7 @@ export function WebDevFinalCta() {
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
                       placeholder="e.g. Sarah Jenkins"
-                      className="w-full h-11 px-4 rounded-xl bg-white/5 border border-white/15 text-white placeholder-[#737373] text-[14px] focus:outline-none focus:border-[#E9204F] transition-colors"
+                      className="w-full h-11 px-4 rounded-xl bg-white/5 border border-white/15 text-white placeholder-[#737373] text-[14px] focus:outline-none focus:border-brand-red focus-visible:ring-2 focus-visible:ring-brand-red transition-colors"
                     />
                   </div>
 
@@ -179,7 +180,7 @@ export function WebDevFinalCta() {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="sarah@company.com"
-                        className="w-full h-11 px-4 rounded-xl bg-white/5 border border-white/15 text-white placeholder-[#737373] text-[14px] focus:outline-none focus:border-[#E9204F] transition-colors"
+                        className="w-full h-11 px-4 rounded-xl bg-white/5 border border-white/15 text-white placeholder-[#737373] text-[14px] focus:outline-none focus:border-brand-red focus-visible:ring-2 focus-visible:ring-brand-red transition-colors"
                       />
                     </div>
                     <div>
@@ -191,7 +192,7 @@ export function WebDevFinalCta() {
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                         placeholder="+1 (555) 000-0000"
-                        className="w-full h-11 px-4 rounded-xl bg-white/5 border border-white/15 text-white placeholder-[#737373] text-[14px] focus:outline-none focus:border-[#E9204F] transition-colors"
+                        className="w-full h-11 px-4 rounded-xl bg-white/5 border border-white/15 text-white placeholder-[#737373] text-[14px] focus:outline-none focus:border-brand-red focus-visible:ring-2 focus-visible:ring-brand-red transition-colors"
                       />
                     </div>
                   </div>
@@ -204,7 +205,7 @@ export function WebDevFinalCta() {
                       value={tier}
                       onChange={(e) => setTier(e.target.value)}
                       aria-label="Interested Package"
-                      className="w-full h-11 px-3 rounded-xl bg-[#1A1A1C] border border-white/15 text-white text-[14px] focus:outline-none focus:border-[#E9204F] transition-colors"
+                      className="w-full h-11 px-3 rounded-xl bg-[#1A1A1C] border border-white/15 text-white text-[14px] focus:outline-none focus:border-brand-red focus-visible:ring-2 focus-visible:ring-brand-red transition-colors"
                     >
                       <option value="Starter Website ($2,500)">Starter Website ($2,500 · 2 Weeks)</option>
                       <option value="Professional Business ($4,800)">Professional Business ($4,800 · Most Popular)</option>
@@ -222,27 +223,20 @@ export function WebDevFinalCta() {
                       value={notes}
                       onChange={(e) => setNotes(e.target.value)}
                       placeholder="Tell us about your project goals or provide your current website link..."
-                      className="w-full p-3 rounded-xl bg-white/5 border border-white/15 text-white placeholder-[#737373] text-[14px] focus:outline-none focus:border-[#E9204F] transition-colors"
+                      className="w-full p-3 rounded-xl bg-white/5 border border-white/15 text-white placeholder-[#737373] text-[14px] focus:outline-none focus:border-brand-red focus-visible:ring-2 focus-visible:ring-brand-red transition-colors"
                     />
                   </div>
 
-                  <button
+                  <Button
                     type="submit"
-                    disabled={loading}
-                    className="w-full h-12 inline-flex items-center justify-center gap-2 rounded-xl bg-[#E9204F] hover:bg-white hover:text-[#101010] text-white font-bold text-[15px] shadow-lg transition-all duration-200 disabled:opacity-50"
+                    variant="primary"
+                    size="lg"
+                    loading={loading}
+                    rightIcon={<ArrowUpRight className="h-4 w-4" />}
+                    className="w-full"
                   >
-                    {loading ? (
-                      <>
-                        <Loader2 className="h-4 w-4 animate-spin" />
-                        <span>Scheduling Discovery Call...</span>
-                      </>
-                    ) : (
-                      <>
-                        <span>Confirm &amp; Book Discovery Meeting</span>
-                        <ArrowUpRight className="h-4 w-4" />
-                      </>
-                    )}
-                  </button>
+                    Confirm &amp; Book Discovery Meeting
+                  </Button>
                 </form>
               )}
             </SpotlightCard>

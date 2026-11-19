@@ -29,7 +29,7 @@ export function PartnerLogos() {
   ];
 
   return (
-    <div className="mt-5 sm:mt-6 pt-4 sm:pt-5 border-t border-[#EBEBEB]">
+    <div className="mt-5 sm:mt-6 pt-4 sm:pt-5 border-t border-brand-border">
       <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-between gap-4 sm:gap-10">
         {partners.map((partner) => (
           <div

@@ -11,6 +11,7 @@ import {
 } from "@/components/common/icons";
 import { RHEK_CONFIG } from "@/data/rhek-config";
 import { SpotlightCard } from "@/components/common/SpotlightCard";
+import { Button } from "@/components/common/Button";
 
 export const metadata: Metadata = {
   title: "About Us — RHEK GLOBAL",
@@ -47,7 +48,7 @@ export default function AboutPage() {
             <span className="inline-block text-[10.5px] font-bold uppercase tracking-wider text-[#737373] mb-1">
               Our Purpose
             </span>
-            <h2 className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-[#101010] tracking-[-0.03em] leading-snug mt-0.5">
+            <h2 className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-brand-black tracking-[-0.03em] leading-snug mt-0.5">
               Empowering Businesses Through Intelligent Digital &amp; Outsourcing Solutions
             </h2>
             <div className="mt-3 space-y-2.5 text-[13.5px] sm:text-[14px] text-[#525252] leading-relaxed">
@@ -59,20 +60,22 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="mt-5 pt-4 border-t border-[#EBEBEB] flex flex-wrap items-center gap-2.5">
-              <Link
+            <div className="mt-5 pt-4 border-t border-brand-border flex flex-wrap items-center gap-2.5">
+              <Button
                 href="/contact"
-                className="inline-flex items-center gap-1.5 rounded-lg bg-[#101010] hover:bg-[#E9204F] px-4 py-2 text-[12.5px] font-semibold text-white transition-all duration-200 shadow-xs min-h-[38px] hover:shadow-md hover:-translate-y-0.5"
+                variant="dark"
+                size="sm"
+                icon={<Calendar className="h-3.5 w-3.5 text-white" />}
               >
-                <Calendar className="h-3.5 w-3.5 text-white" />
-                <span>Book Consultation</span>
-              </Link>
-              <Link
+                Book Consultation
+              </Button>
+              <Button
                 href="/services"
-                className="inline-flex items-center gap-1.5 rounded-lg border border-[#E5E5E5] bg-white hover:border-[#101010] px-4 py-2 text-[12.5px] font-semibold text-[#101010] transition-all duration-200 min-h-[38px] hover:shadow-xs hover:-translate-y-0.5"
+                variant="secondary"
+                size="sm"
               >
-                <span>Explore Capabilities &rarr;</span>
-              </Link>
+                Explore Capabilities &rarr;
+              </Button>
             </div>
           </div>
 
@@ -80,14 +83,14 @@ export default function AboutPage() {
           <div className="space-y-3">
             <SpotlightCard
               mode="light"
-              className="rounded-xl border border-[#EBEBEB] p-4 sm:p-5 hover:border-[#101010]"
+              className="rounded-xl border border-brand-border p-4 sm:p-5 hover:border-brand-black"
               contentClassName="relative z-10"
             >
-              <div className="flex items-center gap-1.5 text-[#E9204F] mb-1 font-semibold text-[10.5px] uppercase tracking-wider">
-                <Target className="h-3.5 w-3.5 text-[#E9204F]" />
+              <div className="flex items-center gap-1.5 text-brand-red mb-1 font-semibold text-[10.5px] uppercase tracking-wider">
+                <Target className="h-3.5 w-3.5 text-brand-red" />
                 <span>Our Mission</span>
               </div>
-              <h3 className="text-base font-bold text-[#101010] mb-1">
+              <h3 className="text-base font-bold text-brand-black mb-1">
                 {companyProfile.mission.headline}
               </h3>
               <p className="text-[13px] text-[#525252] leading-relaxed">
@@ -97,14 +100,14 @@ export default function AboutPage() {
 
             <SpotlightCard
               mode="light"
-              className="rounded-xl border border-[#EBEBEB] p-4 sm:p-5 hover:border-[#101010]"
+              className="rounded-xl border border-brand-border p-4 sm:p-5 hover:border-brand-black"
               contentClassName="relative z-10"
             >
-              <div className="flex items-center gap-1.5 text-[#101010] mb-1 font-semibold text-[10.5px] uppercase tracking-wider">
-                <TrendingUp className="h-3.5 w-3.5 text-[#101010]" />
+              <div className="flex items-center gap-1.5 text-brand-black mb-1 font-semibold text-[10.5px] uppercase tracking-wider">
+                <TrendingUp className="h-3.5 w-3.5 text-brand-black" />
                 <span>Our Vision</span>
               </div>
-              <h3 className="text-base font-bold text-[#101010] mb-1">
+              <h3 className="text-base font-bold text-brand-black mb-1">
                 {companyProfile.vision.headline}
               </h3>
               <p className="text-[13px] text-[#525252] leading-relaxed">
@@ -115,12 +118,12 @@ export default function AboutPage() {
         </div>
 
         {/* 5 Core Values — Compact 2-column on mobile */}
-        <div className="border-t border-[#EBEBEB] pt-6 sm:pt-8">
+        <div className="border-t border-brand-border pt-6 sm:pt-8">
           <div className="max-w-[640px] mb-4">
             <span className="inline-block text-[10.5px] font-bold uppercase tracking-wider text-[#737373]">
               Guiding Principles
             </span>
-            <h3 className="font-heading text-xl sm:text-2xl font-bold text-[#101010] mt-0.5">
+            <h3 className="font-heading text-xl sm:text-2xl font-bold text-brand-black mt-0.5">
               Our Core Values
             </h3>
           </div>
@@ -130,13 +133,13 @@ export default function AboutPage() {
               <SpotlightCard
                 key={idx}
                 mode="light"
-                className="group rounded-xl border border-[#EBEBEB] p-3 sm:p-4 hover:border-[#101010]"
+                className="group rounded-xl border border-brand-border p-3 sm:p-4 hover:border-brand-black"
                 contentClassName="relative z-10"
               >
-                <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-white border border-[#EBEBEB] text-[#101010] mb-2 font-mono font-bold text-[11px] group-hover:bg-[#101010] group-hover:text-white transition-colors duration-200">
+                <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-white border border-brand-border text-brand-black mb-2 font-mono font-bold text-[11px] group-hover:bg-brand-black group-hover:text-white transition-colors duration-200">
                   0{idx + 1}
                 </span>
-                <h4 className="text-[13px] sm:text-[14px] font-bold text-[#101010] mb-1 leading-snug group-hover:text-[#E9204F] transition-colors">
+                <h4 className="text-[13px] sm:text-[14px] font-bold text-brand-black mb-1 leading-snug group-hover:text-brand-red transition-colors">
                   {val.name}
                 </h4>
                 <p className="text-[11px] sm:text-[12px] text-[#525252] leading-relaxed line-clamp-3 sm:line-clamp-none">
@@ -150,11 +153,11 @@ export default function AboutPage() {
         {/* 4 Working Principles */}
         <SpotlightCard
           mode="dark"
-          className="rounded-2xl bg-[#101010] text-white p-4 sm:p-7 lg:p-8"
+          className="rounded-xl bg-brand-black text-white p-4 sm:p-7 lg:p-8"
           contentClassName="relative z-10"
         >
           <div className="max-w-[700px] mb-4">
-            <span className="text-[10.5px] font-bold uppercase tracking-wider text-[#E9204F]">
+            <span className="text-[10.5px] font-bold uppercase tracking-wider text-brand-red">
               Operating Discipline
             </span>
             <h3 className="text-lg sm:text-xl font-bold font-heading text-white mt-0.5">
@@ -173,7 +176,7 @@ export default function AboutPage() {
                 className="group rounded-xl bg-white/[0.03] border border-white/10 p-3 sm:p-3.5 hover:border-white/30"
                 contentClassName="relative z-10"
               >
-                <h4 className="text-[12.5px] sm:text-[13.5px] font-bold text-white mb-0.5 group-hover:text-[#E9204F] transition-colors">
+                <h4 className="text-[12.5px] sm:text-[13.5px] font-bold text-white mb-0.5 group-hover:text-brand-red transition-colors">
                   {pr.title}
                 </h4>
                 <p className="text-[11px] sm:text-[12px] text-[#A3A3A3] leading-relaxed line-clamp-3 sm:line-clamp-none">

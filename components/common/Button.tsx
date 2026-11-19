@@ -26,15 +26,15 @@ export type ButtonProps = ButtonBaseProps &
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-[#E9204F] hover:bg-[#101010] text-white shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 border border-transparent",
+    "bg-brand-red hover:bg-brand-black text-white shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 border border-transparent",
   secondary:
-    "border border-zinc-200 bg-white hover:border-[#101010] hover:bg-[#FAFAFA] text-[#101010] hover:shadow-2xs hover:-translate-y-0.5 active:translate-y-0",
+    "border border-zinc-200 bg-white hover:border-brand-black hover:bg-brand-surface text-brand-black hover:shadow-2xs hover:-translate-y-0.5 active:translate-y-0",
   dark:
-    "bg-[#101010] hover:bg-[#E9204F] text-white shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 border border-transparent",
+    "bg-brand-black hover:bg-brand-red text-white shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 border border-transparent",
   outline:
-    "border border-[#EBEBEB] bg-transparent hover:border-[#101010] hover:bg-[#FAFAFA] text-[#101010]",
+    "border border-brand-border bg-transparent hover:border-brand-black hover:bg-brand-surface text-brand-black",
   ghost:
-    "bg-transparent hover:bg-black/5 text-[#101010] hover:text-[#E9204F] border-transparent",
+    "bg-transparent hover:bg-black/5 text-brand-black hover:text-brand-red border-transparent",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {

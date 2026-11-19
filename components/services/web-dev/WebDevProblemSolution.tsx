@@ -37,15 +37,15 @@ export function WebDevProblemSolution() {
   return (
     <section
       id="problem-solution"
-      className="py-12 sm:py-16 md:py-24 border-b border-[#EBEBEB] bg-white"
+      className="py-12 sm:py-16 md:py-24 border-b border-brand-border bg-white"
     >
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
+      <div className="site-container">
         {/* Section Header */}
         <div className="max-w-3xl mb-10 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#E9204F]/10 text-[#E9204F] text-[11px] font-bold uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-brand-red/10 text-brand-red text-[11px] font-bold uppercase tracking-wider mb-3">
             The Industry Problem vs. Our Solution
           </div>
-          <h2 className="text-2xl sm:text-4xl lg:text-[44px] font-extrabold text-[#101010] tracking-tight leading-tight sm:leading-tight lg:leading-[1.18] [text-wrap:balance]">
+          <h2 className="text-2xl sm:text-4xl lg:text-[44px] font-bold text-brand-black tracking-tight leading-tight sm:leading-tight lg:leading-[1.18] [text-wrap:balance]">
             Most B2B Websites Bleed High-Value Inquiries. Here is How We Fix It.
           </h2>
           <p className="text-base sm:text-lg text-[#525252] mt-4 leading-relaxed">
@@ -67,7 +67,7 @@ export function WebDevProblemSolution() {
                 <XCircle className="h-5 w-5" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-[#101010]">The Outdated Approach</h3>
+                <h3 className="text-lg font-bold text-brand-black">The Outdated Approach</h3>
                 <p className="text-[12px] text-[#737373]">Bloated CMS templates &amp; generic page builders</p>
               </div>
             </div>
@@ -77,7 +77,7 @@ export function WebDevProblemSolution() {
                 <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-white border border-red-100">
                   <XCircle className="h-4 w-4 text-red-500 shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-[14px] font-bold text-[#101010]">{prob.title}</h4>
+                    <h4 className="text-[14px] font-bold text-brand-black">{prob.title}</h4>
                     <p className="text-[13px] text-[#525252] mt-1 leading-relaxed">{prob.desc}</p>
                   </div>
                 </div>
@@ -89,11 +89,11 @@ export function WebDevProblemSolution() {
           <SpotlightCard
             mode="dark"
             spotlightColor="rgba(233, 32, 79, 0.35)"
-            className="rounded-2xl border border-[#101010] bg-[#101010] p-6 sm:p-8 space-y-6 text-white shadow-xl"
+            className="rounded-2xl border border-brand-black bg-brand-black p-6 sm:p-8 space-y-6 text-white shadow-xl"
             contentClassName="relative z-10 space-y-6"
           >
             <div className="flex items-center gap-3 pb-4 border-b border-white/10">
-              <div className="h-8 w-8 rounded-lg bg-[#E9204F] flex items-center justify-center text-white">
+              <div className="h-8 w-8 rounded-lg bg-brand-red flex items-center justify-center text-white">
                 <CheckCircle2 className="h-5 w-5" />
               </div>
               <div>
@@ -105,7 +105,7 @@ export function WebDevProblemSolution() {
             <div className="space-y-4">
               {solutions.map((sol, i) => (
                 <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-white/5 border border-white/10">
-                  <CheckCircle2 className="h-4 w-4 text-[#E9204F] shrink-0 mt-0.5" />
+                  <CheckCircle2 className="h-4 w-4 text-brand-red shrink-0 mt-0.5" />
                   <div>
                     <h4 className="text-[14px] font-bold text-white">{sol.title}</h4>
                     <p className="text-[13px] text-[#A3A3A3] mt-1 leading-relaxed">{sol.desc}</p>

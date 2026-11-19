@@ -29,7 +29,7 @@ export function Footer() {
                 <Link href="/" className="inline-block">
                   <BrandLogo size={22} variant="dark" />
                 </Link>
-                <span className="text-[10px] font-bold tracking-wider uppercase text-[#E9204F] bg-[#E9204F]/10 border border-[#E9204F]/20 px-2 py-0.5 rounded">
+                <span className="text-[10px] font-bold tracking-wider uppercase text-brand-red bg-brand-red/10 border border-brand-red/20 px-2 py-0.5 rounded">
                   B2B Growth Engine
                 </span>
               </div>
@@ -64,7 +64,7 @@ export function Footer() {
                   </div>
                   <button
                     type="submit"
-                    className="inline-flex items-center justify-center gap-1 rounded-lg bg-[#E9204F] hover:bg-white hover:text-[#101010] px-3 py-1.5 text-[11.5px] font-semibold text-white transition-colors whitespace-nowrap min-h-[34px] shrink-0"
+                    className="inline-flex items-center justify-center gap-1 rounded-lg bg-brand-red hover:bg-white hover:text-brand-black px-3 py-1.5 text-[11.5px] font-semibold text-white transition-colors whitespace-nowrap min-h-[34px] shrink-0"
                   >
                     <span>Join</span>
                     <ArrowRight className="h-3 w-3" />
@@ -210,7 +210,7 @@ export function Footer() {
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#16A34A] animate-pulse" />
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
             <span className="text-[#888]">Institutional Capacity: Open Q4</span>
           </div>
         </div>

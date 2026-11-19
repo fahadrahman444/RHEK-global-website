@@ -83,16 +83,16 @@ export function ContactSection({
 
   return (
     <section id="contact" className={embedded ? "py-4 px-3 sm:px-4" : "site-container"}>
-      <div className="rounded-xl bg-[#FAFAFA] border border-[#EBEBEB] p-5 sm:p-8 lg:p-10">
+      <div className="rounded-xl bg-brand-surface border border-brand-border p-5 sm:p-8 lg:p-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-10 items-start">
           
           {/* Left Column: Direct Value & Trust Commitments */}
           <div className="lg:col-span-5 space-y-4">
             <div>
-              <span className="block mb-1 text-xs font-semibold uppercase tracking-widest text-[#E9204F]">
+              <span className="block mb-1 text-xs font-semibold uppercase tracking-widest text-brand-red">
                 Territory Availability
               </span>
-              <h2 className="font-heading text-[24px] sm:text-[30px] font-bold text-[#101010] leading-snug tracking-tight">
+              <h2 className="font-heading text-[24px] sm:text-[30px] font-bold text-brand-black leading-snug tracking-tight">
                 {customTitle || "Lock Your Commercial Territory & Walkthrough Flow"}
               </h2>
               <p className="mt-2 text-[14px] sm:text-[15px] leading-relaxed text-zinc-600">
@@ -104,23 +104,23 @@ export function ContactSection({
             {/* Clean Key Commitments */}
             <div className="space-y-3 pt-3 border-t border-zinc-200/70">
               <div className="flex items-start gap-2.5 text-[13px] text-zinc-700">
-                <ShieldCheck className="h-4 w-4 text-[#E9204F] shrink-0 mt-0.5" />
+                <ShieldCheck className="h-4 w-4 text-brand-red shrink-0 mt-0.5" />
                 <div>
-                  <span className="font-semibold text-[#101010]">100% Territory Exclusivity:</span> Zero shared leads. You hold exclusive rights to all appointments in your contracted zone.
+                  <span className="font-semibold text-brand-black">100% Territory Exclusivity:</span> Zero shared leads. You hold exclusive rights to all appointments in your contracted zone.
                 </div>
               </div>
 
               <div className="flex items-start gap-2.5 text-[13px] text-zinc-700">
-                <Clock className="h-4 w-4 text-[#E9204F] shrink-0 mt-0.5" />
+                <Clock className="h-4 w-4 text-brand-red shrink-0 mt-0.5" />
                 <div>
-                  <span className="font-semibold text-[#101010]">24-Hour SLA Delivery:</span> Receive territory availability, current facility volume counts, and onboarding specs.
+                  <span className="font-semibold text-brand-black">24-Hour SLA Delivery:</span> Receive territory availability, current facility volume counts, and onboarding specs.
                 </div>
               </div>
 
               <div className="flex items-start gap-2.5 text-[13px] text-zinc-700">
-                <MapPin className="h-4 w-4 text-[#E9204F] shrink-0 mt-0.5" />
+                <MapPin className="h-4 w-4 text-brand-red shrink-0 mt-0.5" />
                 <div>
-                  <span className="font-semibold text-[#101010]">Pay-Nothing-Upfront Available:</span> Performance-aligned terms with zero upfront capital risk options.
+                  <span className="font-semibold text-brand-black">Pay-Nothing-Upfront Available:</span> Performance-aligned terms with zero upfront capital risk options.
                 </div>
               </div>
             </div>
@@ -135,7 +135,7 @@ export function ContactSection({
                     <CheckCircle className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="font-heading text-[20px] font-bold text-[#101010]">
+                    <h3 className="font-heading text-[20px] font-bold text-brand-black">
                       Territory Inquiry Logged
                     </h3>
                     <p className="mt-1 text-[13.5px] text-zinc-600 max-w-md mx-auto leading-relaxed">
@@ -147,7 +147,7 @@ export function ContactSection({
                   <div className="pt-3 border-t border-zinc-100 flex flex-col sm:flex-row items-center justify-center gap-3">
                     <Link
                       href="/book-a-meeting"
-                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#E9204F] hover:bg-[#101010] text-white px-5 py-2.5 text-[13px] font-semibold transition-all shadow-xs"
+                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-red hover:bg-brand-black text-white px-5 py-2.5 text-[13px] font-semibold transition-all shadow-xs"
                     >
                       <Calendar className="h-4 w-4" />
                       <span>Book Immediate 20-Min Strategy Call</span>

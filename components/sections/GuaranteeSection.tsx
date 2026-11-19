@@ -9,19 +9,19 @@ export function GuaranteeSection() {
   return (
     <section id="guarantee" className="site-container scroll-mt-24">
       {/* Light Architectural Section Container */}
-      <div className="rounded-xl bg-[#FAFAFA] border border-[#EBEBEB] p-5 sm:p-8 lg:p-10 text-[#101010]">
+      <div className="rounded-xl bg-brand-surface border border-brand-border p-5 sm:p-8 lg:p-10 text-brand-black">
         <div className="max-w-[820px]">
           {/* Subtle Dynamic Status Badge */}
-          <div className="inline-flex items-center gap-1.5 rounded-full bg-rose-50 border border-rose-200/60 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-[#E9204F] mb-3">
-            <Lock className="h-3 w-3 text-[#E9204F]" />
+          <div className="inline-flex items-center gap-1.5 rounded-full bg-rose-50 border border-rose-200/60 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-brand-red mb-3">
+            <Lock className="h-3 w-3 text-brand-red" />
             <span>Risk-Reversal Commitment</span>
           </div>
 
-          <h2 className="font-heading text-[22px] sm:text-[30px] lg:text-[34px] font-bold tracking-tight leading-[1.15] text-[#101010]">
+          <h2 className="font-heading text-[22px] sm:text-[30px] lg:text-[34px] font-bold tracking-tight leading-[1.15] text-brand-black">
             {headline}
           </h2>
 
-          <p className="mt-1 text-[14px] sm:text-[16px] font-semibold text-[#E9204F]">
+          <p className="mt-1 text-[14px] sm:text-[16px] font-semibold text-brand-red">
             {subtitle}
           </p>
 
@@ -39,9 +39,9 @@ export function GuaranteeSection() {
                 i < commitments.length - 1 ? "pb-2.5" : ""
               }`}
             >
-              <ShieldCheck className="h-4 w-4 text-[#E9204F] shrink-0 mt-0.5" />
+              <ShieldCheck className="h-4 w-4 text-brand-red shrink-0 mt-0.5" />
               <div className="min-w-0">
-                <h3 className="text-[13px] font-bold text-[#101010] leading-snug">
+                <h3 className="text-[13px] font-bold text-brand-black leading-snug">
                   {item.title}
                 </h3>
                 <p className="text-[12px] text-zinc-600 leading-normal mt-0.5">
@@ -63,7 +63,7 @@ export function GuaranteeSection() {
             </div>
             <Link
               href="/#contact"
-              className="shrink-0 inline-flex items-center gap-1 rounded-lg bg-[#E9204F] hover:bg-[#101010] px-3 py-1.5 text-[11.5px] font-semibold text-white transition-all min-h-[36px]"
+              className="shrink-0 inline-flex items-center gap-1 rounded-lg bg-brand-red hover:bg-brand-black px-3 py-1.5 text-[11.5px] font-semibold text-white transition-all min-h-[36px]"
             >
               <span>Review SLA</span>
               <ArrowRight className="h-3 w-3" />
@@ -78,9 +78,9 @@ export function GuaranteeSection() {
               key={i}
               className="rounded-xl bg-white border border-zinc-200/80 p-4 sm:p-5 hover:border-zinc-400 hover:shadow-2xs transition-all duration-200"
             >
-              <div className="flex items-center gap-2 text-[#E9204F] mb-2">
+              <div className="flex items-center gap-2 text-brand-red mb-2">
                 <ShieldCheck className="h-4 w-4 shrink-0" />
-                <h3 className="text-[14px] sm:text-[15px] font-bold text-[#101010] leading-snug">
+                <h3 className="text-[14px] sm:text-[15px] font-bold text-brand-black leading-snug">
                   {item.title}
                 </h3>
               </div>
@@ -96,7 +96,7 @@ export function GuaranteeSection() {
               <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-400">
                 Transparent SLA Terms
               </span>
-              <p className="text-[13px] font-semibold text-[#101010] mt-1.5 leading-snug">
+              <p className="text-[13px] font-semibold text-brand-black mt-1.5 leading-snug">
                 Every commercial inquiry campaign operates under explicit delivery timelines and replacement criteria.
               </p>
             </div>

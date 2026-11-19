@@ -1076,3 +1076,214 @@ export const SERVICES_DETAILED_DATA: Record<string, ServiceDetail> = {
     ],
   },
 };
+
+// ---------------------------------------------------------------------------
+// Institutional Commercial Acquisition Data
+// ---------------------------------------------------------------------------
+
+export interface PipelinePhase {
+  phase: string;
+  stepNumber: string;
+  title: string;
+  subtitle: string;
+  timeframe: string;
+  badge: string;
+  description: string;
+  detailedScope: string;
+  deliverables: string[];
+  milestoneOutput: string;
+}
+
+export const PIPELINE_PHASES: PipelinePhase[] = [
+  {
+    phase: "01",
+    stepNumber: "Stage 01",
+    title: "Territory Scoping & Target Lock",
+    subtitle: "Days 1–3",
+    timeframe: "Days 1–3 · Setup & Governance",
+    badge: "Exclusivity Locked",
+    description:
+      "Define target zip codes, square footage parameters, and current vendor replacement criteria with complete local exclusivity.",
+    detailedScope:
+      "We establish your strict territorial perimeter, identify all commercial facilities above your target square footage, and cross-reference active janitorial contracts to pinpoint prime displacement opportunities.",
+    deliverables: [
+      "County and zip code territorial exclusivity perimeter locked",
+      "High-margin commercial facility criteria (>10,000 sq ft)",
+      "Cleaned, verified property & facility manager database",
+      "Written SLA contract with zero local competitor overlap",
+    ],
+    milestoneOutput: "Confirmed Exclusivity Perimeter & Target Account Dossier",
+  },
+  {
+    phase: "02",
+    stepNumber: "Stage 02",
+    title: "Multi-Touch SDR Outreach",
+    subtitle: "Days 4–7",
+    timeframe: "Days 4–7 · Pipeline Activation",
+    badge: "Omnichannel Active",
+    description:
+      "Dedicated sales specialists execute multi-touch phone, email, and LinkedIn cadences to confirmed property and facility managers.",
+    detailedScope:
+      "Our trained industry SDRs engage facility decision-makers directly through verified phone outreach, consultative email sequences, and professional LinkedIn touchpoints to surface dissatisfaction with incumbent cleaners.",
+    deliverables: [
+      "Dedicated commercial janitorial sales development reps (SDRs)",
+      "Multi-touch phone outreach directly to facility decision-makers",
+      "Deliverability-monitored consultative email cadences",
+      "Real-time pipeline transparency with logged conversation notes",
+    ],
+    milestoneOutput: "Active Multi-Channel Cadence & Verified Decision-Maker Conversations",
+  },
+  {
+    phase: "03",
+    stepNumber: "Stage 03",
+    title: "Walkthrough Qualification",
+    subtitle: "Days 8–14",
+    timeframe: "Days 8–14 · Strict Verification",
+    badge: "100% Verified",
+    description:
+      "Every appointment is verified for walkthrough willingness, square footage, cleaning frequencies, and decision-maker status.",
+    detailedScope:
+      "Before any meeting reaches your calendar, our QA managers audit the lead against our 4-point qualification standard to ensure genuine purchasing authority, verified facility scope, and immediate quote readiness.",
+    deliverables: [
+      "Confirmed facility willingness for an on-site walkthrough",
+      "Documented square footage, cleaning frequencies & floor types",
+      "Verified dissatisfaction with incumbent or expiring contract date",
+      "Sole or primary commercial purchasing authority confirmed",
+    ],
+    milestoneOutput: "100% Verified Walkthrough Docket with Decision-Maker Signoff",
+  },
+  {
+    phase: "04",
+    stepNumber: "Stage 04",
+    title: "Calendar Handover & Closing",
+    subtitle: "Ongoing",
+    timeframe: "Ongoing Cadence · Guaranteed Delivery",
+    badge: "Contract Ready",
+    description:
+      "Appointments are synced directly to your calendar with full facility briefing notes and immediate territory protection.",
+    detailedScope:
+      "Confirmed appointments are dispatched directly to your calendar with full facility notes, contact direct dial, and pre-walkthrough briefing. Any unverified meeting is replaced immediately at zero cost.",
+    deliverables: [
+      "Direct Google / Outlook calendar invite synchronization",
+      "Complete facility briefing with verified square footage & scope",
+      "Property manager direct dial phone and verified business email",
+      "Automatic replacement guarantee for any unqualified meeting",
+    ],
+    milestoneOutput: "Confirmed Walkthrough Dispatched with Full Opportunity Dossier",
+  },
+];
+
+export interface CommercialSector {
+  name: string;
+  iconName: "Activity" | "Laptop" | "Building2" | "GraduationCap" | "Truck" | "ShoppingBag" | "ShieldCheck" | "Compass" | "Rocket" | "Sparkles";
+  typicalScope: string;
+  cadence: string;
+  compliance: string;
+}
+
+export const SECTOR_DATA: CommercialSector[] = [
+  {
+    name: "Medical & Healthcare",
+    iconName: "Activity",
+    typicalScope: "35,000 sq ft avg",
+    cadence: "7-Day Night Shift",
+    compliance: "Terminal Clean Protocol",
+  },
+  {
+    name: "Corporate Tech Campuses",
+    iconName: "Laptop",
+    typicalScope: "45,000–80,000 sq ft",
+    cadence: "Day Porter + Evening",
+    compliance: "High-Security Access",
+  },
+  {
+    name: "Commercial Real Estate",
+    iconName: "Building2",
+    typicalScope: "Class-A Atriums",
+    cadence: "Daily Scheduled Cadence",
+    compliance: "Multi-Tenant Management",
+  },
+  {
+    name: "Education & Academies",
+    iconName: "GraduationCap",
+    typicalScope: "Campus Classrooms & Gyms",
+    cadence: "Daily Porter Service",
+    compliance: "Child Safety Clearance",
+  },
+  {
+    name: "Logistics & Warehouses",
+    iconName: "Truck",
+    typicalScope: "100,000+ sq ft",
+    cadence: "Floor Scrub & Dust Control",
+    compliance: "OSHA & Heavy Machine",
+  },
+  {
+    name: "Retail & Dealerships",
+    iconName: "ShoppingBag",
+    typicalScope: "High-Traffic Showrooms",
+    cadence: "Glass & Floor Buffing",
+    compliance: "Public Presentation",
+  },
+  {
+    name: "Financial Institutions",
+    iconName: "ShieldCheck",
+    typicalScope: "Multi-Branch Bank Retail",
+    cadence: "Nightly Sanitization",
+    compliance: "Vault & Teller Security",
+  },
+  {
+    name: "Hospitality & Venues",
+    iconName: "Compass",
+    typicalScope: "Event & Banquet Halls",
+    cadence: "Turnover Between Events",
+    compliance: "Rapid Incident Response",
+  },
+  {
+    name: "Industrial Facilities",
+    iconName: "Rocket",
+    typicalScope: "Cleanrooms & Assembly",
+    cadence: "HEPA Filtration & Sanitizing",
+    compliance: "ISO Standard Cleans",
+  },
+  {
+    name: "Professional Offices",
+    iconName: "Sparkles",
+    typicalScope: "Law & CPA Suites",
+    cadence: "5-Day Weekly Janitorial",
+    compliance: "Document Confidentiality",
+  },
+];
+
+export interface ComparisonRow {
+  feature: string;
+  traditional: string;
+  rhek: string;
+}
+
+export const COMPARISON_ROWS: ComparisonRow[] = [
+  {
+    feature: "Lead Exclusivity",
+    traditional: "Shared with 3–5 local cleaning competitors",
+    rhek: "100% Territory Exclusivity — Never resold or distributed",
+  },
+  {
+    feature: "Financial Risk",
+    traditional: "$3,000–$6,000 non-refundable upfront retainers",
+    rhek: "Pay-Nothing-Upfront Option with explicit performance targets",
+  },
+  {
+    feature: "Appointment Verification",
+    traditional: "Unverified scrape lists and non-committal callbacks",
+    rhek: "Confirmed Date & Time, Square Footage, and Decision-Maker",
+  },
+  {
+    feature: "Outreach & Targeting Tech",
+    traditional: "Generic mass email blasts and stale directory scrapers",
+    rhek: "Proprietary Facility Intelligence, Verified Phone Outreach & Direct Calendar Handover",
+  },
+  {
+    feature: "Account Management",
+    traditional: "Outsourced call centers with high churn and no context",
+    rhek: "Dedicated US/CA B2B SDRs with direct executive slack access",
+  },
+];

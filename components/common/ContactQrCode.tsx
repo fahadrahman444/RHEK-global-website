@@ -14,7 +14,7 @@ export function ContactQrCode({
   sublabel = "+1 (646) 694-8464",
 }: ContactQrCodeProps) {
   return (
-    <div className={`flex flex-col items-center justify-center p-4 rounded-xl bg-white border border-[#EBEBEB] shadow-xs text-center ${className}`}>
+    <div className={`flex flex-col items-center justify-center p-4 rounded-xl bg-white border border-brand-border shadow-xs text-center ${className}`}>
       {/* Crisp SVG QR Code Representation */}
       <div className="relative p-2 bg-white rounded-lg border border-slate-100 shadow-2xs">
         <svg
@@ -87,7 +87,7 @@ export function ContactQrCode({
       </div>
 
       <div className="mt-3">
-        <p className="text-[12px] font-semibold text-[#101010] uppercase tracking-wider">
+        <p className="text-[12px] font-semibold text-brand-black uppercase tracking-wider">
           {label}
         </p>
         <p className="text-[11px] text-[#737373] mt-0.5">

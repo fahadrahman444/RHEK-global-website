@@ -20,7 +20,7 @@ export function CapabilityStrip({ items, className }: CapabilityStripProps) {
   return (
     <div
       className={cn(
-        "rounded-2xl border border-[#EBEBEB] bg-[#FAFAFA] divide-y lg:divide-y-0 lg:divide-x divide-[#EBEBEB] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 overflow-hidden",
+        "rounded-2xl border border-brand-border bg-brand-surface divide-y lg:divide-y-0 lg:divide-x divide-[#EBEBEB] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 overflow-hidden",
         className
       )}
     >
@@ -34,7 +34,7 @@ export function CapabilityStrip({ items, className }: CapabilityStripProps) {
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 {Icon && (
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white border border-[#EBEBEB] text-[#101010] group-hover:border-[#101010] transition-colors">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white border border-brand-border text-brand-black group-hover:border-brand-black transition-colors">
                     <Icon className="h-4 w-4" />
                   </div>
                 )}
@@ -45,7 +45,7 @@ export function CapabilityStrip({ items, className }: CapabilityStripProps) {
                 )}
               </div>
 
-              <h4 className="font-heading text-base font-bold text-[#101010]">
+              <h4 className="font-heading text-base font-bold text-brand-black">
                 {item.title}
               </h4>
               <p className="text-[12.5px] text-[#525252] leading-relaxed">
@@ -54,7 +54,7 @@ export function CapabilityStrip({ items, className }: CapabilityStripProps) {
             </div>
 
             {item.metric && (
-              <div className="pt-2 border-t border-[#EBEBEB]/60 font-mono text-[12px] font-bold text-[#E9204F]">
+              <div className="pt-2 border-t border-brand-border/60 font-mono text-[12px] font-bold text-brand-red">
                 {item.metric}
               </div>
             )}

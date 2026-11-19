@@ -37,8 +37,8 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
     return (
       <div className={cn("w-full", containerClassName)}>
         {label && (
-          <label htmlFor={id} className="block text-[12.5px] font-semibold text-[#101010] mb-1.5">
-            {label} {required && <span className="text-[#E9204F]">*</span>}
+          <label htmlFor={id} className="block text-[12.5px] font-semibold text-brand-black mb-1.5">
+            {label} {required && <span className="text-brand-red">*</span>}
           </label>
         )}
         <input
@@ -48,8 +48,8 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
           aria-invalid={Boolean(error)}
           aria-describedby={error ? errorId : helperText ? helperId : undefined}
           className={cn(
-            "w-full rounded-lg border bg-white px-3.5 py-2.5 min-h-[44px] text-[13.5px] text-[#101010] placeholder:text-zinc-400 transition-colors",
-            "focus:border-[#101010] focus:ring-1 focus:ring-[#101010] focus-visible:outline-none",
+            "w-full rounded-lg border bg-white px-3.5 py-2.5 min-h-[44px] text-[13.5px] text-brand-black placeholder:text-zinc-400 transition-colors",
+            "focus:border-brand-black focus:ring-1 focus:ring-[#101010] focus-visible:outline-none",
             error ? "border-red-500 focus:border-red-500 focus:ring-red-500" : "border-zinc-200",
             className
           )}
@@ -100,8 +100,8 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
     return (
       <div className={cn("w-full", containerClassName)}>
         {label && (
-          <label htmlFor={id} className="block text-[12.5px] font-semibold text-[#101010] mb-1.5">
-            {label} {required && <span className="text-[#E9204F]">*</span>}
+          <label htmlFor={id} className="block text-[12.5px] font-semibold text-brand-black mb-1.5">
+            {label} {required && <span className="text-brand-red">*</span>}
           </label>
         )}
         <select
@@ -111,8 +111,8 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
           aria-invalid={Boolean(error)}
           aria-describedby={error ? errorId : undefined}
           className={cn(
-            "w-full rounded-lg border bg-white px-3.5 py-2.5 min-h-[44px] text-[13.5px] text-[#101010] transition-colors",
-            "focus:border-[#101010] focus:ring-1 focus:ring-[#101010] focus-visible:outline-none",
+            "w-full rounded-lg border bg-white px-3.5 py-2.5 min-h-[44px] text-[13.5px] text-brand-black transition-colors",
+            "focus:border-brand-black focus:ring-1 focus:ring-[#101010] focus-visible:outline-none",
             error ? "border-red-500 focus:border-red-500 focus:ring-red-500" : "border-zinc-200",
             className
           )}
@@ -162,8 +162,8 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     return (
       <div className={cn("w-full", containerClassName)}>
         {label && (
-          <label htmlFor={id} className="block text-[12.5px] font-semibold text-[#101010] mb-1.5">
-            {label} {required && <span className="text-[#E9204F]">*</span>}
+          <label htmlFor={id} className="block text-[12.5px] font-semibold text-brand-black mb-1.5">
+            {label} {required && <span className="text-brand-red">*</span>}
           </label>
         )}
         <textarea
@@ -173,8 +173,8 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           aria-invalid={Boolean(error)}
           aria-describedby={error ? errorId : undefined}
           className={cn(
-            "w-full rounded-lg border bg-white px-3.5 py-2.5 text-[13.5px] text-[#101010] placeholder:text-zinc-400 transition-colors resize-y min-h-[100px]",
-            "focus:border-[#101010] focus:ring-1 focus:ring-[#101010] focus-visible:outline-none",
+            "w-full rounded-lg border bg-white px-3.5 py-2.5 text-[13.5px] text-brand-black placeholder:text-zinc-400 transition-colors resize-y min-h-[100px]",
+            "focus:border-brand-black focus:ring-1 focus:ring-[#101010] focus-visible:outline-none",
             error ? "border-red-500 focus:border-red-500 focus:ring-red-500" : "border-zinc-200",
             className
           )}

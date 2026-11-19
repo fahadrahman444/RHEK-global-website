@@ -7,13 +7,13 @@ export default function NotFound() {
   return (
     <main className="min-h-screen py-3 sm:py-5 space-y-6 sm:space-y-8">
       <div className="site-container">
-        <div className="relative overflow-hidden rounded-2xl bg-white shadow-xs border border-[#EBEBEB]">
+        <div className="relative overflow-hidden rounded-2xl bg-white shadow-xs border border-brand-border">
           <div className="relative z-10 mx-auto max-w-[1080px] p-5 sm:p-7 lg:p-8">
             <Navbar />
 
             {/* Error Content */}
             <div className="pt-10 pb-10 text-center max-w-xl mx-auto">
-              <div className="inline-flex items-center justify-center h-12 w-12 rounded-xl bg-[#FAFAFA] text-[#101010] mb-4 border border-[#EBEBEB]">
+              <div className="inline-flex items-center justify-center h-12 w-12 rounded-xl bg-brand-surface text-brand-black mb-4 border border-brand-border">
                 <FileQuestion className="h-6 w-6" />
               </div>
               
@@ -21,7 +21,7 @@ export default function NotFound() {
                 404 Error — Page Not Found
               </div>
 
-              <h1 className="font-heading text-2xl sm:text-3xl font-bold tracking-tight text-[#101010]">
+              <h1 className="font-heading text-2xl sm:text-3xl font-bold tracking-tight text-brand-black">
                 The page you are looking for does not exist.
               </h1>
 
@@ -32,14 +32,14 @@ export default function NotFound() {
               <div className="mt-5 flex flex-col sm:flex-row items-center justify-center gap-2.5">
                 <Link
                   href="/"
-                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#101010] hover:bg-[#E9204F] px-4 py-2 text-[12.5px] font-semibold text-white shadow-xs transition-colors min-h-[38px]"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-black hover:bg-brand-red px-4 py-2 text-[12.5px] font-semibold text-white shadow-xs transition-colors min-h-[38px]"
                 >
                   <Home className="h-3.5 w-3.5" />
                   <span>Return to Homepage</span>
                 </Link>
                 <Link
                   href="/services"
-                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#E5E5E5] bg-white hover:border-[#101010] px-4 py-2 text-[12.5px] font-semibold text-[#101010] transition-colors min-h-[38px]"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#E5E5E5] bg-white hover:border-brand-black px-4 py-2 text-[12.5px] font-semibold text-brand-black transition-colors min-h-[38px]"
                 >
                   <Compass className="h-3.5 w-3.5" />
                   <span>Explore Services</span>
