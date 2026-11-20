@@ -17,7 +17,7 @@ export default function NotFound() {
                 <FileQuestion className="h-6 w-6" />
               </div>
               
-              <div className="text-[10.5px] font-semibold uppercase tracking-wider text-[#737373] mb-1.5">
+              <div className="text-[10.5px] font-semibold uppercase tracking-wider text-brand-caption mb-1.5">
                 404 Error — Page Not Found
               </div>
 
@@ -25,7 +25,7 @@ export default function NotFound() {
                 The page you are looking for does not exist.
               </h1>
 
-              <p className="mt-2.5 text-[14px] text-[#525252] leading-relaxed">
+              <p className="mt-2.5 text-[14px] text-brand-body leading-relaxed">
                 The resource or link you followed may have been updated, moved, or temporarily retired. Let&apos;s get you back on track.
               </p>
 
@@ -39,7 +39,7 @@ export default function NotFound() {
                 </Link>
                 <Link
                   href="/services"
-                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#E5E5E5] bg-white hover:border-brand-black px-4 py-2 text-[12.5px] font-semibold text-brand-black transition-colors min-h-[38px]"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-brand-border bg-white hover:border-brand-black px-4 py-2 text-[12.5px] font-semibold text-brand-black transition-colors min-h-[38px]"
                 >
                   <Compass className="h-3.5 w-3.5" />
                   <span>Explore Services</span>

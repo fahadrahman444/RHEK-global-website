@@ -36,7 +36,7 @@ export default function PrivacyPolicyPage() {
       {/* 3. Privacy Policy Content */}
       <section className="py-8 sm:py-12">
         <div className="site-container">
-          <div className="mx-auto max-w-[780px] text-[14px] sm:text-[15px] leading-relaxed text-[#525252] space-y-7">
+          <div className="mx-auto max-w-[780px] text-[14px] sm:text-[15px] leading-relaxed text-brand-body space-y-7">
             <section>
               <h2 className="text-lg sm:text-xl font-bold font-heading text-brand-black mb-2.5">
                 1. Overview and Scope
@@ -118,7 +118,7 @@ export default function PrivacyPolicyPage() {
               </p>
               <div className="mt-3 p-4 rounded-xl bg-brand-surface border border-brand-border text-[13.5px] sm:text-[14px]">
                 <div className="font-bold text-brand-black">RHEK GLOBAL Privacy Operations</div>
-                <div className="text-[#525252] mt-1">Email: <a href="mailto:privacy@rhekglobal.com" className="text-brand-red hover:underline font-semibold">privacy@rhekglobal.com</a></div>
+                <div className="text-brand-body mt-1">Email: <a href="mailto:privacy@rhekglobal.com" className="text-brand-red hover:underline font-semibold">privacy@rhekglobal.com</a></div>
               </div>
             </section>
 

@@ -32,9 +32,9 @@ const variantStyles: Record<ButtonVariant, string> = {
   dark:
     "bg-brand-black hover:bg-brand-red text-white shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 border border-transparent",
   outline:
-    "border border-brand-border bg-transparent hover:border-brand-black hover:bg-brand-surface text-brand-black",
+    "border border-brand-border bg-transparent hover:border-brand-black hover:bg-brand-surface text-brand-black hover:-translate-y-0.5 active:translate-y-0",
   ghost:
-    "bg-transparent hover:bg-black/5 text-brand-black hover:text-brand-red border-transparent",
+    "bg-transparent hover:bg-black/5 text-brand-black hover:text-brand-red border-transparent active:translate-y-0",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
@@ -60,8 +60,8 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
     ref
   ) => {
     const baseClass = cn(
-      "inline-flex items-center justify-center transition-all duration-200 whitespace-nowrap select-none",
-      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E9204F] focus-visible:ring-offset-2",
+      "inline-flex items-center justify-center transition-all duration-200 whitespace-nowrap select-none cursor-pointer",
+      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2",
       "disabled:opacity-50 disabled:pointer-events-none disabled:cursor-not-allowed",
       variantStyles[variant],
       sizeStyles[size],

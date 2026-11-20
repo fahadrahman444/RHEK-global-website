@@ -1,11 +1,24 @@
-# Rate Global — Master Design System & Spacing Specification
+# RHEK GLOBAL — Master Design System, Spacing & Interaction Specification
 
 ## 1. Color System & Theme Balancing (60-30-10 Rule)
 
 Use the 60-30-10 color balance principle across all pages and components:
-- **60% — Dominant (Neutral Canvas):** Pure white (`#FFFFFF`) and architectural paper off-white (`#FAFAFA`).
-- **30% — Supporting (Structural Surfaces & Typography):** Midnight black (`#101010`) for authoritative containers and headings; slate (`#747474`) for body copy; architectural borders (`#EBEBEB` and `#F3F3F3`).
-- **10% — Accent (Conversion Focus):** Crimson Red (`#E9204F`) strictly reserved for primary CTA buttons, live verified stamps, and dynamic ROI metrics.
+- **60% — Dominant (Neutral Canvas):** Pure white (`#FFFFFF`) and architectural paper off-white (`#FAFAFA` / `bg-brand-surface`).
+- **30% — Supporting (Structural Surfaces & Typography):** Midnight black (`#101010` / `brand.black`) for authoritative containers and headings; dark body text (`#525252` / `brand.body`); captions (`#737373` / `brand.caption`); muted dark text (`#A3A3A3` / `brand.dim`); architectural hairline borders (`#EBEBEB` / `brand.border` and `#F3F3F3` / `brand.border-subtle`).
+- **10% — Accent (Conversion Focus):** Crimson Red (`#E9204F` / `brand.red`) strictly reserved for primary CTA buttons, live verified stamps, active tabs, and key conversion metrics.
+
+### Centralized Token Reference
+All colors are tokenized under `colors.brand` in [tailwind.config.ts](file:///D:/RHEK/RHEK-global-website/tailwind.config.ts):
+* `bg-brand-red` / `text-brand-red`: `#E9204F`
+* `bg-brand-black` / `text-brand-black`: `#101010`
+* `text-brand-body`: `#525252`
+* `text-brand-caption`: `#737373`
+* `text-brand-dim`: `#A3A3A3`
+* `text-brand-muted`: `#ACACAC`
+* `bg-brand-surface`: `#FAFAFA`
+* `border-brand-border`: `#EBEBEB`
+* `border-brand-border-subtle`: `#F3F3F3`
+* `bg-brand-dark`: `#141416`
 
 ---
 
@@ -33,6 +46,7 @@ Use multiples of 8px as the primary spacing foundation across all components.
 - **Desktop Gutters:** `24px` internal page margins.
 - **Mobile Gutters:** `16px` internal page margins.
 - **Responsive Width:** `min(1280px, calc(100% - 2 * var(--page-gutter)))`.
+- **Horizontal Overflow:** Enforced `overflow-x: clip` on `html` and `body` to prevent horizontal jitter.
 
 ---
 
@@ -40,34 +54,81 @@ Use multiples of 8px as the primary spacing foundation across all components.
 
 | Metric | Desktop | Tablet | Mobile |
 |---|---|---|---|
-| Hero vertical padding | 120px | 96px | 72px |
-| Section top/bottom padding | 112px | 80px | 64px |
-| Spacing between major sections | 96px | 80px | 64px |
-| Heading to paragraph gap | 24px | 20px | 16px |
-| Heading block to content grid | 48px | 40px | 32px |
-| Card-to-card gap | 24px | 20px | 16px |
+| Section top/bottom padding | 96px (`py-24`) | 80px (`py-20`) | 56px (`py-14`) |
+| Spacing between major sections | 96px | 80px | 56px |
+| Heading to paragraph gap | 16px (`mt-4`) | 14px | 12px |
+| Heading block to content grid | 48px (`mb-12`) | 40px (`mb-10`) | 32px (`mb-8`) |
+| Card-to-card gap | 24px (`gap-6`) | 20px | 16px |
 
 ---
 
 ## 5. Responsive Typography Scale
 
+Unified typography via `Plus_Jakarta_Sans` (`font-heading`) and `Instrument_Sans` (`font-sans`):
+
 | Typographic Level | Desktop | Tablet | Mobile | Font & Leading |
 |---|---|---|---|---|
-| **Hero Display Headline** | **72px** | **52px** | **38px** | Poppins Extrabold, `leading-[1.05] tracking-[-0.04em]` |
-| **Section H2 Headings** | **42px** | **34px** | **28px** | Poppins Extrabold, `leading-[1.12] tracking-[-0.035em]` |
-| **Card H3 Subheadings** | **22px** | **20px** | **18px** | Poppins Extrabold, `leading-[1.25]` |
-| **Impact Data Metrics** | **60px** | **48px** | **36px** | Poppins Black, Crimson Red (`#E9204F`) |
-| **Editorial Body Copy** | **16–18px** | **16px** | **15px** | Roboto Condensed, `leading-[1.65]` max-w-xl |
-| **Eyebrow Micro-Badges** | **11px** | **11px** | **10px** | Poppins Extrabold, uppercase `tracking-[0.12em]` |
+| **Hero Display Headline (H1)** | **48–56px** | **40–44px** | **28–32px** | `font-heading font-bold leading-tight tracking-[-0.03em]` |
+| **Section H2 Headings** | **34–40px** | **28–32px** | **24–26px** | `font-heading font-bold leading-[1.18] tracking-tight` |
+| **Card H3 Subheadings** | **17–20px** | **16–18px** | **15–16px** | `font-heading font-bold leading-snug` |
+| **Impact Data Metrics** | **40–56px** | **36–42px** | **28–32px** | `font-heading font-bold tracking-tight text-brand-black` |
+| **Prose Body Copy** | **15–16px** | **15px** | **14–14.5px** | `font-sans font-normal leading-relaxed text-brand-body` (`max-w-2xl`) |
+| **Micro-Badge / Pill** | **11px** | **11px** | **10.5px** | `font-semibold uppercase tracking-wider` |
 
 ---
 
 ## 6. 12-Column Grid Layout Combinations
 
 Enforce divisible 12-column sub-units with unified 24px gutters:
-- **7 / 5:** Hero headline & Pitch (7 cols) + Concrete Visual Proof Anchor Card (5 cols).
-- **6 / 6:** Balanced comparison and image-to-content sections.
-- **4 / 4 / 4:** 3 Performance Pillars and 3 Pricing Packages.
+- **7 / 5:** Split Hero — Pitch (7 cols) + Concrete Visual Proof Anchor Card (5 cols).
+- **6 / 6:** Balanced 2-column comparison (`PatternComparison`).
+- **4 / 4 / 4:** 3-tier pricing (`PatternTieredPricing`) or 3-pillar capabilities.
+- **3 / 3 / 3 / 3:** 4-step roadmap (`PatternStepper`) or 4-column bento grids (`PatternBentoGrid`).
+- **Full Width Centered:** Full-bleed Dark CTA Band (`PatternCtaBand`).
+
+---
+
+## 7. Card Geometry & Internal Rhythm
+
+- **Internal Padding:** `24px` mobile (`p-6`), `28–32px` desktop (`p-7` / `p-8`).
+- **Outer Border Radius:** `rounded-2xl` (16px) for cards; `rounded-xl` (12px) for micro-widgets.
+- **Inner Element Radius:** `rounded-lg` (8px) for buttons, badges, chips, and inputs.
+- **Border Standard:** Single hairline `border border-brand-border` (or `border-brand-black` on selected tiers).
+
+---
+
+## 8. Mouse Hover & Micro-Interaction Standards
+
+Following the comprehensive [MOUSE-HOVER-AUDIT.md](file:///D:/RHEK/RHEK-global-website/docs/MOUSE-HOVER-AUDIT.md), all mouse interactions adhere to 6 strict rules:
+
+1. **Physical Lift Reserved for Operable Targets:**
+   Only clickable links (`<a>`, `<Link>`) and buttons (`<Button>`) apply `hover:-translate-y-0.5`. Static cards (Process steps, Why Choose Us, Guarantee seals) must never lift up on hover.
+2. **Tactile Click Symmetry:**
+   Any element that lifts with `hover:-translate-y-0.5` must include `active:translate-y-0` for immediate tactile press feedback.
+3. **Hardware-Accelerated Spotlight:**
+   `SpotlightCard` computes coordinates via CSS custom properties (`--spotlight-x`, `--spotlight-y`) on DOM elements, bypassing React render cycles.
+4. **Desktop Cursor Affordance:**
+   All buttons and actionable elements enforce `cursor: pointer` via the global rule in `globals.css`:
+   ```css
+   button:not(:disabled), [role="button"]:not([aria-disabled="true"]) { cursor: pointer; }
+   ```
+5. **Primary CTA Hover Inversion:**
+   Primary buttons uniformly transition from `bg-brand-red text-white` to `bg-brand-black text-white`.
+6. **Universal Reduced-Motion Guard:**
+   All hover transforms and transitions respect `@media (prefers-reduced-motion: reduce)` by resetting duration to `0.01ms`.
+
+---
+
+## 9. The 8 Global Pattern Primitives
+
+1. `PatternSplitHero`: 7:5 split display hero with log window, live status badge, and jump navigation.
+2. `PatternBentoGrid`: 2, 3, or 4 column capability cards with 3-line copy clamp and arrow nudges.
+3. `PatternComparison`: 2-column Before/After reality contrast grid.
+4. `PatternSpecAccordion`: Non-text tech strip with progressive disclosure benchmark drawer.
+5. `PatternStepper`: 4-step delivery roadmap with max 3 deliverables and handoff artifact pill.
+6. `PatternSocialProof`: 3 large metric blocks + 3 compact quote cards.
+7. `PatternTieredPricing`: 3-tier fixed-bid pricing grid with popular badge and inclusions footer.
+8. `PatternCtaBand`: Full-bleed dark closing conversion section with risk-reversal subline.
 - **3 / 3 / 3 / 3:** 4 Commercial Target Sectors or capability cards.
 - **2 / 2 / 2 / 2 / 2 / 2:** 6 Numerical Impact Statistics.
 - **8 / 4:** Split Promotional Offers, Guarantee Seals, and Final CTA + QR Dock.

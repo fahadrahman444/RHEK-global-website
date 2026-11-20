@@ -140,13 +140,13 @@ export default function CareersPage() {
       <section className="py-8 sm:py-12 border-b border-brand-border">
         <div className="site-container">
           <div className="max-w-2xl mb-6">
-            <span className="inline-block text-[10.5px] font-bold uppercase tracking-wider text-[#737373] mb-1">
+            <span className="inline-block text-[10.5px] font-bold uppercase tracking-wider text-brand-caption mb-1">
               Why Work With Us
             </span>
             <h2 className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-brand-black tracking-[-0.03em] leading-snug">
               High Standards, Meaningful Freedom, Real Impact
             </h2>
-            <p className="text-[13.5px] text-[#525252] leading-relaxed mt-1.5">
+            <p className="text-[13.5px] text-brand-body leading-relaxed mt-1.5">
               We believe in autonomous high-performers, transparent compensation, and eliminating unnecessary meetings so you can do your best work.
             </p>
           </div>
@@ -167,7 +167,7 @@ export default function CareersPage() {
                   <h3 className="text-[13px] sm:text-[13.5px] font-bold text-brand-black mb-1">
                     {b.title}
                   </h3>
-                  <p className="text-[11.5px] sm:text-[12px] text-[#525252] leading-relaxed">
+                  <p className="text-[11.5px] sm:text-[12px] text-brand-body leading-relaxed">
                     {b.description}
                   </p>
                 </SpotlightCard>
@@ -182,14 +182,14 @@ export default function CareersPage() {
         <div className="site-container">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6">
             <div>
-              <span className="text-[10.5px] font-bold uppercase tracking-wider text-[#737373]">
+              <span className="text-[10.5px] font-bold uppercase tracking-wider text-brand-caption">
                 Open Opportunities
               </span>
               <h3 className="text-lg sm:text-2xl font-bold font-heading text-brand-black mt-0.5">
                 Current Openings at RHEK GLOBAL
               </h3>
             </div>
-            <p className="text-[12px] text-[#737373]">
+            <p className="text-[12px] text-brand-caption">
               {OPEN_ROLES.length} active positions available
             </p>
           </div>
@@ -208,7 +208,7 @@ export default function CareersPage() {
                       <span className="text-[10px] font-semibold text-brand-black bg-white border border-brand-border px-2 py-0.5 rounded">
                         {role.department}
                       </span>
-                      <span className="text-[10.5px] font-semibold text-[#737373] bg-white border border-brand-border px-2 py-0.5 rounded">
+                      <span className="text-[10.5px] font-semibold text-brand-caption bg-white border border-brand-border px-2 py-0.5 rounded">
                         {role.type}
                       </span>
                     </div>
@@ -217,7 +217,7 @@ export default function CareersPage() {
                     </h4>
                   </div>
 
-                  <div className="flex items-center gap-4 text-[12px] sm:text-[12.5px] text-[#525252]">
+                  <div className="flex items-center gap-4 text-[12px] sm:text-[12.5px] text-brand-body">
                     <span className="inline-flex items-center gap-1.5">
                       <MapPin className="h-3.5 w-3.5 text-brand-black" />
                       <span>{role.location}</span>
@@ -230,20 +230,20 @@ export default function CareersPage() {
                 </div>
 
                 <div className="pt-3.5 sm:pt-4">
-                  <p className="text-[13px] sm:text-[13.5px] text-[#525252] leading-relaxed mb-4">
+                  <p className="text-[13px] sm:text-[13.5px] text-brand-body leading-relaxed mb-4">
                     {role.description}
                   </p>
 
                   <div className="space-y-1.5 mb-5">
-                    <p className="text-[11px] font-semibold uppercase tracking-wider text-[#737373] mb-1.5">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider text-brand-caption mb-1.5">
                       Key Deliverables:
                     </p>
                     {role.responsibilities.map((resp) => (
                       <div
                         key={resp}
-                        className="flex items-start gap-2 text-[12px] sm:text-[12.5px] text-[#525252]"
+                        className="flex items-start gap-2 text-[12px] sm:text-[12.5px] text-brand-body"
                       >
-                        <CheckCircle2 className="h-3.5 w-3.5 text-[#16A34A] shrink-0 mt-0.5" />
+                        <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600 shrink-0 mt-0.5" />
                         <span>{resp}</span>
                       </div>
                     ))}
@@ -283,7 +283,7 @@ export default function CareersPage() {
               <h3 className="text-base sm:text-lg font-bold font-heading text-white">
                 Don&apos;t see an exact match for your skillset?
               </h3>
-              <p className="text-[12px] sm:text-[12.5px] text-[#A3A3A3] mt-0.5 leading-relaxed">
+              <p className="text-[12px] sm:text-[12.5px] text-brand-dim mt-0.5 leading-relaxed">
                 We are always open to connecting with top-tier SDRs, designers, full-stack engineers, and ops specialists.
               </p>
             </div>

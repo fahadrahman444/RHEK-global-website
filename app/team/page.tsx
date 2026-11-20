@@ -153,13 +153,13 @@ export default function TeamPage() {
       <div className="site-container py-8 sm:py-12 space-y-10 sm:space-y-14">
         <div>
           <div className="max-w-2xl mb-6">
-            <span className="inline-block text-[10.5px] font-bold uppercase tracking-wider text-[#737373] mb-1">
+            <span className="inline-block text-[10.5px] font-bold uppercase tracking-wider text-brand-caption mb-1">
               Dedicated Domain Experts
             </span>
             <h2 className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-brand-black tracking-[-0.03em] leading-snug">
               Specialized Teams for Every Stage of Your Pipeline
             </h2>
-            <p className="text-[13.5px] text-[#525252] leading-relaxed mt-1.5">
+            <p className="text-[13.5px] text-brand-body leading-relaxed mt-1.5">
               We organize our talent into focused functional units so you receive industry-tested methodology and reliable execution.
             </p>
           </div>
@@ -177,13 +177,13 @@ export default function TeamPage() {
                     <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white border border-brand-border text-brand-black mb-3 shadow-2xs">
                       <Icon className="h-4.5 w-4.5" />
                     </div>
-                    <span className="text-[10.5px] font-semibold uppercase tracking-wider text-[#737373]">
+                    <span className="text-[10.5px] font-semibold uppercase tracking-wider text-brand-caption">
                       {team.focus}
                     </span>
                     <h3 className="font-heading text-lg font-bold text-brand-black mt-0.5 mb-2 leading-snug">
                       {team.name}
                     </h3>
-                    <p className="text-[13px] text-[#525252] leading-relaxed mb-4">
+                    <p className="text-[13px] text-brand-body leading-relaxed mb-4">
                       {team.description}
                     </p>
                   </div>
@@ -192,7 +192,7 @@ export default function TeamPage() {
                     {team.capabilities.map((cap, cIdx) => (
                       <li
                         key={cIdx}
-                        className="flex items-center gap-2 text-[12px] text-[#525252]"
+                        className="flex items-center gap-2 text-[12px] text-brand-body"
                       >
                         <CheckCircle2 className="h-3.5 w-3.5 text-brand-red shrink-0" />
                         <span>{cap}</span>
@@ -208,7 +208,7 @@ export default function TeamPage() {
         {/* Operating Standards Strip */}
         <div className="border-t border-brand-border pt-8">
           <div className="max-w-xl mb-5">
-            <span className="text-[10.5px] font-bold uppercase tracking-wider text-[#737373]">
+            <span className="text-[10.5px] font-bold uppercase tracking-wider text-brand-caption">
               Operating Values
             </span>
             <h3 className="text-xl font-bold font-heading text-brand-black mt-0.5">
@@ -224,13 +224,13 @@ export default function TeamPage() {
                 className="rounded-xl border border-brand-border p-3 sm:p-4 hover:border-brand-black"
                 contentClassName="relative z-10"
               >
-                <span className="font-mono text-[11px] font-bold text-[#737373]">
+                <span className="font-mono text-[11px] font-bold text-brand-caption">
                   0{idx + 1}
                 </span>
                 <h4 className="text-[13px] sm:text-[13.5px] font-bold text-brand-black mt-0.5 mb-1 leading-snug">
                   {val.title}
                 </h4>
-                <p className="text-[11px] sm:text-[12px] text-[#525252] leading-relaxed line-clamp-3 sm:line-clamp-none">
+                <p className="text-[11px] sm:text-[12px] text-brand-body leading-relaxed line-clamp-3 sm:line-clamp-none">
                   {val.description}
                 </p>
               </SpotlightCard>
@@ -252,7 +252,7 @@ export default function TeamPage() {
             <h3 className="text-lg sm:text-xl font-bold font-heading text-white">
               Ready to Deploy a Dedicated Extension to Your Business?
             </h3>
-            <p className="text-[12.5px] text-[#A3A3A3] mt-0.5 leading-relaxed">
+            <p className="text-[12.5px] text-brand-dim mt-0.5 leading-relaxed">
               Schedule an initial consultation to review your requirements, market territory, or production scope with our specialists.
             </p>
           </div>

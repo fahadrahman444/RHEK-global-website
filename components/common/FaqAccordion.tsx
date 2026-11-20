@@ -49,7 +49,7 @@ export function FaqAccordion({
             </h2>
           )}
           {subtitle && (
-            <p className="mt-2 text-[14.5px] text-[#525252] leading-relaxed">
+            <p className="mt-2 text-[14.5px] text-brand-body leading-relaxed">
               {subtitle}
             </p>
           )}
@@ -65,14 +65,14 @@ export function FaqAccordion({
               className={cn(
                 "rounded-xl border transition-all duration-200 overflow-hidden",
                 isOpen
-                  ? "border-brand-black bg-white shadow-sm ring-1 ring-[#101010]/5"
-                  : "border-brand-border bg-brand-surface hover:border-[#D0D0D0]"
+                  ? "border-brand-black bg-white shadow-sm ring-1 ring-brand-black/5"
+                  : "border-brand-border bg-brand-surface hover:border-brand-black"
               )}
             >
               <button
                 type="button"
                 onClick={() => toggle(idx)}
-                className="w-full flex items-center justify-between gap-4 p-4.5 sm:p-5 text-left font-bold text-[14.5px] sm:text-[15.5px] text-brand-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E9204F]"
+                className="w-full flex items-center justify-between gap-4 p-4.5 sm:p-5 text-left font-bold text-[14.5px] sm:text-[15.5px] text-brand-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red"
                 aria-expanded={isOpen}
               >
                 <span>{faq.question}</span>
@@ -81,7 +81,7 @@ export function FaqAccordion({
                     "flex h-7 w-7 shrink-0 items-center justify-center rounded-full border transition-transform duration-200",
                     isOpen
                       ? "rotate-180 bg-brand-black text-white border-brand-black"
-                      : "bg-white text-[#737373] border-brand-border"
+                      : "bg-white text-brand-caption border-brand-border"
                   )}
                 >
                   <ChevronDown className="h-4 w-4" />
@@ -96,7 +96,7 @@ export function FaqAccordion({
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <div className="px-4.5 pb-5 sm:px-5 pt-1 text-[13.5px] sm:text-[14px] text-[#525252] leading-relaxed border-t border-[#F0F0F0]">
+                    <div className="px-4.5 pb-5 sm:px-5 pt-1 text-[13.5px] sm:text-[14px] text-brand-body leading-relaxed border-t border-brand-border-subtle">
                       {faq.answer}
                     </div>
                   </motion.div>

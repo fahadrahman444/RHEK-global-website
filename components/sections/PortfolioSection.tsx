@@ -52,7 +52,7 @@ export function PortfolioSection({
                 <h2 className="font-heading text-[24px] sm:text-[32px] font-bold tracking-[-0.035em] leading-[1.15] text-white">
                   Proven Results, Engineered for Impact.
                 </h2>
-                <p className="mt-1.5 text-[14px] text-[#A3A3A3] max-w-xl leading-relaxed">
+                <p className="mt-1.5 text-[14px] text-brand-dim max-w-xl leading-relaxed">
                   Deep architectural case studies delivering verified performance metrics, zero-downtime reliability, and measurable business growth.
                 </p>
               </div>
@@ -69,7 +69,7 @@ export function PortfolioSection({
                       className={`rounded-lg px-3 py-1 text-[11.5px] font-semibold transition-colors min-h-[34px] inline-flex items-center ${
                         isActive
                           ? "bg-white text-brand-black"
-                          : "bg-white/5 text-[#A3A3A3] border border-white/10 hover:border-white/20 hover:text-white"
+                          : "bg-white/5 text-brand-dim border border-white/10 hover:border-white/20 hover:text-white"
                       }`}
                     >
                       {cat}
@@ -95,7 +95,7 @@ export function PortfolioSection({
                         {project.category}
                       </span>
 
-                      <span className="inline-flex items-center gap-1 rounded bg-[#16A34A]/10 border border-[#16A34A]/30 px-2.5 py-0.5 text-[11px] font-semibold text-[#16A34A]">
+                      <span className="inline-flex items-center gap-1 rounded bg-emerald-600/10 border border-emerald-600/30 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-600">
                         <CheckCircle2 className="h-3.5 w-3.5" />
                         {project.metric}
                       </span>
@@ -103,13 +103,13 @@ export function PortfolioSection({
 
                     <h3 className="text-xl font-bold font-heading text-white mb-1.5 flex items-center justify-between">
                       <span>{project.title}</span>
-                      <ArrowUpRight className="h-4 w-4 text-[#A3A3A3]" />
+                      <ArrowUpRight className="h-4 w-4 text-brand-dim" />
                     </h3>
-                    <p className="text-[12.5px] text-[#A3A3A3] mb-3">
+                    <p className="text-[12.5px] text-brand-dim mb-3">
                       Client: {project.client}
                     </p>
 
-                    <p className="text-[13.5px] leading-relaxed text-[#D4D4D4] mb-4">
+                    <p className="text-[13.5px] leading-relaxed text-neutral-300 mb-4">
                       {project.description}
                     </p>
 
@@ -125,7 +125,7 @@ export function PortfolioSection({
                     {project.techStack.map((tech) => (
                       <span
                         key={tech}
-                        className="rounded bg-white/5 border border-white/10 px-2 py-0.5 text-[11px] font-mono text-[#A3A3A3]"
+                        className="rounded bg-white/5 border border-white/10 px-2 py-0.5 text-[11px] font-mono text-brand-dim"
                       >
                         {tech}
                       </span>
@@ -137,12 +137,12 @@ export function PortfolioSection({
 
             {/* Bottom Full Directory Link */}
             <div className="mt-10 pt-7 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <p className="text-[14px] text-[#A3A3A3] text-center sm:text-left">
+              <p className="text-[14px] text-brand-dim text-center sm:text-left">
                 Review complete technical architectures, case studies, and engineering benchmarks.
               </p>
               <Link
                 href="/work"
-                className="inline-flex items-center gap-1.5 rounded-lg bg-brand-red text-white hover:bg-white hover:text-brand-black transition-colors px-5 py-2.5 text-[12.5px] font-semibold shrink-0 min-h-[40px]"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-brand-red text-white hover:bg-brand-black hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 px-5 py-2.5 text-[12.5px] font-semibold shrink-0 min-h-[40px] shadow-xs hover:shadow-md"
               >
                 <span>View All Case Studies ({portfolioProjects.length})</span>
                 <ArrowRight className="h-3.5 w-3.5" />
@@ -160,7 +160,7 @@ export function PortfolioSection({
       <div className="mx-auto max-w-[1080px]">
         {/* Filter Toolbar */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-5 border-b border-brand-border">
-          <div className="text-[13px] text-[#737373]">
+          <div className="text-[13px] text-brand-caption">
             Showing <span className="font-bold text-brand-black">{displayedProjects.length}</span> verified case {displayedProjects.length === 1 ? "study" : "studies"}
           </div>
 
@@ -176,7 +176,7 @@ export function PortfolioSection({
                   className={`rounded-lg px-3 py-1.5 text-[12px] font-semibold transition-colors min-h-[36px] inline-flex items-center ${
                     isActive
                       ? "bg-brand-black text-white"
-                      : "bg-brand-surface text-[#525252] border border-[#E5E5E5] hover:border-brand-black hover:text-brand-black"
+                      : "bg-brand-surface text-brand-body border border-brand-border hover:border-brand-black hover:text-brand-black"
                   }`}
                 >
                   {cat}
@@ -201,7 +201,7 @@ export function PortfolioSection({
                     {project.category}
                   </span>
 
-                  <span className="inline-flex items-center gap-1 rounded bg-[#16A34A]/10 border border-[#16A34A]/30 px-2 py-0.5 text-[11px] font-semibold text-[#16A34A]">
+                  <span className="inline-flex items-center gap-1 rounded bg-emerald-600/10 border border-emerald-600/30 px-2 py-0.5 text-[11px] font-semibold text-emerald-600">
                     <CheckCircle2 className="h-3 w-3" />
                     {project.metric}
                   </span>
@@ -209,13 +209,13 @@ export function PortfolioSection({
 
                 <h3 className="font-heading text-[18px] font-bold text-brand-black mb-1 flex items-center justify-between">
                   <span>{project.title}</span>
-                  <ArrowUpRight className="h-4 w-4 text-[#737373]" />
+                  <ArrowUpRight className="h-4 w-4 text-brand-caption" />
                 </h3>
-                <p className="text-[12px] text-[#737373] mb-3">
+                <p className="text-[12px] text-brand-caption mb-3">
                   Client: {project.client}
                 </p>
 
-                <p className="text-[13.5px] leading-relaxed text-[#525252] mb-4">
+                <p className="text-[13.5px] leading-relaxed text-brand-body mb-4">
                   {project.description}
                 </p>
 
@@ -231,7 +231,7 @@ export function PortfolioSection({
                 {project.techStack.map((tech) => (
                   <span
                     key={tech}
-                    className="rounded bg-white border border-brand-border px-2 py-0.5 text-[11px] font-mono text-[#525252]"
+                    className="rounded bg-white border border-brand-border px-2 py-0.5 text-[11px] font-mono text-brand-body"
                   >
                     {tech}
                   </span>
@@ -251,14 +251,14 @@ export function PortfolioSection({
             <h3 className="text-xl font-bold font-heading text-brand-black">
               Have a similar product vision?
             </h3>
-            <p className="mt-1 text-[13.5px] text-[#525252] max-w-xl">
+            <p className="mt-1 text-[13.5px] text-brand-body max-w-xl">
               We design and engineer bespoke web platforms with strict type safety, sub-second response times, and 100% IP ownership.
             </p>
           </div>
 
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-brand-black hover:bg-brand-red text-white px-5 py-2.5 text-[13px] font-semibold transition-colors shadow-xs shrink-0 min-h-[42px]"
+            className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-brand-black hover:bg-brand-red text-white hover:-translate-y-0.5 active:translate-y-0 px-5 py-2.5 text-[13px] font-semibold transition-all duration-200 shadow-xs hover:shadow-md shrink-0 min-h-[42px]"
           >
             <span>Book a Discovery Call</span>
             <ArrowRight className="h-3.5 w-3.5" />

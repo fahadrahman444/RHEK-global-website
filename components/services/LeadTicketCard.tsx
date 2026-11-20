@@ -17,20 +17,20 @@ export function LeadTicketCard({ sample, serviceTitle }: LeadTicketCardProps) {
     >
       {/* Top Header Row: Ticket ID + Verified Seal */}
       <div>
-        <div className="flex items-center justify-between gap-3 pb-2.5 border-b border-[#F0F0F0]">
+        <div className="flex items-center justify-between gap-3 pb-2.5 border-b border-brand-border-subtle">
           <div className="flex items-center gap-2">
-            <span className="font-mono text-[10.5px] font-semibold text-[#525252] bg-brand-surface border border-brand-border px-2 py-0.5 rounded">
+            <span className="font-mono text-[10.5px] font-semibold text-brand-body bg-brand-surface border border-brand-border px-2 py-0.5 rounded">
               {sample.ticketId || `TKT-${sample.id.toUpperCase()}`}
             </span>
             {sample.category && (
-              <span className="hidden sm:inline-block rounded bg-brand-surface text-[#525252] border border-brand-border text-[10px] font-semibold px-2 py-0.5">
+              <span className="hidden sm:inline-block rounded bg-brand-surface text-brand-body border border-brand-border text-[10px] font-semibold px-2 py-0.5">
                 {sample.category}
               </span>
             )}
           </div>
 
           <div className="flex items-center gap-1.5 rounded bg-brand-surface border border-brand-border px-2 py-0.5 text-[10px] font-semibold text-brand-black">
-            <CheckCircle2 className="h-3 w-3 text-[#16A34A]" />
+            <CheckCircle2 className="h-3 w-3 text-emerald-600" />
             <span>Verified</span>
           </div>
         </div>
@@ -44,7 +44,7 @@ export function LeadTicketCard({ sample, serviceTitle }: LeadTicketCardProps) {
           <h3 className="text-[16px] font-bold text-brand-black font-heading tracking-tight leading-snug group-hover:text-brand-red transition-colors">
             {sample.facility}
           </h3>
-          <div className="flex items-center gap-1.5 text-[12px] text-[#525252] mt-0.5">
+          <div className="flex items-center gap-1.5 text-[12px] text-brand-body mt-0.5">
             <MapPin className="h-3.5 w-3.5 text-brand-black shrink-0" />
             <span>Territory: <strong className="text-brand-black">{sample.location}</strong></span>
           </div>
@@ -53,7 +53,7 @@ export function LeadTicketCard({ sample, serviceTitle }: LeadTicketCardProps) {
         {/* Specs 4-Grid */}
         <div className="grid grid-cols-2 gap-1.5 py-1.5 text-[11.5px]">
           <div className="rounded bg-brand-surface border border-brand-border p-2">
-            <div className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider text-[#737373] mb-0.5">
+            <div className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider text-brand-caption mb-0.5">
               <Building2 className="h-3 w-3 text-brand-black" />
               <span>Facility Size</span>
             </div>
@@ -63,7 +63,7 @@ export function LeadTicketCard({ sample, serviceTitle }: LeadTicketCardProps) {
           </div>
 
           <div className="rounded bg-brand-surface border border-brand-border p-2">
-            <div className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider text-[#737373] mb-0.5">
+            <div className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider text-brand-caption mb-0.5">
               <Calendar className="h-3 w-3 text-brand-black" />
               <span>Service Scope</span>
             </div>
@@ -73,7 +73,7 @@ export function LeadTicketCard({ sample, serviceTitle }: LeadTicketCardProps) {
           </div>
 
           <div className="rounded bg-brand-surface border border-brand-border p-2">
-            <div className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider text-[#737373] mb-0.5">
+            <div className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider text-brand-caption mb-0.5">
               <DollarSign className="h-3 w-3 text-brand-black" />
               <span>Target Budget</span>
             </div>
@@ -83,7 +83,7 @@ export function LeadTicketCard({ sample, serviceTitle }: LeadTicketCardProps) {
           </div>
 
           <div className="rounded bg-brand-surface border border-brand-border p-2">
-            <div className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider text-[#737373] mb-0.5">
+            <div className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider text-brand-caption mb-0.5">
               <Clock className="h-3 w-3 text-brand-black" />
               <span>Start Timeline</span>
             </div>
@@ -95,9 +95,9 @@ export function LeadTicketCard({ sample, serviceTitle }: LeadTicketCardProps) {
       </div>
 
       {/* Ticket Footer Row */}
-      <div className="pt-2.5 mt-1 border-t border-[#F0F0F0] flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-        <div className="flex items-center gap-1.5 text-[11px] text-[#525252]">
-          <UserCheck className="h-3.5 w-3.5 text-[#16A34A] shrink-0" />
+      <div className="pt-2.5 mt-1 border-t border-brand-border-subtle flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <div className="flex items-center gap-1.5 text-[11px] text-brand-body">
+          <UserCheck className="h-3.5 w-3.5 text-emerald-600 shrink-0" />
           <span>Decision Maker: <strong className="text-brand-black">{sample.contact}</strong></span>
         </div>
 

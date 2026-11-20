@@ -157,8 +157,8 @@ export function Navbar({ variant = "light" }: NavbarProps = {}) {
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-200 ${
         isDark
-          ? "bg-[#0A0A0B]/98 backdrop-blur-md border-b border-white/10"
-          : "bg-white/98 backdrop-blur-md border-b border-[#F0F0F0]"
+          ? "bg-brand-black/98 backdrop-blur-md border-b border-white/10"
+          : "bg-white/98 backdrop-blur-md border-b border-brand-border-subtle"
       }`}
     >
       <div className="site-container">
@@ -185,8 +185,8 @@ export function Navbar({ variant = "light" }: NavbarProps = {}) {
                   ? "text-white font-bold"
                   : "text-brand-black font-bold"
                 : isDark
-                  ? "text-[#A3A3A3] hover:text-white"
-                  : "text-[#525252] hover:text-brand-black"
+                  ? "text-brand-dim hover:text-white"
+                  : "text-brand-body hover:text-brand-black"
             }`}
           >
             Home
@@ -204,8 +204,8 @@ export function Navbar({ variant = "light" }: NavbarProps = {}) {
                   ? "text-white font-bold"
                   : "text-brand-black font-bold"
                 : isDark
-                  ? "text-[#A3A3A3] hover:text-white"
-                  : "text-[#525252] hover:text-brand-black"
+                  ? "text-brand-dim hover:text-white"
+                  : "text-brand-body hover:text-brand-black"
             }`}
           >
             About Us
@@ -230,8 +230,8 @@ export function Navbar({ variant = "light" }: NavbarProps = {}) {
                       ? "text-white font-bold"
                       : "text-brand-black font-bold"
                     : isDark
-                      ? "text-[#A3A3A3] hover:text-white"
-                      : "text-[#525252] hover:text-brand-black"
+                      ? "text-brand-dim hover:text-white"
+                      : "text-brand-body hover:text-brand-black"
                 }`}
               >
                 Services
@@ -244,7 +244,7 @@ export function Navbar({ variant = "light" }: NavbarProps = {}) {
                 onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
                 aria-expanded={servicesDropdownOpen}
                 aria-label="Toggle Services dropdown"
-                className={`ml-1 p-1 transition-colors focus:outline-none ${isDark ? "text-[#A3A3A3] hover:text-white" : "text-[#525252] hover:text-brand-black"}`}
+                className={`ml-1 p-1 transition-colors focus:outline-none ${isDark ? "text-brand-dim hover:text-white" : "text-brand-body hover:text-brand-black"}`}
               >
                 <ChevronDown
                   className={`h-3.5 w-3.5 transition-transform duration-200 ${
@@ -267,18 +267,18 @@ export function Navbar({ variant = "light" }: NavbarProps = {}) {
                   <div
                     className={`rounded-xl border p-5 shadow-2xl ${
                       isDark
-                        ? "border-white/10 bg-[#141416] text-white ring-1 ring-white/10"
+                        ? "border-white/10 bg-brand-dark text-white ring-1 ring-white/10"
                         : "border-brand-border bg-white text-brand-black ring-1 ring-black/5"
                     }`}
                   >
                     <div
                       className={`flex items-center justify-between pb-3 mb-2 border-b ${
-                        isDark ? "border-white/10" : "border-[#F0F0F0]"
+                        isDark ? "border-white/10" : "border-brand-border-subtle"
                       }`}
                     >
                       <span
                         className={`text-[11px] font-bold uppercase tracking-wider ${
-                          isDark ? "text-[#A3A3A3]" : "text-[#737373]"
+                          isDark ? "text-brand-dim" : "text-brand-caption"
                         }`}
                       >
                         Core Capabilities
@@ -346,7 +346,7 @@ export function Navbar({ variant = "light" }: NavbarProps = {}) {
                               </div>
                               <p
                                 className={`text-[11px] leading-tight truncate mt-0.5 ${
-                                  isDark ? "text-[#A3A3A3]" : "text-[#737373]"
+                                  isDark ? "text-brand-dim" : "text-brand-caption"
                                 }`}
                               >
                                 {service.shortDesc}
@@ -360,10 +360,10 @@ export function Navbar({ variant = "light" }: NavbarProps = {}) {
                     {/* Bottom CTA bar */}
                     <div
                       className={`mt-3 pt-3 border-t flex items-center justify-between -mx-5 -mb-5 px-5 py-3 rounded-b-xl ${
-                        isDark ? "border-white/10 bg-white/5" : "border-[#F0F0F0] bg-brand-surface"
+                        isDark ? "border-white/10 bg-white/5" : "border-brand-border-subtle bg-brand-surface"
                       }`}
                     >
-                      <p className={`text-[12px] ${isDark ? "text-[#A3A3A3]" : "text-[#737373]"}`}>
+                      <p className={`text-[12px] ${isDark ? "text-brand-dim" : "text-brand-caption"}`}>
                         Need a custom lead cadence or development scope?
                       </p>
                       <Link
@@ -392,8 +392,8 @@ export function Navbar({ variant = "light" }: NavbarProps = {}) {
                   ? "text-white font-bold"
                   : "text-brand-black font-bold"
                 : isDark
-                  ? "text-[#A3A3A3] hover:text-white"
-                  : "text-[#525252] hover:text-brand-black"
+                  ? "text-brand-dim hover:text-white"
+                  : "text-brand-body hover:text-brand-black"
             }`}
           >
             Team
@@ -411,8 +411,8 @@ export function Navbar({ variant = "light" }: NavbarProps = {}) {
                   ? "text-white font-bold"
                   : "text-brand-black font-bold"
                 : isDark
-                  ? "text-[#A3A3A3] hover:text-white"
-                  : "text-[#525252] hover:text-brand-black"
+                  ? "text-brand-dim hover:text-white"
+                  : "text-brand-body hover:text-brand-black"
             }`}
           >
             Careers
@@ -430,8 +430,8 @@ export function Navbar({ variant = "light" }: NavbarProps = {}) {
                   ? "text-white font-bold"
                   : "text-brand-black font-bold"
                 : isDark
-                  ? "text-[#A3A3A3] hover:text-white"
-                  : "text-[#525252] hover:text-brand-black"
+                  ? "text-brand-dim hover:text-white"
+                  : "text-brand-body hover:text-brand-black"
             }`}
           >
             Contact
@@ -460,7 +460,7 @@ export function Navbar({ variant = "light" }: NavbarProps = {}) {
             className={`flex h-11 w-11 items-center justify-center rounded-lg border lg:hidden transition min-h-[44px] min-w-[44px] ${
               isDark
                 ? "border-white/15 bg-white/5 text-white hover:border-white"
-                : "border-[#E5E5E5] bg-white text-brand-black hover:border-brand-black"
+                : "border-brand-border bg-white text-brand-black hover:border-brand-black"
             }`}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
@@ -500,8 +500,8 @@ export function Navbar({ variant = "light" }: NavbarProps = {}) {
               {/* Contextual Jump Index if on Web Development Page */}
               {isWebDevPage && (
                 <div className="mb-2 p-3 rounded-xl bg-brand-surface border border-brand-border">
-                  <div className="flex items-center justify-between pb-2 mb-1.5 border-b border-[#F0F0F0]">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#737373] flex items-center gap-1.5">
+                  <div className="flex items-center justify-between pb-2 mb-1.5 border-b border-brand-border-subtle">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-brand-caption flex items-center gap-1.5">
                       <span className="h-1.5 w-1.5 rounded-full bg-brand-red" />
                       On This Page
                     </span>
@@ -520,10 +520,10 @@ export function Navbar({ variant = "light" }: NavbarProps = {}) {
                         key={sec.id}
                         type="button"
                         onClick={() => scrollToSection(sec.id)}
-                        className="flex items-center justify-between py-2 px-2.5 rounded-lg bg-white border border-[#EFEFEF] hover:border-brand-black text-brand-black font-semibold text-left transition-colors min-h-[44px]"
+                        className="flex items-center justify-between py-2 px-2.5 rounded-lg bg-white border border-brand-border hover:border-brand-black text-brand-black font-semibold text-left transition-colors min-h-[44px]"
                       >
                         <span className="truncate">{sec.label}</span>
-                        <ArrowRight className="h-3 w-3 text-[#A3A3A3] shrink-0 ml-1" />
+                        <ArrowRight className="h-3 w-3 text-brand-dim shrink-0 ml-1" />
                       </button>
                     ))}
                   </div>

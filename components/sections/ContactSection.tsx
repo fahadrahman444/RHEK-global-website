@@ -145,17 +145,18 @@ export function ContactSection({
 
                   {/* Immediate Calendar Scheduling Step */}
                   <div className="pt-3 border-t border-zinc-100 flex flex-col sm:flex-row items-center justify-center gap-3">
-                    <Link
+                    <Button
                       href="/book-a-meeting"
-                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-red hover:bg-brand-black text-white px-5 py-2.5 text-[13px] font-semibold transition-all shadow-xs"
+                      variant="primary"
+                      size="md"
+                      icon={<Calendar className="h-4 w-4" />}
                     >
-                      <Calendar className="h-4 w-4" />
-                      <span>Book Immediate 20-Min Strategy Call</span>
-                    </Link>
+                      Book Immediate 20-Min Strategy Call
+                    </Button>
                     <button
                       type="button"
                       onClick={() => setSuccess(false)}
-                      className="text-[12.5px] text-zinc-500 hover:text-black underline"
+                      className="text-[12.5px] text-zinc-500 hover:text-black underline cursor-pointer"
                     >
                       Submit another territory
                     </button>

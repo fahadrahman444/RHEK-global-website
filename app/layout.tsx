@@ -19,20 +19,22 @@ const instrumentSans = Instrument_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://rhekglobal.com"),
   title: {
-    default: "RHEK GLOBAL — Intelligent Digital, Operational & Outsourcing Solutions",
+    default: "RHEK GLOBAL — Commercial Growth, Digital Infrastructure & Pipeline Solutions",
     template: "%s | RHEK GLOBAL",
   },
   description:
-    "RHEK GLOBAL empowers businesses with verified janitorial lead generation, B2B sales development, premium 3D web experiences, performance marketing, and dedicated outsourcing solutions.",
+    "RHEK GLOBAL engineers qualified B2B sales pipelines, high-performance Next.js web applications, performance marketing, and dedicated outsourcing solutions for growing enterprises.",
   keywords: [
+    "B2B Pipeline Growth",
     "Janitorial Lead Generation",
-    "Commercial Cleaning Leads",
-    "B2B Appointment Setting",
+    "Web Design & Development",
+    "Next.js Development",
     "Sales Development Representative",
-    "Premium 3D Web Design",
-    "Digital Outsourcing",
-    "RHEK GLOBAL",
+    "Social Media Advertising",
+    "Graphic Design & Branding",
+    "Video Production",
     "Virtual Assistant Support",
+    "RHEK GLOBAL",
   ],
   authors: [{ name: "RHEK GLOBAL Team" }],
   creator: "RHEK GLOBAL",
@@ -43,9 +45,9 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "RHEK GLOBAL — Intelligent Digital, Operational & Outsourcing Solutions",
+    title: "RHEK GLOBAL — Commercial Growth, Digital Infrastructure & Pipeline Solutions",
     description:
-      "Empowering businesses through intelligent digital, operational and outsourcing solutions. 100% exclusive leads, 3D web engineering, and verified outcomes.",
+      "RHEK GLOBAL engineers qualified B2B sales pipelines, high-performance Next.js web applications, performance marketing, and dedicated outsourcing solutions for growing enterprises.",
     url: "https://rhekglobal.com",
     siteName: "RHEK GLOBAL",
     locale: "en_US",
@@ -77,7 +79,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${plusJakartaSans.variable} ${instrumentSans.variable}`}>
-      <body className="antialiased selection:bg-brand-red selection:text-white bg-white text-[#525252] font-sans">
+      <body className="antialiased selection:bg-brand-red selection:text-white bg-white text-brand-body font-sans">
         {children}
       </body>
     </html>

@@ -47,7 +47,7 @@ export function FAQSection() {
       />
 
       <div className="mt-8 text-center">
-        <p className="text-[13.5px] text-[#737373]">
+        <p className="text-[13.5px] text-brand-caption">
           Have a question not listed here?{" "}
           <Link
             href="/contact"

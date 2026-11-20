@@ -31,21 +31,21 @@ export function InteractiveLeadShowcase({ leadSamples, serviceTitle }: Interacti
           <h2 className="text-xl sm:text-2xl lg:text-[26px] font-bold text-brand-black font-heading tracking-[-0.03em] leading-snug">
             Live Verified Facility Appointments
           </h2>
-          <p className="mt-1 text-[13.5px] text-[#525252] leading-relaxed max-w-xl">
+          <p className="mt-1 text-[13.5px] text-brand-body leading-relaxed max-w-xl">
             Inspect live sample walkthrough dispatches pre-qualified by our dedicated SDR team. Verified square footage, scope, and decision-maker contacts.
           </p>
         </div>
 
         {/* Exclusivity Trust Seal */}
         <div className="flex items-center gap-2.5 bg-white border border-brand-border rounded-lg p-3 shrink-0 shadow-2xs self-start lg:self-center">
-          <div className="h-8 w-8 rounded bg-brand-surface border border-brand-border text-[#16A34A] flex items-center justify-center shrink-0">
+          <div className="h-8 w-8 rounded bg-brand-surface border border-brand-border text-emerald-600 flex items-center justify-center shrink-0">
             <ShieldCheck className="h-4 w-4" />
           </div>
           <div>
             <p className="text-[11.5px] font-bold text-brand-black">
               100% Territory Exclusivity
             </p>
-            <p className="text-[10.5px] text-[#737373]">
+            <p className="text-[10.5px] text-brand-caption">
               Zero shared leads • Walkthrough replacement SLA
             </p>
           </div>
@@ -55,7 +55,7 @@ export function InteractiveLeadShowcase({ leadSamples, serviceTitle }: Interacti
       {/* Filter Tabs */}
       {categories.length > 1 && (
         <div className="flex flex-wrap items-center gap-2 mb-4">
-          <span className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider text-[#737373] mr-1">
+          <span className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider text-brand-caption mr-1">
             <Filter className="h-3 w-3 text-brand-black" />
             <span>Filter Sector:</span>
           </span>
@@ -70,11 +70,11 @@ export function InteractiveLeadShowcase({ leadSamples, serviceTitle }: Interacti
                 className={`inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-[11.5px] font-semibold transition-colors min-h-[32px] ${
                   isActive
                     ? "bg-brand-black text-white shadow-xs"
-                    : "bg-white text-[#525252] border border-[#E5E5E5] hover:border-brand-black hover:text-brand-black"
+                    : "bg-white text-brand-body border border-brand-border hover:border-brand-black hover:text-brand-black"
                 }`}
               >
                 <span>{cat}</span>
-                <span className={`text-[9.5px] rounded px-1.5 py-0.5 font-mono ${isActive ? "bg-white/20 text-white" : "bg-[#F0F0F0] text-[#737373]"}`}>
+                <span className={`text-[9.5px] rounded px-1.5 py-0.5 font-mono ${isActive ? "bg-white/20 text-white" : "bg-brand-surface text-brand-caption"}`}>
                   {count}
                 </span>
               </button>

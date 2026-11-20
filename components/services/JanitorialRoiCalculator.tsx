@@ -36,7 +36,7 @@ export function JanitorialRoiCalculator() {
           <h2 className="text-xl sm:text-2xl lg:text-[28px] font-bold font-heading text-white tracking-[-0.03em] leading-snug">
             Calculate Your Commercial Contract ROI
           </h2>
-          <p className="mt-1 text-[13.5px] text-[#A3A3A3] leading-relaxed max-w-xl">
+          <p className="mt-1 text-[13.5px] text-brand-dim leading-relaxed max-w-xl">
             Model recurring monthly revenue based on standard 40%–50% walkthrough close ratios and commercial cleaning contract values.
           </p>
         </div>
@@ -65,10 +65,10 @@ export function JanitorialRoiCalculator() {
                   step="5"
                   value={leadsCount}
                   onChange={(e) => setLeadsCount(Number(e.target.value))}
-                  className="w-full h-1.5 bg-white/20 rounded-lg appearance-none cursor-pointer accent-[#E9204F]"
+                  className="w-full h-1.5 bg-white/20 rounded-lg appearance-none cursor-pointer accent-brand-red"
                 />
 
-                <div className="flex justify-between text-[10.5px] text-[#A3A3A3] mt-1.5">
+                <div className="flex justify-between text-[10.5px] text-brand-dim mt-1.5">
                   <span>5 Leads</span>
                   <span>10 Leads (Starter)</span>
                   <span>20 Leads (Growth)</span>
@@ -85,7 +85,7 @@ export function JanitorialRoiCalculator() {
                       className={`py-1.5 px-2.5 rounded-lg text-[11.5px] font-semibold transition-colors min-h-[34px] ${
                         leadsCount === preset
                           ? "bg-white text-brand-black"
-                          : "bg-white/5 text-[#A3A3A3] border border-white/10 hover:border-white/20 hover:text-white"
+                          : "bg-white/5 text-brand-dim border border-white/10 hover:border-white/20 hover:text-white"
                       }`}
                     >
                       {preset} Leads
@@ -112,7 +112,7 @@ export function JanitorialRoiCalculator() {
                       className={`p-2.5 rounded-lg border text-left transition-all min-h-[40px] ${
                         avgContractValue === tier.value
                           ? "border-white bg-white/10 text-white"
-                          : "border-white/10 bg-white/[0.02] text-[#A3A3A3] hover:border-white/20 hover:text-white"
+                          : "border-white/10 bg-white/[0.02] text-brand-dim hover:border-white/20 hover:text-white"
                       }`}
                     >
                       <p className="text-[10px] font-semibold uppercase tracking-wider text-brand-red">
@@ -120,9 +120,9 @@ export function JanitorialRoiCalculator() {
                       </p>
                       <p className="text-[14px] font-bold text-white mt-0.5">
                         ${tier.value.toLocaleString()}
-                        <span className="text-[9.5px] text-[#A3A3A3] font-normal">/mo</span>
+                        <span className="text-[9.5px] text-brand-dim font-normal">/mo</span>
                       </p>
-                      <p className="text-[10px] text-[#A3A3A3] mt-0.5 truncate">
+                      <p className="text-[10px] text-brand-dim mt-0.5 truncate">
                         {tier.desc}
                       </p>
                     </button>
@@ -132,8 +132,8 @@ export function JanitorialRoiCalculator() {
             </div>
 
             {/* Bottom trust note */}
-            <div className="pt-3.5 mt-4 border-t border-white/10 flex items-center gap-1.5 text-[11.5px] text-[#A3A3A3]">
-              <ShieldCheck className="h-3.5 w-3.5 text-[#16A34A] shrink-0" />
+            <div className="pt-3.5 mt-4 border-t border-white/10 flex items-center gap-1.5 text-[11.5px] text-brand-dim">
+              <ShieldCheck className="h-3.5 w-3.5 text-emerald-500 shrink-0" />
               <span>Calculated with 40%–50% commercial closing rates from verified walkthroughs.</span>
             </div>
           </div>
@@ -143,14 +143,14 @@ export function JanitorialRoiCalculator() {
             <div>
               <div className="flex items-center justify-between gap-2 pb-3 border-b border-white/10 mb-3.5">
                 <div>
-                  <span className="text-[10.5px] font-semibold uppercase tracking-wider text-[#A3A3A3]">
+                  <span className="text-[10.5px] font-semibold uppercase tracking-wider text-brand-dim">
                     Projected Outcomes
                   </span>
                   <h3 className="text-base sm:text-lg font-bold font-heading text-white">
                     Estimated Commercial Pipeline
                   </h3>
                 </div>
-                <span className="rounded bg-white/10 border border-white/15 px-2 py-0.5 text-[10.5px] font-semibold text-[#16A34A]">
+                <span className="rounded bg-white/10 border border-white/15 px-2 py-0.5 text-[10.5px] font-semibold text-emerald-500">
                   {firstMonthRoiRatio}x 1st-Month Yield
                 </span>
               </div>
@@ -158,25 +158,25 @@ export function JanitorialRoiCalculator() {
               {/* Big Metrics Grid */}
               <div className="grid grid-cols-2 gap-2.5 mb-3.5">
                 <div className="rounded-lg bg-black/40 p-3 sm:p-3.5 border border-white/10">
-                  <p className="text-[10px] font-semibold uppercase tracking-wider text-[#A3A3A3]">
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-brand-dim">
                     Contracts Won (40–50%)
                   </p>
                   <p className="text-2xl sm:text-3xl font-bold text-white mt-0.5">
                     {minContracts}–{maxContracts}
                   </p>
-                  <p className="text-[10px] text-[#A3A3A3] mt-0.5">
+                  <p className="text-[10px] text-brand-dim mt-0.5">
                     Recurring monthly accounts
                   </p>
                 </div>
 
                 <div className="rounded-lg bg-black/40 p-3 sm:p-3.5 border border-white/10">
-                  <p className="text-[10px] font-semibold uppercase tracking-wider text-[#A3A3A3]">
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-brand-dim">
                     New Monthly MRR
                   </p>
                   <p className="text-xl sm:text-2xl font-bold text-brand-red mt-0.5">
                     ${minMonthlyRevenue.toLocaleString()}–${maxMonthlyRevenue.toLocaleString()}
                   </p>
-                  <p className="text-[10px] text-[#A3A3A3] mt-0.5">
+                  <p className="text-[10px] text-brand-dim mt-0.5">
                     Added to monthly billing
                   </p>
                 </div>
@@ -186,9 +186,9 @@ export function JanitorialRoiCalculator() {
               <div className="rounded-lg bg-white/5 p-3 border border-white/10 mb-3.5">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <TrendingUp className="h-3.5 w-3.5 text-[#16A34A]" />
+                    <TrendingUp className="h-3.5 w-3.5 text-emerald-500" />
                     <div>
-                      <p className="text-[10px] font-semibold uppercase tracking-wider text-[#A3A3A3]">
+                      <p className="text-[10px] font-semibold uppercase tracking-wider text-brand-dim">
                         Projected Annual Contract Revenue
                       </p>
                       <p className="text-[16px] font-bold text-white">
@@ -203,17 +203,17 @@ export function JanitorialRoiCalculator() {
               </div>
 
               {/* Bullets */}
-              <div className="space-y-1 text-[11.5px] text-[#A3A3A3] mb-4">
+              <div className="space-y-1 text-[11.5px] text-brand-dim mb-4">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-[#16A34A]" />
+                  <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-emerald-500" />
                   <span>Estimated Lead Investment: ~${estLeadInvestment.toLocaleString()} (Starter Promo)</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-[#16A34A]" />
+                  <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-emerald-500" />
                   <span>Pays for entire campaign with just 1 closed contract</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-[#16A34A]" />
+                  <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-emerald-500" />
                   <span>Includes 100% money-back &amp; replacement protection</span>
                 </div>
               </div>

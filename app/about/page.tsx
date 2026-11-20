@@ -45,13 +45,13 @@ export default function AboutPage() {
         <div className="site-container py-8 sm:py-12 space-y-8 sm:space-y-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-start">
           <div>
-            <span className="inline-block text-[10.5px] font-bold uppercase tracking-wider text-[#737373] mb-1">
+            <span className="inline-block text-[10.5px] font-bold uppercase tracking-wider text-brand-caption mb-1">
               Our Purpose
             </span>
             <h2 className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-brand-black tracking-[-0.03em] leading-snug mt-0.5">
               Empowering Businesses Through Intelligent Digital &amp; Outsourcing Solutions
             </h2>
-            <div className="mt-3 space-y-2.5 text-[13.5px] sm:text-[14px] text-[#525252] leading-relaxed">
+            <div className="mt-3 space-y-2.5 text-[13.5px] sm:text-[14px] text-brand-body leading-relaxed">
               <p>
                 At RHEK GLOBAL, we are passionate about helping businesses grow, innovate, and succeed in an increasingly competitive world. We bring together digital expertise, creative solutions, strategic marketing, sales development, and professional outsourcing services under one platform.
               </p>
@@ -93,7 +93,7 @@ export default function AboutPage() {
               <h3 className="text-base font-bold text-brand-black mb-1">
                 {companyProfile.mission.headline}
               </h3>
-              <p className="text-[13px] text-[#525252] leading-relaxed">
+              <p className="text-[13px] text-brand-body leading-relaxed">
                 {companyProfile.mission.text}
               </p>
             </SpotlightCard>
@@ -110,7 +110,7 @@ export default function AboutPage() {
               <h3 className="text-base font-bold text-brand-black mb-1">
                 {companyProfile.vision.headline}
               </h3>
-              <p className="text-[13px] text-[#525252] leading-relaxed">
+              <p className="text-[13px] text-brand-body leading-relaxed">
                 {companyProfile.vision.text}
               </p>
             </SpotlightCard>
@@ -120,7 +120,7 @@ export default function AboutPage() {
         {/* 5 Core Values — Compact 2-column on mobile */}
         <div className="border-t border-brand-border pt-6 sm:pt-8">
           <div className="max-w-[640px] mb-4">
-            <span className="inline-block text-[10.5px] font-bold uppercase tracking-wider text-[#737373]">
+            <span className="inline-block text-[10.5px] font-bold uppercase tracking-wider text-brand-caption">
               Guiding Principles
             </span>
             <h3 className="font-heading text-xl sm:text-2xl font-bold text-brand-black mt-0.5">
@@ -142,7 +142,7 @@ export default function AboutPage() {
                 <h4 className="text-[13px] sm:text-[14px] font-bold text-brand-black mb-1 leading-snug group-hover:text-brand-red transition-colors">
                   {val.name}
                 </h4>
-                <p className="text-[11px] sm:text-[12px] text-[#525252] leading-relaxed line-clamp-3 sm:line-clamp-none">
+                <p className="text-[11px] sm:text-[12px] text-brand-body leading-relaxed line-clamp-3 sm:line-clamp-none">
                   {val.desc}
                 </p>
               </SpotlightCard>
@@ -163,7 +163,7 @@ export default function AboutPage() {
             <h3 className="text-lg sm:text-xl font-bold font-heading text-white mt-0.5">
               Execution Standards
             </h3>
-            <p className="text-[12.5px] text-[#A3A3A3] mt-0.5 leading-relaxed">
+            <p className="text-[12.5px] text-brand-dim mt-0.5 leading-relaxed">
               Every project at RHEK GLOBAL is governed by four strict standards:
             </p>
           </div>
@@ -179,7 +179,7 @@ export default function AboutPage() {
                 <h4 className="text-[12.5px] sm:text-[13.5px] font-bold text-white mb-0.5 group-hover:text-brand-red transition-colors">
                   {pr.title}
                 </h4>
-                <p className="text-[11px] sm:text-[12px] text-[#A3A3A3] leading-relaxed line-clamp-3 sm:line-clamp-none">
+                <p className="text-[11px] sm:text-[12px] text-brand-dim leading-relaxed line-clamp-3 sm:line-clamp-none">
                   {pr.description}
                 </p>
               </SpotlightCard>

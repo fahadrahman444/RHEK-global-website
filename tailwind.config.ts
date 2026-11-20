@@ -26,6 +26,9 @@ const config: Config = {
           black: "#101010",           // Headings, dark full-bleed sections, links
           charcoal: "#101010",        // Headings & strong text
           slate: "#747474",           // Body gray copy
+          body: "#525252",            // Standard body prose copy
+          caption: "#737373",         // Secondary captions and metadata
+          dim: "#A3A3A3",             // Muted placeholder / dark container text
           muted: "#ACACAC",           // Body text on dark backgrounds
           subtle: "#FAFAFA",          // Hero wrapper & subtle borders
           surface: "#FAFAFA",         // Card surface background

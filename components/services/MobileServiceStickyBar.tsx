@@ -36,7 +36,7 @@ export function MobileServiceStickyBar({
 
         <Link
           href={primaryCtaHref}
-          className="flex-[1.4] flex items-center justify-center gap-1.5 rounded-lg bg-brand-red hover:bg-[#d01842] text-white px-4 py-2.5 text-[12px] font-semibold transition-colors min-h-[44px] shadow-sm"
+          className="flex-[1.4] flex items-center justify-center gap-1.5 rounded-lg bg-brand-red hover:bg-brand-red/90 text-white px-4 py-2.5 text-[12px] font-semibold transition-colors min-h-[44px] shadow-sm"
         >
           <span className="truncate">{primaryCtaText}</span>
           <ArrowRight className="h-3.5 w-3.5 shrink-0" />

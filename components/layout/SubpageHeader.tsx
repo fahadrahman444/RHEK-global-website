@@ -20,7 +20,7 @@ export function SubpageHeader({
     <div className="pt-2 sm:pt-4">
       {/* Breadcrumb Navigation Trail */}
       <nav aria-label="Breadcrumb" className="mb-3">
-        <ol className="flex items-center gap-1.5 text-[12px] text-[#737373] font-medium font-sans">
+        <ol className="flex items-center gap-1.5 text-[12px] text-brand-caption font-medium font-sans">
           <li>
             <Link
               href="/"
@@ -50,7 +50,7 @@ export function SubpageHeader({
           {title}
         </h1>
 
-        <p className="mt-2 text-[14.5px] text-[#525252] leading-relaxed max-w-2xl">
+        <p className="mt-2 text-[14.5px] text-brand-body leading-relaxed max-w-2xl">
           {description}
         </p>
       </div>

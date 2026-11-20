@@ -10,6 +10,7 @@ export interface SpotlightCardProps extends React.HTMLAttributes<HTMLDivElement>
   spotlightColor?: string;
   spotlightRadius?: number;
   mode?: "dark" | "light";
+  interactive?: boolean;
 }
 
 export function SpotlightCard({
@@ -19,16 +20,17 @@ export function SpotlightCard({
   spotlightColor,
   spotlightRadius,
   mode = "dark",
+  interactive = false,
   ...props
 }: SpotlightCardProps) {
   const divRef = useRef<HTMLDivElement>(null);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
   const [opacity, setOpacity] = useState(0);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!divRef.current) return;
     const rect = divRef.current.getBoundingClientRect();
-    setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    divRef.current.style.setProperty("--spotlight-x", `${e.clientX - rect.left}px`);
+    divRef.current.style.setProperty("--spotlight-y", `${e.clientY - rect.top}px`);
   };
 
   const handleMouseEnter = () => {
@@ -49,8 +51,12 @@ export function SpotlightCard({
 
   const baseThemeClasses =
     mode === "light"
-      ? "border border-zinc-200/80 bg-white hover:border-zinc-400 hover:bg-brand-surface hover:shadow-md hover:shadow-zinc-900/5 hover:-translate-y-0.5"
-      : "border border-white/10 bg-[#0E1015] hover:border-white/20 hover:shadow-xl hover:-translate-y-0.5";
+      ? "border border-zinc-200/80 bg-white hover:border-zinc-400 hover:bg-brand-surface hover:shadow-md hover:shadow-zinc-900/5"
+      : "border border-white/10 bg-brand-dark hover:border-white/20 hover:shadow-xl";
+
+  const interactiveClasses = interactive
+    ? "hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+    : "";
 
   return (
     <div
@@ -61,16 +67,17 @@ export function SpotlightCard({
       className={cn(
         "relative overflow-hidden rounded-2xl transition-all duration-200",
         baseThemeClasses,
+        interactiveClasses,
         className
       )}
       {...props}
     >
-      {/* Dynamic Cursor Spotlight — Placed beneath content to prevent contrast wash */}
+      {/* Hardware-Accelerated Dynamic Cursor Spotlight via CSS Variables */}
       <div
         className="pointer-events-none absolute -inset-px z-0 transition-opacity duration-300 ease-out"
         style={{
           opacity,
-          background: `radial-gradient(${radius}px circle at ${position.x}px ${position.y}px, ${defaultSpotlight}, transparent 70%)`,
+          background: `radial-gradient(${radius}px circle at var(--spotlight-x, -999px) var(--spotlight-y, -999px), ${defaultSpotlight}, transparent 70%)`,
         }}
         aria-hidden="true"
       />

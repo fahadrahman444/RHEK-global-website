@@ -75,7 +75,7 @@ export function ServiceSubNav({
       aria-label={`${serviceName} contextual navigation`}
       className={`hidden md:block sticky top-[74px] lg:top-[82px] z-40 w-full transition-all duration-200 border-b ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-md border-[#E5E5E5] shadow-xs"
+          ? "bg-white/95 backdrop-blur-md border-brand-border shadow-xs"
           : "bg-white/90 backdrop-blur-sm border-brand-border"
       }`}
     >
@@ -106,7 +106,7 @@ export function ServiceSubNav({
                   className={`px-3 py-1.5 rounded-lg text-[12px] sm:text-[13px] font-semibold whitespace-nowrap transition-all duration-150 min-h-[36px] ${
                     isActive
                       ? "bg-brand-black text-white shadow-xs"
-                      : "text-[#525252] hover:text-brand-black hover:bg-brand-light"
+                      : "text-brand-body hover:text-brand-black hover:bg-brand-light"
                   }`}
                 >
                   {item.label}

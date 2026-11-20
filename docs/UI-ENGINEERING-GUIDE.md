@@ -22,7 +22,11 @@ Use Tailwind tokens instead of arbitrary hex codes:
 |---|---|---|---|
 | `brand.red` | `#E9204F` | `bg-brand-red`, `text-brand-red` | Primary CTAs, active indicators, focus rings |
 | `brand.black` | `#101010` | `text-brand-black`, `bg-brand-black` | Main headlines, dark container sections |
-| `brand.slate` | `#747474` | `text-brand-slate` | Secondary body text, captions |
+| `brand.body` | `#525252` | `text-brand-body` | Standard body prose and paragraphs |
+| `brand.caption`| `#737373` | `text-brand-caption` | Metadata, micro-labels, timestamps |
+| `brand.dim` | `#A3A3A3` | `text-brand-dim` | Muted dark-mode text, input placeholders |
+| `brand.muted` | `#ACACAC` | `text-brand-muted` | Dark-background secondary copy |
+| `brand.slate` | `#747474` | `text-brand-slate` | Auxiliary neutral copy |
 | `brand.surface` | `#FAFAFA` | `bg-brand-surface` | Card surfaces, alternating background panels |
 | `brand.border` | `#EBEBEB` | `border-brand-border` | Hairline card borders, section dividers |
 | `brand.border-subtle`| `#F3F3F3` | `border-brand-border-subtle`| Soft inner dividers, secondary cards |
@@ -40,7 +44,7 @@ Hero Display (H1)    26px - 28px         44px                  56px             
 Section Title (H2)   24px                30px                  34px                  font-heading font-bold leading-[1.18] tracking-tight
 Subpage Title (H1)   24px                30px                  36px                  font-heading font-bold leading-tight tracking-tight
 Card Title (H3)      17px                20px                  22px                  font-heading font-bold leading-snug
-Prose Body Copy      14.5px - 15px       15px - 16px           16px                  font-sans font-normal leading-relaxed text-[#525252]
+Prose Body Copy      14.5px - 15px       15px - 16px           16px                  font-sans font-normal leading-relaxed text-brand-body
 Micro-Badge / Pill   10.5px              11px                  11px                  font-semibold uppercase tracking-wider
 ```
 

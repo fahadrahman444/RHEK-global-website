@@ -17,7 +17,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="w-full bg-[#0a0a0a] text-white border-t border-white/10 mt-6 sm:mt-10">
+    <footer className="w-full bg-brand-black text-white border-t border-white/10 mt-6 sm:mt-10">
       <div className="site-container py-5 sm:py-7">
         {/* Main Content Grid: Brand/Newsletter (left) + Dense 4-column Links (right) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 pb-5 border-b border-white/10">
@@ -33,25 +33,25 @@ export function Footer() {
                   B2B Growth Engine
                 </span>
               </div>
-              <p className="text-[12px] text-[#8e8e8e] mt-2 max-w-[360px] leading-relaxed">
+              <p className="text-[12px] text-brand-muted mt-2 max-w-[360px] leading-relaxed">
                 {RHEK_CONFIG.company.headline}
               </p>
             </div>
 
             {/* Compact Newsletter */}
             <div className="max-w-[360px]">
-              <span className="block text-[10px] font-semibold text-[#8e8e8e] uppercase tracking-wider mb-1.5">
+              <span className="block text-[10px] font-semibold text-brand-muted uppercase tracking-wider mb-1.5">
                 Market Intelligence Newsletter
               </span>
               {subscribed ? (
                 <div className="flex items-center gap-2 rounded-lg bg-white/10 border border-white/15 px-3 py-1.5 text-[11.5px] text-white">
-                  <CheckCircle2 className="h-3.5 w-3.5 text-[#16A34A] shrink-0" />
+                  <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 shrink-0" />
                   <span>Subscribed to RHEK briefings.</span>
                 </div>
               ) : (
                 <form onSubmit={handleSubscribe} className="flex gap-1.5">
                   <div className="relative flex-1">
-                    <Mail className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-[#666]" />
+                    <Mail className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-neutral-500" />
                     <input
                       type="email"
                       value={email}
@@ -59,7 +59,7 @@ export function Footer() {
                       placeholder="business@company.com"
                       required
                       aria-label="Work Email Address for Newsletter"
-                      className="w-full rounded-lg border border-white/15 bg-white/5 pl-8 pr-2.5 py-1.5 text-[12px] text-white placeholder:text-[#666] focus:outline-none focus:border-white focus-visible:ring-2 focus-visible:ring-white transition-all min-h-[34px]"
+                      className="w-full rounded-lg border border-white/15 bg-white/5 pl-8 pr-2.5 py-1.5 text-[12px] text-white placeholder:text-neutral-500 focus:outline-none focus:border-white focus-visible:ring-2 focus-visible:ring-white transition-all min-h-[34px]"
                     />
                   </div>
                   <button
@@ -81,7 +81,7 @@ export function Footer() {
               <h4 className="text-[10px] font-bold uppercase tracking-wider text-white/50 mb-2 font-display">
                 Commercial
               </h4>
-              <ul className="space-y-1.5 text-[#a3a3a3]">
+              <ul className="space-y-1.5 text-brand-dim">
                 <li>
                   <Link href="/services/janitorial-lead-generation" className="hover:text-white transition-colors">
                     Janitorial Leads
@@ -110,7 +110,7 @@ export function Footer() {
               <h4 className="text-[10px] font-bold uppercase tracking-wider text-white/50 mb-2 font-display">
                 Digital &amp; Ops
               </h4>
-              <ul className="space-y-1.5 text-[#a3a3a3]">
+              <ul className="space-y-1.5 text-brand-dim">
                 <li>
                   <Link href="/services/web-design-development" className="hover:text-white transition-colors">
                     Web Dev &amp; 3D
@@ -139,7 +139,7 @@ export function Footer() {
               <h4 className="text-[10px] font-bold uppercase tracking-wider text-white/50 mb-2 font-display">
                 Platform
               </h4>
-              <ul className="space-y-1.5 text-[#a3a3a3]">
+              <ul className="space-y-1.5 text-brand-dim">
                 <li>
                   <Link href="/#industries" className="hover:text-white transition-colors">
                     Target Sectors
@@ -168,7 +168,7 @@ export function Footer() {
               <h4 className="text-[10px] font-bold uppercase tracking-wider text-white/50 mb-2 font-display">
                 Company
               </h4>
-              <ul className="space-y-1.5 text-[#a3a3a3]">
+              <ul className="space-y-1.5 text-brand-dim">
                 <li>
                   <Link href="/about" className="hover:text-white transition-colors">
                     About Us
@@ -195,15 +195,15 @@ export function Footer() {
         </div>
 
         {/* Bottom Utility Strip */}
-        <div className="pt-3.5 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-[#666]">
+        <div className="pt-3.5 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-neutral-500">
           <div className="flex flex-wrap items-center gap-2 sm:gap-3.5">
             <span>© {new Date().getFullYear()} {RHEK_CONFIG.company.legalName}</span>
             <span className="hidden sm:inline text-white/10">|</span>
-            <Link href="/privacy-policy" className="hover:text-[#a3a3a3] transition-colors">
+            <Link href="/privacy-policy" className="hover:text-brand-dim transition-colors">
               Privacy Policy
             </Link>
             <span className="hidden sm:inline text-white/10">|</span>
-            <Link href="/book-a-meeting" className="hover:text-[#a3a3a3] transition-colors inline-flex items-center gap-0.5">
+            <Link href="/book-a-meeting" className="hover:text-brand-dim transition-colors inline-flex items-center gap-0.5">
               <span>Book Call</span>
               <ArrowUpRight className="h-3 w-3" />
             </Link>
@@ -211,7 +211,7 @@ export function Footer() {
 
           <div className="flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-            <span className="text-[#888]">Institutional Capacity: Open Q4</span>
+            <span className="text-neutral-400">Institutional Capacity: Open Q4</span>
           </div>
         </div>
       </div>

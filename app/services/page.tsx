@@ -172,7 +172,7 @@ export default function ServicesPage() {
               <h3 className="text-lg sm:text-xl font-bold font-heading text-white">
                 100% Money-Back Guarantee on Eligible Services
               </h3>
-              <p className="text-[13px] text-[#A3A3A3] mt-1 leading-relaxed">
+              <p className="text-[13px] text-brand-dim mt-1 leading-relaxed">
                 {RHEK_CONFIG.moneyBackGuarantee.description}
               </p>
             </div>

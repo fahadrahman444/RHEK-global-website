@@ -90,7 +90,7 @@ export function ContactQrCode({
         <p className="text-[12px] font-semibold text-brand-black uppercase tracking-wider">
           {label}
         </p>
-        <p className="text-[11px] text-[#737373] mt-0.5">
+        <p className="text-[11px] text-brand-caption mt-0.5">
           {sublabel}
         </p>
       </div>

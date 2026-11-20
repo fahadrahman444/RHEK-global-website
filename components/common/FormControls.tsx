@@ -49,7 +49,7 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
           aria-describedby={error ? errorId : helperText ? helperId : undefined}
           className={cn(
             "w-full rounded-lg border bg-white px-3.5 py-2.5 min-h-[44px] text-[13.5px] text-brand-black placeholder:text-zinc-400 transition-colors",
-            "focus:border-brand-black focus:ring-1 focus:ring-[#101010] focus-visible:outline-none",
+            "focus:border-brand-black focus:ring-1 focus:ring-brand-black focus-visible:outline-none",
             error ? "border-red-500 focus:border-red-500 focus:ring-red-500" : "border-zinc-200",
             className
           )}
@@ -61,7 +61,7 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
           </p>
         )}
         {!error && helperText && (
-          <p id={helperId} className="mt-1 text-[12px] text-[#737373]">
+          <p id={helperId} className="mt-1 text-[12px] text-brand-caption">
             {helperText}
           </p>
         )}
@@ -112,7 +112,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
           aria-describedby={error ? errorId : undefined}
           className={cn(
             "w-full rounded-lg border bg-white px-3.5 py-2.5 min-h-[44px] text-[13.5px] text-brand-black transition-colors",
-            "focus:border-brand-black focus:ring-1 focus:ring-[#101010] focus-visible:outline-none",
+            "focus:border-brand-black focus:ring-1 focus:ring-brand-black focus-visible:outline-none",
             error ? "border-red-500 focus:border-red-500 focus:ring-red-500" : "border-zinc-200",
             className
           )}
@@ -174,7 +174,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           aria-describedby={error ? errorId : undefined}
           className={cn(
             "w-full rounded-lg border bg-white px-3.5 py-2.5 text-[13.5px] text-brand-black placeholder:text-zinc-400 transition-colors resize-y min-h-[100px]",
-            "focus:border-brand-black focus:ring-1 focus:ring-[#101010] focus-visible:outline-none",
+            "focus:border-brand-black focus:ring-1 focus:ring-brand-black focus-visible:outline-none",
             error ? "border-red-500 focus:border-red-500 focus:ring-red-500" : "border-zinc-200",
             className
           )}

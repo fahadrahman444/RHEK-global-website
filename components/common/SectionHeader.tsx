@@ -55,7 +55,7 @@ export function SectionHeader({
         </TitleTag>
 
         {description && (
-          <p className="mt-2 text-[14.5px] sm:text-[16px] leading-relaxed text-[#525252]">
+          <p className="mt-2 text-[14.5px] sm:text-[16px] leading-relaxed text-brand-body">
             {description}
           </p>
         )}
